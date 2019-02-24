@@ -1,0 +1,17 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  padding: 150px 100px;
+
+  img {
+    padding: 100px 0 50px;
+    width: 680px;
+  }
+
+  p {
+    font-size: 25px;
+  }
+}

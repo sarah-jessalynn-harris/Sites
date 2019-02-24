@@ -1,0 +1,105 @@
+//style home page links
+.links {
+  width: 100%;
+  height: 90%;
+
+    a{
+      &:hover .linkBox {
+      background-color: $greyO;
+    }
+  }
+  //holds all the links' info
+  .linkBox {
+    width: 100%;
+    height: 25%;
+    overflow: hidden;
+
+    h3 {
+      padding-top: 50px;
+      font-size: 40px;
+      font-family: "accent";
+      color: $darkGrey;
+      text-align: center;
+    }
+
+    .bar {
+      width: 100%;
+      height: 100px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .barOne {
+      background-image: url("../images/tealBar.png");
+    }
+
+    .barTwo {
+      background-image: url("../images/orangeBar.png");
+    }
+
+    .barThree {
+      background-image: url("../images/greyBar.png");
+    }
+
+    .imageSlide {
+      position: relative;
+      left: 80px;
+      top: 50px;
+      width: 3500px;
+      height: 200px;
+      overflow: hidden;
+      display: flex;
+
+      a:hover {
+        opacity: .8;
+      }
+
+      div {
+        width : 200px;
+        height: 200px;
+        margin: 0 5px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      #imageOne {
+        background-image: url("../images/2.png");
+      }
+      #imageTwo {
+        background-image: url("../images/1.png");
+      }
+      #imageThree{
+        background-image: url("../images/3.png");
+      }
+      #imageFour {
+        background-image: url("../images/10.png");
+      }
+      #imageFive {
+        background-image: url("../images/11.png");
+      }
+      #imageSix{
+        background-image: url("../images/12.png");
+      }
+      #imageSeven {
+        background-image: url("../images/7.png");
+        width: 280px;
+      }
+      #imageThirteen {
+        background-image: url("../images/17.png");
+        width: 250px;
+      }
+      #imageFourteen {
+        background-image: url("../images/20.png");
+        width: 250px;
+      }
+      #imageFifteen{
+        background-image: url("../images/18.png");
+        width: 250px;
+      }
+    }
+  }
+  .slider {
+    height: 35%;
+  }
+}

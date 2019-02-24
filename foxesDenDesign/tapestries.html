@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport"
+              content="width=device-width, user-scalable= 1.0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="css/styles.css">
+
+        <title> FDD - Tapestry </title>
+
+    </head>
+
+    <body>
+
+    <!--header for each page-->
+    <header>
+
+        <!--div to hold first row of header-->
+        <div class="headerRow">
+
+            <!--div to hold the logo in the header-->
+            <div class="logoHeader">
+
+                <img src="images/logo.png" alt="Foxes Den Design Logo">
+
+                <p> Foxes' Den Design </p>
+
+            </div>
+
+            <!--div to hold the social media links in the header-->
+            <div class="socialHeader">
+
+                <nav>
+                    <a href="#"> c </a>
+                    <a href="#"> d </a>
+                    <a href="#"> f </a>
+                </nav>
+
+            </div>
+
+        </div>
+
+        <!--div to hold second row of header -->
+        <div class="headerTwo">
+
+            <nav>
+                <a href="index.html"> Home </a>
+
+                <div class="dropdown">
+
+                    <button style="color: #fff"> Products </button>
+
+                    <div class="dropdownContent">
+
+                        <div class="nav">
+                            <a href="products.html" > All Products </a>
+                            <a href="pillows.html"> Pillows </a>
+                            <a href="blankets.html"> Blankets </a>
+                            <a href="tapestries.html" style="color: #fff"> Tapestries </a>
+                            <a href="rugs.html" > Rugs </a>
+                        </div>
+
+                        <div class="dropImg"></div>
+                    </div>
+
+                </div>
+
+                <a href="about.html"> About </a>
+
+                <div class="cartdown">
+
+                    <button class="cart"> Cart <span class="cartItems"></span></button>
+
+                    <div class="cartdownContent">
+                        <p class="clearCart"> Empty Cart </p>
+                    </div>
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- button to bring user back to the top of the page-->
+    <a class="return"> <img src="images/return.png" alt="return to top"></a>
+
+   <!-- products of the page-->
+
+    <!-- Fox Garden Tapestry -->
+    <section class="productSections" id = "section13">
+
+        <div class = "productDetails" id="product13">
+
+            <div class="detailHeader">
+
+                <div class = "productName">
+
+                    <p> Fox Garden Tapestry </p>
+
+                </div>
+
+                <div class="closeProduct" id="33" onclick="hideProduct(this.id)">
+
+                    <p> &times; </p>
+
+                </div>
+
+            </div>
+
+            <div class="productStuff">
+
+                <div class="imageBox">
+
+                    <div id = "thirteen" class="imageHolder"></div>
+
+                    <div class="moreImages">
+
+                        <img src = "images/15.jpg" class="imageButton 0">
+
+                        <img src="images/flowerTable.jpg" class="imageButton 0">
+
+                        <img src="images/flower.jpg" class="imageButton 0">
+
+                    </div>
+
+                </div>
+
+                <div class="infoHolder">
+
+                    <div class="productInfo">
+
+                        <p> <span class="label">Price: </span> $20 </p>
+
+                        <p><span class="label">Material: </span> Cotton </p>
+
+                        <p> <span class="label">Size: </span> 5' x 5' </p>
+
+                        <p class="label"> Rating: </p>
+
+                        <img src="images/fiveOfFive.png" alt="5 out of 5 stars">
+
+                        <p class="label"> Full Description: </p>
+
+                        <p> You will be smelling the roses when you look at this colorful, 5ft x 5ft tapestry! </p>
+
+                        <button onclick="addItem()"> Add to Cart</button>
+
+                        <p> <span class="label"> Similar Items : </span></p>
+
+                        <div class="moreItems">
+
+                            <img class="similarItem 13 14" src="images/16.jpg" style="width: 22%" alt="Space Fox Tapestry">
+
+                            <img class="similarItem 13 15" src="images/14.jpg" style="width: 22%" alt="Polka Fox Tapestry">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="colorBar tealBar">
+
+            <h1> Fox Garden Tapestry </h1>
+
+            <h2> $20 </h2>
+
+        </div>
+
+        <div class="colorPattern tealPattern"></div>
+
+        <img class = "img" id="13" onclick = "showProduct(this.id)" src="images/15.jpg" style="width: 30%" alt="Fox Garden Tapestry">
+
+    </section>
+
+    <!-- Space Fox Tapestry-->
+    <section class="productSections" id="section14">
+
+        <div class = "productDetails" id="product14">
+
+            <div class="detailHeader">
+
+                <div class = "productName">
+
+                    <p> Space Fox Tapestry </p>
+
+                </div>
+
+                <div class="closeProduct" id="34" onclick="hideProduct(this.id)">
+
+                    <p> &times; </p>
+
+                </div>
+
+            </div>
+
+            <div class="productStuff">
+
+                <div class="imageBox">
+
+                    <div id = "fourteen" class="imageHolder"></div>
+
+                    <div class="moreImages">
+
+                        <img src = "images/16.jpg" class="imageButton 1">
+
+                        <img src="images/bedroom.jpg" class="imageButton 1">
+
+                        <img src="images/space.jpg" class="imageButton 1">
+
+                    </div>
+
+                </div>
+
+                <div class="infoHolder">
+
+                    <div class="productInfo">
+
+                        <p> <span class="label">Price: </span> $20 </p>
+
+                        <p><span class="label">Material: </span> Cotton </p>
+
+                        <p> <span class="label">Size: </span> 4' x 7' </p>
+
+                        <p class="label"> Rating: </p>
+
+                        <img src="images/fiveOfFive.png" alt="5 out of 5 stars">
+
+                        <p class="label"> Full Description: </p>
+
+                        <p> Go on a Space adventure with your foxy friends! This 4ft x 7ft tapestry allows you to have your own portal into the Universe.  </p>
+
+                        <button onclick="addItem()"> Add to Cart</button>
+
+                        <p> <span class="label"> Similar Items : </span></p>
+
+                        <div class="moreItems">
+
+                            <img class="similarItem 14 13" src="images/15.jpg" style="width: 22%" alt="Fox Garden Tapestry">
+
+                            <img class="similarItem 14 15" src="images/14.jpg" style="width: 22%" alt="Polka Fox Tapestry">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="colorBar orangeBar">
+
+            <h1> Space Fox Tapestry </h1>
+
+            <h2> $20 </h2>
+
+        </div>
+
+        <div class="colorPattern orangePattern"></div>
+
+        <img src="images/16.jpg" class = "img" id="14" onclick = "showProduct(this.id)" style="width: 30%" alt="Space Fox Tapestry">
+
+    </section>
+
+    <!-- Polka Fox Tapestry -->
+    <section class="productSections" id="section15">
+
+        <div class = "productDetails" id="product15">
+
+            <div class="detailHeader">
+
+                <div class = "productName">
+
+                    <p> Polka Fox Tapestry </p>
+
+                </div>
+
+                <div class="closeProduct" id="35" onclick="hideProduct(this.id)">
+
+                    <p> &times; </p>
+
+                </div>
+
+            </div>
+
+            <div class="productStuff">
+
+                <div class="imageBox">
+
+                    <div id = "fifteen" class="imageHolder"></div>
+
+                    <div class="moreImages">
+
+                        <img src = "images/14.jpg" class="imageButton 2">
+
+                        <img src="images/livingRoom.jpg" class="imageButton 2">
+
+                        <img src="images/polka.jpg" class="imageButton 2">
+
+                    </div>
+
+                </div>
+
+                <div class="infoHolder">
+
+                    <div class="productInfo">
+
+                        <p> <span class="label">Price: </span> $20 </p>
+
+                        <p><span class="label">Material: </span> Cotton </p>
+
+                        <p> <span class="label">Size: </span> 3' x 5' </p>
+
+                        <p class="label"> Rating: </p>
+
+                        <img src="images/fiveOfFive.png" alt="5 out of 5 stars">
+
+                        <p class="label"> Full Description: </p>
+
+                        <p> Spice up your wall with a fun 3ft x 5ft "polka-fox" tapestry!  </p>
+
+                        <button onclick="addItem()"> Add to Cart</button>
+
+                        <p> <span class="label"> Similar Items : </span></p>
+
+                        <div class="moreItems">
+
+                            <img class="similarItem 15 13" src="images/15.jpg" style="width: 22%" alt="Fox Garden Tapestry">
+
+                            <img class="similarItem 15 14" src="images/16.jpg" style="width: 22%" alt="Space Fox Tapestry">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="colorBar greyBar">
+
+            <h1> Polka Fox Tapestry </h1>
+
+            <h2> $20 </h2>
+
+        </div>
+
+        <div class="colorPattern greyPattern"></div>
+
+        <img class = "img" id="15" onclick = "showProduct(this.id)" src="images/14.jpg" style="width: 30%" alt="Polka Fox Tapestry">
+
+    </section>
+
+    <!--footer for each page -->
+    <footer>
+
+        <!-- div for the contact info-->
+        <div class="contact">
+
+            <p> Email: fox@fox.com </p>
+
+            <p> Phone: 1-234-567-8910 </p>
+
+        </div>
+
+        <!-- div for the logo -->
+        <div class="logoFooter">
+
+            <div class="logoBox">
+
+                <img src="images/logo.png" alt="Foxes Den Design Logo">
+
+                <p> Foxes' Den Design </p>
+
+            </div>
+
+        </div>
+
+        <!--div for the social media navigation-->
+        <div class="socialFooter">
+            <nav>
+                <a href="#"> c </a>
+                <a href="#"> d </a>
+                <a href="#"> f </a>
+            </nav>
+        </div>
+
+        <!--div for the address-->
+        <div class="address">
+
+            <p> 323 Fox Trail Street </p>
+
+            <p> Indianapolis, IN 46202 </p>
+
+        </div>
+
+    </footer>
+
+    <!--import jQuery Library-->
+    <script src="lib/jquery-3.3.1.min.js"></script>
+
+    <!-- import greensock js library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+
+    <!--import javascript-->
+    <script src="js/app.js"></script>
+
+    </body>
+
+</html>

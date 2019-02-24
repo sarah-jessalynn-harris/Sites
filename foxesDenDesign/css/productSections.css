@@ -1,0 +1,7 @@
+.productSections {
+  height: 100%;
+  width: 100%; }
+  .productSections .colorBar h1 {
+    font-size: 30px;
+    font-family: accent, sans-serif;
+    color: white; }

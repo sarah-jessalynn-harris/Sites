@@ -1,0 +1,148 @@
+<html>
+
+    <head>
+    
+        <title> Mood Practice </title>
+         
+        <link href="css/styles.css" rel="stylesheet">
+        
+    </head>
+    
+    <body>
+      
+        <div class="content">
+
+            <nav class="mainNavBar">
+                <img class="logo" src="images/lilLogo.png">
+                <a class="mainNavFont" href="../../index.html"> Home </a> 
+                <a class="mainNavFont" href="../../verbs.html"> Verbs </a>
+                <a class="mainNavFont" href="../../partsOfSpeech.html"> Parts of Speech </a>
+                 <a class="mainNavFont" href="../../activities.html"> Activities </a>
+                <a class="mainNavFont" href="../../about.html"> About </a>
+                <a class="mainNavFont" href="../../credits.html"> Credits </a>
+                <a class="mainNavFont" href="../../search.html"> Index </a>
+            </nav>
+          
+            <header> <img src="images/header.png">  </header>
+            
+            <div class="mainNavBar">
+                
+                <p class="heading"> Mood Practice </p>  	
+            
+                 <table class="mesa">
+                    <tr>
+                    <th> Correct </th>
+                    <th> Incorrect </th>    
+                    <th> Rounds</th>    
+                    </tr>
+                    <tr>
+                    <td id = "right"></td>
+                    <td id = "wrong"></td>    
+                    <td id = "round"></td>    
+                    </tr>    
+                    </table>
+                
+            </div>
+                    
+            <div class = "game">
+        
+                <div class="instructions">
+            
+                    <h2> Choose the correct option that describes the tense and mood of each verb. </h2>
+                
+                </div>
+                <div id="results"></div>
+                
+                <div id="verb"></div>
+        
+        <div class="selectionHolder">
+        <div class="buttons">
+        <p> Simple Indicative Tenses</p>
+        
+        
+        <label class="label" for="presentI"> <input type="radio" name="mood" id="presentI"  value="0"> Present Indicative <span class="icon"></span>
+        </label>
+        
+        <label class="label" for="preteriteI">
+        <input type="radio" name="mood" id="preteriteI" value="1">  Preterite Indicative <span class="icon"></span>
+        </label>
+        
+        
+        <label class="label" for="imperfectI">
+        <input type="radio" name="mood" id="imperfectI" value="2">  Imperfect Indicative <span class="icon"></span>
+        </label>
+        
+        
+        <label class="label" for="futureI"> 
+        <input type="radio" name="mood" id="futureI" value="3"> Future Indicative <span class="icon"></span> 
+        </label>
+        
+        
+        <label class="label" for="conditionalI"> 
+        <input type="radio" name="mood" id="conditionalI"  value="4"> Conditional Indicative <span class="icon"></span>
+        </label>
+        </div>
+                
+        <div class="buttons">
+        <p> Perfect Indicative Tenses</p>
+        
+        
+        <label class="label" for="presentPI">
+        <input type="radio" name="mood" id="presentPI" value="5"> Present Perfect Indicative <span class="icon"></span>  
+        </label>
+        
+        
+        <label class="label" for="preteriteA"> <input type="radio" name="mood" id="preteriteA" value="6"> Preterite Anterior Indicative <span class="icon"></span> </label>
+        
+        
+        <label class="label" for="pastperfectI"> <input type="radio" name="mood" id="pastperfectI" value="7"> Past Perfect Indicative Indicative <span class="icon"></span> </label>
+        
+        
+        <label class="label" for="futurePI"> <input type="radio" name="mood" id="futurePI" value="8"> Future Perfect Indicative <span class="icon"></span> </label>
+        
+        
+        <label class="label" for="conditionalPI"> <input type="radio" name="mood" id="conditionalPI" value="9"> Conditional Perfect Indicative <span class="icon"></span> </label>
+                </div>
+                <div class="buttons">
+        <p> Subjunctive Tenses</p>
+        
+        
+        <label class="label" for="presentS"> <input type="radio" name="mood" id="presentS" value="10"> Present Subjunctive <span class="icon"></span> </label>
+        
+        
+        <label class="label" for="presentPS"> <input type="radio" name="mood" id="presentPS" value="11"> Present Perfect Subjunctive <span class="icon"></span> </label>
+        
+        
+        <label class="label" for="pastS"> <input type="radio" name="mood" id="pastS" value="12"> Past Subjunctive <span class="icon"></span> </label>
+        
+        
+        <label class="label" for="pastPS"> <input class="inputs" type="radio" name="mood" id="pastPS"  value="13"> Past Perfect Subjunctive <span class="icon"></span> </label>
+        
+            </div>
+            
+            
+            <div class = "sectionHolder">
+        <p> Imperative Mood </p>
+        
+        
+        <label class="label" for="imperative"> <input type="radio" name="mood" id="imperative" value="14"> Imperative (Commands) <span class="icon"></span></label>
+        </div>
+         </div>  
+        <button onclick="check()"> Submit </button>
+        
+         </div>
+            
+            <div class="footer"> 
+            
+                <p class="footerT"> SPANISH GRAMMAR ONLINE</p>
+            
+            </div>
+            
+        <script src="js/app.js"></script>
+                
+            
+        </div>
+    
+    </body>
+
+</html>

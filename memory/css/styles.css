@@ -1,0 +1,121 @@
+@font-face {
+    font-family: main;
+    src: url(../fonts/rounded_Elegance.ttf);
+}
+
+
+html, body {
+    width:  100%;
+    margin: 0;
+    background-color: #006456;
+    color: #FFFFFF;
+    font-family: "main";
+    letter-spacing: 2px;
+    line-height: 35px;
+}
+
+/* div for holding cards */
+.deck {
+    margin: 10% auto;
+    padding: 0px;
+    border-radius: 10px;
+    background-color: #008170;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 2%;
+}
+
+/*style intro div*/
+.intro {
+    margin: 10% auto;
+    padding: 100px;
+    background-color: #008170;
+    width: 50%;
+    border-radius: 10px;
+}
+
+/*style title text*/
+.title {
+    font-size: 50px;
+    margin: 0 auto;
+    text-align: center;
+    opacity: .9;
+}
+
+/*style text for intro*/
+.text {
+    font-size: 25px;
+    margin: 50px 25px;
+    opacity: .9;
+}
+
+/*style buttons*/
+button {
+    width: 50%;
+    height: 5%;
+    font-size: 20px;
+    background-color: #00A38D;
+    color: white;
+    border: none;
+    margin-left: 25%;
+    font-family: "main";
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #02C7AC;
+    cursor: pointer;
+}
+
+/* divs for holding cards in rows*/
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 4%;
+}
+
+/* style cards size*/
+.card {
+    float: left;
+    width: 20%;
+    padding-top: 20%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/card0.png);
+} 
+
+/*let user know when they are hovering over a card*/
+.card:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
+/*when a card is removed, replace it with a placeholder div so that the other cards stay in place */
+.placeholder {
+    float: left;
+    width: 20%;
+    padding-top: 20%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/card0.png);
+    opacity: 0;
+}
+
+/*style button to play again*/
+.starter {
+    margin-top: 25%;
+}
+
+/*resize for mobile*/
+@media screen and (max-width: 900px) {
+    .deck {
+    width: 80%;    
+    }
+}

@@ -1,0 +1,45 @@
+.sectionals {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+
+    
+    h1 {
+        font-size: 5.0rem;
+        font-family: "bold";
+    }
+    h2 {
+        font-size: 4.0rem;
+        font-family: "thin";
+    }
+}
+
+#home {
+    background-image: url('/images/carnigie.jpg');
+}
+
+#lesson {
+    background-image: url('/images/symphony.jpg');
+}
+
+#schedule {
+    background-image: url('/images/hall.jpg');
+}
+
+#instructor {
+    background-position: left;
+    background-image: url('/images/piano.jpg');
+}
+
+#signup {
+    background-position: right;
+    background-image: url('/images/tuba.jpg');
+}

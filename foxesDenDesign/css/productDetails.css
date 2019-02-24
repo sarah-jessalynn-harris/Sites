@@ -1,0 +1,21 @@
+.productDetails {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; }
+
+.closeProduct {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; }
+
+.closeProduct:hover,
+.closeProduct:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer; }

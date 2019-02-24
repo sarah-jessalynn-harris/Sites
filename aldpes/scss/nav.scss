@@ -1,0 +1,52 @@
+nav {
+  height: 100px;
+  width: 100%;
+  background-color: $navBackground;
+  display: flex;
+  position: fixed;
+  z-index: 99;
+
+  a {
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    margin: auto;
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo {
+    width: 20%;
+    background-color: $logoBackground;
+
+    .logoImg {
+      width: 40%;
+      margin: auto;
+    }
+  }
+
+  .navi {
+    width: 65%;
+
+    a:hover {
+      color: $yellow;
+    }
+  }
+
+  .social {
+    font-family: "social";
+    width: 15%;
+    background-color: $socialBackground;
+
+    a {
+      font-size: 50px;
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+
+}

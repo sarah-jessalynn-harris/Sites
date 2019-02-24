@@ -1,0 +1,421 @@
+/* set up font for titles */
+@font-face { 
+    font-family: "title";
+    src: url(../font/agentOrange.ttf);
+    font-weight: bolder;
+}
+
+/* set up font for text */
+@font-face {
+    font-family: "text";
+    src: url("../font/teen.ttf");
+    font-weight: 300;
+}
+
+/* set up for entire doc */
+body {
+    margin: 0;
+    height: 100%;
+    font-family:"text";
+    color: #0066cc;
+    font-size: 30px;
+}
+
+
+/* set up for menu bar */
+nav {
+    font-family: text;
+    width: 100%;
+    height: 100px;
+    background-color: #ffff66;
+    display: flex;
+    flex-direction: row;
+}
+
+/* style links in the menu bar */
+nav a {
+    text-decoration: none;
+    margin-left: 15%;
+    line-height: 100px;
+    color: #0066cc;
+    font-family: title;
+}
+
+/* style logo image */
+.logo {
+    margin-left: 10%;
+    width: 100px;
+}
+
+/* style parallax image header*/
+.img1, .img2, .img3 {
+  position: relative;
+  background-position: center;
+  background-size: contain;
+  background-repeat: repeat;
+  background-attachment: fixed;
+    
+}
+
+/* 1st image for headers */
+.img1{
+    background-image: url(../images/possiblePattern.png);
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2nd image for headers */
+.img2{
+    background-image: url(../images/image2.jpg);
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2nd image for headers */
+.img3{
+    background-image: url(../images/image3.jpg);
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* titles over image headers */
+.imgTxt { 
+  position: relative;
+  top: 40%;
+  align-self: center;
+}
+
+/* styling changes to inpage navigation bar */
+.nav {
+    height: 70px;
+    line-height: 10px;
+}
+
+/* inpage navigation links styling */
+.nav a {
+    line-height: 80px;
+    font-size: 30px;
+}
+
+/* style for links on page when hovered */
+a:hover {
+    color: #f5a3c7;
+}
+
+/* titles for inpage navigation */
+.titles {
+    margin-left: 10%;
+    
+    font-family: title;
+}
+
+/* style content area */
+.content {
+    width: 100%;
+    background-color: #ccecf3;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* styling paragraph content for each page */
+.content p {
+    padding: 50px;
+    text-align: center;
+}
+
+/*style in-text anchors/links */
+.content a {
+    text-decoration: none;
+    font-weight: 700;
+    font-style: italic;
+    color: #0066cc;
+}
+
+/* style links when hovered over*/
+.content a:hover {
+     opacity: .7;
+}
+
+/* styling for welcome title on home page */
+.welcome {
+    font-family: title;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: -20px;
+}
+
+/* style video holder */
+.vidPlayer {
+    width: 70%;
+    background-image: url(../images/play.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: 50px;
+}
+
+/*style video*/
+.player {
+    width: 100%;
+    opacity: 0;
+}
+
+video {
+    width: 100%;
+}
+
+/* styling for the div holding bubble links on home page */
+.bubbleHolder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+/* styling for bubble links on home page */
+.bubble {
+    height: 400px;
+    width: 400px;
+    border-right: 20px solid #f3c1d7;
+    border-top: 20px solid #f3c1d7;
+    border-radius: 50%;
+    background-color: #f5a3c7;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/*style headers in bubbles*/
+.bubble h2, h4 {
+    font-family: title;
+    margin: 0 auto;
+}
+
+.bubble h4 {
+    margin-top: -20px;
+}
+
+/*style text in bubbles*/
+.bubble p {
+    margin-top: -50px;
+}
+
+/*create links out of bubble divs*/
+.link{
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+}
+
+/* style hover over bubbles */
+.bubble:hover {
+    background-image: url(../images/pop.png);
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/* style spans so that HUBBA BUBBA always has the title font */
+.hb {
+   font-weight: bold;
+}
+/* style endpage bar*/
+.end {
+    font-family: title;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ffff66;
+
+}
+
+.end img {
+    width: 100px;
+    margin-left: 20%;
+    margin-right: 5%;
+}
+
+/*divs for timeline on about page */
+.time {
+    width: 100%;
+    background-color: #f5a3c7;
+    margin: 50px;
+    justify-content: center;
+}
+
+.time h2 {
+    margin-left: 50px;
+    font-family: title;
+}
+
+
+/* styling for the div holding bubble links on home page */
+.bubblesHolder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+/* styling for bubble links on home page */
+.bubbles {
+    height: 200px;
+    width: 200px;
+    border-right: 20px solid #f3c1d7;
+    border-top: 20px solid #f3c1d7;
+    border-radius: 50%;
+    background-color: #f5a3c7;
+    margin: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/*style headers in bubbles*/
+.bubbles h2, h4 {
+    font-family: title;
+    line-height: 100px;
+}
+
+/*hide number until hover */
+.bubbles h4 {
+    opacity: 0;
+    margin-top: -125px;
+}
+
+/* style hover over bubbles */
+.bubbles:hover {
+    background-image: url(../images/pop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/*hide titles when hovering */
+.bubbles:hover h2 {
+    opacity: 0;
+}
+
+/* show numbers when hovering */
+.bubbles:hover h4 {
+    opacity: 1;
+}
+
+/*style rows of fav gum types */
+.rowHolder {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+/*style each row of fav gum types */
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5a3c7;
+    width: 600px;
+    height: 620px;
+    margin: 50px;
+    border: 30px solid #f3c1d7;
+    text-align: center;
+    font-size: 25px;
+}
+
+/*style text for gum types */
+.row p {
+    margin-top: -5px;
+}
+/* style the titles for fav gum types */
+.row h2 {
+    font-family: title;
+}
+
+/*style the thumbnails for each type*/
+.row img {
+    width: 170px;
+    align-self: center;
+}
+
+/*style max img */
+.max {
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    width: 400px;
+    height: 150px;
+    align-self: center;
+    background-image: url(../images/max.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+/*style comment img */
+.more {
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: -40px;
+    width: 400px;
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/mystery.jpg);
+}
+
+/* styling for animated gif */
+.gif {
+    margin-top: 50px;
+}
+
+/*style table elements for purchase section*/
+.tables {
+    display: flex;
+    flex-direction: row;
+}
+
+table {
+    font-size: 30px;
+    margin: 50px;
+}
+
+td {
+    height: 50px;
+    text-align: center;
+    vertical-align: middle; 
+}
+
+th {
+    font-size: 40px;
+}
+
+/* change bubbles to be in a column instead of a row if the screen is sized down too small */
+@media only screen and (max-width: 1300px) {           .bubbleHolder {
+        flex-direction: column;
+    }
+    .bubblesHolder {
+        flex-direction: column;
+    }
+    .rowHolder {
+        flex-direction: column;
+    }
+    .tables {
+        flex-direction: column;
+    }
+    nav a {
+        margin-left: 5%;
+    }
+}

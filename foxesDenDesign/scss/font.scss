@@ -1,0 +1,37 @@
+//fonts for this website
+
+//main font
+@font-face {
+  font-family: "main";
+  src: url("../font/Gravity-Book.otf");
+}
+
+//nav font
+@font-face {
+  font-family: "nav";
+  src: url("../font/Gravity-Light.otf");
+}
+
+//accent font
+@font-face {
+  font-family: "accent";
+  src: url("../font/Quicksand_Book.otf");
+}
+
+//logo font
+@font-face {
+  font-family: "logo";
+  src: url("../font/Quicksand_Book_Oblique.otf");
+}
+
+//font for item descriptions
+@font-face {
+  font-family: "label";
+  src: url("../font/Quicksand_Bold_Oblique.otf");
+}
+
+// font for social media icons
+@font-face {
+  font-family: "social";
+  src: url("../font/social_shapes.ttf");
+}
