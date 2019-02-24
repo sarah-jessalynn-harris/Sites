@@ -1,0 +1,380 @@
+/* create font families */
+@font-face {
+    font-family: "main";
+    src: url(../font/Comfortaa-Regular.ttf);
+}
+
+@font-face {
+    font-family: "icon";
+    src: url(../font/s.ttf);
+}
+
+@font-face {
+    font-family: "special";
+    src: url(../font/sketchtica.ttf);
+}
+
+/* create no margins outside of the body */
+html, body {
+    width: 100%;
+    margin: 0;
+    font-size: 30px;
+    background-color: #221815;
+    font-family: main;
+    color: #d2c8c6;
+}
+
+/* style menu to navigate through the site */
+.menu {
+    width: 100%;
+    height: 100px;
+    background-color: #433b39;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    top: 0;
+    position: fixed;
+    z-index: 1; 
+} 
+
+/* never underline anchor tags/links */
+a {
+    text-decoration: none;
+}
+
+/* style menu links */
+.menu a {
+    font-size: 30px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    color: #a39692;
+}
+
+/* style menu link when hovered */ 
+.menu a:hover, button:hover {
+    background-color: #756966;
+    color: #d2c8c6;
+    cursor: pointer;
+}
+
+/* prevent logo from acting as a link */ 
+.logo {
+    background-color: #756966;
+}
+
+.logo:hover {
+    background-color: #756966;
+    color: #d2c8c6;
+}
+
+.link {
+    color: #756966;  
+}
+
+/* style video-gif header at the beginning of the page */
+.introduction {
+    width: 100%;
+    height: 95%;
+    margin-top: 100px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/introduction.jpg);
+    text-align: center;
+ 
+}
+
+/* allow text to overlay gif */
+.introduction p {
+  position: absolute;
+  font-size: 70px;
+  font-family: special;
+  color: #221815;
+  font-weight: bold;
+  width: 100%;
+  top: 40%;
+}
+
+/* class for all large chunks of text */
+.text {
+    text-align: center;
+    margin: 100px 100px 0px 100px;
+    line-height: 100px;
+    font-family: special;
+    font-style: italic;
+}
+
+/* Style the home section's text */
+.home {
+    margin: 50px 100px 0px 100px;
+    line-height: 50px;
+}
+
+/* style the divs that contain the content of the page's sections */
+.content {
+    width: 100%;
+    background-color: #221815;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+/* control the text content of each about section */
+.content p {
+    line-height: 50px;
+}
+
+/* style the menu to navigate through the about section */
+.aboutMenu {
+    position: relative;
+    z-index: 0;
+}
+
+/* style the sections of the about section */
+.aboutSections {
+    background-color: #433b39;
+    margin-top: 100px;
+    padding: 100px;
+}
+
+/* give each title of each section an accent font */
+.aboutSections h1 {
+    font-family: special;
+}
+
+/* style the ministers subsection of the about section */
+.church {
+    margin-bottom: -100px;
+}
+
+.pasters {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.ministers {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+
+.ministers img {
+    height: 300px;
+    padding: 100px;
+    padding-bottom: 0;
+}
+
+.ministers h4 {
+    font-family: special;
+    padding: 20px;
+    padding-bottom: 0;
+}
+.ministers h5 {
+    font-family: special;
+    margin-top: -20px;
+}
+
+.ministers p {
+    font-size: 25px;
+    margin-top: -20px;
+    color: #D2C8C6;
+}
+.ministers p:hover {
+    color: #A39692;
+}
+
+/* style sections outside of special highlights */
+.stuff {
+    padding: 50px 100px 50px 100px;
+    margin-bottom: -100px;
+}
+
+.pics {
+    display: flex;
+    flex-direction: row;
+}
+.sidePic {
+    display: flex;
+    flex-direction: column;
+}
+.sidePic img {
+    width: 80%;
+    padding: 50px 50px 0px;
+}
+
+/* space out headers in about sections */
+.stuff h3 {
+    margin-top: 50px;
+}
+
+.sundae {
+    margin-top: -25px;
+}
+
+/* style the divs that hold the images that work as section headers */
+.sectionHeader {
+    width: 100%;
+    height: 70%;
+    margin-top: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+/* style the image of the about header */
+.aboutImg {
+    background-image: url(../images/aboutImage.jpg);
+}
+
+/* style the image of the donate header */
+.donateImg {
+    background-image: url(../images/donateImage.jpg);
+}
+
+/* style the image of the contact header */
+.contactImg {
+    background-image: url(../images/contactImage.jpg);
+
+}
+.beliefImg {
+    background-image: url(../images/beliefImage.jpg);
+    background-size: contain;
+
+}
+
+/* text overlay for image headers */
+.sectionHeader p {
+  position: relative;
+  top: 40%;
+  width: 100%;
+  font-size: 70px;
+  font-family: special;
+  font-weight: bold;
+  color: #221815;
+}
+
+/* style donate button */
+button {
+    background-color: #433b39;
+    border-width: 0px;
+    padding: 50px;
+    width: 50%;
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: bold;
+    color: #a39692;
+    align-self: center;
+    margin: 100px 100px 0 100px;
+    line-height: 75px;
+    font-family: special;
+    outline-color: #a39692;
+}
+
+/* style beliefs button's anchor tag to center it in home section */
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/* icons for contact section */
+.icons {
+    font-family: icon;
+    font-size: 300px;
+    color: #a39692;
+}
+
+.icons:hover {
+    color: #433b39;
+    cursor: pointer;
+}
+
+.iconHolder { 
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    letter-spacing: 50px;
+    line-height: 10px;
+}
+
+/* line up footer text */
+.footer {
+    line-height: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+.footer h6 {
+    margin: 0 15px;
+}
+
+.footer h6 a {
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    font-style: italic;
+}
+
+.footer h6 a:hover {
+    background-color: transparent;
+    color: #a39692;
+}
+/* adjust items for multiple platforms */
+@media only screen and (max-width: 1350px) {
+    
+    /* make the pastors' image boxes go into a column instead of a row */
+    .pasters {
+        flex-direction: column;
+        align-content: center;
+    }
+    
+    .iconholder {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+    .iconholder a {
+      margin-bottom: -100px;
+    }
+}
+
+@media only screen and (max-width: 1080px) { 
+    .menu a {
+        font-size: 35px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        font-weight: bolder;
+    }
+    .menu {
+        height: 200px;
+    }
+    
+    .introduction {
+        height: 70%;
+        margin-top: 200px;
+    }
+    
+    .sectionHeader {
+        height: 50%;
+    }    
+    
+    .pics {
+        flex-direction: column;
+    }
+    
+    .introduction p {
+        
+    }
+    
+}
