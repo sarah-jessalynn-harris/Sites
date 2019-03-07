@@ -51,12 +51,12 @@ body, html{
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin-bottom: -30px;
-	
 }
 
 /* home section image holder*/
 .home {
-	height: 775px;}
+	height: 100vh;
+}
 
 /* home section image and modification*/
 .img1 {
@@ -112,7 +112,7 @@ a:hover {
 /* aboout section header image*/
 .img2 {
 	 background-image:url('../images/image2.jpg');
-	height: 400px;
+	 height: 60vh;
 }
 
 /* about section box*/
@@ -147,12 +147,10 @@ padding: 10.0rem;
 	margin: -10px 0px 20px;
 }
 
-
-
 /* portfolio section image header*/
 .img3 {
 	 background-image:url('../images/image3.jpg');
-	height: 400px;
+	 height: 60vh;
 }
 
 /* portfolio section box*/
