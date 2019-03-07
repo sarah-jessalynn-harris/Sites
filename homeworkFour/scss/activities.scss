@@ -1,0 +1,17 @@
+//style the activities section 
+.activities {
+
+    video {
+        margin: 50px 20px 80px 20px;
+        max-width: 70%;
+        height: auto;
+        box-shadow: 10px 20px $last; 
+    }
+
+    @media only screen and (max-width: 900px) {
+
+        video {
+            max-width: 90%;
+        }
+    }
+}

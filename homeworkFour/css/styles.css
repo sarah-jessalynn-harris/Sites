@@ -1,0 +1,195 @@
+@font-face {
+  font-family: "main";
+  src: url("../font/Anjasmoro.ttf"); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 1px; }
+
+html {
+  font-size: 62.5%;
+  height: 100vh; }
+
+body {
+  height: 100%;
+  font-size: 1.6rem; }
+
+html, body {
+  width: 100%;
+  font-family: "main";
+  overflow: visible;
+  position: relative; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 4.0rem; }
+
+h1 {
+  font-size: 4.5rem; }
+
+h2 {
+  font-size: 4.0rem; }
+
+h3 {
+  font-size: 3.5rem; }
+
+h4 {
+  font-size: 3.0rem; }
+
+h6 {
+  font-size: 2.5rem; }
+
+p {
+  font-size: 2.5rem; }
+
+@media only screen and (max-width: 960px) {
+  html {
+    font-size: 50%; } }
+
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 40%; } }
+
+.navigation {
+  width: 100%;
+  height: 60px;
+  background-color: #0B7571;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .navigation a {
+    color: #5DE3DE;
+    text-decoration: none;
+    font-size: 2.5rem; }
+    .navigation a:hover {
+      cursor: pointer;
+      color: #3CBBB6; }
+  @media only screen and (max-width: 700px) {
+    .navigation a {
+      font-size: 2.0rem; } }
+
+.mainNav {
+  position: fixed;
+  z-index: 99;
+  border-bottom: 5px solid #002C2A; }
+  .mainNav img {
+    width: 8%; }
+
+.miniNav {
+  z-index: 99;
+  position: relative; }
+  .miniNav h3 {
+    margin-top: 40px;
+    color: #002C2A; }
+  @media only screen and (max-width: 700px) {
+    .miniNav h3 {
+      font-size: 2.0rem;
+      margin-top: 27px; } }
+
+.sticky {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  z-index: 99; }
+
+section {
+  width: 100%;
+  min-height: 100%;
+  background-color: #004341;
+  color: #5DE3DE;
+  position: relative;
+  z-index: 10;
+  padding: 150px 100px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; }
+  section:nth-child(even) {
+    background-color: #3CBBB6;
+    color: #002C2A; }
+  @media only screen and (max-width: 900px) {
+    section {
+      padding: 75px 50px 50px; } }
+
+.home {
+  width: 100%;
+  height: 100%;
+  background-color: #004341 !important;
+  position: relative;
+  z-index: 1; }
+  .home .homeBg {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/header.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #5DE3DE;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    .home .homeBg h1 {
+      font-size: 7.0rem;
+      padding: 10px;
+      border-radius: 20px;
+      background-color: rgba(0, 44, 42, 0.5); }
+    .home .homeBg img {
+      width: 40%;
+      position: fixed;
+      box-shadow: 10px 20px rgba(0, 44, 42, 0.5); }
+  @media only screen and (max-width: 1000px) {
+    .home .homeBg img {
+      width: 70%; } }
+
+.intro img {
+  border: 5px dashed #004341;
+  margin: 50px; }
+
+@media only screen and (max-width: 700px) {
+  .intro img {
+    width: 70%; } }
+
+.concepts div {
+  width: 60%;
+  padding: 20px 0px 20px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border: 5px dashed #004341; }
+  .concepts div a img {
+    width: 90%; }
+    .concepts div a img:hover {
+      opacity: .7; }
+
+@media only screen and (max-width: 700px) {
+  .concepts div {
+    width: 100%; }
+    .concepts div a img {
+      width: 80%; } }
+
+.activities video {
+  margin: 50px 20px 80px 20px;
+  max-width: 70%;
+  height: auto;
+  box-shadow: 10px 20px #002C2A; }
+
+@media only screen and (max-width: 900px) {
+  .activities video {
+    max-width: 90%; } }
+
+.more img {
+  margin-bottom: 50px; }
+
+@media only screen and (max-width: 700px) {
+  .more img {
+    margin-bottom: -25px;
+    width: 50%; } }
+
+.footer {
+  padding: 0;
+  position: relative;
+  z-index: -1; }

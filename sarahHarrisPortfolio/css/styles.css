@@ -15,6 +15,15 @@
 	font-weight: 400;
 }
 
+/*Set up rem*/
+html {
+	font-size: 64.5%;
+}
+
+body {
+	font-size: 2.5rem;
+}
+
 /* things that effect the entire page*/
 body, html{
   height: 100%;
@@ -23,7 +32,6 @@ body, html{
   font-weight: 400;
   line-height: 40px;
   color: #C4C4C4;
-  font-size: 25px;
     word-spacing: 3px;
 }
 
@@ -62,7 +70,7 @@ body, html{
   top: 30%;
   width: 100%;
   text-align: center;
-  font-size: 70px; 
+  font-size: 6.5rem; 
   font-family:"title";
 }
 
@@ -72,7 +80,7 @@ body, html{
   top: 45%;
   width: 100%;
   text-align: center;
-  font-size: 50px; 
+  font-size: 5.0rem; 
   font-family:"title";
 }
 
@@ -83,14 +91,13 @@ body, html{
 	justify-content: center;
 	display: flex;
 	background-color: #393B3B;
-	
 }
 
 /* target's links text in main nav bar to style*/
 .menu a {
 	text-decoration: none;
 	line-height: 100px;
-	font-size: 30px;
+	font-size: 3.0rem;
 	margin: 0 auto;
 	color: #C4C4C4;
     width: 100%;
@@ -113,21 +120,21 @@ a:hover {
 background-color: #393B3B;
 display: flex;
 flex-direction: column;
+padding: 10.0rem;
 }
 
 .aboutIntro {
-	margin: 100px 100px 0px;
+	margin-bottom: 3.0rem;
 	
 }
 .aboutC { 
 	display: flex;
-	flex-direction: row;
-	margin: 0px 100px 100px;
-	
+	flex-direction: row;	
 }
+
 .meBox {
     height: 100%;
-	margin-right: 30px;
+	margin-right: 3.0rem;
 }
 
 /* "about text", about section's text holder */ 
@@ -153,17 +160,12 @@ flex-direction: column;
 	background-color: #393B3B;
 	display: flex;
 	flex-direction: column;
-	
-}
-
-/* target text in portfolio section*/
-.portfolio p {
-	margin: 50px 50px 0px 50px;
+	padding: 15.0rem;
 }
 
 /* target title section text (play on previous ".portfolio p" that targets the other text. p, paragraph, and t, title, rhyme) */
 .portfolioT {
-	margin: 100px 50px;
+	margin-bottom: 5.0rem;
 }
 
 /* holds thumbs, holds the thumbnail boxes that hold text and all */
@@ -172,6 +174,7 @@ flex-direction: column;
 	flex-direction: column;
 	align-items: center;
 	align-self: center;
+	width: 70%;
 }
 
 
@@ -182,13 +185,14 @@ flex-direction: column;
 	align-items: center;
 	background-color: #212222;
     margin-bottom: 100px;
-	width: 60%;     
+	width: 100%;     
+	padding: 5.0rem;
 }
 
 /* styling the thumbnail images themselves*/
 .thumbImg {
- 	width: 400px;
-	margin: 50px auto;
+	 width: 70%;
+	 padding: 0 0 3.0rem 0;
 }
 
 /* styles text that is used as titles for thumbnails*/
@@ -206,8 +210,8 @@ flex-direction: column;
 	text-decoration: none;
 	color: #C4C4C4;
     background-color: #393B3B;
-    margin: 50px;
-    padding: 20px;
+	margin-top: 2.0rem;
+    padding: 2.0rem 5.0rem;
     font-weight: bold;
 }
 
@@ -251,10 +255,10 @@ flex-direction: column;
 	border: 2px solid #212222;
 	border-radius: 5px;
     color: #C4C4C4;
-    padding: 20px 50px;
+    padding: 2.5rem 5.0rem;
     font-family: "main";
     margin: 50px 37%;
-	font-size: 25px;
+	font-size: 2.5rem;
 }
 
 /* style submit button when hovering, highlight */
@@ -270,18 +274,18 @@ width: 500px;
 height: 40px;
 background-color: #C4C4C4;
 color: #212222;
-padding: 5px;
+padding: .5rem;
 border: 2px solid #C4C4C4;
 border-radius: 5px;
 margin: 10px 0 20px 10px;
 font-family: "main";
-font-size: 30px;
+font-size: 3.0rem;
 }
 
 /* width of images maintained */
 .viewNew {
 	max-width: 700px;
-    margin: 50px auto;
+    margin: .5rem auto;
 }
 
 /* uniform background */
@@ -301,9 +305,58 @@ font-size: 30px;
     }
     
     .meBox {
-        margin-bottom: 20px;
+        margin-bottom: 0.2rem;
         align-self: center;
-    }
+	}
+	
+	html {
+		font-size: 60%;
+	}
+
+	.thumbImg {
+		width: 80%;
+   }
+
+   .thumbHolder {
+	   width: 90%;
+   }
 
 }
 
+@media only screen and (max-width: 900px) {
+	html {
+		font-size: 50%;
+	}
+
+	.thumbImg {
+		width: 90%;
+   }
+
+   .thumbHolder {
+		width: 80%;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	html {
+		font-size: 40%;
+	}
+
+	.thumbImg {
+		width: 100%;
+   }
+
+   .thumbHolder {
+		width: 100%;
+	}
+}
+
+/* make the nav stick */
+.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99; 
+	background-color: rgba(57, 59, 59, 0.5);
+}

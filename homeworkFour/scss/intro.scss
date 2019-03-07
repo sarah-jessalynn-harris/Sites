@@ -1,0 +1,14 @@
+//style the intro section
+.intro {
+    img {
+        border: 5px dashed $dark;
+        margin: 50px;
+    }
+
+    @media only screen and (max-width: 700px) { 
+    
+        img {
+            width: 70%;
+        }
+    }
+}

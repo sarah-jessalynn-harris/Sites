@@ -1,0 +1,141 @@
+{
+    "mainNav" : [
+
+        {
+            "linkName" : "home",
+            "linkUrl" : "#",
+            "target" : "_self"
+        },
+
+        {
+            "linkName" : "verbs",
+            "linkUrl" : "http://pages.iu.edu/~sh39/spanishGrammarOnline/verbs.html",
+            "target" : "_blank"
+        },
+
+        {
+            "linkName" : "speech",
+            "linkUrl" : "http://pages.iu.edu/~sh39/spanishGrammarOnline/partsOfSpeech.html",
+            "target" : "_blank"
+        },
+
+        {
+            "linkName" : "activities",
+            "linkUrl" : "http://pages.iu.edu/~sh39/spanishGrammarOnline/activities.html",
+            "target" : "_blank"
+        },
+
+        {
+            "linkName" : "about",
+            "linkUrl" : "http://pages.iu.edu/~sh39/spanishGrammarOnline/about.html",
+            "target" : "_blank"
+        },
+
+        {
+            "linkName" : "credits",
+            "linkUrl" : "http://pages.iu.edu/~sh39/spanishGrammarOnline/credits.html",
+            "target" : "_blank"
+        },
+
+        {
+            "linkName" : "index",
+            "linkUrl" : "http://pages.iu.edu/~sh39/spanishGrammarOnline/search.html",
+            "target" : "_blank"
+        }
+
+    ],
+
+    "navLogoImage" : "images/lilLogo.png",
+
+    "homeImgUrl" : "images/bigLogo.png",
+
+    "homeTitle" : "Home",
+
+    "miniNav" : [
+        {
+            "linkName" : "intro",
+            "linkUrl" : "#introductionSection"
+        },
+        {
+            "linkName" : "resources",
+            "linkUrl" : "#resourcesSection"
+        },
+
+        {
+            "linkName" : "concepts",
+            "linkUrl" : "#conceptsSection"
+        },
+
+        {
+            "linkName" : "activities",
+            "linkUrl" : "#activitiesSection"
+        },
+
+        {
+            "linkName" : "more",
+            "linkUrl" : "#moreSection"
+        },
+        {
+            "linkName" : "top",
+            "linkUrl" : "#homeSection"
+        }
+    ],
+
+    "Sections" : [
+
+        {
+            "sectionId" : "introductionSection",
+            "introGreeting" : "Welcome to Spanish                           Grammar Online!",
+            "sectionImage" : "images/pieces.gif",
+            "introParagraph" : "This is a resource made                      for students to review                       and relearn the basics                       of Spanish grammar in hopes that they may more rapidly put the pieces together.                         There are pages                              discussing the different                     rules and subjects of                        the language's grammar                       as well as some                              activities you can try                       to better your skills                        and knowledge. Follow                        the links in the                             navigation or scroll                         down to learn more.",
+            "introOutro" : "¡Felices Repasos!"
+        },
+
+        {
+            "sectionId" : "resourceSection",
+            "heading" : "Resources",
+            "pOne" : " On Spanish Grammar Online you will find many different resources that were designed to help you improve your understanding of the Spanish Language and its grammar rules. Firstly you will find pages designated to a grammar concept. You may also browse the Index to find a certain topic if you already know what you need to work on. The other main resource you will find on this site is the activities. Right now there are three different ones to choose from, and more are currently in the works. ",
+            "pTwo" : "These are the main resources that have been made available to you via this site. We hope that it may help you in your language journey!"
+        },
+        
+        {
+            "sectionName" : "concepts",
+            "heading" : "Concepts",
+            "pOne" : "SPO divides its content into concpets. These concepts are broken into categories that you will find listed here on the site. One of these is the Verbs section. From the main Verbs page, you will see a brief description of the concept and see more links to other pages partaining to, in this case, verbs. It will have links on types of verbs, how to use (conjugate) these verbs, and when to use these verbs (tense/mood). The other parts of speech are conveniently listed on a page named as such, so you can visit that page to catch up on adverbs, adjectives, and more. You may also browse the Index to find a certain topic if you already know what you need to work on.",
+            "verbsLink" : "http://pages.iu.edu/~sh39/spanishGrammarOnline/verbs.html",
+            "verbsImage" : "images/pieces/verbs.png",
+            "speechLink" : "http://pages.iu.edu/~sh39/spanishGrammarOnline/partsOfSpeech.html",
+            "speechImage" : "images/pieces/partsOfSpeech.png",
+            "indexLink" : "http://pages.iu.edu/~sh39/spanishGrammarOnline/search.html",
+            "indexImage" : "images/pieces/about.png"
+            
+        },
+
+        {
+            "sectionName" : "activities",
+            "heading" : "Activities",
+            "pOne" : "Spanish Grammar Online also offers some practice activities so that you can test out our skills from what you have learned or already know.",
+            "actOne" : "Articles",
+            "movOne" : "images/video/movOne.mp4",
+            "pTwo" : "The first is a little game testing if you know your masculine vs feminine noun rules and singular vs plural noun rules. You match the correct indirect or direct article for each noun displayed.",
+            "actTwo" : "Mood",
+            "movTwo" : "images/video/movTwo.mp4",
+            "pThree" : "In the second activity you choose the correct mood and tense given the displayed conjugated verb. ",
+            "actThree" : "Tense",
+            "movThree" : "images/video/movThree.mp4", 
+            "pFour" : "Lastly, in the third activity, you have some options on how to play it. For this conjugation and tense practice you must correctly conjugate a given infinitive. You may choose a mode with which tense you wish to practice or try your hand at the mixed bag of all the tenses. "
+        },
+
+        {
+            "sectionName" : "more",
+            "heading" : "More",
+            "moreImage" : "images/pieces/zc.png",
+            "pOne" : "You will also find a page called Credits. This is a sort of 'Works Cited' page giving credit to the resources used in aid while making this site. You will also see footnotes periodically giving direct credit to certain ideas presented. Feel free to check out these resources for yourself as well!",
+            "pTwo" : "If you would still like more information about Spanish Grammar Online, you can also visit our About page. It describes the idea behind the site and how it got started."
+        },
+
+        {
+            "sectionName" : "footer"
+        }
+    ]
+}

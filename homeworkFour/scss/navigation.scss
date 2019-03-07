@@ -1,0 +1,66 @@
+// style the navigations
+.navigation {
+    width: 100%;
+    height: 60px;
+    background-color: $medium;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    a {
+        color: $first;
+        text-decoration: none;
+        font-size: 2.5rem;
+
+        &:hover {
+            cursor: pointer;
+            color: $light;
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+        a {
+            font-size: 2.0rem;
+        }
+    }
+}
+
+
+//style differentiation for main nav
+.mainNav {
+    position: fixed;
+    z-index: 99;
+    border-bottom: 5px solid $last;
+    
+    img {
+        width: 8%;
+    }
+}
+
+//style differentiation for mini nav
+.miniNav {
+    z-index: 99;
+    position: relative;
+
+    h3 {
+        margin-top: 40px;
+        color: $last;
+    }
+
+    @media only screen and (max-width: 700px) {
+        h3 {
+            font-size: 2.0rem;
+            margin-top: 27px;
+        }
+    }
+}
+
+//sticky class for the miniNav
+.sticky{
+	position:fixed;
+	top:60px;
+	left:0;
+	right:0;
+	z-index:99;
+}
+
