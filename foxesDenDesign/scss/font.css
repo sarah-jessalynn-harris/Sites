@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "main";
+  src: url("../font/Gravity-Book.otf");
+}
+
+@font-face {
+  font-family: "nav";
+  src: url("../font/Gravity-Light.otf");
+}
+
+@font-face {
+  font-family: "accent";
+  src: url("../font/Quicksand_Book.otf");
+}
+
+@font-face {
+  font-family: "logo";
+  src: url("../font/Quicksand_Book_Oblique.otf");
+}
+
+@font-face {
+  font-family: "label";
+  src: url("../font/Quicksand_Bold_Oblique.otf");
+}
+
+@font-face {
+  font-family: "social";
+  src: url("../font/social_shapes.ttf");
+}
+/*# sourceMappingURL=font.css.map */

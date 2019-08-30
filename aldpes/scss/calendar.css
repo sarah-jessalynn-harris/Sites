@@ -1,0 +1,23 @@
+.calendario {
+  padding-top: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.calendario h1 {
+  padding-left: 100px;
+}
+
+.calendario p {
+  padding-left: 150px;
+}
+
+.calendario .calenderBox {
+  margin: 100px auto;
+}
+/*# sourceMappingURL=calendar.css.map */

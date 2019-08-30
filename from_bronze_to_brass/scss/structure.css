@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2.5rem;
+  font-family: "medium", sans-serif;
+  letter-spacing: .25rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 1.6rem;
+}
+
+@font-face {
+  font-family: "medium";
+  src: url("../fonts/homizio/medium.ttf");
+}
+
+@font-face {
+  font-family: "bold";
+  src: url("../fonts/homizio/bold.ttf");
+}
+
+@font-face {
+  font-family: "light";
+  src: url("../fonts/homizio/light.ttf");
+}
+
+@font-face {
+  font-family: "thin";
+  src: url("../fonts/homizio/thin.ttf");
+}
+
+@media only screen and (max-width: 960px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 40%;
+  }
+}
+/*# sourceMappingURL=structure.css.map */

@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "main";
+  src: url("../font/Anjasmoro.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: 1px;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  font-size: 1.6rem;
+}
+
+html, body {
+  width: 100%;
+  font-family: "main";
+  overflow: visible;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 4.0rem;
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+
+h2 {
+  font-size: 4.0rem;
+}
+
+h3 {
+  font-size: 3.5rem;
+}
+
+h4 {
+  font-size: 3.0rem;
+}
+
+h6 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 960px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 40%;
+  }
+}
+/*# sourceMappingURL=structure.css.map */
