@@ -1,0 +1,137 @@
+/* Structure*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html, body {
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2.0rem;
+    font-family: "mallanna";
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 1.6rem;
+}
+
+i {
+    color: #434343;
+    padding: 0.5rem;
+}
+
+i:hover {
+    color: #555555;
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: "lato";
+    src: url('../font/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: "mallanna";
+    src: url('../font/Mallanna/Mallanna-Regular.ttf');
+}
+
+@font-face {
+    font-family: "muli";
+    src: url('../font/Muli/Muli-Regular.ttf');
+}
+
+@font-face {
+    font-family: "patrick";
+    src: url('../font/Patrick_Hand_SC/PatrickHandSC-Regular.ttf');
+}
+
+@media only screen and (max-width: 900px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 45%;
+    }
+}
+
+/* Navigation*/
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+nav .social {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 5.0rem;
+    background-color: #E9E9E9;
+}
+
+nav .social .email {
+    font-size: 1.8rem;
+}
+
+nav .social .media {
+    font-size: 3.0rem;
+}
+
+nav .links {
+    background-color: #555555;
+    padding: 1.0rem 5.0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .links p {
+    color:#E9E9E9;
+}
+
+nav .links a{
+    text-decoration: none;
+    color: #E9E9E9;
+}
+
+nav .links .heading a {
+    font-size: 3.5rem;
+    color: white;
+}
+
+nav .links .heading a:hover {
+    color: #E9E9E9;
+}
+
+nav .links .link {
+
+}
+
+nav .links .link a {
+
+}
+
+nav .links .link .resumeButton {
+
+}
+
+/* Home */
+.home {
+
+}
