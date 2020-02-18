@@ -110,6 +110,7 @@ nav .links .heading a {
     color: white;
 }
 
+
 nav .links .heading a:hover {
     color: #E9E9E9;
 }
@@ -136,6 +137,31 @@ nav i:hover {
     cursor: pointer;
 }
 
+/* make the nav stick */
+.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99; 
+    opacity: .8;
+}
+
+@media only screen and (max-width: 1100px) {
+    nav .links, nav .social{
+        padding: 2.0rem;
+    }
+
+    nav .links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sticky .heading p{
+        display: none;
+    }
+}
+
 /* Home */
 .home {
     width: 100%;
@@ -143,12 +169,25 @@ nav i:hover {
     background-image: url('../img/image1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    color: #E9E9E9;
+    display: flex;
+    align-items: center;
+}
+
+.home p {
+    font-size: 5.0rem;
+    margin-left: 5.0rem;
+}
+
+.home p div{
+    font-size: 7.0rem;
+    font-style: bold;
 }
 
 /* About */
 .about {
     width: 100%;
-    padding: 5.0rem 10.0rem;
+    padding: 5.0rem;
     background-color: #434343;
     color: #E9E9E9;
 }
@@ -205,7 +244,7 @@ nav i:hover {
 /* Skillset */
 .skillset {
     width: 100%;
-    padding: 5.0rem 10.0rem;
+    padding: 5.0rem;
 }
 
 .skillset .intro {
@@ -260,13 +299,18 @@ nav i:hover {
 /* Portfolio */
 .portfolio {
     width: 100%;
-    padding: 5.0rem 10.0rem;
+    padding: 5.0rem;
     background-color: #434343;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     color: #E9E9E9;
+}
+
+.portfolio .intro {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 /* Slideshow container */
@@ -290,6 +334,10 @@ nav i:hover {
       width: 50%;
       background-color: #E9E9E9;
       padding: 5.0rem;
+  }
+
+  .thumbnail .buttons {
+      margin-top: 30px;
   }
 
   .thumbnail .resumeButtonA, .thumbnail .resumeButtonB {
@@ -390,7 +438,47 @@ nav i:hover {
     from {opacity: .4}
     to {opacity: 1}
   }
+
+  .slide{
+    position: relative;
+    overflow: hidden;
+    -webkit-animation-name: slide_animation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-play-state:running; 
+    animation-name: slide_animation;
+    animation-duration: 1s;
+    animation-timing-function:linear;
+    animation-play-state:running;
+  }
   
+  @keyframes slide_animation{
+       0% {left: 50px;} 
+       10% {left: 100px;}
+       20% {left: 200px;}
+       30% {left: 300px;}
+       40% {left: 400px;}
+       50% {left: 500px;}
+       60% {left: 600px;}
+       70% {left: 700px;}
+       80% {left: 800px;}
+       90% {left: 900px;}
+       100% {left:1000px;}
+  }
+  
+  @-webkit-keyframes slide_animation /* Safari and Chrome */{
+    0% {left: 50px;} 
+    10% {left: 100px;}
+    20% {left: 200px;}
+    30% {left: 300px;}
+    40% {left: 400px;}
+    50% {left: 500px;}
+    60% {left: 600px;}
+    70% {left: 700px;}
+    80% {left: 800px;}
+    90% {left: 900px;}
+    100% {left:1000px;}
+  }
+
   @media only screen and (max-width: 1500px) {
     .thumbnail {
         flex-direction: column-reverse;
