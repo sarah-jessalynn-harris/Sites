@@ -1,0 +1,29 @@
+{
+    "Sections" : [
+        {
+            "name" : "home",
+            "content" : "<div class='home'><div class='bubbles'><div class='main'><h1> The Jungle Cook</h1><p> The home to various recipes of your choice. Add your own recipe today and fill the world with joy! </p></div><div class='second'><p>Want to be a Jungle Cook? Go ahead and the kitchen is yours!</p></div></div></div>"
+        },
+
+        {
+            "name" : "login",
+            "content" : "<div class='loginRegister'><div class='login'><h1> Login Here! </h1><input type='email' name='emailLogin' id='emailLogin' placeholder='Email Addess' required><input type='password' name='passwordLogin' id='passwordLogin' placeholder='Password' required><button id='login'> Login </button></div><div class='register'><p> don't have an account?</p><h1> Sign Up! </h1><input type='text' name='firstName' id='firstName' placeholder='First Name' required><input type='text' name='lastName' id='lastName' placeholder='Last Name' required><input type='email' name='email' id='email' placeholder='Email Addess' required><input type='password' name='password' id='password' placeholder='Password' required><button id='signup'> Sign Up </button></div></div>"
+        },
+
+        {
+            "name" : "create",
+            "content" : "<div id='createRecipe' class='createRecipe'><h2> Hey, create a recipe!</h2><input type='text' id='image' placeholder='Recipe Image' readonly><label id='fileLabel' for='file'> Attach File<input name='file' id='file' type='file' value='Attach File'/></label><div id='fileBox'></div><input type='text' id='recipeName' placeholder='Recipe Name'><input type='text' id='recipeDescription' placeholder='Recipe Description'><input type='text' id='recipeTotalTime' placeholder='Recipe Total Time'> <input type='text' id='recipeServingSize' placeholder='Recipe Serving Size'><h3> Enter Ingredients:</h3><div id='ingredientBox'> <input type='text' id='ingredient1' placeholder='Ingredient #1'><input type='text' id='ingredient2' placeholder='Ingredient #2'><input type='text' id='ingredient3' placeholder='Ingredient #3'></div><button id='plusOne' class='moreFields'> + </button><h3> Enter Instructions:</h3><div id='instructionBox'><input type='text' id='instruction1' placeholder='Instruction #1'><input type='text' id='instruction2' placeholder='Instruction #2'><input type='text' id='instruction3' placeholder='Instruction #3'></div><button class='moreFields' id='plusTwo'> + </button><button id='addRecipe'> Create Recipe </button></div>"
+        },
+
+        {
+            "name" : "edit",
+            "content" : "<div id = 'editRecipe' class='createRecipe'><h2> Hey, edit this recipe!</h2><input type='text' id='recipeId' placeholder='Recipe Id' readonly><input type='text' id='image' placeholder='Recipe Image' readonly><label id='fileLabel' for='file'> Attach File<input name='file' id='file' type='file' value='Attach File'/></label><div id='fileBox'></div><input type='text' id='recipeName' placeholder='Recipe Name'><input type='text' id='recipeDescription' placeholder='Recipe Description'><input type='text' id='recipeTotalTime' placeholder='Recipe Total Time'> <input type='text' id='recipeServingSize' placeholder='Recipe Serving Size'><h3> Enter Ingredients:</h3><div id='ingredientBox'> <input type='text' id='ingredient1' placeholder='Ingredient #1'><input type='text' id='ingredient2' placeholder='Ingredient #2'><input type='text' id='ingredient3' placeholder='Ingredient #3'></div><button id='plusOne' class='moreFields'> + </button><h3> Enter Instructions:</h3><div id='instructionBox'><input type='text' id='instruction1' placeholder='Instruction #1'><input type='text' id='instruction2' placeholder='Instruction #2'><input type='text' id='instruction3' placeholder='Instruction #3'></div><button class='moreFields' id='plusTwo'> + </button><button id='addRecipe' onclick='updateRecipe()'> Edit Recipe </button></div>"
+        },
+
+        {
+            "name" : "your",
+            "content" : "<div id='yourRecipes' class='recipesList'> <h1>Hey, here are our recipes!</h1> <div class='yourRecipiesListed' id='yourRecipesList'> </div> </div>"
+        }
+
+    ]
+}
