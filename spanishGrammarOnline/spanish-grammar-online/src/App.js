@@ -5,45 +5,43 @@ import fire from "./Fire.js";
 import PrivateRoute from './PrivateRoute';
 import Home from './Home';
 import Nav from "./Nav";
+import Categories from './Categories/Categories';
+import Articles from './Articles/Articles';
 
 
 class App extends Component {
 
-  state = {loading: true, ids : []};
+  
 
   render() {
 
-    const {loading} = this.state;
-
-    if (loading) {
-      return <p> Loading...</p>
-    }
 
     return (
       <div className="App">
 
         <Router>
 
-          <Nav signedIn={this.state.authenticated} />
-
           <div>
-              <PrivateRoute exact path={"/"} component={Home}/>
+
+            <Nav></Nav>
+
+            <PrivateRoute exact path={"/"} component={Home} />
+
+            <Route exact path={"/categories"} component={Categories} />
+
+            <Route exact path={"/articles"} component = {Articles} />
+            
+
           </div>
 
         </Router>
+
+        
 
       </div>
     );
   }
 
-  idGetter(id) {
-      this.setState({ids : [id].concat(this.state.ids)});
-
-  };
-
-  getIds(idx) {
-      this.setState({ids: idx});
-  }
 }
 
 export default App;
