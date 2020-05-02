@@ -8,11 +8,22 @@ class Nav extends Component {
 
             navi =  <nav>
 
-                        <NavLink exact className="link" activeClassName="active" to={"/"}> Home </NavLink>
+                        <div className="logo"></div>
 
-                        <NavLink exact className="link" activeClassName="active" to={"/categories"}> Categories </NavLink>
+                        <div className="links">
 
-                        <NavLink exact className="link" activeClassName="active" to={"/articles"}> Articles </NavLink>
+                            <NavLink exact className="link" activeClassName="active" to={"/"}> Home </NavLink>
+
+                            <NavLink exact className="link" activeClassName="active" to={"/categories"}> Categories </NavLink>
+
+                            <NavLink exact className="link" activeClassName="active" to={"/articles"}> Articles </NavLink>
+
+                        </div>
+
+                        <div className="search">
+                            <input type="text"></input>
+                            <button> Search</button>
+                        </div>
 
                     </nav>;
 

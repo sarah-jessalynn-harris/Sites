@@ -4,9 +4,9 @@ class Examples extends Component {
 
     render() {
         return(
-            <div class="example">
-                <p class="engEx"> Ex: {this.props.engEx}</p>
-                <p class="spanEx"> Ex: {this.props.spanEx}</p>
+            <div className="example">
+                <p className="engEx"> Ex: {this.props.engEx}</p>
+                <p className="spanEx"> Ex: {this.props.spanEx}</p>
             </div>
         );
     }

@@ -57,7 +57,65 @@ h1, h2, h3, h4, h5, h6, p {
   font-style: italic;
 }
 
+/* Nav */
+nav {
+  background-color: #424242;
+  height: 70px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  width: 100%;
+}
+
+.logo {
+  background-image: url("./img/lilLogo.png");
+  width: 100px;
+  height: 50px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.link {
+  text-decoration: none;
+  color: #dbdbdb;
+}
+
+.link:hover {
+  color: #181717;
+}
+
+.search {
+
+}
+
+.search input {
+  padding: 10px;
+  background-color: #cac6c6;
+  border: none;
+  margin-right: 10px;
+}
+
+.search button {
+  padding: 10px;
+  background-color: #302f2f;
+  color: #cac6c6;
+  border: none;
+}
+
+.search button:hover {
+  cursor: pointer;
+  background-color: #181717;
+}
+
 /* Pages */
+
+/* Categories  */
 .categories {
   background-image: url("./img/headerTransparent.png");
   background-size: contain;
@@ -65,17 +123,32 @@ h1, h2, h3, h4, h5, h6, p {
   min-height: 100vh;
   width: 100vw;
   padding: 50px;
+} 
+
+.categories h1 {
+  margin: 50px;
 }
 
 .categoriesList {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .category {
   background-color: #302f2f;
   padding: 50px;
-  margin-bottom: 25px;
+  width: 400px;
+  margin-bottom: 50px;
 }
 
+.categoryLinking {
+  text-decoration: none;
+  color: #dbdbdb;
+}
+/* end of categories */
+
+/* Articles */
+/* end of articles */
