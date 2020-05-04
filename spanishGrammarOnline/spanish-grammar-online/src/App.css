@@ -114,9 +114,7 @@ nav {
 }
 
 /* Pages */
-
-/* Categories  */
-.categories {
+.categories, .articles {
   background-image: url("./img/headerTransparent.png");
   background-size: contain;
   background-color: #141414;
@@ -125,10 +123,19 @@ nav {
   padding: 50px;
 } 
 
-.categories h1 {
+.categories h1, .articles h1 {
   margin: 50px;
 }
 
+.articles h2 {
+  margin-top: 50px;
+}
+
+.home {
+  margin-top: 50px;
+}
+
+/* Categories  */
 .categoriesList {
   display: flex;
   align-items: center;
@@ -151,4 +158,5 @@ nav {
 /* end of categories */
 
 /* Articles */
+
 /* end of articles */

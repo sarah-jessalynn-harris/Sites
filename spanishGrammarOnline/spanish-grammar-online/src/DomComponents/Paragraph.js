@@ -4,7 +4,7 @@ class Paragraph extends Component {
 
     render() {
         return(
-            <div class="paragraph">
+            <div className="paragraph">
                 <p> {this.props.content}</p>
             </div>
         );

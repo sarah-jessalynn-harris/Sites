@@ -34,8 +34,8 @@ class Categories extends Component {
 
                 <div className="categoriesList">
                     
-                    { this.state.categories.map (category => 
-                        <Category
+                    { this.state.categories.map ((category, key) => 
+                        <Category key={key}
                             title = {category.title}
                             desc = {category.desc}
                         />)

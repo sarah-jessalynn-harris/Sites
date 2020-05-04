@@ -5,7 +5,13 @@ class ExampleList extends Component {
     render() {
         return(
             <div className="exampleList">
-                <p className="exListItem"> {this.props.listItem}</p>
+                {
+                    this.props.list.map 
+                    ((item, key) =>
+                    <p key={key} className="exListItem"> {item}</p>
+                    )
+                }
+               
             </div>
         );
     }

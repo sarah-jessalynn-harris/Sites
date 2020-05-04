@@ -6,7 +6,7 @@ class Category extends Component {
     render() {
         return(
             <div>
-                <NavLink className="categoryLinking" to={"/"} >
+                <NavLink className="categoryLinking" to={"/"+ this.props.title.toLowerCase()} >
                     <div className="category">
                         <h2> {this.props.title} </h2>
                         <p> {this.props.desc}</p>
