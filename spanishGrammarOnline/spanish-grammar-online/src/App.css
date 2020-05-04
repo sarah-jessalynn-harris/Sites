@@ -71,8 +71,10 @@ nav {
 
 .logo {
   background-image: url("./img/lilLogo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   width: 100px;
-  height: 50px;
+  height: 25px;
 }
 
 .links {
@@ -136,6 +138,35 @@ nav {
 .infoPage h2 {
   margin-top: 50px;
 }
+
+/* Home */
+.home {
+padding-top: 100px;
+background-image: url("./img/headerTransparent.png");
+background-size: contain;
+background-color: #141414;
+}
+
+.homeHeader {
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  background-color: #141414;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 50px;
+}
+.home .category {
+  margin: 20px
+}
+/* end of home */
+
 /* Categories  */
 .categoriesList {
   display: flex;

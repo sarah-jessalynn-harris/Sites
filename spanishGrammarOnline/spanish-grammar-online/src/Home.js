@@ -36,8 +36,13 @@ class Home extends Component {
     render() {   
 
         if(!this.state.loading) {
-            return   <div className="pageDefaults home">
-            <h1> Home </h1>
+            return   <div className="home">
+
+
+            <div className="homeHeader"> 
+                <h1> Spanish Grammar Online</h1>
+                <h3> Your one-stop resource for all things Spanish Grammar!</h3>
+            </div>
 
             <div className="cards">
                 {
