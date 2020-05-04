@@ -114,7 +114,7 @@ nav {
 }
 
 /* Pages */
-.categories, .articles {
+.pageDefaults {
   background-image: url("./img/headerTransparent.png");
   background-size: contain;
   background-color: #141414;
@@ -123,18 +123,19 @@ nav {
   padding: 50px;
 } 
 
-.categories h1, .articles h1 {
+.pageDefaults h1 {
   margin: 50px;
 }
 
-.articles h2 {
-  margin-top: 50px;
+/* info page defaults */
+.infoPage h1 {
+  margin-left: 0;
+  margin-bottom: 10px;
 }
 
-.home {
+.infoPage h2 {
   margin-top: 50px;
 }
-
 /* Categories  */
 .categoriesList {
   display: flex;
@@ -158,8 +159,5 @@ nav {
 /* end of categories */
 
 /* Articles */
-.articles h1 {
-  margin-left: 0;
-  margin-bottom: 10px;
-}
+
 /* end of articles */

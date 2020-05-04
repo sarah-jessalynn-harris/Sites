@@ -18,7 +18,7 @@ class Articles extends Component {
             snapshot.forEach((doc) => {
                 articles.push(doc.data());
                 itemsProcessed++;
-                console.log(itemsProcessed, doc.id, '=>', doc.data());
+                // console.log(itemsProcessed, doc.id, '=>', doc.data());
                 
                 this.setState({articles: articles});
 
@@ -34,10 +34,9 @@ class Articles extends Component {
     }
 
     render() {   
-        console.log(this.state.loading);
 
         if(!this.state.loading) {
-            return <div className="articles">
+            return <div className="pageDefaults infoPage articles">
             
             <h1> Articles </h1>
             <Paragraph content={this.state.articles[2].description}></Paragraph>
@@ -52,17 +51,13 @@ class Articles extends Component {
 
         </div>;
         } else {
-            return <div className="articles">
+            return <div className="pageDefaults infoPage articles">
 
-            <h1> Articles </h1>
-            <Paragraph content="Loading, please wait..."></Paragraph>
+                <h1> Articles </h1>
+                <Paragraph content="Loading, please wait..."></Paragraph>
 
         </div>
         }
-        
-        return(
-            <div></div>
-        )
         
     }
 
