@@ -38,7 +38,7 @@ class Articles extends Component {
 
         if(!this.state.loading) {
             return <div className="articles">
-
+            
             <h1> Articles </h1>
             <Paragraph content={this.state.articles[2].description}></Paragraph>
 

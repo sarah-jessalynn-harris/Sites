@@ -158,5 +158,8 @@ nav {
 /* end of categories */
 
 /* Articles */
-
+.articles h1 {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
 /* end of articles */
