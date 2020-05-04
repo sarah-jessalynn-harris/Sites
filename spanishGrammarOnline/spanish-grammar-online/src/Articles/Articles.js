@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import firebase from "firebase";
 import Paragraph from "../DomComponents/Paragraph";
 import ExampleList from "../DomComponents/ExampleList";
+import PageNav from "../DomComponents/pageNav";
 
 
 class Articles extends Component {
@@ -18,7 +19,7 @@ class Articles extends Component {
             snapshot.forEach((doc) => {
                 articles.push(doc.data());
                 itemsProcessed++;
-                // console.log(itemsProcessed, doc.id, '=>', doc.data());
+                //  console.log(itemsProcessed, doc.id, '=>', doc.data());
                 
                 this.setState({articles: articles});
 
@@ -38,14 +39,15 @@ class Articles extends Component {
         if(!this.state.loading) {
             return <div className="pageDefaults infoPage articles">
             
-            <h1> Articles </h1>
+            <h1 id={this.state.articles[2].title}> Articles </h1>
             <Paragraph content={this.state.articles[2].description}></Paragraph>
+            <PageNav list={[ this.state.articles[0].title, this.state.articles[1].title]}></PageNav>
 
-            <h2> Definite Articles</h2>
+            <h2 id={this.state.articles[0].title}> Definite Articles</h2>
             <Paragraph content={this.state.articles[0].description}></Paragraph>
             <ExampleList list={this.state.articles[0].exampleList}></ExampleList>
 
-            <h2> Indefinite Articles</h2>
+            <h2 id={this.state.articles[1].title}> Indefinite Articles</h2>
             <Paragraph content={this.state.articles[1].description}></Paragraph>
             <ExampleList list={this.state.articles[1].exampleList}></ExampleList>
 

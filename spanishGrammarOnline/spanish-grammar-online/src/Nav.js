@@ -16,6 +16,10 @@ class Nav extends Component {
 
                             <NavLink exact className="link" activeClassName="active" to={"/categories"}> Categories </NavLink>
 
+                            <NavLink exact className="link" activeClassName="active" to={"/activities"}> Activities </NavLink>
+
+                            <NavLink exact className="link" activeClassName="active" to={"/index"}> Index </NavLink>
+
                         </div>
 
                         <div className="search">

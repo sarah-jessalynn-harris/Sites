@@ -57,6 +57,26 @@ h1, h2, h3, h4, h5, h6, p {
   font-style: italic;
 }
 
+.pageNav {
+  margin-top: 20px;
+}
+
+.pageNav h3 {
+  margin-bottom: 50px;
+}
+
+.pageLink {
+  text-decoration: none;
+  color: #cac6c6;
+  padding: 20px;
+  background-color: #424242;
+  margin-right: 20px;
+}
+
+.pageLink:hover {
+  background-color: #181717;
+}
+
 /* Nav */
 nav {
   background-color: #424242;
@@ -114,6 +134,20 @@ nav {
   cursor: pointer;
   background-color: #181717;
 }
+
+@media only screen and (max-width: 700px) {
+  nav {
+    height: 100px;
+    flex-direction: column;
+  }
+
+  .links {
+    width: 100%;
+    margin: 10px;
+  }
+}
+
+/* end nav */
 
 /* Pages */
 .pageDefaults {

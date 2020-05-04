@@ -7,6 +7,8 @@ import Home from './Home';
 import Nav from "./Nav";
 import Categories from './Categories/Categories';
 import Articles from './Articles/Articles';
+import Activities from './Activity/Activities';
+import Index from './Index/Index';
 
 
 class App extends Component {
@@ -32,6 +34,10 @@ class App extends Component {
             <Route exact path={"/categories"} component={Categories} />
 
             <Route exact path={"/articles"} component={Articles} />
+
+            <Route exact path={"/activities"} component={Activities} />
+
+            <Route exact path={"/index"} component={Index} />
             
 
           </div>
