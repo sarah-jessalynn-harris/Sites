@@ -15,6 +15,7 @@ html, body {
 
 html {
   font-size: 62.5%;
+  scroll-padding-top: 90px; /* height of sticky header */
 }
 
 body {
@@ -75,6 +76,14 @@ h1, h2, h3, h4, h5, h6, p {
 
 .pageLink:hover {
   background-color: #181717;
+}
+
+.chart {
+
+}
+
+.chartCell {
+  
 }
 
 /* Nav */
@@ -145,6 +154,10 @@ nav {
     width: 100%;
     margin: 10px;
   }
+
+  html {
+    scroll-padding-top: 120px; /* height of sticky header */
+  }
 }
 
 /* end nav */
@@ -160,7 +173,7 @@ nav {
 } 
 
 .pageDefaults h1 {
-  margin: 50px;
+  margin: 100px;
 }
 
 /* info page defaults */
@@ -170,7 +183,7 @@ nav {
 }
 
 .infoPage h2 {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 /* Home */

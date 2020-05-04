@@ -39,7 +39,7 @@ class Articles extends Component {
         if(!this.state.loading) {
             return <div className="pageDefaults infoPage articles">
             
-            <h1 id={this.state.articles[2].title}> Articles </h1>
+            <h1> Articles </h1>
             <Paragraph content={this.state.articles[2].description}></Paragraph>
             <PageNav list={[ this.state.articles[0].title, this.state.articles[1].title]}></PageNav>
 

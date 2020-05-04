@@ -9,6 +9,7 @@ import Categories from './Categories/Categories';
 import Articles from './Articles/Articles';
 import Activities from './Activity/Activities';
 import Index from './Index/Index';
+import Infinitives from './Info/Infinitives';
 
 
 class App extends Component {
@@ -38,6 +39,8 @@ class App extends Component {
             <Route exact path={"/activities"} component={Activities} />
 
             <Route exact path={"/index"} component={Index} />
+
+            <Route exact path={"/infinitives"} component={Infinitives} />
             
 
           </div>
