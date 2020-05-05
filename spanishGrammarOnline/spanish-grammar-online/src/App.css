@@ -50,6 +50,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .spanEx {
   font-style: italic;
+  margin-left: 25px;
 }
 
 .exampleList {}
