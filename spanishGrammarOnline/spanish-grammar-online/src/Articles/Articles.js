@@ -11,7 +11,7 @@ class Articles extends Component {
 
     componentWillMount(){
         var articles = [];
-        var articlesRef = firebase.firestore().collection('articles');
+        var articlesRef = firebase.firestore().collection('articles').orderBy("title", "desc");
         articlesRef.get()
         .then(snapshot => {
             var itemsProcessed = 0;
@@ -37,19 +37,30 @@ class Articles extends Component {
     render() {   
 
         if(!this.state.loading) {
+
+            var list = [];
+
             return <div className="pageDefaults infoPage articles">
-            
-            <h1> Articles </h1>
-            <Paragraph content={this.state.articles[2].description}></Paragraph>
-            <PageNav list={[ this.state.articles[0].title, this.state.articles[1].title]}></PageNav>
 
-            <h2 id={this.state.articles[0].title}> Definite Articles</h2>
-            <Paragraph content={this.state.articles[0].description}></Paragraph>
-            <ExampleList list={this.state.articles[0].exampleList}></ExampleList>
+                {
+                    this.state.articles.map ((item, key) => {
+                        list.push(item.title);
 
-            <h2 id={this.state.articles[1].title}> Indefinite Articles</h2>
-            <Paragraph content={this.state.articles[1].description}></Paragraph>
-            <ExampleList list={this.state.articles[1].exampleList}></ExampleList>
+                        if(item.type == "intro"){
+                            return <div>
+                            <h1 id={item.title}> Articles </h1>
+                            <Paragraph content={item.description}></Paragraph>
+                            <PageNav list={list}></PageNav> </div>   
+                        } else if (item.type == "info"){
+                            return <div>
+                                <h2 id={item.title}> {item.title} Articles</h2>
+                                <Paragraph content={item.description}></Paragraph>
+                                <ExampleList list={item.exampleList}></ExampleList>
+
+                            </div>
+                        }
+                    })
+                }
 
         </div>;
         } else {

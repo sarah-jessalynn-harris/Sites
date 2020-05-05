@@ -6,7 +6,7 @@ class Examples extends Component {
         return(
             <div className="example">
                 <p className="engEx"> Ex: {this.props.engEx}</p>
-                <p className="spanEx"> Ex: {this.props.spanEx}</p>
+                <p className="spanEx"> {this.props.spanEx}</p>
             </div>
         );
     }
