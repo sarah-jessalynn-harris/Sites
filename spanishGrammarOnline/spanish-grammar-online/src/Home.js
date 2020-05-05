@@ -10,7 +10,7 @@ class Home extends Component {
 
     componentWillMount(){
         var cards = [];
-        var cardsRef = firebase.firestore().collection('home');
+        var cardsRef = firebase.firestore().collection('home').orderBy("title", "asc");
         cardsRef.get()
         .then(snapshot => {
             var itemsProcessed = 0;

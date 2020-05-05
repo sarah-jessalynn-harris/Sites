@@ -6,7 +6,7 @@
   outline: none;
 }
 
-html, body {
+html, body{
   min-height: 100%;
   width: 100%;
   overflow-x: hidden;
@@ -222,6 +222,10 @@ background-color: #141414;
   width: 100%;
 }
 
+.categories h1 {
+  margin-left: 40px;
+}
+
 .category {
   background-color: #302f2f;
   padding: 50px;
@@ -235,6 +239,4 @@ background-color: #141414;
 }
 /* end of categories */
 
-/* Articles */
 
-/* end of articles */
