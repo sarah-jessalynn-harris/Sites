@@ -59,8 +59,8 @@ if(!this.state.loading) {
                             <Examples engEx={item.engEx} spanEx={item.spanEx}></Examples>
                             <Paragraph content={item.exEng}></Paragraph>
 
-                            {item.type = "u2" ? <div>
-                            <Paragraph content={item.description2q}></Paragraph>
+                            {item.type == "u2" ? <div>
+                            <Paragraph content={item.description2}></Paragraph>
                             <Paragraph content={item.verb2}></Paragraph>
                             <Examples engEx={item.engEx2} spanEx={item.spanEx2}></Examples>
                             <Paragraph content={item.exEng2}></Paragraph>
