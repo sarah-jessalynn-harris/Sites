@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none; }
+
+html, body {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden; }
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
+
+body {
+  font-size: 2.5rem;
+  font-family: "mallanna";
+  background-color: #292929;
+  color: #B6B6B6; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 1.6rem; }
+
+@font-face {
+  font-family: "lato";
+  src: url("font/Lato/Lato-Regular.ttf"); }
+
+@font-face {
+  font-family: "mallanna";
+  src: url("font/Mallanna/Mallanna-Regular.ttf"); }
+
+@font-face {
+  font-family: "muli";
+  src: url("font/Muli/Muli-Regular.ttf"); }
+
+@font-face {
+  font-family: "patrick";
+  src: url("font/Patrick_Hand_SC/PatrickHandSC-Regular.ttf"); }
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 50%; } }
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 45%; } }
+
+nav {
+  width: 100vw;
+  height: 60px;
+  background-color: #3d3d3d;
+  display: flex;
+  padding: 10px 60px;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  font-size: 2.0rem; }
+  nav .link {
+    text-decoration: none;
+    color: #B6B6B6; }
+    nav .link:hover {
+      color: #A4ADE9;
+      cursor: pointer; }
+  nav .logo {
+    font-family: "muli";
+    color: #84DFE2; }
+    nav .logo:hover {
+      cursor: pointer;
+      color: #A4ADE9; }
+  nav .links {
+    display: flex;
+    align-items: center; }
+  nav #loggedOut {
+    display: flex;
+    justify-content: space-between; }
+  nav #loggedIn {
+    display: none;
+    width: 80%;
+    justify-content: space-evenly; }
+
+.login {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 110px 50px 50px;
+  background-image: url("img/kitchen.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+  @media only screen and (max-width: 1800px) {
+    .login {
+      flex-direction: column; } }
+
+.form {
+  background-color: #3d3d3d;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0; }
+  .form input {
+    padding: 10px;
+    background-color: #292929;
+    border: none;
+    color: #B6B6B6;
+    width: 500px;
+    margin: 5px 0;
+    font-size: 2.0rem; }
+  .form button {
+    border: none;
+    background: #84DFE2;
+    font-family: "muli";
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 2.0rem; }
+    .form button:hover {
+      background-color: #A4ADE9;
+      cursor: pointer; }
+  .form #forgot {
+    background-color: #292929;
+    color: #B6B6B6; }
+    .form #forgot:hover {
+      background-color: #A4ADE9;
+      color: #292929; }
+
+.recipeForms input {
+  width: 99%; }
+
+.recipeForms .files {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .recipeForms .files #file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1; }
+  .recipeForms .files #inputFile {
+    border: none;
+    background: #84DFE2;
+    color: #292929;
+    font-family: "muli";
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 2.0rem;
+    width: 20%;
+    text-align: center; }
+    .recipeForms .files #inputFile:hover {
+      background-color: #A4ADE9;
+      cursor: pointer; }
+  .recipeForms .files #image {
+    font-size: 2.0rem;
+    width: 79%;
+    height: 50px; }
+
+.recipeForms h3 {
+  margin-top: 10px; }
+
+.recipeForms .moreFields {
+  padding: 5px 15px;
+  margin: 10px 0;
+  font-size: 2.0rem;
+  width: 100%; }
+
+.recipeForms .ingredientBox {
+  display: flex;
+  flex-direction: column; }
+  .recipeForms .ingredientBox input {
+    width: 33%; }
+  .recipeForms .ingredientBox select {
+    padding: 10px;
+    background-color: #292929;
+    border: none;
+    color: #B6B6B6;
+    width: 32%;
+    margin: 5px 0;
+    font-size: 2.0rem; }
+
+.recipeForms .instructions {
+  display: flex;
+  flex-direction: column; }
+  .recipeForms .instructions input {
+    width: 99%; }
+
+.recipeForms .buttons {
+  display: flex; }
+  .recipeForms .buttons #addRecipe, .recipeForms .buttons #cancel, .recipeForms .buttons .updateRecipe, .recipeForms .buttons #addItem, .recipeForms .buttons .updateItem, .recipeForms .buttons #addMeal, .recipeForms .buttons .updateMeal {
+    width: 49%;
+    margin: 50px auto 0px; }
+
+.recipeForms #cancel {
+  background-color: #FFC68A; }
+  .recipeForms #cancel:hover {
+    background-color: #A4ADE9; }
+
+.mealForm select {
+  padding: 10px;
+  background-color: #292929;
+  border: none;
+  color: #B6B6B6;
+  margin: 5px 0;
+  width: 100%;
+  font-size: 2.0rem; }
+
+.home {
+  width: 100%; }
+  .home .homeButton {
+    border: none;
+    background: #84DFE2;
+    font-family: "muli";
+    font-size: 2.0rem;
+    padding: 20px;
+    margin: 0 auto;
+    text-decoration: none;
+    color: #292929; }
+    .home .homeButton:hover {
+      background-color: #A4ADE9;
+      cursor: pointer; }
+    .home .homeButton:active {
+      color: #292929; }
+  .home .header {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-image: url("img/kitchen.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; }
+    .home .header p {
+      color: white;
+      font-size: 5.0rem; }
+    .home .header .sub {
+      font-size: 3.5rem;
+      font-style: italic;
+      color: #84DFE2; }
+  .home .intro {
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column; }
+    .home .intro h2 {
+      color: #84DFE2; }
+    .home .intro h3 {
+      color: #A4ADE9;
+      font-style: italic; }

@@ -1,0 +1,46 @@
+nav {
+    width: 100vw;
+    height: 60px;
+    background-color: $grey;
+    display: flex;
+    padding: 10px 60px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    font-size: 2.0rem;
+
+    .link {
+        text-decoration: none;
+        color: $white;
+
+        &:hover {
+            color: $purple;
+            cursor: pointer;
+        }
+    }
+
+    .logo {
+        font-family: "muli";
+        color: $blue;
+
+        &:hover{
+            cursor: pointer;
+            color: $purple;
+        }
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+    }
+
+    #loggedOut {
+        display: flex;
+        justify-content: space-between;
+    }
+    #loggedIn{
+        display: none;
+        width: 80%;
+        justify-content: space-evenly;
+    }
+}

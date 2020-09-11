@@ -1,0 +1,112 @@
+.mealPlan {
+    width: 100%;
+    min-height: 100vh;
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    margin-top: 60px;
+    justify-content: space-evenly;
+
+    button {
+        border: none;
+        background: $blue;
+        font-family: "muli";
+        font-size: 2.0rem;
+        padding: 20px 40px;
+        margin: 0 auto;
+        
+        &:hover {
+            background-color: $purple;
+            cursor: pointer;
+        }
+    }
+
+    .calendar{
+        display: flex;
+        flex-direction: column;
+        
+
+        .addMeal {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .calendarBox{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 20px;
+            
+            .dateRow {
+                color: $black;
+                width: 100%;
+                background-color: $purple;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 20px;
+            }
+
+            .mealBox {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                background-color: $grey;
+                padding: 50px;
+                justify-content: space-evenly;
+                align-items: center;
+
+                .mealHolder {
+                    background-color: $black;
+
+                    .slot {
+                        width: 100%;
+                        background-color: $blue;
+                        color: $black;
+                        text-align: center;
+                    }
+
+                    .mealRecipeBox{
+                        width: 100%;
+                        text-align: center;
+                    } 
+
+                    .buttonBox {
+                        padding: 0 20px 20px;  
+                        
+                        button {
+                            padding: 10px 30px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .mealPicking {
+        display: flex;
+        background-color: $black;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 1000px;
+
+        button {
+            padding: 10px 40px;
+        }
+
+        input {
+            padding: 10px;
+            background-color: $grey;
+            border: none;
+            color: $white;
+            width: 200px;
+            margin: 5px 0;
+            font-size: 2.0rem;
+        }
+    }
+
+}

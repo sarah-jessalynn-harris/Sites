@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">
+  <title> Kitchen Control Panel</title>
+
+</head>
+<body>
+  <nav>
+    <section class="logo" onclick="location.href='index.html'">
+      Kitchen Control Panel
+    </section>
+    <section class="links" id="loggedOut">
+      <a href="login.html">Login or Register</a>
+    </section>
+    <section class="links" id="loggedIn">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="recipes.html"> Recipes</a>
+        <a href="mealPlan.html"> Meal Plan</a>
+        <a href="inventory.html"> Inventory</a>
+        <a href="shoppingList.html">Shopping List</a>
+        <a href="userInfo.html">Your Account</a>
+        <a href="#" id="logOut"> Logout</a>
+    </section>
+  </nav>
+
+  <section class="login">
+
+    <div class="form">
+        <h3> Login</h3>
+        <label for="rEmail"> Email: </label>
+        <input name="rEmail" type="email" id="rEmail" placeholder="Please enter your email">
+        
+        <label for="rPassword"> Password: </label>
+        <input name="rPassword" type="password" id="rPassword" placeholder="Please enter your password">
+        
+        <button id="login"> Submit</button>
+        <button id="forgot"> Forgot Password?</button>
+    </div>
+
+    <div class="form">
+        <h3> Register</h3>
+
+        <label for="firstname"> First Name: </label>
+        <input name="firstname" type="text" id="firstname" placeholder="Please enter your first name">
+        
+        <label for="lastname"> Last Name: </label>
+        <input name="lastname" type="text" id="lastname" placeholder="Please enter your last name">
+        
+        <label for="email"> Email: </label>
+        <input name="email" type="email" id="email" placeholder="Please enter your email">
+        
+        <label for="password"> Password: </label>
+        <input name="password" type="password" id="password" placeholder="Please enter your password">
+        
+        <button id="create"> Submit</button>
+    </div>
+
+  </section>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="/__/firebase/7.2.3/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="/__/firebase/7.2.3/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="/__/firebase/7.2.3/firebase-auth.js"></script>
+  <script src="/__/firebase/7.2.3/firebase-firestore.js"></script>
+  <script src="lib/jquery-3.4.1.min.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/firebaseAccountUtility.js"></script>
+  <script src="js/accounts.js"></script>
+  <script>  MINI_ACCOUNT_UTILITY.addAccountListeners();</script>
+</body>
+</html>

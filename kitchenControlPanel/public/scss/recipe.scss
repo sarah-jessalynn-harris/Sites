@@ -1,0 +1,87 @@
+.recipeData{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .title{
+        width: 30%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .recipeRightSide {
+        width: 60%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .listRecipeData {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .ingredientsDisplay, .instructionsDisplay {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .instructionsWrapper{
+        display: flex;
+    }
+
+    .recipeOptions {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        button {
+            color: $black;
+        }
+
+        .deleteRecipe {
+            background-color: $peach;
+
+            &:hover {
+                background-color: $purple;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1100px) {
+        flex-direction: column;
+
+        .title, .recipeRightSide, .listRecipeData, .recipeOptions {
+            width: 100%;
+        }
+
+       .recipeRightSide, .listRecipeData, .ingredientsDisplay, .instructionsDisplay, .recipeOptions {
+            min-height: unset;
+        }
+
+        .listRecipeData {
+            flex-direction: column;
+            align-items: unset;
+            margin-bottom: 100px;
+            justify-content: center;
+        }
+
+        .ingredientsDisplay {
+            margin-bottom: 50px; 
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "kitchencontrolpanel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "firebase": "^7.20.0",
+    "mathjs": "^6.2.3",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "compile:sass": "node-sass public/scss/styles.scss public/css/styles.css -w"
+  },
+  "author": "",
+  "license": "ISC"
+}

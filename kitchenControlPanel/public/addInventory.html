@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">
+  <title> Kitchen Control Panel</title>
+
+</head>
+<body>
+  <nav>
+    <section class="logo" onclick="location.href='index.html'">
+      Kitchen Control Panel
+    </section>
+    <section class="links" id="loggedOut">
+      <a href="login.html">Login or Register</a>
+    </section>
+    <section class="links" id="loggedIn">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="recipes.html"> Recipes</a>
+        <a href="mealPlan.html"> Meal Plan</a>
+        <a href="inventory.html"> Inventory</a>
+        <a href="userInfo.html">Your Account</a>
+        <a href="#" id="logOut"> Logout</a>
+    </section>
+  </nav>
+
+  
+<div class="inventory">
+  <section class="form recipeForms">
+
+    <h1> Add Item to Inventory</h1>
+
+      <div class="ingredientBox">
+
+        <div class="ingredient" id='ingredient'>
+            <input type='number'  placeholder='Number Amount' min="0.25" step="0.25" id='ingredientAmount'>
+            <select name="units" id="ingredientLabel">
+              <option value="teaspoon">teaspoon</option>
+              <option value="tablespoon">tablespoon</option>
+              <option value="liter">liter</option>
+              <option value="cup">cup</option>
+              <option value="pint">pint</option>
+              <option value="quart">quart</option>
+              <option value="gallon">gallon</option>
+              <option value="gram">gram</option>
+              <option value="ounce">ounce</option>
+              <option value="lbs">lbs</option>
+            </select>
+            <input name="label" type="text" id="ingredientName" placeholder="Item Name">
+        </div>
+       
+      </div>
+      <div class="buttons">
+          <button id="addItem"> Submit</button>
+          <button id="cancel" onclick="window.location.href='inventory.html'"> Cancel </button>
+    </div>
+
+  </section>
+</div>
+      <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="/__/firebase/7.2.3/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="/__/firebase/7.2.3/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="/__/firebase/7.2.3/firebase-auth.js"></script>
+  <script src="/__/firebase/7.2.3/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-storage.js"></script>
+
+
+  <script src="lib/jquery-3.4.1.min.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/firebaseAccountUtility.js"></script>
+  <script src="js/accounts.js"></script>
+  <script src="js/firebaseInventoryUtility.js"></script>
+  <script src="js/inventory.js"></script>
+  <script> addInventoryListeners()</script>
+</body>
+</html>

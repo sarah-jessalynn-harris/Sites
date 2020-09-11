@@ -1,0 +1,155 @@
+.form {
+    background-color: $grey;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+
+    input {
+        padding: 10px;
+        background-color: $black;
+        border: none;
+        color: $white;
+        width: 500px;
+        margin: 5px 0;
+        font-size: 2.0rem;
+    }
+
+    button {
+        border: none;
+        background: $blue;
+        font-family: "muli";
+        padding: 10px;
+        margin: 20px 0;
+        font-size: 2.0rem;
+        
+        &:hover {
+            background-color: $purple;
+            cursor: pointer;
+        }
+    }
+
+    #forgot {
+        background-color: $black;
+        color: $white;
+
+        &:hover {
+            background-color: $purple;
+            color: $black;
+        }
+    }
+
+}
+
+.recipeForms {
+
+    input {
+        width: 99%;
+    }
+
+    .files {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        #file {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+    
+        #inputFile {
+            border: none;
+            background: $blue;
+            color: $black;
+            font-family: "muli";
+            padding: 10px;
+            margin: 20px 0;
+            font-size: 2.0rem;
+            width: 20%;
+            text-align: center;
+            
+            &:hover {
+                background-color: $purple;
+                cursor: pointer;
+            }      
+        }
+
+        #image {
+            font-size: 2.0rem;
+            width: 79%;
+            height: 50px
+        }
+    }
+    
+
+    h3 {
+        margin-top: 10px;
+    }
+
+    .moreFields {
+        padding: 5px 15px;
+        margin: 10px 0;
+        font-size: 2.0rem;
+        width: 100%;
+    }
+
+    .ingredientBox{
+        display: flex;
+        flex-direction: column;
+        input {
+            width: 33%;
+        }
+
+        select {
+            padding: 10px;
+            background-color: $black;
+            border: none;
+            color: $white;
+            width: 32%;
+            margin: 5px 0;
+            font-size: 2.0rem;
+        }
+    }
+
+    .instructions{
+        display: flex;
+        flex-direction: column;
+
+        input {
+            width: 99%;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        #addRecipe, #cancel, .updateRecipe, #addItem, .updateItem, #addMeal, .updateMeal {
+            width: 49%;
+            margin: 50px auto 0px;
+        }   
+    }
+
+    #cancel {
+        background-color: $peach;
+
+        &:hover {
+            background-color: $purple;
+        }
+    }
+
+}
+
+.mealForm{
+    select {
+        padding: 10px;
+        background-color: $black;
+        border: none;
+        color: $white;
+        margin: 5px 0;
+        width: 100%;
+        font-size: 2.0rem;
+    }
+}
