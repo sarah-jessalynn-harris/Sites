@@ -31,12 +31,12 @@ function showSlides(n) {
 // nav links
 function addListeners() {
 
-    $("nav .links .link a").click(function (e) {
+    $("nav .links .link a, nav .links .heading .headingNames a").click(function (e) {
         var buttonId = e.currentTarget.id;
         var sectionId = buttonId;
 
         $('html, body').animate({
-            scrollTop: $("." + sectionId).offset().top -140
+            scrollTop: $("." + sectionId).offset().top -100
         }, 500);
     });
 

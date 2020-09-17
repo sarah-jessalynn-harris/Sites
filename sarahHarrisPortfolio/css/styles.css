@@ -76,7 +76,8 @@ nav .social {
     align-items: center;
     justify-content: space-between;
     padding: 0rem 15.0rem;
-    background-color: #E9E9E9;
+    background-color: #181A1B;
+    color: #E9E9E9;
 }
 
 nav .social .email {
@@ -109,13 +110,34 @@ nav .links a:hover {
     color: white;
 }
 
-nav .links .heading a {
+nav .links .heading .headingNames a {
     font-size: 3.5rem;
     color: white;
+    display: flex;
+}
+
+nav .links .heading .headingNames .logo {
+    width: 9.0rem;
+    height: 9.0rem;
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-left: -5px;
+    background-image: url('../img/logo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav .links .heading .headingNames .logo:hover {
+    opacity: 0.6;
+}
+
+nav .links .heading .headingNames .return p {
+    margin-left: 5px;
+    font-size: 2.0rem;
 }
 
 
-nav .links .heading a:hover {
+nav .links .heading .headingNames a:hover {
     color: #E9E9E9;
 }
 
@@ -123,8 +145,9 @@ nav .links .link .resumeButton {
     background-color: #E9E9E9;
     border-radius: 5px;
     color: #555555;
-    padding: 5px 20px;
+    padding: 0px 10px;
     margin: 0px 10px;
+    font-size: 1.8rem;
 }
 
 nav .links .link .resumeButton:hover {
@@ -132,12 +155,12 @@ nav .links .link .resumeButton:hover {
 }
 
 nav i {
-    color: #434343;
+    color:#E9E9E9;
     padding: 0.5rem;
 }
 
 nav i:hover {
-    color: #555555;
+    color:  #555555;
     cursor: pointer;
 }
 
@@ -151,41 +174,69 @@ nav i:hover {
     opacity: .8;
 }
 
+.sticky .heading .logo, .sticky .heading p {
+    display: none;
+}
+
+.sticky .heading .name{
+    font-size: 2.5rem;
+}
+
 @media only screen and (max-width: 1100px) {
     nav .links, nav .social{
         padding: 2.0rem;
     }
 
+    .heading .logo {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
     nav .links {
         flex-direction: column;
         text-align: center;
     }
+}
 
-    .sticky .heading p{
-        display: none;
+@media only screen and (max-width: 300px) {
+    nav .links, nav .social{
+        flex-direction: column;
     }
 }
 
 /* Home */
 .home {
     width: 100%;
-    height: 100vh;
-    background-image: url('../img/image1.jpg');
+    height: 85vh;
+    background-image: url('../img/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    color: #E9E9E9;
+    color: #181A1B;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 10.0rem;
+    align-items: center;
 }
 
 .home p {
-    font-size: 5.0rem;
+    font-size: 4.0rem;
 }
 
 .home div{
-    font-size: 7.0rem;
+    font-size: 6.0rem;
+}
+
+@media only screen and (max-width: 950px) {
+    .home {
+        background-position: -10.0rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .home {
+        background-position: -25.0rem;
+    }
 }
 
 /* About */
@@ -201,7 +252,7 @@ nav i:hover {
 }
 
 .about .aboutImg {
-    width: 50%;
+    width: 35%;
     margin-right: 2.5rem;
 }
 
@@ -211,10 +262,15 @@ nav i:hover {
 
 .funFact {
    display: flex; 
+   margin: 30px 0px;
 }
 
 .funFact i {
-    margin: 15px 20px;
+    margin: 0px 20px;
+}
+
+.funFact p {
+    margin: 5px 0px;;
 }
 
 .formal, .informal {
@@ -249,6 +305,8 @@ nav i:hover {
 .skillset {
     width: 100%;
     padding: 5.0rem;
+    background-color: #181A1B;
+    color: #E9E9E9;
 }
 
 .skillset .intro {
@@ -342,6 +400,8 @@ nav i:hover {
 
   .thumbnail .buttons {
       margin-top: 30px;
+      display: flex;
+      flex-direction: column;
   }
 
   .thumbnail .resumeButtonA, .thumbnail .resumeButtonB {
@@ -350,7 +410,8 @@ nav i:hover {
     border-radius: 5px;
     background-color: #434343;
     padding: 5px 20px;
-    margin: 0px 10px;
+    margin: 10px 10px;
+    text-align: center;
  }
 
  .thumbnail .resumeButtonA:hover {
@@ -511,7 +572,8 @@ nav i:hover {
 .resume {
     width: 100%;
     padding: 5.0rem 10.0rem;
-    background-color: #E9E9E9;
+    background-color: #181A1B;
+    color: #E9E9E9;
     display: flex;
     align-items: center;
     justify-content: space-between;
