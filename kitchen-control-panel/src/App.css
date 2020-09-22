@@ -22,6 +22,13 @@ body {
 h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 1.6rem; }
 
+.loadingScreen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 @font-face {
   font-family: "lato";
   src: url("font/Lato/Lato-Regular.ttf"); }
@@ -69,8 +76,11 @@ nav {
       cursor: pointer;
       color: #A4ADE9; }
   nav .links {
+    width: 30%;
     display: flex;
-    align-items: center; }
+    justify-content: space-evenly; }
+  nav .linkBox {
+    width: 70%; }
   nav #loggedOut {
     display: flex;
     justify-content: space-between; }
@@ -89,13 +99,13 @@ nav {
   background-image: url("img/kitchen.jpg");
   background-size: cover;
   background-repeat: no-repeat; }
-  @media only screen and (max-width: 1800px) {
+  @media only screen and (max-width: 1450px) {
     .login {
       flex-direction: column; } }
 
 .form {
   background-color: #3d3d3d;
-  padding: 100px;
+  padding: 50px 75px;
   display: flex;
   flex-direction: column;
   margin: 50px 0; }
@@ -104,7 +114,7 @@ nav {
     background-color: #292929;
     border: none;
     color: #B6B6B6;
-    width: 500px;
+    width: 450px;
     margin: 5px 0;
     font-size: 2.0rem; }
   .form button {
@@ -113,7 +123,8 @@ nav {
     font-family: "muli";
     padding: 10px;
     margin: 20px 0;
-    font-size: 2.0rem; }
+    font-size: 2.0rem;
+    width: 100%; }
     .form button:hover {
       background-color: #A4ADE9;
       cursor: pointer; }
@@ -123,6 +134,28 @@ nav {
     .form #forgot:hover {
       background-color: #A4ADE9;
       color: #292929; }
+
+.loginForm {
+  display: flex;
+  flex-direction: column; }
+
+.forgottenForm button {
+  border: none;
+  background: #84DFE2;
+  font-family: "muli";
+  padding: 10px;
+  margin: 20px 0;
+  font-size: 2.0rem; }
+  .forgottenForm button:hover {
+    background-color: #A4ADE9;
+    cursor: pointer; }
+
+.forgottenForm #forgot {
+  background-color: #292929;
+  color: #B6B6B6; }
+  .forgottenForm #forgot:hover {
+    background-color: #A4ADE9;
+    color: #292929; }
 
 .recipeForms input {
   width: 99%; }
@@ -249,3 +282,74 @@ nav {
     .home .intro h3 {
       color: #A4ADE9;
       font-style: italic; }
+
+.dashboard {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #292929;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  justify-content: space-evenly; }
+  .dashboard .overview {
+    padding: 20px;
+    width: 100%; }
+    .dashboard .overview .box {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center; }
+      .dashboard .overview .box .calendarBox {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        border: 1px #292929 solid; }
+        .dashboard .overview .box .calendarBox .dateRow {
+          color: #292929;
+          width: 100%;
+          background-color: #A4ADE9;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 20px; }
+        .dashboard .overview .box .calendarBox .mealBox {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          background-color: #3d3d3d;
+          padding: 50px;
+          justify-content: space-evenly;
+          align-items: center; }
+          .dashboard .overview .box .calendarBox .mealBox .mealHolder {
+            border: none;
+            background: #292929;
+            font-family: "muli";
+            font-size: 2.0rem;
+            padding: 10px 60px;
+            margin: 20px auto; }
+  .dashboard .dashButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 50px; }
+    .dashboard .dashButtons button {
+      border: none;
+      background: #84DFE2;
+      font-family: "muli";
+      font-size: 2.0rem;
+      padding: 20px 40px;
+      margin: 0 auto; }
+      .dashboard .dashButtons button:hover {
+        background-color: #A4ADE9;
+        cursor: pointer; }
+
+.account {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #292929;
+  display: flex;
+  flex-direction: column;
+  padding: 100px; }

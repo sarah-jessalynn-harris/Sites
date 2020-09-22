@@ -30,8 +30,13 @@ nav {
     }
 
     .links {
+        width: 30%;
         display: flex;
-        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .linkBox {
+        width: 70%;
     }
 
     #loggedOut {

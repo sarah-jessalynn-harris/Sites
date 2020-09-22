@@ -1,6 +1,6 @@
 .form {
     background-color: $grey;
-    padding: 100px;
+    padding: 50px 75px;
     display: flex;
     flex-direction: column;
     margin: 50px 0;
@@ -10,11 +10,44 @@
         background-color: $black;
         border: none;
         color: $white;
-        width: 500px;
+        width: 450px;
         margin: 5px 0;
         font-size: 2.0rem;
     }
 
+    button {
+        border: none;
+        background: $blue;
+        font-family: "muli";
+        padding: 10px;
+        margin: 20px 0;
+        font-size: 2.0rem;
+        width: 100%;
+        
+        &:hover {
+            background-color: $purple;
+            cursor: pointer;
+        }
+    }
+
+    #forgot {
+        background-color: $black;
+        color: $white;
+
+        &:hover {
+            background-color: $purple;
+            color: $black;
+        }
+    }
+
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.forgottenForm {
     button {
         border: none;
         background: $blue;
@@ -40,6 +73,7 @@
     }
 
 }
+
 
 .recipeForms {
 
