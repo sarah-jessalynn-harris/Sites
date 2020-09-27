@@ -2,14 +2,18 @@
     width: 100%;
     min-height: 100vh;
     background-color: $black;
-    display: flex;
-    flex-direction: column;
-    padding: 100px;
+    padding: 150px 100px 100px;
+
+    .accountCard {
+        display: flex;
+        flex-direction: column;
+        background-color: $grey;
+        border: solid $blue 1px;
+    }
 
     .accountHeader {
         width: 100%;
         height: 35.0rem;
-        margin-bottom: 50px;
     }
 
     .background {
@@ -31,12 +35,14 @@
         background-size: cover;
     }
 
+    .accountContent {
+        padding: 50px;
+    }
+
     @media only screen and (max-width: 1500px) {
         .accountHeader {
             height: 30.0 rem;
         }
-    
-
     }
     
     @media only screen and (max-width: 1200px) {
@@ -54,15 +60,16 @@
         .avatar {
             margin-top: 50px;
         }
+
+        .accountContent {
+            padding: 20px;
+        }
     }
     
     @media only screen and (max-width: 600px) {
-    
+        
         padding: 150px 50px 50px;
         
-        .accountHeader {
-            height: 10.0 rem;
-        }
     
         .avatar {
             width: 15vw;

@@ -5,7 +5,7 @@
     display: flex;
     background-color: $grey;
     flex-direction: column;
-    margin: 10px;
+    margin: 20px;
     border: solid $blue 1px;
 
     .cardHeader {
@@ -39,7 +39,6 @@
     .cardButtons {
         width: 100%;
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
     }
@@ -54,6 +53,7 @@
         text-align: center;
         color: $black;
         border-radius: 3px;
+        margin: 5px 10px;
         
         &:hover {
             background-color: $purple;
@@ -68,8 +68,30 @@
     }
 
     @media only screen and (max-width: 500px) {
-        .cardBanner p,.cardContent {
+        width: 300px;
+        min-height: 100vh;
+
+        .cardHeader {
+            background-position: center;
+            height: 50%;
+        }
+
+        .cardContent {
+            height: 50%;
+        }
+
+        .cardBanner p{
             font-size: 2.5rem;
+            min-width: 100px;
+        }
+
+        .cardButtons {
+            flex-direction: column;
+        }
+
+        .cardButton {
+            width: 90%;
+            margin: 10px 0px;
         }
     }
 }

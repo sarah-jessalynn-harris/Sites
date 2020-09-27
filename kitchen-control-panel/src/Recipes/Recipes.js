@@ -6,11 +6,12 @@ class Recipes extends Component {
 
     
     render() {
-        console.log(this.props.userData.recipes);
+
         return(
             <div className="recipes">
                 <div className="recipesHeading">
                     <h2> Recipes</h2>
+                    <a className="recipesButton"> Add </a>
                 </div>
                 
 

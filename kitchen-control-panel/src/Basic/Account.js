@@ -8,17 +8,23 @@ class Account extends Component {
         return(
             <div className="account">
 
-                <div className="accountHeader">
-                    <div className="background">
-                        <div className="avatar"> </div>  
-                    </div>
-                </div>  
+                <div className="accountCard">
 
-                <h2> Hello, {this.props.userData.userData.firstname}! </h2>
-                <p> Name: {this.props.userData.userData.displayName} </p>
-                <p> Email: {this.props.userData.userData.email} </p>
-                <p> Date Joined: {this.props.userData.userData.joinDate} </p>
-                <p> Recipes: {this.props.userData.recipes.length} </p>
+                    <div className="accountHeader">
+                        <div className="background">
+                            <div className="avatar"> </div>  
+                        </div>
+                    </div>  
+
+                    <div className="accountContent"> 
+                        <h2> Hello, {this.props.userData.userData.firstname}! </h2>
+                        <p> Name: {this.props.userData.userData.displayName} </p>
+                        <p> Email: {this.props.userData.userData.email} </p>
+                        <p> Date Joined: {this.props.userData.userData.joinDate} </p>
+                        <p> Recipes: {this.props.userData.recipes.length} </p>
+                    </div>
+
+                </div>
             </div>
         );
     }

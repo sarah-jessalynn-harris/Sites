@@ -8,6 +8,8 @@
         width: 100%;
         padding: 50px 10px;
         display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .recipesList {
@@ -18,31 +20,26 @@
         align-items: center;
     }
 
-
-
-    // button {
-    //     border: none;
-    //     background: $blue;
-    //     font-family: "muli";
-    //     font-size: 2.0rem;
-    //     padding: 20px 40px;
-    //     margin: 0 auto;
+    .recipesButton {
+        border: none;
+        background: $blue;
+        font-family: "muli";
+        font-size: 2.0rem;
+        padding: 10px;
+        min-width: 15%;
+        border-radius: 3px;
+        color: $black;
+        text-align: center;
         
-    //     &:hover {
-    //         background-color: $purple;
-    //         cursor: pointer;
-    //     }
-    // }
-
-    // .recipeBox {
-    //     width: 100%;
-    //     background-color: $grey;
-    //     padding: 20px;
-    //     color: $white;
         
-    //     &:hover {
-    //         color: $black;
-    //         cursor: pointer;
-    //     }
-    // }
+        &:hover {
+            background-color: $purple;
+            cursor: pointer;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        padding: 80px 10px 10px;
+    }
+
 }
