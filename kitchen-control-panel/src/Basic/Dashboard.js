@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 
+//component to render the user dashboard
 class Dashboard extends Component {
 
     render() {      

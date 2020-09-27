@@ -9,8 +9,9 @@ import ScrollToTop from './ScrollToTop';
 import fire from './Fire';
 import Dashboard from './Basic/Dashboard';
 import Account from './Basic/Account';
+import Recipes from './Recipes/Recipes'
 
-
+//component that controls everything
 class App extends Component {
 
   state = {authenticated: false, currentUser: null, loading: true, userData: ""};
@@ -23,6 +24,8 @@ class App extends Component {
           currentUser: user.uid,
           loading: true
         });
+
+        console.log(user.metadata.creationTime);
 
         this.getData(this.state.currentUser, this.storeData);
 
@@ -87,6 +90,7 @@ class App extends Component {
                 <Route exact path={"/logout"} component={LogOutHandler} />
                 <Route exact path={"/dashboard"} component={Dashboard} />
                 <Route exact path={"/account"}> <Account userData={this.state.userData} /></Route>
+                <Route exact path={"/recipes"}> <Recipes userData={this.state.userData} /></Route>
 
               </div>
 

@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6, p {
 nav {
   width: 100vw;
   height: 60px;
-  background-color: #3d3d3d;
+  background-color: #5c5b5b;
   display: flex;
   padding: 10px 60px;
   justify-content: space-between;
@@ -65,29 +65,52 @@ nav {
   font-size: 2.0rem; }
   nav .link {
     text-decoration: none;
-    color: #B6B6B6; }
+    color: #B6B6B6;
+    margin: 0 1.0rem; }
     nav .link:hover {
       color: #A4ADE9;
       cursor: pointer; }
   nav .logo {
+    width: 20%;
     font-family: "muli";
-    color: #84DFE2; }
+    color: #84dfe2;
+    display: flex;
+    align-items: center; }
     nav .logo:hover {
       cursor: pointer;
       color: #A4ADE9; }
+  nav .logoImg {
+    background-image: url("./img/logo.jpg");
+    background-size: cover;
+    width: 5.0rem;
+    height: 5.0rem;
+    margin-right: 10px; }
   nav .links {
     width: 30%;
     display: flex;
     justify-content: space-evenly; }
   nav .linkBox {
     width: 70%; }
-  nav #loggedOut {
-    display: flex;
-    justify-content: space-between; }
-  nav #loggedIn {
-    display: none;
-    width: 80%;
-    justify-content: space-evenly; }
+  @media only screen and (max-width: 1400px) {
+    nav .linkBox {
+      width: 80%; }
+    nav .logo p {
+      display: none; } }
+  @media only screen and (max-width: 1200px) {
+    nav {
+      flex-wrap: wrap; }
+      nav .logo {
+        display: none; }
+      nav .linkBox {
+        width: 100%; } }
+  @media only screen and (max-width: 700px) {
+    nav {
+      padding: 10px 20px; } }
+  @media only screen and (max-width: 550px) {
+    nav {
+      height: 100px; }
+      nav .linkBox {
+        flex-wrap: wrap; } }
 
 .login {
   width: 100%;
@@ -119,7 +142,7 @@ nav {
     font-size: 2.0rem; }
   .form button {
     border: none;
-    background: #84DFE2;
+    background: #84dfe2;
     font-family: "muli";
     padding: 10px;
     margin: 20px 0;
@@ -141,7 +164,7 @@ nav {
 
 .forgottenForm button {
   border: none;
-  background: #84DFE2;
+  background: #84dfe2;
   font-family: "muli";
   padding: 10px;
   margin: 20px 0;
@@ -173,7 +196,7 @@ nav {
     z-index: -1; }
   .recipeForms .files #inputFile {
     border: none;
-    background: #84DFE2;
+    background: #84dfe2;
     color: #292929;
     font-family: "muli";
     padding: 10px;
@@ -242,7 +265,7 @@ nav {
   width: 100%; }
   .home .homeButton {
     border: none;
-    background: #84DFE2;
+    background: #84dfe2;
     font-family: "muli";
     font-size: 2.0rem;
     padding: 20px;
@@ -262,7 +285,7 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 50px;
-    background-image: url("img/kitchen.jpg");
+    background-image: url("./img/kitchen.jpg");
     background-size: cover;
     background-repeat: no-repeat; }
     .home .header p {
@@ -271,17 +294,72 @@ nav {
     .home .header .sub {
       font-size: 3.5rem;
       font-style: italic;
-      color: #84DFE2; }
+      color: #84dfe2; }
   .home .intro {
     width: 100%;
     padding: 50px;
     display: flex;
     flex-direction: column; }
     .home .intro h2 {
-      color: #84DFE2; }
+      color: #84dfe2; }
     .home .intro h3 {
       color: #A4ADE9;
       font-style: italic; }
+
+.card {
+  width: 450px;
+  height: 60vh;
+  display: flex;
+  background-color: #3d3d3d;
+  flex-direction: column;
+  margin: 10px;
+  border: solid #84dfe2 1px; }
+  .card .cardHeader {
+    width: 100%;
+    height: 60%;
+    background-size: cover;
+    display: flex;
+    background-color: #E1DFFD; }
+  .card .cardBanner p {
+    margin-top: 30px;
+    font-size: 2.0rem;
+    padding: 5px 10px;
+    min-width: 150px;
+    background-color: #84dfe2;
+    color: #292929; }
+  .card .cardContent {
+    width: 100%;
+    height: 40%;
+    padding: 15px;
+    font-size: 2.0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+  .card .cardButtons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center; }
+  .card .cardButton {
+    border: none;
+    background: #84dfe2;
+    font-family: "muli";
+    font-size: 1.7rem;
+    padding: 5px;
+    width: 90px;
+    text-align: center;
+    color: #292929;
+    border-radius: 3px; }
+    .card .cardButton:hover {
+      background-color: #A4ADE9;
+      cursor: pointer; }
+  @media only screen and (max-width: 900px) {
+    .card .cardBanner p, .card .cardContent {
+      font-size: 2.5rem; } }
+  @media only screen and (max-width: 500px) {
+    .card .cardBanner p, .card .cardContent {
+      font-size: 2.5rem; } }
 
 .dashboard {
   width: 100%;
@@ -337,7 +415,7 @@ nav {
     padding: 50px; }
     .dashboard .dashButtons button {
       border: none;
-      background: #84DFE2;
+      background: #84dfe2;
       font-family: "muli";
       font-size: 2.0rem;
       padding: 20px 40px;
@@ -353,3 +431,123 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 100px; }
+  .account .accountHeader {
+    width: 100%;
+    height: 35.0rem;
+    margin-bottom: 50px; }
+  .account .background {
+    width: 100%;
+    height: 90%;
+    background-image: url("./img/food.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center; }
+  .account .avatar {
+    width: 18vw;
+    height: 18vw;
+    margin-top: 200px;
+    background-image: url("./img/avatar.png");
+    background-repeat: no-repeat;
+    background-size: cover; }
+  @media only screen and (max-width: 1500px) {
+    .account .accountHeader {
+      height: 30.0 rem; } }
+  @media only screen and (max-width: 1200px) {
+    .account .accountHeader {
+      height: 20.0 rem; } }
+  @media only screen and (max-width: 900px) {
+    .account .accountHeader {
+      height: 15.0rem; }
+    .account .avatar {
+      margin-top: 50px; } }
+  @media only screen and (max-width: 600px) {
+    .account {
+      padding: 150px 50px 50px; }
+      .account .accountHeader {
+        height: 10.0 rem; }
+      .account .avatar {
+        width: 15vw;
+        height: 15vw; } }
+  @media only screen and (max-width: 375px) {
+    .account {
+      padding: 150px 20px 20px; }
+      .account .accountHeader {
+        height: 5.0rem;
+        margin-bottom: 25px; }
+      .account .avatar {
+        margin-top: 15px; } }
+
+.recipes {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px;
+  background-color: #292929; }
+  .recipes .recipesHeading {
+    width: 100%;
+    padding: 50px 10px;
+    display: flex; }
+  .recipes .recipesList {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
+
+.recipeData {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+  .recipeData .title {
+    width: 30%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; }
+    .recipeData .title img {
+      width: 100%; }
+  .recipeData .recipeRightSide {
+    width: 60%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; }
+  .recipeData .listRecipeData {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; }
+  .recipeData .ingredientsDisplay, .recipeData .instructionsDisplay {
+    display: flex;
+    flex-direction: column; }
+  .recipeData .instructionsWrapper {
+    display: flex; }
+  .recipeData .recipeOptions {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    .recipeData .recipeOptions button {
+      color: #292929; }
+    .recipeData .recipeOptions .deleteRecipe {
+      background-color: #FFC68A; }
+      .recipeData .recipeOptions .deleteRecipe:hover {
+        background-color: #A4ADE9; }
+  @media only screen and (max-width: 1100px) {
+    .recipeData {
+      flex-direction: column; }
+      .recipeData .title, .recipeData .recipeRightSide, .recipeData .listRecipeData, .recipeData .recipeOptions {
+        width: 100%; }
+      .recipeData .recipeRightSide, .recipeData .listRecipeData, .recipeData .ingredientsDisplay, .recipeData .instructionsDisplay, .recipeData .recipeOptions {
+        min-height: unset; }
+      .recipeData .listRecipeData {
+        flex-direction: column;
+        align-items: unset;
+        margin-bottom: 100px;
+        justify-content: center; }
+      .recipeData .ingredientsDisplay {
+        margin-bottom: 50px; } }

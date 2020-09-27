@@ -1,13 +1,20 @@
 import React, {Component} from "react";
 
+//component to render the user account page information
 class Account extends Component {
 
     render() {    
-        console.log(this.props.userData.userData);
 
         return(
             <div className="account">
-                <h2> Your Account Information: </h2>
+
+                <div className="accountHeader">
+                    <div className="background">
+                        <div className="avatar"> </div>  
+                    </div>
+                </div>  
+
+                <h2> Hello, {this.props.userData.userData.firstname}! </h2>
                 <p> Name: {this.props.userData.userData.displayName} </p>
                 <p> Email: {this.props.userData.userData.email} </p>
                 <p> Date Joined: {this.props.userData.userData.joinDate} </p>

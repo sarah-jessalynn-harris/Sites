@@ -1,7 +1,7 @@
 nav {
     width: 100vw;
     height: 60px;
-    background-color: $grey;
+    background-color: $cardShadow;
     display: flex;
     padding: 10px 60px;
     justify-content: space-between;
@@ -12,6 +12,7 @@ nav {
     .link {
         text-decoration: none;
         color: $white;
+        margin: 0 1.0rem;
 
         &:hover {
             color: $purple;
@@ -20,13 +21,25 @@ nav {
     }
 
     .logo {
+        width: 20%;
         font-family: "muli";
         color: $blue;
+        display: flex;
+        align-items: center;
 
         &:hover{
             cursor: pointer;
             color: $purple;
         }
+    }
+
+
+    .logoImg{
+        background-image: url("./img/logo.jpg");
+        background-size: cover;
+        width: 5.0rem;
+        height: 5.0rem;
+        margin-right: 10px;
     }
 
     .links {
@@ -39,13 +52,39 @@ nav {
         width: 70%;
     }
 
-    #loggedOut {
-        display: flex;
-        justify-content: space-between;
+    @media only screen and (max-width: 1400px) {
+        .linkBox {
+            width: 80%;
+        }
+
+        .logo p {
+            display: none;
+        }
     }
-    #loggedIn{
-        display: none;
-        width: 80%;
-        justify-content: space-evenly;
+
+    @media only screen and (max-width: 1200px) {
+        flex-wrap: wrap;
+
+        .logo {
+            display: none;
+        }
+
+        .linkBox {
+            width: 100%;
+        }
     }
+
+    @media only screen and (max-width: 700px) {
+        padding: 10px 20px;
+    }
+
+    @media only screen and (max-width: 550px) {
+        height: 100px;
+        .linkBox {
+            flex-wrap: wrap;
+        }
+    }
+
+
 }
+

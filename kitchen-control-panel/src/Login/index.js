@@ -4,7 +4,7 @@ import fire from "../Fire";
 import LoginView from "./LoginView";
 
 
-
+//component to handle options on the login page
 class LogInHandler extends Component {
 
     constructor(){
@@ -98,8 +98,7 @@ class LogInHandler extends Component {
               var errorMessage = error.message;
               console.log(errorCode + '' + errorMessage)
             }).then(function(res){
-               console.log(res); 
-               
+
                var newUser = fire.firestore().collection('users').doc();
       
                var userData = {
@@ -109,7 +108,8 @@ class LogInHandler extends Component {
                       displayName: fn + ' ' + ln,
                       firstname: fn,
                       lastname: ln,
-                      email: email
+                      email: email,
+                      joinDate: res.user.metadata.creationTime
                   },
                 recipes: [],
                 mealplan: [],
