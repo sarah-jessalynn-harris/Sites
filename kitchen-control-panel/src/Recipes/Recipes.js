@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import RecipeCard from "./RecipeCard";
+import {NavLink} from "react-router-dom";
 
 
 class Recipes extends Component {
@@ -11,15 +12,16 @@ class Recipes extends Component {
             <div className="recipes">
                 <div className="recipesHeading">
                     <h2> Recipes</h2>
-                    <a className="recipesButton"> Add </a>
+                    <NavLink exact className="recipesButton" activeClassName="active" to={"/recipes/new"}> Add </NavLink>
                 </div>
                 
 
                 <div className="recipesList">
         
-                    {this.props.userData.recipes.map (item  =>
+                    {this.props.userData.recipes.map ((item, key)  =>
                         <RecipeCard 
                             id = {item.id}
+                            key = {key}
                             instructions = {item.instructions}
                             name = {item.name}
                             image = {item.image}

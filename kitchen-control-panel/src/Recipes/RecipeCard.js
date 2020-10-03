@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { NavLink } from "react-router-dom";
 
 //component for displaying user's recipe
 class RecipeCard extends Component {
@@ -32,7 +33,7 @@ class RecipeCard extends Component {
 
                     <div className="cardButtons">
 
-                        <a className="cardButton"> Cook </a>
+                        <NavLink className="cardButton" to={"/recipe/" + this.props.id}> Cook </NavLink>
                         <a className="cardButton"> Edit </a>
                         <a className="cardButton"> Delete </a>
 

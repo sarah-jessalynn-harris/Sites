@@ -1,42 +1,58 @@
-.recipeData{
+.recipe {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 100px 20px 50px;
+    background-color: $grey;
 
-    .title{
-        width: 30%;
-        min-height: 100vh;
+    .recipeData{
+        width: 90%;
+        background-color: $black;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        border: 1px solid $blue;
+    }
+
+    .title{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        padding: 20px 20px 0;
+        color: $black;
 
         img {
             width: 100%;
         }
-    }
 
-    .recipeRightSide {
-        width: 60%;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
+        h1, p {
+            background-color: $blue;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: $black;
+            color: $blue;
+        }
     }
 
     .listRecipeData {
         width: 100%;
+        min-height: 100vh;
         display: flex;
-        align-items: center;
-        justify-content: space-evenly;
+        padding: 20px;
+        flex-wrap: wrap;
     }
 
     .ingredientsDisplay, .instructionsDisplay {
         display: flex;
         flex-direction: column;
+        padding: 20px;
     }
 
     .instructionsWrapper{
@@ -46,42 +62,32 @@
     .recipeOptions {
         width: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        padding-top: 20px;
 
-        button {
+        .button {
             color: $black;
-        }
-
-        .deleteRecipe {
-            background-color: $peach;
+            background-color: $blue;
+            padding: 10px 20px;
+            margin: 20px;
+            width: 90%;
+            text-align: center;
 
             &:hover {
                 background-color: $purple;
+                cursor: pointer;
             }
         }
     }
 
-    @media only screen and (max-width: 1100px) {
-        flex-direction: column;
+    @media only screen and (max-width: 550px) {
+        padding: 150px 10px 10px;
 
-        .title, .recipeRightSide, .listRecipeData, .recipeOptions {
-            width: 100%;
-        }
-
-       .recipeRightSide, .listRecipeData, .ingredientsDisplay, .instructionsDisplay, .recipeOptions {
-            min-height: unset;
-        }
-
-        .listRecipeData {
-            flex-direction: column;
-            align-items: unset;
-            margin-bottom: 100px;
-            justify-content: center;
-        }
-
-        .ingredientsDisplay {
-            margin-bottom: 50px; 
+        .ingredientsDisplay, .instructionsDisplay {
+            padding: 0px;
         }
     }
+    
 }

@@ -9,7 +9,9 @@ import ScrollToTop from './ScrollToTop';
 import fire from './Fire';
 import Dashboard from './Basic/Dashboard';
 import Account from './Basic/Account';
-import Recipes from './Recipes/Recipes'
+import Recipes from './Recipes/Recipes';
+import Recipe from './Recipes/Recipe';
+import RecipeHandler from './Recipes/index';
 
 //component that controls everything
 class App extends Component {
@@ -25,8 +27,6 @@ class App extends Component {
           loading: true
         });
 
-        console.log(user.metadata.creationTime);
-
         this.getData(this.state.currentUser, this.storeData);
 
       } else {
@@ -41,25 +41,26 @@ class App extends Component {
 
   getData(user, callback) { 
       
-    fire.firestore().collection("users").where("userData.uid", "==", user)
-      .get()
-      .then(function(querySnapshot) {
-          querySnapshot.forEach(function(doc) {
-              // doc.data() is never undefined for query doc snapshots
-              console.log(doc.id, " => ", doc.data());
-              let dataObj = doc.data();
-              callback(dataObj);
-          });
-      })
-      .catch(function(error) {
-          console.log("Error getting documents: ", error);
-      });
-    };
+      fire.firestore().collection("users").where("userData.uid", "==", user)
+        .get()
+        .then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                // doc.data() is never undefined for query doc snapshots
+                console.log(doc.id, " => ", doc.data());
+                let dataObj = doc.data();
+                callback(dataObj);
+            });
+        })
+        .catch(function(error) {
+            console.log("Error getting documents: ", error);
+        });
+      };
 
-    storeData = (dataObj) => {
-      this.setState({userData : dataObj});
-      this.setState({loading: false});
-    }
+      storeData = (dataObj) => {
+        this.setState({userData : dataObj});
+        this.setState({loading: false});
+  }
+
 
   render() {
 
@@ -79,6 +80,7 @@ class App extends Component {
           <div className="App">
 
             <Router>
+              
               <ScrollToTop/>
 
               <div>
@@ -86,11 +88,33 @@ class App extends Component {
                 <Nav signedIn={this.state.authenticated} userData={this.state.userData}></Nav>
 
                 <Route exact path={"/"} component={Home} />
+
                 <Route exact path={"/login"} component={LoginHandler} />
+
                 <Route exact path={"/logout"} component={LogOutHandler} />
+
                 <Route exact path={"/dashboard"} component={Dashboard} />
+                
                 <Route exact path={"/account"}> <Account userData={this.state.userData} /></Route>
+
                 <Route exact path={"/recipes"}> <Recipes userData={this.state.userData} /></Route>
+
+                <Route exact path={"/recipe/:id"} render={({match}) => (
+                    <Recipe 
+                      userData={this.state.userData.recipes} 
+                      id = {match.params.id}
+                    />
+                )}/>
+
+                <Route exact path={"/recipes/new"}><RecipeHandler type = "new"/></Route>
+
+                <Route exact path={"/recipe/edit/:id"} render={({match}) => (
+                    <RecipeHandler 
+                      type = "edit" 
+                      id = {match.params.id}
+                    />
+                )}/>
+
 
               </div>
 
