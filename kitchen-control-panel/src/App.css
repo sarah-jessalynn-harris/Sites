@@ -234,6 +234,8 @@ nav {
     width: 32%;
     margin: 5px 0;
     font-size: 2.0rem; }
+  .recipeForms .ingredientBox #ingredient1 select {
+    margin: 0 5px; }
 
 .recipeForms .instructions {
   display: flex;

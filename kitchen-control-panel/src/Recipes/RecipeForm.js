@@ -1,8 +1,52 @@
 import React, {Component} from "react";
 
+let addIngredient = function(e){
+    e.preventDefault();
+    let lastId = document.getElementsByClassName('ingredientBox')[0].lastChild.id;
+
+    var newId = lastId.replace('ingredient', '');
+    var indexNumber = parseInt(newId) + 1;
+
+    var newIngredient = document.createElement("div");
+    newIngredient.className = "ingredient";
+    newIngredient.id = "ingredient" + indexNumber;
+    newIngredient.innerHTML = `<input type='number'  placeholder='Ingredient #${indexNumber} amount' min="0.25" step="0.25">
+    <select name="units" id="unit${indexNumber}">
+      <option value="teaspoon">teaspoon</option>
+      <option value="tablespoon">tablespoon</option>
+      <option value="liter">liter</option>
+      <option value="cup">cup</option>
+      <option value="pint">pint</option>
+      <option value="quart">quart</option>
+      <option value="gallon">gallon</option>
+      <option value="gram">gram</option>
+      <option value="ounce">ounce</option>
+      <option value="lbs">lbs</option>
+    </select>
+    <input name="label" type="text" id="label" placeholder="Ingredient Name">
+ </div>
+ `;
+ 
+     document.getElementsByClassName('ingredientBox')[0].appendChild(newIngredient);
+}
+
+let addInstruction = function(e) {
+    e.preventDefault();
+    let lastId = document.getElementsByClassName('instructions')[0].lastChild.id;
+
+    var newId = lastId.replace('instruction', '');
+    var indexNumber = parseInt(newId) + 1;
+
+    var newInstruction = document.createElement('input');
+
+    newInstruction.type = "text";
+    newInstruction.id = "instruction" + indexNumber;
+    newInstruction.placeholder = "Instruction #" + indexNumber;
+
+    document.getElementsByClassName('instructions')[0].appendChild(newInstruction);
+}
 
 const RecipeForm = ({onSubmit}) => {
-
   
         return(
         <div>
@@ -38,14 +82,14 @@ const RecipeForm = ({onSubmit}) => {
                 
                 </div>
 
-                <button id='addIngredient' className='moreFields'> Add Another Ingredient </button>
+                <button id='addIngredient' className='moreFields' onClick={(e) => addIngredient(e)}> Add Another Ingredient </button>
 
                 <h3> Enter Instructions </h3>
                 <div className="instructions">
                     <input type='text' id='instruction1' placeholder='Instruction #1'/>
                 </div>
 
-                <button id='addInstruction' className='moreFields'> Add Another Instruction </button>
+                <button id='addInstruction' className='moreFields' onClick={(e) => addInstruction(e)}> Add Another Instruction </button>
 
                 <h3> Attach an Image</h3>
                 
