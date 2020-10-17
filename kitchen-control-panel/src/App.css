@@ -243,6 +243,19 @@ nav {
   .recipeForms .instructions input {
     width: 99%; }
 
+.recipeForms #fileBox {
+  width: 100%;
+  text-align: center; }
+  .recipeForms #fileBox .urlPreview {
+    border: 1px solid #84dfe2;
+    text-decoration: none;
+    color: #84dfe2;
+    padding: 5px 20px;
+    width: 100%; }
+    .recipeForms #fileBox .urlPreview:hover {
+      color: #A4ADE9;
+      cursor: pointer; }
+
 .recipeForms .buttons {
   display: flex; }
   .recipeForms .buttons #addRecipe, .recipeForms .buttons #cancel, .recipeForms .buttons .updateRecipe, .recipeForms .buttons #addItem, .recipeForms .buttons .updateItem, .recipeForms .buttons #addMeal, .recipeForms .buttons .updateMeal {

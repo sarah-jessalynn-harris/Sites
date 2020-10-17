@@ -19,13 +19,25 @@ class RecipeHandler extends Component {
     handleRequest(){
 
         if(this.props.type === "new"){
-            this.setState({form: <RecipeForm type="new" onSubmit={this.handleNew} uid={this.props.uid} />})
+            this.setState({form: <RecipeForm type="new" onSubmit={this.handleNew} uid={this.props.uid} />});
         }
     }
 
     handleNew(event){
         event.preventDefault();
-        console.log(event.target.elements[0]);
+
+        console.log(event.target.elements);
+       
+        // if (event.target.elements[0].value == "" || event.target.elements[1].value == "" || event.target.elements[3].value == "" || $('#instruction1 input').val() == "") {
+        //     return alert('You must fill out all fields before creating a recipe, including at least Ingredient #1 and Instruction #1.');
+        // }
+
+        var recipeObj = {
+            name: event.target.elements[0].value,
+            description: event.target.elements[1].value
+        }
+
+        console.log(recipeObj);
     }
 
     render() {

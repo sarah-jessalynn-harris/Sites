@@ -162,6 +162,24 @@
         }
     }
 
+    #fileBox{
+        width: 100%;
+        text-align: center;
+
+        .urlPreview {
+            border: 1px solid $blue;
+            text-decoration: none;
+            color: $blue;
+            padding: 5px 20px;
+            width: 100%;
+
+            &:hover {
+                color: $purple;
+                cursor: pointer;
+            }
+        }
+    }
+
     .buttons {
         display: flex;
         #addRecipe, #cancel, .updateRecipe, #addItem, .updateItem, #addMeal, .updateMeal {

@@ -53,6 +53,8 @@ import firebase from 'firebase';
     getImageName = function(e){
         
         var file = e.target.files[0];
+
+        document.getElementById('fileBox').innerHTML= "Please wait while we upload your file...";  
     
         var fileName = file.name;
     
@@ -78,7 +80,7 @@ import firebase from 'firebase';
       
          }, function() {
            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-            var imgUrl = `<a href='${downloadURL}' target='_blank'> Image Preview </a>`;
+            var imgUrl = `<a class='urlPreview' href='${downloadURL}' target='_blank'> Image Preview </a>`;
         
             document.getElementById('fileBox').innerHTML= imgUrl;  
            });
