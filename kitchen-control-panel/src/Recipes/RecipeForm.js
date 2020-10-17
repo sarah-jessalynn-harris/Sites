@@ -1,57 +1,96 @@
 import React, {Component} from "react";
+import firebase from 'firebase';
 
-let addIngredient = function(e){
-    e.preventDefault();
-    let lastId = document.getElementsByClassName('ingredientBox')[0].lastChild.id;
-
-    var newId = lastId.replace('ingredient', '');
-    var indexNumber = parseInt(newId) + 1;
-
-    var newIngredient = document.createElement("div");
-    newIngredient.className = "ingredient";
-    newIngredient.id = "ingredient" + indexNumber;
-    newIngredient.innerHTML = `<input type='number'  placeholder='Ingredient #${indexNumber} amount' min="0.25" step="0.25">
-    <select name="units" id="unit${indexNumber}">
-      <option value="teaspoon">teaspoon</option>
-      <option value="tablespoon">tablespoon</option>
-      <option value="liter">liter</option>
-      <option value="cup">cup</option>
-      <option value="pint">pint</option>
-      <option value="quart">quart</option>
-      <option value="gallon">gallon</option>
-      <option value="gram">gram</option>
-      <option value="ounce">ounce</option>
-      <option value="lbs">lbs</option>
-    </select>
-    <input name="label" type="text" id="label" placeholder="Ingredient Name">
- </div>
- `;
- 
-     document.getElementsByClassName('ingredientBox')[0].appendChild(newIngredient);
-}
-
-let addInstruction = function(e) {
-    e.preventDefault();
-    let lastId = document.getElementsByClassName('instructions')[0].lastChild.id;
-
-    var newId = lastId.replace('instruction', '');
-    var indexNumber = parseInt(newId) + 1;
-
-    var newInstruction = document.createElement('input');
-
-    newInstruction.type = "text";
-    newInstruction.id = "instruction" + indexNumber;
-    newInstruction.placeholder = "Instruction #" + indexNumber;
-
-    document.getElementsByClassName('instructions')[0].appendChild(newInstruction);
-}
-
-const RecipeForm = ({onSubmit}) => {
+ class RecipeForm extends Component {
   
+    addIngredient = function(e){
+        e.preventDefault();
+        let lastId = document.getElementsByClassName('ingredientBox')[0].lastChild.id;
+    
+        var newId = lastId.replace('ingredient', '');
+        var indexNumber = parseInt(newId) + 1;
+    
+        var newIngredient = document.createElement("div");
+        newIngredient.className = "ingredient";
+        newIngredient.id = "ingredient" + indexNumber;
+        newIngredient.innerHTML = `<input type='number'  placeholder='Ingredient #${indexNumber} amount' min="0.25" step="0.25">
+        <select name="units" id="unit${indexNumber}">
+          <option value="teaspoon">teaspoon</option>
+          <option value="tablespoon">tablespoon</option>
+          <option value="liter">liter</option>
+          <option value="cup">cup</option>
+          <option value="pint">pint</option>
+          <option value="quart">quart</option>
+          <option value="gallon">gallon</option>
+          <option value="gram">gram</option>
+          <option value="ounce">ounce</option>
+          <option value="lbs">lbs</option>
+        </select>
+        <input name="label" type="text" id="label" placeholder="Ingredient Name">
+     </div>
+     `;
+     
+         document.getElementsByClassName('ingredientBox')[0].appendChild(newIngredient);
+    }
+    
+    addInstruction = function(e) {
+        e.preventDefault();
+        let lastId = document.getElementsByClassName('instructions')[0].lastChild.id;
+    
+        var newId = lastId.replace('instruction', '');
+        var indexNumber = parseInt(newId) + 1;
+    
+        var newInstruction = document.createElement('input');
+    
+        newInstruction.type = "text";
+        newInstruction.id = "instruction" + indexNumber;
+        newInstruction.placeholder = "Instruction #" + indexNumber;
+    
+        document.getElementsByClassName('instructions')[0].appendChild(newInstruction);
+    }
+    
+    //get the image name so that the file input is not ugly
+    getImageName = function(e){
+        
+        var file = e.target.files[0];
+    
+        var fileName = file.name;
+    
+        document.getElementById('image').value= fileName;
+    
+        this.uploadFile(file, this.props.uid);
+    }
+    
+    //upload the file to firebase storage
+    uploadFile = function(file, uid){
+        var fileName = file.name;
+    
+         // this is a reference to Firebase storage for uploading images
+         var storageRef = firebase.storage().ref( uid + '/recipeImages/' + fileName);
+      
+         var uploadTask = storageRef.put(file);
+      
+         uploadTask.on('state_changed', function(snapshot){
+      
+         }, function(error) {
+      
+          console.log(error);
+      
+         }, function() {
+           uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+            var imgUrl = `<a href='${downloadURL}' target='_blank'> Image Preview </a>`;
+        
+            document.getElementById('fileBox').innerHTML= imgUrl;  
+           });
+         });
+      }
+
+
+    render(){
         return(
         <div>
 
-            <form className="form recipeForms" onSubmit = {onSubmit}>
+            <form className="form recipeForms" onSubmit = {this.props.onSubmit}>
                 <h1> New Recipe </h1>
                 <label htmlFor="name"> Name: </label>
                 <input name="name" type="text" id="name" placeholder="Recipe Name"/>
@@ -82,21 +121,21 @@ const RecipeForm = ({onSubmit}) => {
                 
                 </div>
 
-                <button id='addIngredient' className='moreFields' onClick={(e) => addIngredient(e)}> Add Another Ingredient </button>
+                <button id='addIngredient' className='moreFields' onClick={(e) => this.addIngredient(e)}> Add Another Ingredient </button>
 
                 <h3> Enter Instructions </h3>
                 <div className="instructions">
                     <input type='text' id='instruction1' placeholder='Instruction #1'/>
                 </div>
 
-                <button id='addInstruction' className='moreFields' onClick={(e) => addInstruction(e)}> Add Another Instruction </button>
+                <button id='addInstruction' className='moreFields' onClick={(e) => this.addInstruction(e)}> Add Another Instruction </button>
 
                 <h3> Attach an Image</h3>
                 
 
                 <div className="files">
                     <label htmlFor="file" id="inputFile">Choose File</label>
-                    {/* <input name='file' id='file' type='file' defaultValue='Attach File'/> */}
+                    <input name='file' id='file' type='file'  onChange={(e) => this.getImageName(e)}/>
                     <input type='text' id='image' placeholder='Recipe Image' readOnly/> 
                 </div>
 
@@ -108,7 +147,7 @@ const RecipeForm = ({onSubmit}) => {
             </form>   
         </div>
         );
-        
+    } 
 }
 
 

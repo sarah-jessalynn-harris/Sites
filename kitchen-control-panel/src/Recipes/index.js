@@ -1,6 +1,4 @@
 import React, {Component} from "react";
-import {withRouter} from "react-router";
-import fire from "../Fire";
 import RecipeForm from "./RecipeForm";
 
 class RecipeHandler extends Component {
@@ -21,12 +19,13 @@ class RecipeHandler extends Component {
     handleRequest(){
 
         if(this.props.type === "new"){
-            this.setState({form: <RecipeForm type="new" onSubmit={this.handleNew} />})
+            this.setState({form: <RecipeForm type="new" onSubmit={this.handleNew} uid={this.props.uid} />})
         }
     }
 
-    handleNew(){
-        console.log("new");
+    handleNew(event){
+        event.preventDefault();
+        console.log(event.target.elements[0]);
     }
 
     render() {

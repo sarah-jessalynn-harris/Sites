@@ -61,7 +61,6 @@ class App extends Component {
         this.setState({loading: false});
   }
 
-
   render() {
 
     if (this.state.loading) {
@@ -106,7 +105,7 @@ class App extends Component {
                     />
                 )}/>
 
-                <Route exact path={"/recipes/new"}><RecipeHandler type = "new"/></Route>
+                <Route exact path={"/recipes/new"}><RecipeHandler type = "new" uid={this.state.userData.userData.uid}/></Route>
 
                 <Route exact path={"/recipe/edit/:id"} render={({match}) => (
                     <RecipeHandler 
