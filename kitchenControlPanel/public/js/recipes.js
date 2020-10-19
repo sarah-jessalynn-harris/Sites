@@ -321,6 +321,7 @@ function addRecipe() {
 
 
     var recipeObj = {
+        id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
         name : name,
         description : description,
         ingredients: ingredients,

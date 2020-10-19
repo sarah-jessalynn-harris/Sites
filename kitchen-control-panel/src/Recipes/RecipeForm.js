@@ -80,7 +80,7 @@ import firebase from 'firebase';
       
          }, function() {
            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-            var imgUrl = `<a class='urlPreview' href='${downloadURL}' target='_blank'> Image Preview </a>`;
+            var imgUrl = `<a class='urlPreview' id='urlPreview' href='${downloadURL}' target='_blank'> Image Preview </a>`;
         
             document.getElementById('fileBox').innerHTML= imgUrl;  
            });

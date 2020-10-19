@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router, Redirect, Route} from "react-router-dom";
 import Home from './Basic/Home';
 import Nav from "./Basic/Nav";
 import LoginHandler from "./Login/index";
@@ -18,6 +18,7 @@ class App extends Component {
 
   state = {authenticated: false, currentUser: null, loading: true, userData: ""};
 
+  //find out if the user is logged in and show the correct nav and data if so, otherwise show defaults for being logged out
   componentDidMount() {
     fire.auth().onAuthStateChanged((user=> {
       if (user) {
@@ -39,6 +40,7 @@ class App extends Component {
     }));
   }
 
+  //store user data for the app to use
   getData(user, callback) { 
       
       fire.firestore().collection("users").where("userData.uid", "==", user)
@@ -62,7 +64,7 @@ class App extends Component {
   }
 
   render() {
-
+    // if the page is still loading, show the loading screen otherwise show loaded page
     if (this.state.loading) {
 
       return (
@@ -74,7 +76,6 @@ class App extends Component {
       );
 
     } else {
-
         return (
           <div className="App">
 
@@ -105,7 +106,7 @@ class App extends Component {
                     />
                 )}/>
 
-                <Route exact path={"/recipes/new"}><RecipeHandler type = "new" uid={this.state.userData.userData.uid}/></Route>
+                <Route exact path={"/recipes/new"}><RecipeHandler type = "new" uid={this.state.userData.userData.uid} id={this.state.userData.userData.id}/></Route>
 
                 <Route exact path={"/recipe/edit/:id"} render={({match}) => (
                     <RecipeHandler 
@@ -123,7 +124,6 @@ class App extends Component {
         );
     }
   }
-
 }
 
 export default App;
