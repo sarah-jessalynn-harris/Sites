@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import RecipeForm from "./RecipeForm";
+import fire from "../Fire";
+import { Redirect } from "react-router-dom";
 
 class RecipeHandler extends Component {
 
@@ -8,7 +10,7 @@ class RecipeHandler extends Component {
         this.handleNew = this.handleNew.bind(this);
     }
 
-    state = {form: ""}
+    state = {form: "", update: false}
     
     //call the loading screen while data is still loading
     componentDidMount(){
@@ -32,8 +34,6 @@ class RecipeHandler extends Component {
     //handle a new recipe
     handleNew(event){
         event.preventDefault();
-
-        console.log(event.target.elements);
 
         //check to see if the user has filled out all the fields
         for(var i=0; i <= event.target.elements.length; i++){
@@ -113,23 +113,54 @@ class RecipeHandler extends Component {
             image: recipeImg           
         }
 
-        console.log(recipeObj);
-
-        this.newRecipe(recipeObj);
+        this.addRecipe(recipeObj);
     }
 
-    //push new recipe up to app to add it to firebase
-    newRecipe(recipe){
-        this.props.newRecipe(recipe);
+    //add a new recipe to firebase
+    addRecipe(recipe){
+        var id = this.props.id;
+
+        fire.firestore()
+        .collection("users")
+        .doc(id).get().then((doc) => {
+        if (doc.exists) {
+
+            var oldRecipes = doc.data().recipes;
+            
+            oldRecipes.push(recipe);
+
+            
+            fire.firestore()
+            .collection("users")
+            .doc(id)
+            .update(
+                {recipes : oldRecipes}
+            ).then(() => {
+                console.log("Document successfully written!");
+                this.setState({update: true});
+            }); 
+
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
     }
 
     render() {
 
-        return(
+        if(this.state.update){
+            return <Redirect push to="/recipes"/>;
+        } else {
+            return (
             <div className="recipes">
                 {this.state.form}
             </div>
-        );
+            );
+        }
+      
     }
 
 }

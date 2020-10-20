@@ -20,6 +20,7 @@ class App extends Component {
 
   //find out if the user is logged in and show the correct nav and data if so, otherwise show defaults for being logged out
   componentDidMount() {
+
     fire.auth().onAuthStateChanged((user=> {
       if (user) {
         this.setState({
@@ -30,6 +31,8 @@ class App extends Component {
 
         this.getData(this.state.currentUser, this.storeData);
 
+        console.log(this.state.authenticated);
+
       } else {
         this.setState({
           authenticated: false,
@@ -38,6 +41,19 @@ class App extends Component {
         });
       }
     }));
+
+    console.log(this.state.authenticated);
+
+    if(this.state.authenticated) {
+      console.log(this.state.userData.userData.id);
+
+      fire.firestore()
+      .collection("users")
+      .doc(this.state.userData.userData.id)
+      .onSnapshot(function(doc) {
+        console.log("Current data: ", doc.data());
+    });
+    }
   }
 
   //store user data for the app to use
@@ -76,52 +92,89 @@ class App extends Component {
       );
 
     } else {
-        return (
-          <div className="App">
 
-            <Router>
-              
-              <ScrollToTop/>
+        if(this.state.authenticated) {
 
-              <div>
-
-                <Nav signedIn={this.state.authenticated} userData={this.state.userData}></Nav>
-
-                <Route exact path={"/"} component={Home} />
-
-                <Route exact path={"/login"} component={LoginHandler} />
-
-                <Route exact path={"/logout"} component={LogOutHandler} />
-
-                <Route exact path={"/dashboard"} component={Dashboard} />
+          return (
+            <div className="App">
+  
+              <Router>
                 
-                <Route exact path={"/account"}> <Account userData={this.state.userData} /></Route>
+                <ScrollToTop/>
+  
+                <div>
+  
+                  <Nav signedIn={this.state.authenticated} userData={this.state.userData}></Nav>
+  
+                  <Route exact path={"/"} component={Home} />
+  
+                  <Route exact path={"/login"} component={LoginHandler} />
+  
+                  <Route exact path={"/logout"} component={LogOutHandler} />
+  
+                  <Route exact path={"/dashboard"} component={Dashboard} />
+                  
+                  <Route exact path={"/account"}> <Account userData={this.state.userData} /></Route>
+  
+                  <Route exact path={"/recipes"}> <Recipes userData={this.state.userData} /></Route>
+  
+                  <Route exact path={"/recipe/:id"} render={({match}) => (
+                      <Recipe 
+                        userData={this.state.userData.recipes} 
+                        id = {match.params.id}
+                      />
+                  )}/>
+  
+                  <Route exact path={"/recipes/new"}>
+                      <RecipeHandler 
+                        type = "new" 
+                        uid={this.state.userData.userData.uid} 
+                        id={this.state.userData.userData.id}
+                      />
+                  </Route>
+  
+                  <Route exact path={"/recipe/edit/:id"} render={({match}) => (
+                      <RecipeHandler 
+                        type = "edit" 
+                        id = {match.params.id}
+                      />
+                  )}/>
+  
+  
+                </div>
+  
+              </Router>
+              
+            </div>
+          );
 
-                <Route exact path={"/recipes"}> <Recipes userData={this.state.userData} /></Route>
+        } else {
 
-                <Route exact path={"/recipe/:id"} render={({match}) => (
-                    <Recipe 
-                      userData={this.state.userData.recipes} 
-                      id = {match.params.id}
-                    />
-                )}/>
+          return (
+            <div className="App">
+  
+              <Router>
+                
+                <ScrollToTop/>
+  
+                <div>
+  
+                  <Nav signedIn={this.state.authenticated} userData={this.state.userData}></Nav>
+  
+                  <Route exact path={"/"} component={Home} />
+  
+                  <Route exact path={"/login"} component={LoginHandler} />
+  
+                </div>
+  
+              </Router>
+              
+            </div>
+          );
 
-                <Route exact path={"/recipes/new"}><RecipeHandler type = "new" uid={this.state.userData.userData.uid} id={this.state.userData.userData.id}/></Route>
+        }
+        
 
-                <Route exact path={"/recipe/edit/:id"} render={({match}) => (
-                    <RecipeHandler 
-                      type = "edit" 
-                      id = {match.params.id}
-                    />
-                )}/>
-
-
-              </div>
-
-            </Router>
-            
-          </div>
-        );
     }
   }
 }
