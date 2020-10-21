@@ -20,8 +20,8 @@ class App extends Component {
 
   //find out if the user is logged in and show the correct nav and data if so, otherwise show defaults for being logged out
   componentDidMount() {
-
     fire.auth().onAuthStateChanged((user=> {
+      console.log(this.state.authenticated);
       if (user) {
         this.setState({
           authenticated: true,
@@ -29,9 +29,9 @@ class App extends Component {
           loading: true
         });
 
-        this.getData(this.state.currentUser, this.storeData);
+      this.getData(this.state.currentUser, this.storeData);
 
-        console.log(this.state.authenticated);
+      console.log(this.state.authenticated);
 
       } else {
         this.setState({
@@ -39,44 +39,50 @@ class App extends Component {
           currentUser: null,
           loading: false
         });
+
+        console.log(this.state.authenticated);
       }
     }));
-
-    console.log(this.state.authenticated);
-
-    if(this.state.authenticated) {
-      console.log(this.state.userData.userData.id);
-
-      fire.firestore()
-      .collection("users")
-      .doc(this.state.userData.userData.id)
-      .onSnapshot(function(doc) {
-        console.log("Current data: ", doc.data());
-    });
-    }
   }
 
-  //store user data for the app to use
+  //get user data for the app to use
   getData(user, callback) { 
       
-      fire.firestore().collection("users").where("userData.uid", "==", user)
+    //find out the doc id of the user
+      fire
+      .firestore()
+      .collection("users")
+      .where("userData.uid", "==", user)
         .get()
         .then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 // doc.data() is never undefined for query doc snapshots
                 console.log(doc.id, " => ", doc.data());
-                let dataObj = doc.data();
-                callback(dataObj);
+
+                //get the data and watch it      
+                fire.firestore()
+                .collection("users")
+                .doc(doc.id)
+                .onSnapshot(function(doc) {
+                    console.log("Current data: ", doc.data());
+                    let dataObj = doc.data();
+                    callback(dataObj);
+                });
+
             });
         })
         .catch(function(error) {
             console.log("Error getting documents: ", error);
         });
+
+
       };
 
-      storeData = (dataObj) => {
-        this.setState({userData : dataObj});
-        this.setState({loading: false});
+  //store user data for the app to use
+  storeData = (dataObj) => {
+    this.setState({userData : dataObj});
+    this.setState({loading: false});
+
   }
 
   render() {
@@ -137,6 +143,16 @@ class App extends Component {
                       <RecipeHandler 
                         type = "edit" 
                         id = {match.params.id}
+                        userData = {this.state.userData}
+                      />
+                  )}/>
+
+                  
+                  <Route exact path={"/recipe/delete/:id"} render={({match}) => (
+                      <RecipeHandler 
+                        type = "delete" 
+                        id = {match.params.id}
+                        userData = {this.state.userData}
                       />
                   )}/>
   

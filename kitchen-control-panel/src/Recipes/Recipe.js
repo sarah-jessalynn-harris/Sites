@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {NavLink} from "react-router-dom";
 
 class Recipe extends Component {
 
@@ -72,9 +73,9 @@ class Recipe extends Component {
                     </div>
 
                     <div className="recipeOptions">
-                        <a className="button"> Edit</a>
-                        <a className="button"> Delete</a>
-                        <a className="button"> Return</a>
+                        <NavLink className="button" to={"/recipe/edit/" + this.props.id}> Edit </NavLink>
+                        <NavLink className="button" to={"/recipe/delete/" + this.props.id}> Delete </NavLink>
+                        <NavLink exact className="button" activeClassName="active" to={"/recipes"}> Return </NavLink>
                     </div>
             </div>
             );

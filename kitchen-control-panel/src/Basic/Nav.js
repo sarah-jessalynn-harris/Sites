@@ -45,7 +45,7 @@ class Nav extends Component {
 
         } else {
 
-            navi =  <nav id>
+            navi =  <nav>
 
                 <div className="logo">
                     <NavLink exact className="link" activeClassName="active" to={"/"}> Kitchen Control Panel </NavLink>

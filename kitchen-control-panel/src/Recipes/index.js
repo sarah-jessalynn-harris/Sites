@@ -26,12 +26,58 @@ class RecipeHandler extends Component {
     //choose if the user is adding a new recipe, updating a recipe, or deleting a recipe
     handleRequest(){
 
+        console.log(this.props.id);
+
         if(this.props.type === "new"){
             this.setState({form: <RecipeForm type="new" onSubmit={this.handleNew} uid={this.props.uid} />});
+        } else if (this.props.type === "edit"){
+            //find array id for this recipe
+            let arrayId = this.props.userData.recipes.findIndex(x => x.id == this.props.id);
+
+            this.setState({form: <RecipeForm type="edit" onSubmit={this.handleNew} uid={this.props.uid} recipeData={this.props.userData.recipes[arrayId]}/>});
+        } else if (this.props.type === "delete") {
+            this.handleDelete();
         }
     }
 
-    //handle a new recipe
+    //handle delete a recipe
+    handleDelete(){
+        var id = this.props.userData.userData.id;
+
+        console.log(id);
+
+        fire.firestore()
+        .collection("users")
+        .doc(id).get().then((doc) => {
+        if (doc.exists) {
+
+            var oldRecipes = doc.data().recipes;
+
+            let arrayId = this.props.userData.recipes.findIndex(x => x.id == this.props.id);
+
+            oldRecipes.splice(arrayId, 1);
+
+            
+            fire.firestore()
+            .collection("users")
+            .doc(id)
+            .update(
+                {recipes : oldRecipes}
+            ).then(() => {
+                console.log("Document successfully written!");
+                this.setState({update: true});
+            }); 
+
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+    }
+
+    //handle a new/edit recipe from form
     handleNew(event){
         event.preventDefault();
 
@@ -92,9 +138,9 @@ class RecipeHandler extends Component {
         }
 
         //get the recipe image link or set the default
-        var imgHolder = document.getElementById("image").value;
+        var imgHolder = document.getElementById("fileBox").childElementCount;
 
-        if(imgHolder == "") {
+        if(imgHolder == 0) {
             var recipeImg = "https://firebasestorage.googleapis.com/v0/b/kitchen-control-panel.appspot.com/o/recipeImages%2Fdefault.jpg?alt=media&token=9abb9b44-48f6-4af1-a4b5-074d31976cc2";
         } else {
             var recipeImg = document.getElementById("urlPreview").href;
@@ -113,7 +159,13 @@ class RecipeHandler extends Component {
             image: recipeImg           
         }
 
-        this.addRecipe(recipeObj);
+        if(this.props.type == "new") {
+            this.addRecipe(recipeObj);
+        } else if(this.props.type == "edit") {
+            this.updateRecipe(recipeObj);
+        }
+        
+
     }
 
     //add a new recipe to firebase
@@ -128,6 +180,41 @@ class RecipeHandler extends Component {
             var oldRecipes = doc.data().recipes;
             
             oldRecipes.push(recipe);
+
+            
+            fire.firestore()
+            .collection("users")
+            .doc(id)
+            .update(
+                {recipes : oldRecipes}
+            ).then(() => {
+                console.log("Document successfully written!");
+                this.setState({update: true});
+            }); 
+
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+    }
+
+    //add a new recipe to firebase
+    updateRecipe(recipe){
+        var id = this.props.userData.userData.id;
+
+        fire.firestore()
+        .collection("users")
+        .doc(id).get().then((doc) => {
+        if (doc.exists) {
+
+            var oldRecipes = doc.data().recipes;
+
+            let arrayId = this.props.userData.recipes.findIndex(x => x.id == this.props.id);
+
+            oldRecipes[arrayId] = recipe;
 
             
             fire.firestore()

@@ -600,6 +600,7 @@ nav {
     .recipe .recipeOptions .button {
       color: #292929;
       background-color: #84dfe2;
+      text-decoration: none;
       padding: 10px 20px;
       margin: 20px;
       width: 90%;
