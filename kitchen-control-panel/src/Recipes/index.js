@@ -201,7 +201,7 @@ class RecipeHandler extends Component {
         });
     }
 
-    //add a new recipe to firebase
+    //update recipe to firebase
     updateRecipe(recipe){
         var id = this.props.userData.userData.id;
 

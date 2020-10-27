@@ -613,3 +613,43 @@ nav {
       padding: 150px 10px 10px; }
       .recipe .ingredientsDisplay, .recipe .instructionsDisplay {
         padding: 0px; } }
+
+.inventory {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center; }
+  .inventory button {
+    border: none;
+    background: #84dfe2;
+    font-family: "muli";
+    font-size: 2.0rem;
+    padding: 10px 40px;
+    margin: 0 auto; }
+    .inventory button:hover {
+      background-color: #A4ADE9;
+      cursor: pointer; }
+  .inventory .inventoryItems {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly; }
+    .inventory .inventoryItems .inventoryItem {
+      width: 400px;
+      padding: 20px;
+      background-color: #3d3d3d;
+      margin-bottom: 50px; }
+      .inventory .inventoryItems .inventoryItem .buttons {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center; }
+        .inventory .inventoryItems .inventoryItem .buttons .deleteItem {
+          background-color: #FFC68A; }
+          .inventory .inventoryItems .inventoryItem .buttons .deleteItem:hover {
+            background-color: #A4ADE9;
+            cursor: pointer; }

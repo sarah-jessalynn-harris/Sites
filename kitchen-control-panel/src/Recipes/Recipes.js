@@ -1,16 +1,8 @@
 import React, {Component} from "react";
 import RecipeCard from "./RecipeCard";
 import {NavLink} from "react-router-dom";
-import fire from "../Fire";
-
 
 class Recipes extends Component {
-
-    componentDidMount(){
-  
-
-    }
-
     
     render() {
 
