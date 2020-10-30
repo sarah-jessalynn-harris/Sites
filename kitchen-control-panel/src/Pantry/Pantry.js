@@ -11,8 +11,8 @@ class Pantry extends Component {
         return(
             <div className="inventory">
                 <div className="recipesHeading">
-                    <h2> Recipes</h2>
-                    <NavLink exact className="recipesButton" activeClassName="active" to={"/inventory/new"}> Add </NavLink>
+                    <h2> Pantry </h2>
+                    <NavLink exact className="recipesButton" activeClassName="active" to={"/pantry/new"}> Add </NavLink>
                 </div>
                 
 

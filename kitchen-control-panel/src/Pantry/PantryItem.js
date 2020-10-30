@@ -5,9 +5,13 @@ import { NavLink } from "react-router-dom";
 class PantryItem extends Component {
     render() {
         return(
-<div class="inventoryItem"><h4>${items[i].amount + " " + items[i].label + " " + items[i].name}</h4><div class="buttons"><button id="${i}" class="editItem"> Edit </button><button id="${i}" class="deleteItem"> Delete </button></div></div>
-
-
+                <div class="inventoryItem">
+                    <h4>{this.props.amount} {this.props.label} {this.props.name}</h4>
+                    <div class="buttons">
+                        <button id="${i}" class="editItem"> Edit </button>
+                        <button id="${i}" class="deleteItem"> Delete </button>
+                    </div>
+                </div>
         );
     }
 }

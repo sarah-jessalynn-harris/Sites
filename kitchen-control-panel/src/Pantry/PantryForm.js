@@ -5,6 +5,7 @@ import firebase from 'firebase';
 
     render(){
         if(this.props.type == "new"){
+            return(
             <div>
                 <form className="form recipeForms" onSubmit = {this.props.onSubmit}>
 
@@ -31,9 +32,14 @@ import firebase from 'firebase';
                     
                     </div>
 
+                    <div className="buttons">
+                        <button type="submit" id="addRecipe"> Submit</button>
+                    </div>
                 </form>
             </div>
+            );
         } else if (this.props.type == "edit"){
+            return(
             <div>
                 <h1>Edit Pantry Item</h1>
                 <form className="form recipeForms" onSubmit = {this.props.onSubmit}>
@@ -67,6 +73,7 @@ import firebase from 'firebase';
 
                 </form>
             </div>
+            );
         }
     }
  }

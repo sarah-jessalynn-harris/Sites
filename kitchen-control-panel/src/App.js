@@ -12,6 +12,8 @@ import Account from './Basic/Account';
 import Recipes from './Recipes/Recipes';
 import Recipe from './Recipes/Recipe';
 import RecipeHandler from './Recipes/index';
+import PantryHandler from './Pantry/index';
+import Pantry from './Pantry/Pantry';
 
 //component that controls everything
 class App extends Component {
@@ -155,6 +157,33 @@ class App extends Component {
                         userData = {this.state.userData}
                       />
                   )}/>
+
+                  <Route exact path={"/pantry"}> <Pantry userData={this.state.userData} /></Route>
+                    
+                    <Route exact path={"/pantry/new"}>
+                        <PantryHandler 
+                          type = "new" 
+                          uid={this.state.userData.userData.uid} 
+                          id={this.state.userData.userData.id}
+                        />
+                    </Route>
+
+                    <Route exact path={"/pantry/edit/:id"} render={({match}) => (
+                        <PantryHandler 
+                          type = "edit" 
+                          id = {match.params.id}
+                          userData = {this.state.userData}
+                        />
+                    )}/>
+
+                    
+                    <Route exact path={"/pantry/delete/:id"} render={({match}) => (
+                        <PantryHandler 
+                          type = "delete" 
+                          id = {match.params.id}
+                          userData = {this.state.userData}
+                        />
+                    )}/>
   
   
                 </div>

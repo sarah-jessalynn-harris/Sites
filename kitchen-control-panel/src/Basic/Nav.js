@@ -27,7 +27,11 @@ class Nav extends Component {
                             <NavLink exact className="link" activeClassName="active" to={"/recipes"}> Recipes </NavLink>
                             
                             <a className="link"> Plan</a>
-                            <a className="link"> Pantry</a>
+
+                            
+                            <NavLink exact className="link" activeClassName="active" to={"/pantry"}> Pantry </NavLink>
+
+
                             <a className="link"> List</a>
 
                             <NavLink exact className="link" activeClassName="active" to={{
