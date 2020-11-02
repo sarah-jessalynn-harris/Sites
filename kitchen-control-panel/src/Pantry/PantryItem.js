@@ -5,11 +5,11 @@ import { NavLink } from "react-router-dom";
 class PantryItem extends Component {
     render() {
         return(
-                <div class="inventoryItem">
+                <div className="inventoryItem">
                     <h4>{this.props.amount} {this.props.label} {this.props.name}</h4>
-                    <div class="buttons">
-                        <button id="${i}" class="editItem"> Edit </button>
-                        <button id="${i}" class="deleteItem"> Delete </button>
+                    <div className="buttons">
+                        <button id="${i}" className="editItem"> Edit </button>
+                        <NavLink exact className="deleteItem" activeClassName="active" to={"/pantry/delete/" + this.props.id}> Delete </NavLink>
                     </div>
                 </div>
         );

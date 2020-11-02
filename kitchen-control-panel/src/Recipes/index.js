@@ -26,8 +26,6 @@ class RecipeHandler extends Component {
     //choose if the user is adding a new recipe, updating a recipe, or deleting a recipe
     handleRequest(){
 
-        console.log(this.props.id);
-
         if(this.props.type === "new"){
             this.setState({form: <RecipeForm type="new" onSubmit={this.handleNew} uid={this.props.uid} />});
         } else if (this.props.type === "edit"){
@@ -43,8 +41,6 @@ class RecipeHandler extends Component {
     //handle delete a recipe
     handleDelete(){
         var id = this.props.userData.userData.id;
-
-        console.log(id);
 
         fire.firestore()
         .collection("users")
@@ -84,7 +80,7 @@ class RecipeHandler extends Component {
         //check to see if the user has filled out all the fields
         for(var i=0; i <= event.target.elements.length; i++){
 
-            if (i <= 4 || i == 6) {
+            if (i <= 4 || i === 6) {
                 if(event.target.elements[i].value === "") {
                     console.log("here", event.target.elements[i]);
                     return alert('You must fill out all fields before creating a recipe, including at least Ingredient #1 and Instruction #1.');

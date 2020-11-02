@@ -14,7 +14,7 @@ class Recipe extends Component {
     }
 
     findId(recipeId) {
-        return recipeId == this.props.id; 
+        return recipeId === this.props.id; 
     }
     
     render() {
