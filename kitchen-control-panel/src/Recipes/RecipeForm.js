@@ -80,7 +80,7 @@ import firebase from 'firebase';
       
          }, function() {
            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-            var imgUrl = `<a class='urlPreview' id='urlPreview' href='${downloadURL}' target='_blank'> Image Preview </a>`;
+            var imgUrl = `<a class='urlPreview' id='urlPreview' href='${downloadURL}' target='_blank' rel="noopener noreferrer"> Image Preview </a>`;
         
             document.getElementById('fileBox').innerHTML= imgUrl;  
            });
@@ -91,7 +91,7 @@ import firebase from 'firebase';
     render(){
 
        
-        if(this.props.type == "new") {
+        if(this.props.type === "new") {
             return(
             <div>
 
@@ -152,11 +152,11 @@ import firebase from 'firebase';
                 </form>   
             </div>
             );
-        } else if (this.props.type == "edit") {
+        } else if (this.props.type === "edit") {
             return(
                 <div>
     
-                    <form className="form recipeForms" onSubmit = {this.props.onSubmit}>
+                    <form className="form recipeForms" onSubmit = {this.props.onSubmit} id = {this.props.itemId}>
                         <h1> New Recipe </h1>
                         <label htmlFor="name"> Name: </label>
                         <input name="name" type="text" id="name" placeholder="Recipe Name" defaultValue={this.props.recipeData.name}/>
@@ -219,7 +219,7 @@ import firebase from 'firebase';
                         </div>
     
                         <div id='fileBox'>
-                            <a className='urlPreview' id='urlPreview' href={this.props.recipeData.image} target='_blank'> Image Preview </a>
+                            <a className='urlPreview' id='urlPreview' href={this.props.recipeData.image} target='_blank'  rel="noopener noreferrer"> Image Preview </a>
                         </div>
     
                         <div className="buttons">

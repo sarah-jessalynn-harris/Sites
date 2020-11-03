@@ -24,6 +24,7 @@ class Pantry extends Component {
                             amount = {item.amount}
                             label = {item.label}
                             name = {item.name}
+                            id = {item.id}
                         />)
                     }
             

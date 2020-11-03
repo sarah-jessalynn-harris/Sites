@@ -642,16 +642,6 @@ nav {
     .inventory .recipesButton:hover {
       background-color: #A4ADE9;
       cursor: pointer; }
-  .inventory button {
-    border: none;
-    background: #84dfe2;
-    font-family: "muli";
-    font-size: 2.0rem;
-    padding: 10px 40px;
-    margin: 0 auto; }
-    .inventory button:hover {
-      background-color: #A4ADE9;
-      cursor: pointer; }
   .inventory .inventoryItems {
     width: 100%;
     display: flex;
@@ -664,6 +654,18 @@ nav {
       padding: 20px;
       background-color: #3d3d3d;
       margin-bottom: 50px; }
+      .inventory .inventoryItems .inventoryItem .button {
+        border: none;
+        background: #84dfe2;
+        font-family: "muli";
+        font-size: 2.0rem;
+        padding: 10px 40px;
+        margin: 0 auto;
+        text-decoration: none;
+        color: #292929; }
+        .inventory .inventoryItems .inventoryItem .button:hover {
+          background-color: #A4ADE9;
+          cursor: pointer; }
       .inventory .inventoryItems .inventoryItem .buttons {
         display: flex;
         justify-content: space-evenly;

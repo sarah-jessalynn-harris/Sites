@@ -8,8 +8,8 @@ class PantryItem extends Component {
                 <div className="inventoryItem">
                     <h4>{this.props.amount} {this.props.label} {this.props.name}</h4>
                     <div className="buttons">
-                        <button id="${i}" className="editItem"> Edit </button>
-                        <NavLink exact className="deleteItem" activeClassName="active" to={"/pantry/delete/" + this.props.id}> Delete </NavLink>
+                    <NavLink exact className="button" activeClassName="active" to={"/pantry/edit/" + this.props.id}> Edit </NavLink>
+                    <NavLink exact className="button deleteItem" activeClassName="active" to={"/pantry/delete/" + this.props.id}> Delete </NavLink>
                     </div>
                 </div>
         );

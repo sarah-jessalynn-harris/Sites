@@ -13,10 +13,6 @@ class Recipe extends Component {
         this.setState({loading: false});
     }
 
-    findId(recipeId) {
-        return recipeId === this.props.id; 
-    }
-    
     render() {
         if (this.state.loading) {
 

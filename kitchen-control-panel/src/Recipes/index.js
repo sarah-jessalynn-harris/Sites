@@ -30,9 +30,9 @@ class RecipeHandler extends Component {
             this.setState({form: <RecipeForm type="new" onSubmit={this.handleNew} uid={this.props.uid} />});
         } else if (this.props.type === "edit"){
             //find array id for this recipe
-            let arrayId = this.props.userData.recipes.findIndex(x => x.id == this.props.id);
+            let arrayId = this.props.userData.recipes.findIndex(x => x.id === this.props.id);
 
-            this.setState({form: <RecipeForm type="edit" onSubmit={this.handleNew} uid={this.props.uid} recipeData={this.props.userData.recipes[arrayId]}/>});
+            this.setState({form: <RecipeForm type="edit" onSubmit={this.handleNew} uid={this.props.uid} recipeData={this.props.userData.recipes[arrayId]} itemId = {this.props.id}/>});
         } else if (this.props.type === "delete") {
             this.handleDelete();
         }
@@ -49,7 +49,7 @@ class RecipeHandler extends Component {
 
             var oldRecipes = doc.data().recipes;
 
-            let arrayId = this.props.userData.recipes.findIndex(x => x.id == this.props.id);
+            let arrayId = this.props.userData.recipes.findIndex(x => x.id === this.props.id);
 
             oldRecipes.splice(arrayId, 1);
 
@@ -98,15 +98,15 @@ class RecipeHandler extends Component {
 
         var isOdd = function(x) { return x & 1; };
 
-        for(var i=0; i < ingredientBox.children.length; i++){
+        for(var g=0; g < ingredientBox.children.length; g++){
             for(var x=0; x < ingredientBox.children[i].children.length; x++){
-                if(x == 0) {
-                    rawAmounts.push(Number(ingredientBox.children[i].children[x].value));
+                if(x === 0) {
+                    rawAmounts.push(Number(ingredientBox.children[g].children[x].value));
                 } else {
                     if(isOdd(x)) {
-                        rawLabels.push(ingredientBox.children[i].children[x].value);
+                        rawLabels.push(ingredientBox.children[g].children[x].value);
                     } else {
-                        rawNames.push(ingredientBox.children[i].children[x].value);
+                        rawNames.push(ingredientBox.children[g].children[x].value);
                     }
                 } 
             }
@@ -136,29 +136,47 @@ class RecipeHandler extends Component {
         //get the recipe image link or set the default
         var imgHolder = document.getElementById("fileBox").childElementCount;
 
-        if(imgHolder == 0) {
-            var recipeImg = "https://firebasestorage.googleapis.com/v0/b/kitchen-control-panel.appspot.com/o/recipeImages%2Fdefault.jpg?alt=media&token=9abb9b44-48f6-4af1-a4b5-074d31976cc2";
+        var recipeImg;
+
+        if(imgHolder === 0) {
+            recipeImg = "https://firebasestorage.googleapis.com/v0/b/kitchen-control-panel.appspot.com/o/recipeImages%2Fdefault.jpg?alt=media&token=9abb9b44-48f6-4af1-a4b5-074d31976cc2";
         } else {
-            var recipeImg = document.getElementById("urlPreview").href;
+            recipeImg = document.getElementById("urlPreview").href;
         }
+
+        var recipeObj;
 
         //create custom id for recipe
         var randId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
-        //create the recipe object that will be sent to the database
-        var recipeObj = {
-            id: randId,
-            name: event.target.elements[0].value,
-            description: event.target.elements[1].value,
-            instructions: instructions,
-            ingredients: ingredients,
-            image: recipeImg           
-        }
+        if(this.props.type === "new") {
+            
+            //create the recipe object that will be sent to the database
+            recipeObj = {
+                id: randId,
+                name: event.target.elements[0].value,
+                description: event.target.elements[1].value,
+                instructions: instructions,
+                ingredients: ingredients,
+                image: recipeImg           
+            }
 
-        if(this.props.type == "new") {
             this.addRecipe(recipeObj);
-        } else if(this.props.type == "edit") {
+
+        } else if(this.props.type === "edit") {
+            console.log(event.target.id);
+            //create the recipe object that will be sent to the database
+            recipeObj = {
+                id: event.target.id,
+                name: event.target.elements[0].value,
+                description: event.target.elements[1].value,
+                instructions: instructions,
+                ingredients: ingredients,
+                image: recipeImg           
+            }
+
             this.updateRecipe(recipeObj);
+
         }
         
 
@@ -208,7 +226,7 @@ class RecipeHandler extends Component {
 
             var oldRecipes = doc.data().recipes;
 
-            let arrayId = this.props.userData.recipes.findIndex(x => x.id == this.props.id);
+            let arrayId = this.props.userData.recipes.findIndex(x => x.id === this.props.id);
 
             oldRecipes[arrayId] = recipe;
 

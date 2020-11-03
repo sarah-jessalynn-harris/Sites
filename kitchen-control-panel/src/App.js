@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Redirect, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import Home from './Basic/Home';
 import Nav from "./Basic/Nav";
 import LoginHandler from "./Login/index";
@@ -23,7 +23,6 @@ class App extends Component {
   //find out if the user is logged in and show the correct nav and data if so, otherwise show defaults for being logged out
   componentDidMount() {
     fire.auth().onAuthStateChanged((user=> {
-      console.log(this.state.authenticated);
       if (user) {
         this.setState({
           authenticated: true,
@@ -33,8 +32,6 @@ class App extends Component {
 
       this.getData(this.state.currentUser, this.storeData);
 
-      console.log(this.state.authenticated);
-
       } else {
         this.setState({
           authenticated: false,
@@ -42,7 +39,6 @@ class App extends Component {
           loading: false
         });
 
-        console.log(this.state.authenticated);
       }
     }));
   }
@@ -66,7 +62,7 @@ class App extends Component {
                 .collection("users")
                 .doc(doc.id)
                 .onSnapshot(function(doc) {
-                    console.log("Current data: ", doc.data());
+                    // console.log("Current data: ", doc.data());
                     let dataObj = doc.data();
                     callback(dataObj);
                 });

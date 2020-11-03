@@ -25,15 +25,13 @@ class PantryHandler extends Component {
     //choose if the user is adding a new pantry item, updating a pantry item, or deleting a pantry item
     handleRequest(){
 
-        console.log(this.props.id);
-
         if(this.props.type === "new"){
             this.setState({form: <PantryForm type="new" onSubmit={this.handleNew} uid={this.props.uid} />});
         } else if (this.props.type === "edit"){
             //find array id for this recipe
-            let arrayId = this.props.userData.recipes.findIndex(x => x.id == this.props.id);
+            let arrayId = this.props.userData.inventory.findIndex(x => x.id === this.props.id);
 
-            this.setState({form: <PantryForm type="edit" onSubmit={this.handleNew} uid={this.props.uid} recipeData={this.props.userData.recipes[arrayId]}/>});
+            this.setState({form: <PantryForm type="edit" onSubmit={this.handleNew} uid={this.props.uid} pantryData={this.props.userData.inventory[arrayId]} itemId={this.props.id} />});
         } else if (this.props.type === "delete") {
             this.handleDelete();
         }
@@ -50,7 +48,7 @@ class PantryHandler extends Component {
 
             var oldPantry = doc.data().inventory;
 
-            let arrayId = this.props.userData.inventory.findIndex(x => x.id == this.props.id);
+            let arrayId = this.props.userData.inventory.findIndex(x => x.id === this.props.id);
 
             oldPantry.splice(arrayId, 1);
 
@@ -90,16 +88,35 @@ class PantryHandler extends Component {
 
         }
 
-        var pantryObj = {
-            amount: event.target.elements[0].value,
-            label: event.target.elements[1].value,
-            name: event.target.elements[2].value,
-        }
+        var pantryObj;
 
-        if(this.props.type == "new") {
+        //create custom id for recipe
+        var randId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+
+        if(this.props.type === "new") {
+            
+            pantryObj = {
+                id: randId,
+                amount: event.target.elements[0].value,
+                label: event.target.elements[1].value,
+                name: event.target.elements[2].value,
+            }
+
             this.addItem(pantryObj);
-        } else if(this.props.type == "edit") {
+
+        } else if(this.props.type === "edit") {
+
+            console.log(event.target.id);
+
+            pantryObj = {
+                id: event.target.id,
+                amount: event.target.elements[0].value,
+                label: event.target.elements[1].value,
+                name: event.target.elements[2].value,
+            }
+
             this.updateItem(pantryObj);
+
         }
 
     }
@@ -107,6 +124,8 @@ class PantryHandler extends Component {
     //add a new pantry item to firebase
     addItem(item){
         var id = this.props.id;
+
+        console.log(id);
 
         fire.firestore()
         .collection("users")
@@ -138,7 +157,41 @@ class PantryHandler extends Component {
     }
 
     //update pantry item to firebase
-    updateItem(item){}
+    updateItem(item){
+        var id = this.props.userData.userData.id;
+
+        console.log(id);
+
+        fire.firestore()
+        .collection("users")
+        .doc(id).get().then((doc) => {
+        if (doc.exists) {
+
+            var oldPantry = doc.data().inventory;
+
+            let arrayId = this.props.userData.inventory.findIndex(x => x.id === this.props.id);
+            
+            oldPantry[arrayId] = item;
+
+            
+            fire.firestore()
+            .collection("users")
+            .doc(id)
+            .update(
+                {inventory : oldPantry}
+            ).then(() => {
+                console.log("Document successfully written!");
+                this.setState({update: true});
+            }); 
+
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+    }
 
     render() {
 
