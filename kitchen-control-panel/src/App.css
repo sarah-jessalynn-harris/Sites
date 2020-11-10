@@ -675,3 +675,87 @@ nav {
           .inventory .inventoryItems .inventoryItem .buttons .deleteItem:hover {
             background-color: #A4ADE9;
             cursor: pointer; }
+
+.mealPlan {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #292929;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  justify-content: space-evenly; }
+  .mealPlan button {
+    border: none;
+    background: #84dfe2;
+    font-family: "muli";
+    font-size: 2.0rem;
+    padding: 20px 40px; }
+    .mealPlan button:hover {
+      background-color: #A4ADE9;
+      cursor: pointer; }
+  .mealPlan .calendar {
+    display: flex;
+    flex-direction: column; }
+    .mealPlan .calendar .addMeal {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100; }
+    .mealPlan .calendar .calendarBox {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 20px; }
+      .mealPlan .calendar .calendarBox .dateRow {
+        color: #292929;
+        width: 100%;
+        background-color: #A4ADE9;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px; }
+      .mealPlan .calendar .calendarBox .mealBox {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        background-color: #3d3d3d;
+        padding: 50px;
+        justify-content: space-evenly;
+        align-items: center; }
+        .mealPlan .calendar .calendarBox .mealBox .mealHolder {
+          background-color: #292929; }
+          .mealPlan .calendar .calendarBox .mealBox .mealHolder .slot {
+            width: 100%;
+            background-color: #84dfe2;
+            color: #292929;
+            text-align: center; }
+          .mealPlan .calendar .calendarBox .mealBox .mealHolder .mealRecipeBox {
+            width: 100%;
+            text-align: center; }
+          .mealPlan .calendar .calendarBox .mealBox .mealHolder .buttonBox {
+            padding: 0 20px 20px; }
+            .mealPlan .calendar .calendarBox .mealBox .mealHolder .buttonBox button {
+              padding: 10px 30px; }
+  .mealPlan .mealPicking {
+    display: flex;
+    background-color: #292929;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap; }
+    .mealPlan .mealPicking .dates {
+      display: flex;
+      background-color: #292929;
+      justify-content: space-evenly;
+      width: 40%; }
+    .mealPlan .mealPicking button {
+      padding: 10px 40px;
+      margin-left: auto;
+      order: 2; }
+    .mealPlan .mealPicking input {
+      padding: 10px;
+      background-color: #3d3d3d;
+      border: none;
+      color: #B6B6B6;
+      width: 200px;
+      margin: 5px 0;
+      font-size: 2.0rem; }
