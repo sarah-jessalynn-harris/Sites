@@ -341,7 +341,8 @@ nav {
     padding: 5px 10px;
     min-width: 150px;
     background-color: #84dfe2;
-    color: #292929; }
+    color: #292929;
+    text-transform: capitalize; }
   .card .cardContent {
     width: 100%;
     height: 40%;
@@ -714,6 +715,8 @@ nav {
         align-items: center;
         justify-content: space-between;
         padding: 10px 20px; }
+        .mealPlan .calendar .calendarBox .dateRow h3 {
+          margin: 0; }
       .mealPlan .calendar .calendarBox .mealBox {
         display: flex;
         flex-wrap: wrap;

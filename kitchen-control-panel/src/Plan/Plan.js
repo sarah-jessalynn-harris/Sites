@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-//import PantryItem from "./PantryItem";
+import Week from "./Week";
 import {NavLink} from "react-router-dom";
+import Moment from "react-moment";
 
 
 
@@ -33,7 +34,19 @@ class Plan extends Component {
                 </div>
         
                 <div className="calendar">
-                    <h1> Loading your meal plan... </h1>
+                    {
+                        this.props.userData.mealplan.map((item, key) =>
+
+                        <Week
+                            id = {item.id}
+                            key = {key}
+                            recipe = {item.recipe}
+                            date = {item.date}
+                            slot = {item.slot}
+                            recipeData = {this.props.userData.recipes}
+                        />)
+                        
+                    }
                 </div>
           </div>
         );
