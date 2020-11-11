@@ -70,8 +70,8 @@
     }
 
     @media only screen and (max-width: 500px) {
-        width: 300px;
-        min-height: 100vh;
+        min-width: 300px;
+        min-height: 80vh;
 
         .cardHeader {
             background-position: center;

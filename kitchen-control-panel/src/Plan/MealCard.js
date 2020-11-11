@@ -9,7 +9,7 @@ class MealCard extends Component {
     render() {
 
         var cardBgStyles = {
-            backgroundImage: "url(" + this.props.image + ")"
+            backgroundImage: "url(" + this.props.recipeData.image + ")"
         }
 
         var tagColor;
@@ -24,8 +24,10 @@ class MealCard extends Component {
             tagColor = "#84dfe2";
         }
 
+        
+
         return(
-            <div className="card">
+            <div className="card mealCard" style={{borderColor: tagColor}}>
       
                 <div className="cardHeader" style={cardBgStyles}>
 
@@ -41,18 +43,16 @@ class MealCard extends Component {
 
                     <div className="cardDescription">
 
-                        <h2> {this.props.name} </h2>
-
-                        <p> {this.props.description} </p>
+                        <h2> {this.props.recipeData.name} </h2>
 
                     </div>
 
                     <div className="cardButtons">
 
-                        <NavLink className="cardButton" to={"/recipe/" + this.props.id}> Cook </NavLink>
-                        <NavLink className="cardButton" to={"/plan/edit/" + this.props.id}> Move </NavLink>
-                        <NavLink className="cardButton" to={"/recipe/edit/" + this.props.id}> Edit </NavLink>
-                        <NavLink className="cardButton" to={"/plan/delete/" + this.props.id}> Delete </NavLink>
+                        <NavLink className="cardButton" to={"/recipe/" + this.props.recipe} style={{backgroundColor: tagColor}}> Cook </NavLink>
+                        <NavLink className="cardButton" to={"/plan/edit/" + this.props.id} style={{backgroundColor: tagColor}}> Move </NavLink>
+                        <NavLink className="cardButton" to={"/recipe/edit/" + this.props.recipe} style={{backgroundColor: tagColor}}> Edit </NavLink>
+                        <NavLink className="cardButton" to={"/plan/delete/" + this.props.id} style={{backgroundColor: tagColor}}> Delete </NavLink>
 
                     </div>
 

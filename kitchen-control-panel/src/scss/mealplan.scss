@@ -9,14 +9,14 @@
 
     button {
         border: none;
-        background: $blue;
+        background: $light;
         font-family: "muli";
         font-size: 2.0rem;
         padding: 20px 40px;
         // margin: 0 auto;
         
         &:hover {
-            background-color: $purple;
+            background-color: $white;
             cursor: pointer;
         }
     }
@@ -37,12 +37,12 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            margin: 20px;
+            margin-bottom: 30px;
             
             .dateRow {
                 color: $black;
                 width: 100%;
-                background-color: $purple;
+                background-color: $light;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -55,12 +55,19 @@
 
             .mealBox {
                 display: flex;
-                flex-wrap: wrap;
                 width: 100%;
                 background-color: $grey;
                 padding: 50px;
-                justify-content: space-evenly;
+                padding-left: 10px;
                 align-items: center;
+                overflow-y: auto;
+                white-space: nowrap;
+                border: solid $light 1px;
+
+                .mealCard{
+                    margin: 20px;
+                    background-color: $black;
+                }
 
                 .mealHolder {
                     background-color: $black;
@@ -96,6 +103,7 @@
         align-items: center;
         width: 100%;
         flex-wrap: wrap;
+        margin: 50px auto 10px;
 
         .dates{
             display: flex;
@@ -119,6 +127,10 @@
             margin: 5px 0;
             font-size: 2.0rem;
         }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        padding: 0px;
     }
 
 }

@@ -4,6 +4,18 @@
   box-sizing: border-box;
   outline: none; }
 
+::-webkit-scrollbar {
+  height: 20px;
+  width: 20px; }
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: rgba(92, 91, 91, 0.5); }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(225, 223, 253, 0.5); }
+
 html, body {
   min-height: 100%;
   width: 100%;
@@ -105,10 +117,10 @@ nav {
         width: 100%; } }
   @media only screen and (max-width: 700px) {
     nav {
-      padding: 10px 20px; } }
+      padding: 10px; } }
   @media only screen and (max-width: 550px) {
     nav {
-      height: 100px; }
+      height: 70px; }
       nav .linkBox {
         flex-wrap: wrap; } }
 
@@ -376,8 +388,8 @@ nav {
       font-size: 2.5rem; } }
   @media only screen and (max-width: 500px) {
     .card {
-      width: 300px;
-      min-height: 100vh; }
+      min-width: 300px;
+      min-height: 80vh; }
       .card .cardHeader {
         background-position: center;
         height: 50%; }
@@ -687,12 +699,12 @@ nav {
   justify-content: space-evenly; }
   .mealPlan button {
     border: none;
-    background: #84dfe2;
+    background: #E1DFFD;
     font-family: "muli";
     font-size: 2.0rem;
     padding: 20px 40px; }
     .mealPlan button:hover {
-      background-color: #A4ADE9;
+      background-color: #B6B6B6;
       cursor: pointer; }
   .mealPlan .calendar {
     display: flex;
@@ -706,11 +718,11 @@ nav {
       display: flex;
       flex-direction: column;
       width: 100%;
-      margin: 20px; }
+      margin-bottom: 30px; }
       .mealPlan .calendar .calendarBox .dateRow {
         color: #292929;
         width: 100%;
-        background-color: #A4ADE9;
+        background-color: #E1DFFD;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -719,12 +731,17 @@ nav {
           margin: 0; }
       .mealPlan .calendar .calendarBox .mealBox {
         display: flex;
-        flex-wrap: wrap;
         width: 100%;
         background-color: #3d3d3d;
         padding: 50px;
-        justify-content: space-evenly;
-        align-items: center; }
+        padding-left: 10px;
+        align-items: center;
+        overflow-y: auto;
+        white-space: nowrap;
+        border: solid #E1DFFD 1px; }
+        .mealPlan .calendar .calendarBox .mealBox .mealCard {
+          margin: 20px;
+          background-color: #292929; }
         .mealPlan .calendar .calendarBox .mealBox .mealHolder {
           background-color: #292929; }
           .mealPlan .calendar .calendarBox .mealBox .mealHolder .slot {
@@ -744,7 +761,8 @@ nav {
     background-color: #292929;
     align-items: center;
     width: 100%;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    margin: 50px auto 10px; }
     .mealPlan .mealPicking .dates {
       display: flex;
       background-color: #292929;
@@ -762,3 +780,6 @@ nav {
       width: 200px;
       margin: 5px 0;
       font-size: 2.0rem; }
+  @media only screen and (max-width: 1200px) {
+    .mealPlan {
+      padding: 0px; } }
