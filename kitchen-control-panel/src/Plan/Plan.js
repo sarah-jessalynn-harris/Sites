@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Day from "./Day";
 import {NavLink} from "react-router-dom";
-import {add, format} from "date-fns";
+import {add, format, isAfter, isBefore, isEqual, isValid} from "date-fns";
 
 
 class Plan extends Component {
@@ -10,27 +10,51 @@ class Plan extends Component {
         super();
         this.state = {
             weeks:{},
-            loading: true
+            loading: true,
+            start: "",
+            end: ""
         }
+
+        this.handleRefresh = this.handleRefresh.bind(this);
     }
 
     componentDidMount(){
                 //get start and end dates (with proper formatting)
-                var today = new Date();
-                var start = format(today, "yyyy-MM-dd");
-                var week = add(today, {days: 7});
-                var end = format(week, "yyyy-MM-dd");
 
-                this.setState({
-                    start: start,
-                    end: end
-                });
+                if(this.state.start === ""){
+                    var today = new Date();
+                    var start = format(today, "yyyy-MM-dd");
+                    var week = add(today, {days: 7});
+                    var end = format(week, "yyyy-MM-dd");
+    
+                    this.setState({
+                        start: start,
+                        end: end
+                    });
+
+                    console.log("here");
+                }
+
         
-                //seperate the meal plan information into days as an object
+                //create an object to hold days of the week
                 var weeks = {};
-        
+
+                console.log(this.state.start);
+
+                //seperate the meal plan information into days as an object based on these dates and add the meals to the days of the weeks that are planned
                 this.props.userData.mealplan.map((item, key) =>{
-        
+                    
+
+                    var dateFormat = new Date(item.date); 
+                    var startFormat = new Date(this.state.start);
+                    var endFormat = new Date(this.state.end);
+
+                    console.log(startFormat);
+
+                    if(isAfter(dateFormat, startFormat) && isBefore(dateFormat, endFormat)){
+                        console.log("short");
+                    }
+
                     if(weeks.hasOwnProperty(item.date)){
                         let arrayId = this.props.userData.recipes.findIndex(x => x.id === item.recipe);
 
@@ -69,7 +93,27 @@ class Plan extends Component {
                 });
     }
 
+    handleRefresh(event){
+        event.preventDefault();
+
+        var newStart = new Date(event.target.elements[0].value);
+        var newEnd = new Date(event.target.elements[1].value);
+
+        if(!isAfter(newEnd, newStart) && !isEqual(newEnd, newStart)) {
+            alert("End date must come after start date chronologically.")
+        } else {
+
+            this.setState({
+                start: event.target.elements[0].value,
+                end: event.target.elements[1].value
+            });
+        }
+        
+    }
+
     render() {
+
+        console.log(this.state);
 
         if(this.state.loading){
 
@@ -83,26 +127,27 @@ class Plan extends Component {
 
             return(
                 <div className="mealPlan" id="mealPlan">
+               
 
-                    <div className="mealPicking">
-                        <h2> Plan Week</h2>
+                        <form className="mealPicking" onSubmit={this.handleRefresh}>
+                            <h2> Plan Week</h2>
 
-                        <div className="dates">
-                            <div>
+                            <div className="dates">
                                 {/* <label for="date"> Start Date: </label> */}
-                                <input name="date" type="date" id="date1" defaultValue={this.state.start}/>
-                            </div>
+                                <input className="input" name="date" type="date" id="date1" defaultValue={this.state.start}/>
+                           
                 
-                            <h4> to </h4>
+                                <h4> to </h4>
                 
-                            <div>
+                           
                                 {/* <label for="date2"> End Date: </label> */}
-                                <input name="date2" type="date" id="date2" defaultValue={this.state.end}/>
+                                <input className="input" name="date2" type="date" id="date2" defaultValue={this.state.end}/>
                             </div>
-                        </div>
+
+                            <input type="submit" id="mealFilter" value="Refresh Plan"/> 
+                        </form>
         
-                        <button id="mealFilter"> Refresh Plan</button>
-                    </div>
+                        
             
                     <div className="calendar">
                         {
@@ -112,6 +157,7 @@ class Plan extends Component {
                                         key = {key}
                                         date = {key}
                                         array = {this.state.weeks[key]}
+                                        planned = {true}
                                     />
                             })
                         }

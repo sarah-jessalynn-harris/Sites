@@ -760,26 +760,35 @@ nav {
     display: flex;
     background-color: #292929;
     align-items: center;
+    justify-content: space-evenly;
     width: 100%;
-    flex-wrap: wrap;
-    margin: 50px auto 10px; }
-    .mealPlan .mealPicking .dates {
-      display: flex;
-      background-color: #292929;
-      justify-content: space-evenly;
-      width: 40%; }
-    .mealPlan .mealPicking button {
-      padding: 10px 40px;
-      margin-left: auto;
-      order: 2; }
-    .mealPlan .mealPicking input {
+    margin: 50px auto 20px; }
+    .mealPlan .mealPicking h2 {
+      margin-right: 20px; }
+    .mealPlan .mealPicking .input {
       padding: 10px;
       background-color: #3d3d3d;
       border: none;
       color: #B6B6B6;
       width: 200px;
-      margin: 5px 0;
+      margin: 0 20px;
       font-size: 2.0rem; }
+    .mealPlan .mealPicking .dates {
+      display: flex;
+      background-color: #292929;
+      justify-content: space-between; }
+    .mealPlan .mealPicking #mealFilter {
+      padding: 15px 30px;
+      margin-left: auto;
+      order: 2;
+      border: none;
+      background: #E1DFFD;
+      font-family: "muli";
+      font-size: 2.0rem;
+      color: #292929; }
+      .mealPlan .mealPicking #mealFilter:hover {
+        background-color: #B6B6B6;
+        cursor: pointer; }
   @media only screen and (max-width: 1200px) {
     .mealPlan {
       padding: 0px; } }
