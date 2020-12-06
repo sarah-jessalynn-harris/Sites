@@ -101,7 +101,7 @@
         display: flex;
         background-color: $black;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
         width: 100%;
         margin: 50px auto 20px;
 
@@ -117,24 +117,26 @@
             width: 200px;
             margin: 0 20px;
             font-size: 2.0rem;
+            height: 50px;
         }
 
         .dates{
             display: flex;
             background-color: $black;
             justify-content: space-between;
+            align-items: center;
             // width: 40%;
         }
 
         #mealFilter {
             padding: 15px 30px;
-            margin-left: auto;
             order: 2;
             border: none;
             background: $light;
             font-family: "muli";
             font-size: 2.0rem;
             color: $black;
+            height: 50px;
             
             &:hover {
                 background-color: $white;

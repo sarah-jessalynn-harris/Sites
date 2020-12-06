@@ -130,9 +130,9 @@ class Plan extends Component {
                
 
                         <form className="mealPicking" onSubmit={this.handleRefresh}>
-                            <h2> Plan Week</h2>
-
+                           
                             <div className="dates">
+                            <h2> Plan Week</h2>
                                 {/* <label for="date"> Start Date: </label> */}
                                 <input className="input" name="date" type="date" id="date1" defaultValue={this.state.start}/>
                            
@@ -142,9 +142,11 @@ class Plan extends Component {
                            
                                 {/* <label for="date2"> End Date: </label> */}
                                 <input className="input" name="date2" type="date" id="date2" defaultValue={this.state.end}/>
+                                <input type="submit" id="mealFilter" value="Refresh Plan"/> 
                             </div>
 
-                            <input type="submit" id="mealFilter" value="Refresh Plan"/> 
+                       
+                            <button> Add Meal</button>
                         </form>
         
                         

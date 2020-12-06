@@ -760,7 +760,7 @@ nav {
     display: flex;
     background-color: #292929;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
     margin: 50px auto 20px; }
     .mealPlan .mealPicking h2 {
@@ -772,20 +772,22 @@ nav {
       color: #B6B6B6;
       width: 200px;
       margin: 0 20px;
-      font-size: 2.0rem; }
+      font-size: 2.0rem;
+      height: 50px; }
     .mealPlan .mealPicking .dates {
       display: flex;
       background-color: #292929;
-      justify-content: space-between; }
+      justify-content: space-between;
+      align-items: center; }
     .mealPlan .mealPicking #mealFilter {
       padding: 15px 30px;
-      margin-left: auto;
       order: 2;
       border: none;
       background: #E1DFFD;
       font-family: "muli";
       font-size: 2.0rem;
-      color: #292929; }
+      color: #292929;
+      height: 50px; }
       .mealPlan .mealPicking #mealFilter:hover {
         background-color: #B6B6B6;
         cursor: pointer; }
