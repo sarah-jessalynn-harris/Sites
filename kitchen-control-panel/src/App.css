@@ -2,69 +2,80 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: none; }
+  outline: none;
+}
 
 ::-webkit-scrollbar {
   height: 20px;
-  width: 20px; }
+  width: 20px;
+}
 
 ::-webkit-scrollbar-track {
   border-radius: 0;
-  background: rgba(92, 91, 91, 0.5); }
+  background: rgba(92, 91, 91, 0.5);
+}
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
-  background: rgba(225, 223, 253, 0.5); }
+  background: rgba(225, 223, 253, 0.5);
+}
 
 html, body {
   min-height: 100%;
   width: 100%;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+}
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+}
 
 body {
   font-size: 2.5rem;
   font-family: "mallanna";
   background-color: #292929;
-  color: #B6B6B6; }
+  color: #B6B6B6;
+}
 
 h1, h2, h3, h4, h5, h6, p {
-  margin-bottom: 1.6rem; }
+  margin-bottom: 1.6rem;
+}
 
 .loadingScreen {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
 @font-face {
   font-family: "lato";
-  src: url("font/Lato/Lato-Regular.ttf"); }
-
+  src: url("font/Lato/Lato-Regular.ttf");
+}
 @font-face {
   font-family: "mallanna";
-  src: url("font/Mallanna/Mallanna-Regular.ttf"); }
-
+  src: url("font/Mallanna/Mallanna-Regular.ttf");
+}
 @font-face {
   font-family: "muli";
-  src: url("font/Muli/Muli-Regular.ttf"); }
-
+  src: url("font/Muli/Muli-Regular.ttf");
+}
 @font-face {
   font-family: "patrick";
-  src: url("font/Patrick_Hand_SC/PatrickHandSC-Regular.ttf"); }
-
+  src: url("font/Patrick_Hand_SC/PatrickHandSC-Regular.ttf");
+}
 @media only screen and (max-width: 900px) {
   html {
-    font-size: 50%; } }
-
+    font-size: 50%;
+  }
+}
 @media only screen and (max-width: 600px) {
   html {
-    font-size: 45%; } }
-
+    font-size: 45%;
+  }
+}
 nav {
   width: 100vw;
   height: 60px;
@@ -74,55 +85,75 @@ nav {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  font-size: 2.0rem; }
-  nav .link {
-    text-decoration: none;
-    color: #B6B6B6;
-    margin: 0 1.0rem; }
-    nav .link:hover {
-      color: #A4ADE9;
-      cursor: pointer; }
-  nav .logo {
-    width: 20%;
-    font-family: "muli";
-    color: #84dfe2;
-    display: flex;
-    align-items: center; }
-    nav .logo:hover {
-      cursor: pointer;
-      color: #A4ADE9; }
-  nav .logoImg {
-    background-image: url("./img/logo.jpg");
-    background-size: cover;
-    width: 5.0rem;
-    height: 5.0rem;
-    margin-right: 10px; }
-  nav .links {
-    width: 30%;
-    display: flex;
-    justify-content: space-evenly; }
+  font-size: 2rem;
+}
+nav .link {
+  text-decoration: none;
+  color: #B6B6B6;
+  margin: 0 1rem;
+}
+nav .link:hover {
+  color: #A4ADE9;
+  cursor: pointer;
+}
+nav .logo {
+  width: 20%;
+  font-family: "muli";
+  color: #84dfe2;
+  display: flex;
+  align-items: center;
+}
+nav .logo:hover {
+  cursor: pointer;
+  color: #A4ADE9;
+}
+nav .logoImg {
+  background-image: url("./img/logo.jpg");
+  background-size: cover;
+  width: 5rem;
+  height: 5rem;
+  margin-right: 10px;
+}
+nav .links {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+}
+nav .linkBox {
+  width: 70%;
+}
+@media only screen and (max-width: 1400px) {
   nav .linkBox {
-    width: 70%; }
-  @media only screen and (max-width: 1400px) {
-    nav .linkBox {
-      width: 80%; }
-    nav .logo p {
-      display: none; } }
-  @media only screen and (max-width: 1200px) {
-    nav {
-      flex-wrap: wrap; }
-      nav .logo {
-        display: none; }
-      nav .linkBox {
-        width: 100%; } }
-  @media only screen and (max-width: 700px) {
-    nav {
-      padding: 10px; } }
-  @media only screen and (max-width: 550px) {
-    nav {
-      height: 70px; }
-      nav .linkBox {
-        flex-wrap: wrap; } }
+    width: 80%;
+  }
+  nav .logo p {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  nav {
+    flex-wrap: wrap;
+  }
+  nav .logo {
+    display: none;
+  }
+  nav .linkBox {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  nav {
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  nav {
+    height: 70px;
+  }
+  nav .linkBox {
+    flex-wrap: wrap;
+  }
+}
 
 .login {
   width: 100%;
@@ -133,46 +164,56 @@ nav {
   padding: 110px 50px 50px;
   background-image: url("img/kitchen.jpg");
   background-size: cover;
-  background-repeat: no-repeat; }
-  @media only screen and (max-width: 1450px) {
-    .login {
-      flex-direction: column; } }
+  background-repeat: no-repeat;
+}
+@media only screen and (max-width: 1450px) {
+  .login {
+    flex-direction: column;
+  }
+}
 
 .form {
   background-color: #3d3d3d;
   padding: 50px 75px;
   display: flex;
   flex-direction: column;
-  margin: 50px 0; }
-  .form input {
-    padding: 10px;
-    background-color: #292929;
-    border: none;
-    color: #B6B6B6;
-    width: 450px;
-    margin: 5px 0;
-    font-size: 2.0rem; }
-  .form button {
-    border: none;
-    background: #84dfe2;
-    font-family: "muli";
-    padding: 10px;
-    margin: 20px 0;
-    font-size: 2.0rem;
-    width: 100%; }
-    .form button:hover {
-      background-color: #A4ADE9;
-      cursor: pointer; }
-  .form #forgot {
-    background-color: #292929;
-    color: #B6B6B6; }
-    .form #forgot:hover {
-      background-color: #A4ADE9;
-      color: #292929; }
+  margin: 50px 0;
+}
+.form input {
+  padding: 10px;
+  background-color: #292929;
+  border: none;
+  color: #B6B6B6;
+  width: 450px;
+  margin: 5px 0;
+  font-size: 2rem;
+}
+.form button {
+  border: none;
+  background: #84dfe2;
+  font-family: "muli";
+  padding: 10px;
+  margin: 20px 0;
+  font-size: 2rem;
+  width: 100%;
+}
+.form button:hover {
+  background-color: #A4ADE9;
+  cursor: pointer;
+}
+.form #forgot {
+  background-color: #292929;
+  color: #B6B6B6;
+}
+.form #forgot:hover {
+  background-color: #A4ADE9;
+  color: #292929;
+}
 
 .loginForm {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .forgottenForm button {
   border: none;
@@ -180,105 +221,127 @@ nav {
   font-family: "muli";
   padding: 10px;
   margin: 20px 0;
-  font-size: 2.0rem; }
-  .forgottenForm button:hover {
-    background-color: #A4ADE9;
-    cursor: pointer; }
-
+  font-size: 2rem;
+}
+.forgottenForm button:hover {
+  background-color: #A4ADE9;
+  cursor: pointer;
+}
 .forgottenForm #forgot {
   background-color: #292929;
-  color: #B6B6B6; }
-  .forgottenForm #forgot:hover {
-    background-color: #A4ADE9;
-    color: #292929; }
+  color: #B6B6B6;
+}
+.forgottenForm #forgot:hover {
+  background-color: #A4ADE9;
+  color: #292929;
+}
 
 .recipeForms input {
-  width: 99%; }
-
+  width: 99%;
+}
 .recipeForms .files {
   display: flex;
   justify-content: space-between;
-  align-items: center; }
-  .recipeForms .files #file {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1; }
-  .recipeForms .files #inputFile {
-    border: none;
-    background: #84dfe2;
-    color: #292929;
-    font-family: "muli";
-    padding: 10px;
-    margin: 20px 0;
-    font-size: 2.0rem;
-    width: 20%;
-    text-align: center; }
-    .recipeForms .files #inputFile:hover {
-      background-color: #A4ADE9;
-      cursor: pointer; }
-  .recipeForms .files #image {
-    font-size: 2.0rem;
-    width: 79%;
-    height: 50px; }
-
+  align-items: center;
+}
+.recipeForms .files #file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.recipeForms .files #inputFile {
+  border: none;
+  background: #84dfe2;
+  color: #292929;
+  font-family: "muli";
+  padding: 10px;
+  margin: 20px 0;
+  font-size: 2rem;
+  width: 20%;
+  text-align: center;
+}
+.recipeForms .files #inputFile:hover {
+  background-color: #A4ADE9;
+  cursor: pointer;
+}
+.recipeForms .files #image {
+  font-size: 2rem;
+  width: 79%;
+  height: 50px;
+}
 .recipeForms h3 {
-  margin-top: 10px; }
-
+  margin-top: 10px;
+}
 .recipeForms .moreFields {
   padding: 5px 15px;
   margin: 10px 0;
-  font-size: 2.0rem;
-  width: 100%; }
-
+  font-size: 2rem;
+  width: 100%;
+}
 .recipeForms .ingredientBox {
   display: flex;
-  flex-direction: column; }
-  .recipeForms .ingredientBox input {
-    width: 33%; }
-  .recipeForms .ingredientBox select {
-    padding: 10px;
-    background-color: #292929;
-    border: none;
-    color: #B6B6B6;
-    width: 32%;
-    margin: 5px 0;
-    font-size: 2.0rem; }
-  .recipeForms .ingredientBox #ingredient1 select {
-    margin: 0 5px; }
-
+  flex-direction: column;
+}
+.recipeForms .ingredientBox input {
+  width: 33%;
+}
+.recipeForms .ingredientBox select {
+  padding: 10px;
+  background-color: #292929;
+  border: none;
+  color: #B6B6B6;
+  width: 32%;
+  margin: 5px 0;
+  font-size: 2rem;
+}
+.recipeForms .ingredientBox #ingredient1 select {
+  margin: 0 5px;
+}
 .recipeForms .instructions {
   display: flex;
-  flex-direction: column; }
-  .recipeForms .instructions input {
-    width: 99%; }
-
+  flex-direction: column;
+}
+.recipeForms .instructions input {
+  width: 99%;
+}
 .recipeForms #fileBox {
   width: 100%;
-  text-align: center; }
-  .recipeForms #fileBox .urlPreview {
-    border: 1px solid #84dfe2;
-    text-decoration: none;
-    color: #84dfe2;
-    padding: 5px 20px;
-    width: 100%; }
-    .recipeForms #fileBox .urlPreview:hover {
-      color: #A4ADE9;
-      cursor: pointer; }
-
+  text-align: center;
+}
+.recipeForms #fileBox .urlPreview {
+  border: 1px solid #84dfe2;
+  text-decoration: none;
+  color: #84dfe2;
+  padding: 5px 20px;
+  width: 100%;
+}
+.recipeForms #fileBox .urlPreview:hover {
+  color: #A4ADE9;
+  cursor: pointer;
+}
 .recipeForms .buttons {
-  display: flex; }
-  .recipeForms .buttons #addRecipe, .recipeForms .buttons #cancel, .recipeForms .buttons .updateRecipe, .recipeForms .buttons #addItem, .recipeForms .buttons .updateItem, .recipeForms .buttons #addMeal, .recipeForms .buttons .updateMeal {
-    width: 49%;
-    margin: 50px auto 0px; }
-
+  display: flex;
+}
+.recipeForms .buttons #addRecipe, .recipeForms .buttons #cancel, .recipeForms .buttons .updateRecipe, .recipeForms .buttons #addItem, .recipeForms .buttons .updateItem, .recipeForms .buttons #addMeal, .recipeForms .buttons .updateMeal {
+  width: 49%;
+  margin: 50px auto 0px;
+}
 .recipeForms #cancel {
-  background-color: #FFC68A; }
-  .recipeForms #cancel:hover {
-    background-color: #A4ADE9; }
+  background-color: #FFC68A;
+}
+.recipeForms #cancel:hover {
+  background-color: #A4ADE9;
+}
 
+.mealForm {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  margin: 35px auto 0;
+}
 .mealForm select {
   padding: 10px;
   background-color: #292929;
@@ -286,52 +349,73 @@ nav {
   color: #B6B6B6;
   margin: 5px 0;
   width: 100%;
-  font-size: 2.0rem; }
+  font-size: 2rem;
+  width: 300px;
+}
+.mealForm input {
+  width: 300px;
+}
+.mealForm .buttons {
+  flex-direction: column;
+}
+.mealForm .buttons .options {
+  width: 300px;
+}
 
 .home {
-  width: 100%; }
-  .home .homeButton {
-    border: none;
-    background: #84dfe2;
-    font-family: "muli";
-    font-size: 2.0rem;
-    padding: 20px;
-    margin: 0 auto;
-    text-decoration: none;
-    color: #292929; }
-    .home .homeButton:hover {
-      background-color: #A4ADE9;
-      cursor: pointer; }
-    .home .homeButton:active {
-      color: #292929; }
-  .home .header {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    background-image: url("./img/kitchen.jpg");
-    background-size: cover;
-    background-repeat: no-repeat; }
-    .home .header p {
-      color: white;
-      font-size: 5.0rem; }
-    .home .header .sub {
-      font-size: 3.5rem;
-      font-style: italic;
-      color: #84dfe2; }
-  .home .intro {
-    width: 100%;
-    padding: 50px;
-    display: flex;
-    flex-direction: column; }
-    .home .intro h2 {
-      color: #84dfe2; }
-    .home .intro h3 {
-      color: #A4ADE9;
-      font-style: italic; }
+  width: 100%;
+}
+.home .homeButton {
+  border: none;
+  background: #84dfe2;
+  font-family: "muli";
+  font-size: 2rem;
+  padding: 20px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #292929;
+}
+.home .homeButton:hover {
+  background-color: #A4ADE9;
+  cursor: pointer;
+}
+.home .homeButton:active {
+  color: #292929;
+}
+.home .header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-image: url("./img/kitchen.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.home .header p {
+  color: white;
+  font-size: 5rem;
+}
+.home .header .sub {
+  font-size: 3.5rem;
+  font-style: italic;
+  color: #84dfe2;
+}
+.home .intro {
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.home .intro h2 {
+  color: #84dfe2;
+}
+.home .intro h3 {
+  color: #A4ADE9;
+  font-style: italic;
+}
 
 .card {
   width: 450px;
@@ -340,69 +424,85 @@ nav {
   background-color: #3d3d3d;
   flex-direction: column;
   margin: 20px;
-  border: solid #84dfe2 1px; }
+  border: solid #84dfe2 1px;
+}
+.card .cardHeader {
+  width: 100%;
+  height: 60%;
+  background-size: cover;
+  display: flex;
+  background-color: #E1DFFD;
+}
+.card .cardBanner p {
+  margin-top: 30px;
+  font-size: 2rem;
+  padding: 5px 10px;
+  min-width: 150px;
+  background-color: #84dfe2;
+  color: #292929;
+  text-transform: capitalize;
+}
+.card .cardContent {
+  width: 100%;
+  height: 40%;
+  padding: 15px;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.card .cardButtons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.card .cardButton {
+  text-decoration: none;
+  border: none;
+  background: #84dfe2;
+  font-family: "muli";
+  font-size: 1.7rem;
+  padding: 5px;
+  width: 90px;
+  text-align: center;
+  color: #292929;
+  border-radius: 3px;
+  margin: 5px 10px;
+}
+.card .cardButton:hover {
+  background-color: #A4ADE9;
+  cursor: pointer;
+}
+@media only screen and (max-width: 900px) {
+  .card .cardBanner p, .card .cardContent {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .card {
+    min-width: 300px;
+    min-height: 80vh;
+  }
   .card .cardHeader {
-    width: 100%;
-    height: 60%;
-    background-size: cover;
-    display: flex;
-    background-color: #E1DFFD; }
-  .card .cardBanner p {
-    margin-top: 30px;
-    font-size: 2.0rem;
-    padding: 5px 10px;
-    min-width: 150px;
-    background-color: #84dfe2;
-    color: #292929;
-    text-transform: capitalize; }
+    background-position: center;
+    height: 50%;
+  }
   .card .cardContent {
-    width: 100%;
-    height: 40%;
-    padding: 15px;
-    font-size: 2.0rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly; }
+    height: 50%;
+  }
+  .card .cardBanner p {
+    font-size: 2.5rem;
+    min-width: 100px;
+  }
   .card .cardButtons {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center; }
+    flex-direction: column;
+  }
   .card .cardButton {
-    text-decoration: none;
-    border: none;
-    background: #84dfe2;
-    font-family: "muli";
-    font-size: 1.7rem;
-    padding: 5px;
-    width: 90px;
-    text-align: center;
-    color: #292929;
-    border-radius: 3px;
-    margin: 5px 10px; }
-    .card .cardButton:hover {
-      background-color: #A4ADE9;
-      cursor: pointer; }
-  @media only screen and (max-width: 900px) {
-    .card .cardBanner p, .card .cardContent {
-      font-size: 2.5rem; } }
-  @media only screen and (max-width: 500px) {
-    .card {
-      min-width: 300px;
-      min-height: 80vh; }
-      .card .cardHeader {
-        background-position: center;
-        height: 50%; }
-      .card .cardContent {
-        height: 50%; }
-      .card .cardBanner p {
-        font-size: 2.5rem;
-        min-width: 100px; }
-      .card .cardButtons {
-        flex-direction: column; }
-      .card .cardButton {
-        width: 90%;
-        margin: 10px 0px; } }
+    width: 90%;
+    margin: 10px 0px;
+  }
+}
 
 .dashboard {
   width: 100%;
@@ -411,154 +511,192 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 50px;
-  justify-content: space-evenly; }
-  .dashboard .overview {
-    padding: 20px;
-    width: 100%; }
-    .dashboard .overview .box {
-      width: 100%;
-      height: 100%;
-      padding: 20px;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center; }
-      .dashboard .overview .box .calendarBox {
-        display: flex;
-        flex-direction: column;
-        width: 25%;
-        border: 1px #292929 solid; }
-        .dashboard .overview .box .calendarBox .dateRow {
-          color: #292929;
-          width: 100%;
-          background-color: #A4ADE9;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 10px 20px; }
-        .dashboard .overview .box .calendarBox .mealBox {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          background-color: #3d3d3d;
-          padding: 50px;
-          justify-content: space-evenly;
-          align-items: center; }
-          .dashboard .overview .box .calendarBox .mealBox .mealHolder {
-            border: none;
-            background: #292929;
-            font-family: "muli";
-            font-size: 2.0rem;
-            padding: 10px 60px;
-            margin: 20px auto; }
-  .dashboard .dashButtons {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    padding: 50px; }
-    .dashboard .dashButtons button {
-      border: none;
-      background: #84dfe2;
-      font-family: "muli";
-      font-size: 2.0rem;
-      padding: 20px 40px;
-      margin: 0 auto; }
-      .dashboard .dashButtons button:hover {
-        background-color: #A4ADE9;
-        cursor: pointer; }
+  justify-content: space-evenly;
+}
+.dashboard .overview {
+  padding: 20px;
+  width: 100%;
+}
+.dashboard .overview .box {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.dashboard .overview .box .calendarBox {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  border: 1px #292929 solid;
+}
+.dashboard .overview .box .calendarBox .dateRow {
+  color: #292929;
+  width: 100%;
+  background-color: #A4ADE9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.dashboard .overview .box .calendarBox .mealBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #3d3d3d;
+  padding: 50px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.dashboard .overview .box .calendarBox .mealBox .mealHolder {
+  border: none;
+  background: #292929;
+  font-family: "muli";
+  font-size: 2rem;
+  padding: 10px 60px;
+  margin: 20px auto;
+}
+.dashboard .dashButtons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+}
+.dashboard .dashButtons button {
+  border: none;
+  background: #84dfe2;
+  font-family: "muli";
+  font-size: 2rem;
+  padding: 20px 40px;
+  margin: 0 auto;
+}
+.dashboard .dashButtons button:hover {
+  background-color: #A4ADE9;
+  cursor: pointer;
+}
 
 .account {
   width: 100%;
   min-height: 100vh;
   background-color: #292929;
-  padding: 150px 100px 100px; }
-  .account .accountCard {
-    display: flex;
-    flex-direction: column;
-    background-color: #3d3d3d;
-    border: solid #84dfe2 1px; }
+  padding: 150px 100px 100px;
+}
+.account .accountCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #3d3d3d;
+  border: solid #84dfe2 1px;
+}
+.account .accountHeader {
+  width: 100%;
+  height: 35rem;
+}
+.account .background {
+  width: 100%;
+  height: 90%;
+  background-image: url("./img/veggies.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+.account .avatar {
+  width: 18vw;
+  height: 18vw;
+  margin-top: 200px;
+  background-image: url("./img/avatar.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.account .accountContent {
+  padding: 50px;
+}
+@media only screen and (max-width: 1500px) {
   .account .accountHeader {
-    width: 100%;
-    height: 35.0rem; }
-  .account .background {
-    width: 100%;
-    height: 90%;
-    background-image: url("./img/food.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center; }
+    height: 30 rem;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .account .accountHeader {
+    height: 20 rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .account .accountHeader {
+    height: 15rem;
+  }
   .account .avatar {
-    width: 18vw;
-    height: 18vw;
-    margin-top: 200px;
-    background-image: url("./img/avatar.png");
-    background-repeat: no-repeat;
-    background-size: cover; }
+    margin-top: 50px;
+  }
   .account .accountContent {
-    padding: 50px; }
-  @media only screen and (max-width: 1500px) {
-    .account .accountHeader {
-      height: 30.0 rem; } }
-  @media only screen and (max-width: 1200px) {
-    .account .accountHeader {
-      height: 20.0 rem; } }
-  @media only screen and (max-width: 900px) {
-    .account .accountHeader {
-      height: 15.0rem; }
-    .account .avatar {
-      margin-top: 50px; }
-    .account .accountContent {
-      padding: 20px; } }
-  @media only screen and (max-width: 600px) {
-    .account {
-      padding: 150px 50px 50px; }
-      .account .avatar {
-        width: 15vw;
-        height: 15vw; } }
-  @media only screen and (max-width: 375px) {
-    .account {
-      padding: 150px 20px 20px; }
-      .account .accountHeader {
-        height: 5.0rem;
-        margin-bottom: 25px; }
-      .account .avatar {
-        margin-top: 15px; } }
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .account {
+    padding: 150px 50px 50px;
+  }
+  .account .avatar {
+    width: 15vw;
+    height: 15vw;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .account {
+    padding: 150px 20px 20px;
+  }
+  .account .accountHeader {
+    height: 5rem;
+    margin-bottom: 25px;
+  }
+  .account .avatar {
+    margin-top: 15px;
+  }
+}
 
 .recipes {
   width: 100%;
   min-height: 100vh;
   padding: 50px;
-  background-color: #292929; }
-  .recipes .recipesHeading {
-    width: 100%;
-    padding: 50px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; }
-  .recipes .recipesList {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center; }
-  .recipes .recipesButton {
-    text-decoration: none;
-    border: none;
-    background: #84dfe2;
-    font-family: "muli";
-    font-size: 2.0rem;
-    padding: 10px;
-    min-width: 15%;
-    border-radius: 3px;
-    color: #292929;
-    text-align: center; }
-    .recipes .recipesButton:hover {
-      background-color: #A4ADE9;
-      cursor: pointer; }
-  @media only screen and (max-width: 600px) {
-    .recipes {
-      padding: 80px 10px 10px; } }
+  background-color: #292929;
+}
+.recipes .recipesHeading {
+  width: 100%;
+  padding: 50px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.recipes .recipesList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.recipes .recipesButton {
+  text-decoration: none;
+  border: none;
+  background: #84dfe2;
+  font-family: "muli";
+  font-size: 2rem;
+  padding: 10px;
+  min-width: 15%;
+  border-radius: 3px;
+  color: #292929;
+  text-align: center;
+}
+.recipes .recipesButton:hover {
+  background-color: #A4ADE9;
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  .recipes {
+    padding: 80px 10px 10px;
+  }
+}
 
 .recipe {
   width: 100%;
@@ -568,64 +706,79 @@ nav {
   align-items: center;
   justify-content: center;
   padding: 100px 20px 50px;
-  background-color: #3d3d3d; }
-  .recipe .recipeData {
-    width: 90%;
-    background-color: #292929;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border: 1px solid #84dfe2; }
-  .recipe .title {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 20px 0;
-    color: #292929; }
-    .recipe .title img {
-      width: 100%; }
-    .recipe .title h1, .recipe .title p {
-      background-color: #84dfe2;
-      width: 100%;
-      text-align: center; }
-    .recipe .title h1 {
-      background-color: #292929;
-      color: #84dfe2; }
-  .recipe .listRecipeData {
-    width: 100%;
-    display: flex;
-    padding: 20px;
-    flex-wrap: wrap; }
+  background-color: #3d3d3d;
+}
+.recipe .recipeData {
+  width: 90%;
+  background-color: #292929;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 1px solid #84dfe2;
+}
+.recipe .title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px 0;
+  color: #292929;
+}
+.recipe .title img {
+  width: 100%;
+}
+.recipe .title h1, .recipe .title p {
+  background-color: #84dfe2;
+  width: 100%;
+  text-align: center;
+}
+.recipe .title h1 {
+  background-color: #292929;
+  color: #84dfe2;
+}
+.recipe .listRecipeData {
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.recipe .ingredientsDisplay, .recipe .instructionsDisplay {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.recipe .instructionsWrapper {
+  display: flex;
+}
+.recipe .recipeOptions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+}
+.recipe .recipeOptions .button {
+  color: #292929;
+  background-color: #84dfe2;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 20px;
+  width: 90%;
+  text-align: center;
+}
+.recipe .recipeOptions .button:hover {
+  background-color: #A4ADE9;
+  cursor: pointer;
+}
+@media only screen and (max-width: 550px) {
+  .recipe {
+    padding: 150px 10px 10px;
+  }
   .recipe .ingredientsDisplay, .recipe .instructionsDisplay {
-    display: flex;
-    flex-direction: column;
-    padding: 20px; }
-  .recipe .instructionsWrapper {
-    display: flex; }
-  .recipe .recipeOptions {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 20px; }
-    .recipe .recipeOptions .button {
-      color: #292929;
-      background-color: #84dfe2;
-      text-decoration: none;
-      padding: 10px 20px;
-      margin: 20px;
-      width: 90%;
-      text-align: center; }
-      .recipe .recipeOptions .button:hover {
-        background-color: #A4ADE9;
-        cursor: pointer; }
-  @media only screen and (max-width: 550px) {
-    .recipe {
-      padding: 150px 10px 10px; }
-      .recipe .ingredientsDisplay, .recipe .instructionsDisplay {
-        padding: 0px; } }
+    padding: 0px;
+  }
+}
 
 .inventory {
   width: 100%;
@@ -634,60 +787,83 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center; }
+  align-items: center;
+  background-image: url("img/food.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #3d3d3d;
+}
+.inventory .recipesHeading {
+  width: 100%;
+  padding: 50px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #E1DFFD;
+}
+.inventory .recipesButton {
+  text-decoration: none;
+  border: none;
+  background: #84dfe2;
+  font-family: "muli";
+  font-size: 2rem;
+  padding: 10px;
+  width: 200px;
+  border-radius: 3px;
+  color: #292929;
+  text-align: center;
+}
+.inventory .recipesButton:hover {
+  background-color: #A4ADE9;
+  cursor: pointer;
+}
+.inventory .inventoryItems {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.inventory .inventoryItems .inventoryItem {
+  width: 400px;
+  padding: 20px;
+  background-color: #292929;
+  margin-bottom: 50px;
+  color: #B6B6B6;
+}
+.inventory .inventoryItems .inventoryItem .button {
+  border: none;
+  background: #84dfe2;
+  font-family: "muli";
+  font-size: 2rem;
+  padding: 10px 40px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #292929;
+}
+.inventory .inventoryItems .inventoryItem .button:hover {
+  background-color: #A4ADE9;
+  cursor: pointer;
+}
+.inventory .inventoryItems .inventoryItem .buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.inventory .inventoryItems .inventoryItem .buttons .deleteItem {
+  background-color: #FFC68A;
+}
+.inventory .inventoryItems .inventoryItem .buttons .deleteItem:hover {
+  background-color: #A4ADE9;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1000px) {
   .inventory .recipesHeading {
-    width: 100%;
-    padding: 50px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; }
-  .inventory .recipesButton {
-    text-decoration: none;
-    border: none;
-    background: #84dfe2;
-    font-family: "muli";
-    font-size: 2.0rem;
-    padding: 10px;
-    min-width: 15%;
-    border-radius: 3px;
-    color: #292929;
-    text-align: center; }
-    .inventory .recipesButton:hover {
-      background-color: #A4ADE9;
-      cursor: pointer; }
-  .inventory .inventoryItems {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly; }
-    .inventory .inventoryItems .inventoryItem {
-      width: 400px;
-      padding: 20px;
-      background-color: #3d3d3d;
-      margin-bottom: 50px; }
-      .inventory .inventoryItems .inventoryItem .button {
-        border: none;
-        background: #84dfe2;
-        font-family: "muli";
-        font-size: 2.0rem;
-        padding: 10px 40px;
-        margin: 0 auto;
-        text-decoration: none;
-        color: #292929; }
-        .inventory .inventoryItems .inventoryItem .button:hover {
-          background-color: #A4ADE9;
-          cursor: pointer; }
-      .inventory .inventoryItems .inventoryItem .buttons {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center; }
-        .inventory .inventoryItems .inventoryItem .buttons .deleteItem {
-          background-color: #FFC68A; }
-          .inventory .inventoryItems .inventoryItem .buttons .deleteItem:hover {
-            background-color: #A4ADE9;
-            cursor: pointer; }
+    flex-direction: column;
+  }
+}
 
 .mealPlan {
   width: 100%;
@@ -696,101 +872,142 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 50px;
-  justify-content: space-evenly; }
-  .mealPlan button {
-    border: none;
-    background: #E1DFFD;
-    font-family: "muli";
-    font-size: 2.0rem;
-    padding: 20px 40px; }
-    .mealPlan button:hover {
-      background-color: #B6B6B6;
-      cursor: pointer; }
-  .mealPlan .calendar {
-    display: flex;
-    flex-direction: column; }
-    .mealPlan .calendar .addMeal {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 100; }
-    .mealPlan .calendar .calendarBox {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      margin-bottom: 30px; }
-      .mealPlan .calendar .calendarBox .dateRow {
-        color: #292929;
-        width: 100%;
-        background-color: #E1DFFD;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 20px; }
-        .mealPlan .calendar .calendarBox .dateRow h3 {
-          margin: 0; }
-      .mealPlan .calendar .calendarBox .mealBox {
-        display: flex;
-        width: 100%;
-        background-color: #3d3d3d;
-        padding: 50px;
-        padding-left: 10px;
-        align-items: center;
-        overflow-y: auto;
-        white-space: nowrap;
-        border: solid #E1DFFD 1px; }
-        .mealPlan .calendar .calendarBox .mealBox .mealCard {
-          margin: 20px;
-          background-color: #292929; }
-        .mealPlan .calendar .calendarBox .mealBox .mealHolder {
-          background-color: #292929; }
-          .mealPlan .calendar .calendarBox .mealBox .mealHolder .slot {
-            width: 100%;
-            background-color: #84dfe2;
-            color: #292929;
-            text-align: center; }
-          .mealPlan .calendar .calendarBox .mealBox .mealHolder .mealRecipeBox {
-            width: 100%;
-            text-align: center; }
-          .mealPlan .calendar .calendarBox .mealBox .mealHolder .buttonBox {
-            padding: 0 20px 20px; }
-            .mealPlan .calendar .calendarBox .mealBox .mealHolder .buttonBox button {
-              padding: 10px 30px; }
-  .mealPlan .mealPicking {
-    display: flex;
-    background-color: #292929;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin: 50px auto 20px; }
-    .mealPlan .mealPicking h2 {
-      margin-right: 20px; }
-    .mealPlan .mealPicking .input {
-      padding: 10px;
-      background-color: #3d3d3d;
-      border: none;
-      color: #B6B6B6;
-      width: 200px;
-      margin: 0 20px;
-      font-size: 2.0rem;
-      height: 50px; }
-    .mealPlan .mealPicking .dates {
-      display: flex;
-      background-color: #292929;
-      justify-content: space-between;
-      align-items: center; }
-    .mealPlan .mealPicking #mealFilter {
-      padding: 15px 30px;
-      order: 2;
-      border: none;
-      background: #E1DFFD;
-      font-family: "muli";
-      font-size: 2.0rem;
-      color: #292929;
-      height: 50px; }
-      .mealPlan .mealPicking #mealFilter:hover {
-        background-color: #B6B6B6;
-        cursor: pointer; }
-  @media only screen and (max-width: 1200px) {
-    .mealPlan {
-      padding: 0px; } }
+  justify-content: space-evenly;
+}
+.mealPlan .button {
+  border: none;
+  background: #E1DFFD;
+  font-family: "muli";
+  font-size: 2rem;
+  padding: 20px 40px;
+  text-decoration: none;
+  color: #292929;
+}
+.mealPlan .button:hover {
+  background-color: #B6B6B6;
+  cursor: pointer;
+}
+.mealPlan .calendar {
+  display: flex;
+  flex-direction: column;
+}
+.mealPlan .calendar .addMeal {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+.mealPlan .calendar .calendarBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.mealPlan .calendar .calendarBox .dateRow {
+  color: #292929;
+  width: 100%;
+  background-color: #E1DFFD;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.mealPlan .calendar .calendarBox .dateRow h3 {
+  margin: 0;
+}
+.mealPlan .calendar .calendarBox .mealBox {
+  display: flex;
+  width: 100%;
+  background-color: #3d3d3d;
+  padding: 50px;
+  padding-left: 10px;
+  align-items: center;
+  overflow-y: auto;
+  white-space: nowrap;
+  border: solid #E1DFFD 1px;
+}
+.mealPlan .calendar .calendarBox .mealBox .mealCard {
+  margin: 20px;
+  background-color: #292929;
+}
+.mealPlan .calendar .calendarBox .mealBox .mealHolder {
+  background-color: #292929;
+}
+.mealPlan .calendar .calendarBox .mealBox .mealHolder .slot {
+  width: 100%;
+  background-color: #84dfe2;
+  color: #292929;
+  text-align: center;
+}
+.mealPlan .calendar .calendarBox .mealBox .mealHolder .mealRecipeBox {
+  width: 100%;
+  text-align: center;
+}
+.mealPlan .calendar .calendarBox .mealBox .mealHolder .buttonBox {
+  padding: 0 20px 20px;
+}
+.mealPlan .calendar .calendarBox .mealBox .mealHolder .buttonBox button {
+  padding: 10px 30px;
+}
+.mealPlan .calendar .calendarBox .mealBox .unplanned {
+  width: 300px;
+  background-color: #FFC68A;
+  text-align: center;
+  margin: auto;
+  font-family: "muli";
+  font-size: 2rem;
+  padding: 20px 40px;
+  text-decoration: none;
+  color: #292929;
+}
+.mealPlan .calendar .calendarBox .mealBox .unplanned:hover {
+  background-color: #A4ADE9;
+}
+.mealPlan .mealPicking {
+  display: flex;
+  background-color: #292929;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 50px auto 20px;
+}
+.mealPlan .mealPicking h2 {
+  margin-right: 20px;
+}
+.mealPlan .mealPicking .input {
+  padding: 10px;
+  background-color: #3d3d3d;
+  border: none;
+  color: #B6B6B6;
+  width: 200px;
+  margin: 0 20px;
+  font-size: 2rem;
+  height: 50px;
+}
+.mealPlan .mealPicking .dates {
+  display: flex;
+  background-color: #292929;
+  justify-content: space-between;
+  align-items: center;
+}
+.mealPlan .mealPicking #mealFilter {
+  padding: 15px 30px;
+  order: 2;
+  border: none;
+  background: #E1DFFD;
+  font-family: "muli";
+  font-size: 2rem;
+  color: #292929;
+  text-align: center;
+}
+.mealPlan .mealPicking #mealFilter:hover {
+  background-color: #B6B6B6;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1200px) {
+  .mealPlan {
+    padding: 0px;
+  }
+}
+
+/*# sourceMappingURL=App.css.map */

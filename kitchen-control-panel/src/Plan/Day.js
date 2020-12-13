@@ -7,7 +7,7 @@ import {format} from "date-fns";
 class Day extends Component {    
     render() {
 
-        console.log(this.props.array);
+        // console.log(this.props.array);
         var day = this.props.date;
         var date = new Date(day);
         var weekday = format(date, "EEEE");
@@ -52,9 +52,7 @@ class Day extends Component {
                     </div>
                         
                     <div className="mealBox">
-    
-                        <button> Plan</button>
-    
+                        <NavLink className="unplanned"  to={"/plan/new"}> Plan a meal for this day!</NavLink>
                     </div>
                         
                 </div>

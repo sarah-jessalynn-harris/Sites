@@ -106,7 +106,7 @@ class PantryHandler extends Component {
 
         } else if(this.props.type === "edit") {
 
-            console.log(event.target.id);
+            console.log(event.target);
 
             pantryObj = {
                 id: event.target.id,

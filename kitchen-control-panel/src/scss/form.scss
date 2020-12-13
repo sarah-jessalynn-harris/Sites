@@ -134,6 +134,9 @@
     .ingredientBox{
         display: flex;
         flex-direction: column;
+
+        
+
         input {
             width: 33%;
         }
@@ -199,6 +202,11 @@
 }
 
 .mealForm{
+    display: flex;
+    align-items: center;
+    width: 500px;
+    margin: 35px auto 0;
+
     select {
         padding: 10px;
         background-color: $black;
@@ -207,5 +215,19 @@
         margin: 5px 0;
         width: 100%;
         font-size: 2.0rem;
+        
+        width: 300px;
+    }
+
+    input{
+        width: 300px;
+    }
+
+    .buttons{
+        flex-direction: column;
+
+        .options {
+            width: 300px;
+        }
     }
 }

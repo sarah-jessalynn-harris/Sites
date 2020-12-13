@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import PlanForm from "./PlanForm";
 import fire from "../Fire";
 import { Redirect } from "react-router-dom";
+import PlanForm from "./PlanForm";
 
-class PantryHandler extends Component {
+class PlanHandler extends Component {
     constructor(){
         super();
         this.handleNew = this.handleNew.bind(this);
@@ -26,12 +26,12 @@ class PantryHandler extends Component {
     handleRequest(){
 
         if(this.props.type === "new"){
-            this.setState({form: <PantryForm type="new" onSubmit={this.handleNew} uid={this.props.uid} />});
+            this.setState({form: <PlanForm type="new" onSubmit={this.handleNew} uid={this.props.uid} recipes={this.props.recipes}/>});
         } else if (this.props.type === "edit"){
             //find array id for this recipe
-            let arrayId = this.props.userData.inventory.findIndex(x => x.id === this.props.id);
+            let arrayId = this.props.userData.mealplan.findIndex(x => x.id === this.props.id);
 
-            this.setState({form: <PantryForm type="edit" onSubmit={this.handleNew} uid={this.props.uid} pantryData={this.props.userData.inventory[arrayId]} itemId={this.props.id} />});
+            this.setState({form: <PlanForm type="edit" onSubmit={this.handleNew} uid={this.props.uid} planData={this.props.userData.mealplan[arrayId]} itemId={this.props.id} recipes={this.props.recipes}/>});
         } else if (this.props.type === "delete") {
             this.handleDelete();
         }
@@ -46,18 +46,18 @@ class PantryHandler extends Component {
         .doc(id).get().then((doc) => {
         if (doc.exists) {
 
-            var oldPantry = doc.data().inventory;
+            var oldPlan = doc.data().mealplan;
 
-            let arrayId = this.props.userData.inventory.findIndex(x => x.id === this.props.id);
+            let arrayId = this.props.userData.mealplan.findIndex(x => x.id === this.props.id);
 
-            oldPantry.splice(arrayId, 1);
+            oldPlan.splice(arrayId, 1);
 
             
             fire.firestore()
             .collection("users")
             .doc(id)
             .update(
-                {inventory : oldPantry}
+                {mealplan : oldPlan}
             ).then(() => {
                 console.log("Document successfully written!");
                 this.setState({update: true});
@@ -82,46 +82,46 @@ class PantryHandler extends Component {
             if (i <= 2 ) {
                 if(event.target.elements[i].value === "") {
                     console.log("here", event.target.elements[i]);
-                    return alert('You must fill out all fields before creating a pantry item. Please include an amount, amount type, and name.');
+                    return alert('You must fill out all fields before creating a meal plan. Please include a date, a recipe, and the meal type (breakfast, lunch, dinner, or snack).');
                 }
             }
 
         }
 
-        var pantryObj;
+        var planObj;
 
         //create custom id for recipe
         var randId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
         if(this.props.type === "new") {
             
-            pantryObj = {
+            planObj = {
                 id: randId,
-                amount: event.target.elements[0].value,
-                label: event.target.elements[1].value,
-                name: event.target.elements[2].value,
+                date: event.target.elements[0].value.replaceAll('-', '/'),
+                slot: event.target.elements[1].value,
+                recipe: event.target.elements[2].value,
             }
 
-            this.addItem(pantryObj);
+            this.addItem(planObj);
 
         } else if(this.props.type === "edit") {
 
             console.log(event.target.id);
 
-            pantryObj = {
+            planObj = {
                 id: event.target.id,
-                amount: event.target.elements[0].value,
-                label: event.target.elements[1].value,
-                name: event.target.elements[2].value,
+                date: event.target.elements[0].value.replaceAll('-', '/'),
+                slot: event.target.elements[1].value,
+                recipe: event.target.elements[2].value,
             }
 
-            this.updateItem(pantryObj);
+            this.updateItem(planObj);
 
         }
 
     }
 
-    //add a new pantry item to firebase
+    //add a new meal plan item to firebase
     addItem(item){
         var id = this.props.id;
 
@@ -132,19 +132,19 @@ class PantryHandler extends Component {
         .doc(id).get().then((doc) => {
         if (doc.exists) {
 
-            var oldPantry = doc.data().inventory;
+            var oldPlan = doc.data().mealplan;
             
-            oldPantry.push(item);
+            oldPlan.push(item);
 
             
             fire.firestore()
             .collection("users")
             .doc(id)
             .update(
-                {inventory : oldPantry}
+                {mealplan : oldPlan}
             ).then(() => {
-                console.log("Document successfully written!");
-                this.setState({update: true});
+                // console.log("Document successfully written!");
+                // this.setState({update: true});
             }); 
 
         } else {
@@ -167,18 +167,18 @@ class PantryHandler extends Component {
         .doc(id).get().then((doc) => {
         if (doc.exists) {
 
-            var oldPantry = doc.data().inventory;
+            var oldPlan = doc.data().mealplan;
 
-            let arrayId = this.props.userData.inventory.findIndex(x => x.id === this.props.id);
+            let arrayId = this.props.userData.mealplan.findIndex(x => x.id === this.props.id);
             
-            oldPantry[arrayId] = item;
+            oldPlan[arrayId] = item;
 
             
             fire.firestore()
             .collection("users")
             .doc(id)
             .update(
-                {inventory : oldPantry}
+                {mealplan : oldPlan}
             ).then(() => {
                 console.log("Document successfully written!");
                 this.setState({update: true});
@@ -196,7 +196,7 @@ class PantryHandler extends Component {
     render() {
 
         if(this.state.update){
-            return <Redirect push to="/pantry"/>;
+            return <Redirect push to="/plan"/>;
         } else {
             return (
             <div className="recipes">
@@ -209,4 +209,4 @@ class PantryHandler extends Component {
 
 }
 
-export default PantryHandler;
+export default PlanHandler;

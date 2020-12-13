@@ -6,13 +6,19 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
+    background-image: url('img/food.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: $grey;
+    
     .recipesHeading {
         width: 100%;
         padding: 50px 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        color: $light;
     }
 
     .recipesButton {
@@ -22,7 +28,7 @@
         font-family: "muli";
         font-size: 2.0rem;
         padding: 10px;
-        min-width: 15%;
+        width: 200px;
         border-radius: 3px;
         color: $black;
         text-align: center;
@@ -46,8 +52,9 @@
         .inventoryItem {
             width: 400px;
             padding: 20px;
-            background-color: $grey;
+            background-color: $black;
             margin-bottom: 50px;
+            color: $white;
 
             .button {
                 border: none;
@@ -80,6 +87,12 @@
                 }
                 
             }
+        }
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .recipesHeading{
+            flex-direction: column;
         }
     }
 }

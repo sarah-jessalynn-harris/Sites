@@ -15,6 +15,7 @@ import RecipeHandler from './Recipes/index';
 import PantryHandler from './Pantry/index';
 import Pantry from './Pantry/Pantry';
 import Plan from './Plan/Plan';
+import PlanHandler from './Plan/index';
 
 //component that controls everything
 class App extends Component {
@@ -155,7 +156,9 @@ class App extends Component {
                       />
                   )}/>
 
-                  <Route exact path={"/pantry"}> <Pantry userData={this.state.userData} /></Route>
+                  <Route exact path={"/pantry"}> 
+                    <Pantry userData={this.state.userData} />
+                  </Route>
                     
                     <Route exact path={"/pantry/new"}>
                         <PantryHandler 
@@ -182,27 +185,32 @@ class App extends Component {
                         />
                     )}/>
 
-                <Route exact path={"/plan"}> <Plan userData={this.state.userData} /></Route>
+                <Route exact path={"/plan"}> 
+                    <Plan 
+                        userData={this.state.userData} 
+                      />
+                </Route>
                     
                     <Route exact path={"/plan/new"}>
-                        <PantryHandler 
+                        <PlanHandler 
                           type = "new" 
                           uid={this.state.userData.userData.uid} 
                           id={this.state.userData.userData.id}
+                          recipes={this.state.userData.recipes}
                         />
                     </Route>
 
                     <Route exact path={"/plan/edit/:id"} render={({match}) => (
-                        <PantryHandler 
+                        <PlanHandler 
                           type = "edit" 
                           id = {match.params.id}
                           userData = {this.state.userData}
+                          recipes={this.state.userData.recipes}
                         />
                     )}/>
 
-                    
                     <Route exact path={"/plan/delete/:id"} render={({match}) => (
-                        <PantryHandler 
+                        <PlanHandler 
                           type = "delete" 
                           id = {match.params.id}
                           userData = {this.state.userData}

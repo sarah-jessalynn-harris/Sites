@@ -7,12 +7,14 @@
     padding: 50px;
     justify-content: space-evenly;
 
-    button {
+    .button {
         border: none;
         background: $light;
         font-family: "muli";
         font-size: 2.0rem;
         padding: 20px 40px;
+        text-decoration: none;
+        color: $black;
         // margin: 0 auto;
         
         &:hover {
@@ -92,6 +94,22 @@
                         }
                     }
                 }
+
+                .unplanned{
+                    width: 300px;
+                    background-color: $peach;
+                    text-align: center;
+                    margin: auto;
+                    font-family: "muli";
+                    font-size: 2.0rem;
+                    padding: 20px 40px;
+                    text-decoration: none;
+                    color: $black;
+
+                    &:hover{
+                        background-color: $purple;
+                    }
+                }
             }
 
         }
@@ -125,7 +143,6 @@
             background-color: $black;
             justify-content: space-between;
             align-items: center;
-            // width: 40%;
         }
 
         #mealFilter {
@@ -136,7 +153,7 @@
             font-family: "muli";
             font-size: 2.0rem;
             color: $black;
-            height: 50px;
+            text-align: center;
             
             &:hover {
                 background-color: $white;
