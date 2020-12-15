@@ -20,7 +20,7 @@ class Nav extends Component {
 
                         <div className="links linkBox">
 
-                            <NavLink exact className="link" activeClassName="active" to={"/"}> Home </NavLink>
+                            {/* <NavLink exact className="link" activeClassName="active" to={"/"}> Home </NavLink> */}
 
                             <NavLink exact className="link" activeClassName="active" to={"/dashboard"}> Dashboard </NavLink>
 

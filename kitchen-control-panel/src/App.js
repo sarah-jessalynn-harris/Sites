@@ -118,7 +118,9 @@ class App extends Component {
   
                   <Route exact path={"/logout"} component={LogOutHandler} />
   
-                  <Route exact path={"/dashboard"} component={Dashboard} />
+                  <Route exact path={"/dashboard"}>
+                    <Dashboard  userData={this.state.userData}/>
+                  </Route>
                   
                   <Route exact path={"/account"}> <Account userData={this.state.userData} /></Route>
   

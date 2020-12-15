@@ -37,6 +37,10 @@
         justify-content: space-evenly;
     }
 
+    .cardDescription p{
+        font-size: 2.0rem;
+    }
+
     .cardButtons {
         width: 100%;
         display: flex;
@@ -51,7 +55,7 @@
         font-family: "muli";
         font-size: 1.7rem;
         padding: 5px;
-        width: 90px;
+        width: 100px;
         text-align: center;
         color: $black;
         border-radius: 3px;
@@ -61,6 +65,10 @@
             background-color: $purple;
             cursor: pointer;
         }
+    }
+
+    .linkButton{
+        width: 150px;
     }
 
     @media only screen and (max-width: 900px) {

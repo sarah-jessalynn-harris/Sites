@@ -451,6 +451,9 @@ nav .linkBox {
   flex-direction: column;
   justify-content: space-evenly;
 }
+.card .cardDescription p {
+  font-size: 2rem;
+}
 .card .cardButtons {
   width: 100%;
   display: flex;
@@ -464,7 +467,7 @@ nav .linkBox {
   font-family: "muli";
   font-size: 1.7rem;
   padding: 5px;
-  width: 90px;
+  width: 100px;
   text-align: center;
   color: #292929;
   border-radius: 3px;
@@ -473,6 +476,9 @@ nav .linkBox {
 .card .cardButton:hover {
   background-color: #A4ADE9;
   cursor: pointer;
+}
+.card .linkButton {
+  width: 150px;
 }
 @media only screen and (max-width: 900px) {
   .card .cardBanner p, .card .cardContent {
@@ -506,21 +512,18 @@ nav .linkBox {
 
 .dashboard {
   width: 100%;
-  min-height: 100vh;
   background-color: #292929;
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 0px 30px;
   justify-content: space-evenly;
 }
 .dashboard .overview {
-  padding: 20px;
   width: 100%;
+  margin-top: 20px;
 }
 .dashboard .overview .box {
   width: 100%;
-  height: 100%;
-  padding: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -535,34 +538,43 @@ nav .linkBox {
 .dashboard .overview .box .calendarBox .dateRow {
   color: #292929;
   width: 100%;
-  background-color: #A4ADE9;
+  background-color: #5c5b5b;
+  color: #E1DFFD;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px 20px 5px;
 }
 .dashboard .overview .box .calendarBox .mealBox {
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: #3d3d3d;
-  padding: 50px;
-  justify-content: space-evenly;
-  align-items: center;
+  padding: 20px;
+  min-height: 100%;
 }
 .dashboard .overview .box .calendarBox .mealBox .mealHolder {
   border: none;
-  background: #292929;
+  background: #E1DFFD;
   font-family: "muli";
   font-size: 2rem;
-  padding: 10px 60px;
-  margin: 20px auto;
+  padding: 10px 20px;
+  width: 300px;
+  margin: 10px auto;
+  color: #292929;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.dashboard .overview .box .calendarBox .mealBox .mealHolder:hover {
+  background-color: #5c5b5b;
 }
 .dashboard .dashButtons {
   width: 100%;
   display: flex;
   flex-direction: row;
-  padding: 50px;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  justify-content: center;
 }
 .dashboard .dashButtons button {
   border: none;
@@ -575,6 +587,16 @@ nav .linkBox {
 .dashboard .dashButtons button:hover {
   background-color: #A4ADE9;
   cursor: pointer;
+}
+
+.dash {
+  width: 100%;
+  background-image: linear-gradient(0deg, rgba(51, 50, 50, 0.6), rgba(51, 50, 50, 0.6)), url("./img/castIron.jpg");
+  background-size: cover;
+  padding: 80px 70px 10px;
+  background-attachment: fixed;
+  color: #E1DFFD;
+  font-size: 5rem;
 }
 
 .account {

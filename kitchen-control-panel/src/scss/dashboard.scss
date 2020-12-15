@@ -1,20 +1,17 @@
 .dashboard {
     width: 100%;
-    min-height: 100vh;
     background-color: $black;
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding: 0px 30px;
     justify-content: space-evenly;
 
     .overview {
-        padding: 20px;
         width: 100%;
+        margin-top: 20px;
         
         .box {
             width: 100%;
-            height: 100%;
-            padding: 20px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -30,11 +27,12 @@
                     .dateRow {
                         color: $black;
                         width: 100%;
-                        background-color: $purple;
+                        background-color: $cardShadow;
+                        color: $light;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-                        padding: 10px 20px;
+                        padding: 10px 20px 5px;
                     }
         
                     .mealBox {
@@ -42,18 +40,24 @@
                         flex-direction: column;
                         width: 100%;
                         background-color: $grey;
-                        padding: 50px;
-                        justify-content: space-evenly;
-                        align-items: center;
+                        padding: 20px;
+                        min-height: 100%;
         
                         .mealHolder {
                             border: none;
-                            background: $black;
+                            background: $light;
                             font-family: "muli";
                             font-size: 2.0rem;
-                            padding: 10px 60px;
-                            margin: 20px auto;
+                            padding: 10px 20px;
+                            width: 300px;
+                            margin: 10px auto;
+                            color: $black;
+                            text-decoration: none;
+                            text-transform: capitalize;
 
+                            &:hover{
+                                background-color: $cardShadow;
+                            }
                         }
                     }
         
@@ -66,7 +70,9 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        padding: 50px;
+        flex-wrap: wrap;
+        margin-top: 100px;
+        justify-content: center;
 
         button {
             border: none;
@@ -82,4 +88,14 @@
             }
         }
     }
+}
+
+.dash{
+    width: 100%;
+    background-image: linear-gradient(0deg, $dashShadow, $dashShadow), url("./img/castIron.jpg");
+    background-size: cover;
+    padding: 80px 70px 10px;
+    background-attachment: fixed;
+    color: $light;
+    font-size: 5.0rem;
 }

@@ -144,7 +144,7 @@ class PlanHandler extends Component {
                 {mealplan : oldPlan}
             ).then(() => {
                 // console.log("Document successfully written!");
-                // this.setState({update: true});
+                this.setState({update: true});
             }); 
 
         } else {
