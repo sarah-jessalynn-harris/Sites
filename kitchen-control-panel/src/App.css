@@ -1032,4 +1032,22 @@ nav .linkBox {
   }
 }
 
+.faq {
+  background-image: url("./img/faqbackground.jpeg");
+}
+.faq h2 {
+  color: #292929;
+  margin: 0 auto;
+}
+.faq .inventoryItems {
+  flex-direction: column;
+}
+.faq .inventoryItems .inventoryItem {
+  width: 80%;
+}
+.faq .inventoryItems h4 {
+  color: #84dfe2;
+  font-style: italic;
+}
+
 /*# sourceMappingURL=App.css.map */

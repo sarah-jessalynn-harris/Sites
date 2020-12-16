@@ -1,0 +1,21 @@
+.faq{
+    background-image: url("./img/faqbackground.jpeg");
+
+    h2 {
+        color: $black;
+        margin: 0 auto;
+    }
+
+    .inventoryItems{
+        flex-direction: column;
+
+        .inventoryItem {
+            width: 80%;
+        }
+
+        h4 {
+            color: $blue;
+            font-style: italic;
+        }
+    }
+}

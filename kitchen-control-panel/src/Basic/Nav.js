@@ -39,7 +39,7 @@ class Nav extends Component {
                                 state: this.props.userData
                                 }}> Account </NavLink>
 
-                            <a className="link"> Help</a>
+                                <NavLink exact className="link" activeClassName="active" to={"/help"}> Help </NavLink>
 
                             <NavLink exact className="link" activeClassName="active" to={"/logout"}> Logout </NavLink>
 

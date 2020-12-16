@@ -16,6 +16,7 @@ import PantryHandler from './Pantry/index';
 import Pantry from './Pantry/Pantry';
 import Plan from './Plan/Plan';
 import PlanHandler from './Plan/index';
+import Faq from './Help/FAQ';
 
 //component that controls everything
 class App extends Component {
@@ -113,6 +114,8 @@ class App extends Component {
                   <Nav signedIn={this.state.authenticated} userData={this.state.userData}></Nav>
   
                   <Route exact path={"/"} component={Home} />
+
+                  <Route exact path={"/help"} component={Faq} />
   
                   <Route exact path={"/login"} component={LoginHandler} />
   
