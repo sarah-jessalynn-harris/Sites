@@ -99,7 +99,7 @@ class RecipeHandler extends Component {
         var isOdd = function(x) { return x & 1; };
 
         for(var g=0; g < ingredientBox.children.length; g++){
-            for(var x=0; x < ingredientBox.children[x].children.length; x++){
+            for(var x=0; x < ingredientBox.children[g].children.length; x++){
                 if(x === 0) {
                     rawAmounts.push(Number(ingredientBox.children[g].children[x].value));
                 } else {
