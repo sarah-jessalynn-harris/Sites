@@ -245,6 +245,9 @@ nav i:hover {
     padding: 5.0rem;
     background-color: #434343;
     color: #E9E9E9;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 
 .about i {
@@ -252,25 +255,12 @@ nav i:hover {
 }
 
 .about .aboutImg {
-    width: 35%;
-    margin-right: 2.5rem;
+    width: 25%;
+    margin-right: 5.0rem;
 }
 
 .about .text {
-    width: 50%;
-}
-
-.funFact {
-   display: flex; 
-   margin: 30px 0px;
-}
-
-.funFact i {
-    margin: 0px 20px;
-}
-
-.funFact p {
-    margin: 5px 0px;;
+    width: 75%;
 }
 
 .formal, .informal {
@@ -282,13 +272,33 @@ nav i:hover {
     padding: 2.0rem;
 }
 
-.informal .aboutImg {
-    margin-left: 2.5rem;
-    margin-right: 0;
+.informal {
+    width: 50%;
+    background-color:#717171;
+    margin-top: 50px;
+    justify-content: center;
+    flex-direction: column;
 }
 
+.informalText {
+    width: auto;
+}
+
+.funFact {
+    display: flex; 
+    margin: 30px 0px;
+ }
+ 
+ .funFact i {
+     margin: 0px 20px;
+ }
+ 
+ .funFact p {
+     margin: 5px 0px;;
+ }
+
 @media only screen and (max-width: 1500px) {
-    .formal, .informal {
+    .formal {
         flex-direction: column;
     }
 
@@ -388,12 +398,14 @@ nav i:hover {
   }
 
   .thumbnail img {
-      width: 50%;
+      width: 40%;
+      padding: 20px;
+      background-color: #E9E9E9;
   }
 
   .thumbnail .textPortfolio {
       font-size: 1.6rem;
-      width: 50%;
+      width: 70%;
       background-color: #E9E9E9;
       padding: 5.0rem;
   }
@@ -550,7 +562,7 @@ nav i:hover {
         background-color: #E9E9E9;
         padding-top: 5.0rem;
     }
-    .thumbnail img, .thumbnail .textPortfolio {
+    .thumbnail .textPortfolio {
         width: 100%;
     }
     .thumbnail img {
