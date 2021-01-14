@@ -398,14 +398,14 @@ nav i:hover {
   }
 
   .thumbnail img {
-      width: 40%;
+      width: 45%;
       padding: 20px;
       background-color: #E9E9E9;
   }
 
   .thumbnail .textPortfolio {
       font-size: 1.6rem;
-      width: 70%;
+      width: 55%;
       background-color: #E9E9E9;
       padding: 5.0rem;
   }

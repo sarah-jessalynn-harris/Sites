@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/videopopup.css">
+
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons//apple-touch-icon.png">
@@ -184,16 +186,26 @@
                     <div class="textPortfolio">
                         <h2> Jagathon Mobile App</h2>
                         <h3>August 2020 - January 2021</h3>
-                        <p>I am currently working with Indiana Universty Purdue University of Indianapolis' Dance Marathon Team (aka Jagathon) in creating their mobile app for the 2021 event. I am on a team of seven, and I am the project manager. I'm also one of two developers. We'll be using React Native to create this mobile app for both Android and Apple devices. My role on the team is over, but the app is due to launch very soon. Jagathon 2021 is occuring on April 24th. #ForTheKids!</p>
+                        <p>In the fall semester of 2020, I got the honor to work with Indiana Universty Purdue University of Indianapolis' Dance Marathon Team (aka Jagathon) in creating their mobile app. If you aren't familiar with Dance Marathon, it is a fundraising event held to raise money for the children at Riley Hospital. I was on a team of seven students as project manager and one of two developers. We be used React Native to create this mobile app for both Android and Apple devices, as well as utilizing Expo for launching services. One of the major needs of this app was push notifications, so we used Google Firebase Cloud Messaging to complete that task. To save the messages in app, we created a website with HTML/CSS/Js and Firebase Firestore as a hub for storing notifications. My role on the team is over, but the first official version of the app is due to launch very soon on Google Play and Apple Store. </p>
+                        
                         <p style="font-style: italic;">Watch our promo video or learn more about Jagathon using the links below:</p>
+
                         <div class="buttons">
-                            <a href="https://sf.iupui.edu/jagathon/" target="_blank" class="resumeButtonA"> Promo Video</a>
+                            <a href="javascript:void(0)" id="video-trigger" class="resumeButtonA"> Promo Video</a>
                             <a href="https://sf.iupui.edu/jagathon/" target="_blank" class="resumeButtonB"> Learn More</a>
                         </div>
                     </div>
                     <img src="img/jagathonLogo.jpg">
                 
                 </div>
+
+                <div id="vidBox" style="display: none;">
+                    <div id="videCont">
+                      <video id="demo" controls>
+                        <source src="./img/jagathon-promo-video.mp4" type="video/mp4">
+                      </video>
+                     </div>
+                </div> 
             
             </div>
         
@@ -288,13 +300,14 @@
             <a href="https://github.com/sarah-jessalynn-harris" target="_blank">
                 <i class="fab fa-github-square"></i>
             </a>
-            <a href="tel:3176432262">
+            <a href="tel:3176610985">
                 <i class="fas fa-phone-square"></i>
             </a>
         </div>
     </footer>
 
     <script src="./lib/jquery-3.3.1.min.js"></script>
+    <script src="./lib/videopopup.js"></script>
     <script src="./js/app.js"></script>
 </body>
 </html>
