@@ -1,12 +1,12 @@
 import React from "react";
 
-const LoginView = ({onSubmit}) => {
+const LoginView = ({login, signup, forgot}) => {
 
         return(
             <div className="login">
                 <div className="form">
                     
-                    <form className="loginForm" id="logIn" onSubmit = {onSubmit}>
+                    <form className="loginForm" id="logIn" onSubmit = {login}>
                         <h3> Login</h3>
                         <label htmlFor="rEmail"> Email: </label>
                         <input name="rEmail" type="email" id="rEmail" placeholder="Please enter your email"/>
@@ -18,13 +18,13 @@ const LoginView = ({onSubmit}) => {
                         
                     </form>
 
-                    <form className="forgottenForm" id="forgotten" onSubmit= {onSubmit}>
+                    <form className="forgottenForm" id="forgotten" onSubmit= {forgot}>
                         <button type="submit" id="forgot"> Forgot Password?</button>
                     </form>
 
                 </div>
 
-                <form className="form" id="signup" onSubmit = {onSubmit}>
+                <form className="form" id="signup" onSubmit = {signup}>
                     <h3> Register</h3>
 
                     <label htmlFor="firstname"> First Name: </label>

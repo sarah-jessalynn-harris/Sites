@@ -1,5 +1,8 @@
 // Initialize Firebase
 import firebase from 'firebase';
+import 'firebase/firestore';   // for cloud firestore
+import 'firebase/auth';        // for authentication
+import 'firebase/storage';     // for storage
 
 var config = {
     apiKey: "AIzaSyBfjcp_YIqvJLL8GirEkL8KGdaqTFTH4FI",

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {add, format, isAfter, isBefore, isEqual, isValid} from "date-fns";
+import {add, format, isAfter, isBefore, isEqual} from "date-fns";
 import DashDay from "../Plan/DashDay";
 import Card from "../Components/Card";
 
@@ -57,7 +57,7 @@ class Dashboard extends Component {
             image: "",
             desc: "Need help organizing your kitchen with Kitchen Control Panel? Visit this page to see FAQs.",
             action: "Get Help!",
-            link: ""
+            link: "/help"
         },
       
     ];
@@ -108,13 +108,13 @@ class Dashboard extends Component {
         }
 
         //seperate the meal plan information into days as an object based on these dates and add the meals to the days of the weeks that are planned
-        this.props.userData.mealplan.map((item, key) =>{
+        this.props.userData.mealplan.forEach(item => {
             var startFormat = new Date(this.state.start);
             var endFormat = new Date(this.state.end);
             var dateFormat = new Date(item.date); 
             
             // find out if the date is within bounds
-            if(isAfter(dateFormat, startFormat) || isEqual(dateFormat, startFormat) && isBefore(dateFormat, endFormat) || isEqual(dateFormat, endFormat)){
+            if((isAfter(dateFormat, startFormat) || isEqual(dateFormat, startFormat)) && (isBefore(dateFormat, endFormat) || isEqual(dateFormat, endFormat))){
                 
                 // put the meal in the correct day - if it doesn't already exist make one
                 if(weeks.hasOwnProperty(item.date)){
@@ -130,7 +130,6 @@ class Dashboard extends Component {
                         {
                             planned: true,
                             id : item.id,
-                            key : key,
                             recipe : item.recipe,
                             date : item.date,
                             slot : item.slot,

@@ -32,7 +32,7 @@ class Nav extends Component {
                             <NavLink exact className="link" activeClassName="active" to={"/pantry"}> Pantry </NavLink>
 
 
-                            <a className="link"> List</a>
+                            <NavLink exact className="link" activeClassName="active" to={"/list"}> List </NavLink>
 
                             <NavLink exact className="link" activeClassName="active" to={{
                                 pathname: "/account",

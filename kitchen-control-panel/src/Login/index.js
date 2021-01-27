@@ -11,27 +11,34 @@ class LogInHandler extends Component {
         super();
 
         this.state = {
-            signInType : <LoginView onSubmit={this.handleSubmit}/>
+            signInType : <LoginView login={this.handleLogIn} signup={this.handleSignUp} forgot={this.forgottenPassword}/>
         }
     }
 
-    //choose to log in for account or sign up
-    handleSubmit = async event =>{
+    componentDidMount(){
+        this.setState({form: <div>
+            <p> Loading... </p>
+        </div>});
+        
+    }
 
-        event.preventDefault();
 
-        if(event.target.id === "logIn") {
+    // //choose to log in for account or sign up
+    // handleSubmit = async event =>{
 
-            this.setState({signInType : <LoginView onSubmit={this.handleLogIn}/>});
 
-        } else if (event.target.id === "signup") {
+    //     if(event.target.id === "logIn") {
+
+    //         this.setState({signInType : <LoginView onSubmit={this.handleLogIn}/>});
+
+    //     } else if (event.target.id === "signup") {
             
-            this.setState({signInType : <LoginView onSubmit={this.handleSignUp}/>});
+    //         this.setState({signInType : <LoginView onSubmit={this.handleSignUp}/>});
 
-        } else if (event.target.id === "forgotten") {
-            this.setState({signInType : <LoginView onSubmit={this.forgottenPassword}/>});
-        }
-    }
+    //     } else if (event.target.id === "forgotten") {
+    //         this.setState({signInType : <LoginView onSubmit={this.forgottenPassword}/>});
+    //     }
+    // }
 
     //handle log in for account
     handleLogIn = async event =>{

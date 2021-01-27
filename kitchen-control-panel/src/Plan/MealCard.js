@@ -24,6 +24,8 @@ class MealCard extends Component {
             case 3:
                 this.setState({hover3: true});
                 break;
+            default:
+                break;
         } 
     }
 
@@ -37,6 +39,8 @@ class MealCard extends Component {
                 break;
             case 3:
                 this.setState({hover3: false});
+                break;
+            default:
                 break;
         } 
     }

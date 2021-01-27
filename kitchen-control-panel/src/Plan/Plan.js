@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Day from "./Day";
 import {NavLink} from "react-router-dom";
-import {add, format, isAfter, isBefore, isEqual, isValid} from "date-fns";
+import {add, format, isAfter, isBefore, isEqual} from "date-fns";
 
 
 class Plan extends Component {
@@ -89,13 +89,13 @@ class Plan extends Component {
                         }
         
                         //seperate the meal plan information into days as an object based on these dates and add the meals to the days of the weeks that are planned
-                        this.props.userData.mealplan.map((item, key) =>{
+                        this.props.userData.mealplan.forEach(item => {
                             var startFormat = new Date(this.state.start);
                             var endFormat = new Date(this.state.end);
                             var dateFormat = new Date(item.date); 
                             
                             // find out if the date is within bounds
-                            if(isAfter(dateFormat, startFormat) || isEqual(dateFormat, startFormat) && isBefore(dateFormat, endFormat) || isEqual(dateFormat, endFormat)){
+                            if((isAfter(dateFormat, startFormat) || isEqual(dateFormat, startFormat)) && (isBefore(dateFormat, endFormat) || isEqual(dateFormat, endFormat))){
                                 
                                 // put the meal in the correct day - if it doesn't already exist make one
                                 if(weeks.hasOwnProperty(item.date)){
@@ -111,7 +111,6 @@ class Plan extends Component {
                                         {
                                             planned: true,
                                             id : item.id,
-                                            key : key,
                                             recipe : item.recipe,
                                             date : item.date,
                                             slot : item.slot,

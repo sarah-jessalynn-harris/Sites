@@ -12,7 +12,7 @@ class LogOutHandler extends Component {
             console.log (errorMessage, errorCode);
         });
 
-        {this.props.history.push("/")}
+        this.props.history.push("/")
     }
 
     render() {
