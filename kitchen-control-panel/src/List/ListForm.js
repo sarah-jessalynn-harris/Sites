@@ -1,5 +1,5 @@
 import React, {Component} from "react";
- class PantryForm extends Component {
+ class ListForm extends Component {
 
     render(){
         if(this.props.type === "new"){
@@ -9,9 +9,9 @@ import React, {Component} from "react";
 
                     <div className="ingredientBox">
                     
-                        <h1> Add Item to Pantry</h1>
+                        <h1> Add Item to List</h1>
 
-                        <div className="ingredient" id='ingredient1'>
+                        <div className="ingredient">
                             <input type='number' placeholder='Ingredient amount' min="0.25" step="0.25"/>
                             <select name="units" id="unit1">
                             <option defaultValue="teaspoon">teaspoon</option>
@@ -42,10 +42,10 @@ import React, {Component} from "react";
                 
                 <form className="form recipeForms ingredientForm" onSubmit = {this.props.onSubmit} id={this.props.itemId}>
                         <div className="ingredientBox">
-                        <h1>Edit Pantry Item</h1>
+                        <h1>Edit List Item</h1>
                             <div className="ingredient" id={'ingredient'} >
-                                <input type='number'  placeholder={'Ingredient amount'} min="0.25" step="0.25" defaultValue={this.props.pantryData.amount} />
-                                <select name="units" id={"unit"} defaultValue={this.props.pantryData.label}>
+                                <input type='number'  placeholder={'Ingredient amount'} min="0.25" step="0.25" defaultValue={this.props.listData.amount} />
+                                <select name="units" id={"unit"} defaultValue={this.props.listData.label}>
                                     <option defaultValue="teaspoon">teaspoon</option>
                                     <option defaultValue="tablespoon">tablespoon</option>
                                     <option defaultValue="liter">liter</option>
@@ -57,8 +57,19 @@ import React, {Component} from "react";
                                     <option defaultValue="ounce">ounce</option>
                                     <option defaultValue="lbs">lbs</option>
                                 </select>
-                                <input name="label" type="text" id="label" placeholder="Ingredient Name" defaultValue={this.props.pantryData.name} />
-                            </div>
+
+                          
+                                <input name="label" type="text" id="label" placeholder="Ingredient Name" defaultValue={this.props.listData.name} />
+
+                                <br/>
+                                <label htmlFor="check" className="checkLabel"> Check this item on the list?</label> 
+                                <select name="check" className="checkInput" defaultValue={this.props.listData.checked ? "Yes" : "No"}>
+                                    <option defaultValue="1"> Yes</option>
+                                    <option defaultValue="0"> No</option>
+                                </select>  
+                                                  
+                                    
+                                </div>
                             <div className="buttons">
                                 <button type="submit" id="addRecipe"> Submit</button>
                             </div>
@@ -70,4 +81,4 @@ import React, {Component} from "react";
     }
  }
 
- export default PantryForm;
+ export default ListForm;

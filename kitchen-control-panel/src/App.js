@@ -17,6 +17,8 @@ import Pantry from './Pantry/Pantry';
 import Plan from './Plan/Plan';
 import PlanHandler from './Plan/index';
 import Faq from './Help/FAQ';
+import List from './List/List';
+import ListHandler from './List/index';
 
 //component that controls everything
 class App extends Component {
@@ -216,6 +218,36 @@ class App extends Component {
 
                     <Route exact path={"/plan/delete/:id"} render={({match}) => (
                         <PlanHandler 
+                          type = "delete" 
+                          id = {match.params.id}
+                          userData = {this.state.userData}
+                        />
+                    )}/>
+
+                  <Route exact path={"/list"}> 
+                    <List userData={this.state.userData} />
+                  </Route>
+
+                  <Route exact path={"/list/new"}>
+                        <ListHandler 
+                          type = "new" 
+                          uid={this.state.userData.userData.uid} 
+                          id={this.state.userData.userData.id}
+                          list={this.state.userData.list}
+                        />
+                    </Route>
+
+                    <Route exact path={"/list/edit/:id"} render={({match}) => (
+                        <ListHandler 
+                          type = "edit" 
+                          id = {match.params.id}
+                          userData = {this.state.userData}
+                          list={this.state.userData.list}
+                        />
+                    )}/>
+
+                    <Route exact path={"/list/delete/:id"} render={({match}) => (
+                        <ListHandler 
                           type = "delete" 
                           id = {match.params.id}
                           userData = {this.state.userData}
