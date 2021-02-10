@@ -24,6 +24,7 @@ import React, {Component} from "react";
                             <option defaultValue="gram">gram</option>
                             <option defaultValue="ounce">ounce</option>
                             <option defaultValue="lbs">lbs</option>
+                            <option defaultValue="unit">unit</option>
                             </select>
                             <input name="label" type="text" id="label" placeholder="Ingredient Name"/>
                         </div>
@@ -56,6 +57,7 @@ import React, {Component} from "react";
                                     <option defaultValue="gram"> gram</option>
                                     <option defaultValue="ounce">ounce</option>
                                     <option defaultValue="lbs">lbs</option>
+                                    <option defaultValue="unit">unit</option>
                                 </select>
                                 <input name="label" type="text" id="label" placeholder="Ingredient Name" defaultValue={this.props.pantryData.name} />
                             </div>

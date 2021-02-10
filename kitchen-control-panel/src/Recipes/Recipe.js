@@ -35,7 +35,11 @@ class Recipe extends Component {
                         <div className="title">
                             <h1>{this.props.userData[this.state.id].name}</h1>
 
-                            <img src={this.props.userData[this.state.id].image} alt={this.props.userData[this.state.id].name}/>
+                            <span className="topBar">&nbsp;</span>
+
+                            <div className="imgHolder">
+                                <img src={this.props.userData[this.state.id].image} alt={this.props.userData[this.state.id].name}/>
+                            </div>
 
                             <p>{this.props.userData[this.state.id].description}</p>
                         </div>

@@ -25,6 +25,7 @@ import firebase from 'firebase';
           <option value="gram">gram</option>
           <option value="ounce">ounce</option>
           <option value="lbs">lbs</option>
+          <option defaultValue="unit">unit</option>
         </select>
         <input name="label" type="text" id="label" placeholder="Ingredient Name">
      </div>
@@ -120,6 +121,7 @@ import firebase from 'firebase';
                             <option defaultValue="gram">gram</option>
                             <option defaultValue="ounce">ounce</option>
                             <option defaultValue="lbs">lbs</option>
+                            <option defaultValue="unit">unit</option>
                             </select>
                             <input name="label" type="text" id="label" placeholder="Ingredient Name"/>
                         </div>
@@ -157,7 +159,7 @@ import firebase from 'firebase';
                 <div>
     
                     <form className="form recipeForms" onSubmit = {this.props.onSubmit} id = {this.props.itemId}>
-                        <h1> New Recipe </h1>
+                        <h1> Edit Recipe </h1>
                         <label htmlFor="name"> Name: </label>
                         <input name="name" type="text" id="name" placeholder="Recipe Name" defaultValue={this.props.recipeData.name}/>
     
@@ -184,6 +186,7 @@ import firebase from 'firebase';
                                                 <option defaultValue="gram"> gram</option>
                                                 <option defaultValue="ounce">ounce</option>
                                                 <option defaultValue="lbs">lbs</option>
+                                                <option defaultValue="unit">unit</option>
                                             </select>
                                             <input name="label" type="text" id="label" placeholder="Ingredient Name" defaultValue={item.name} />
                                         </div>

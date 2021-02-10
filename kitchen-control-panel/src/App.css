@@ -758,16 +758,25 @@ nav .linkBox {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 20px 0;
   color: #292929;
 }
-.recipe .title img {
+.recipe .title .imgHolder {
+  background-color: #3d3d3d;
+  padding: 20px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./img/cutlery-background.png");
 }
-.recipe .title h1, .recipe .title p {
+.recipe .title .imgHolder img {
+  height: 50vh;
+}
+.recipe .title .topBar, .recipe .title p {
   background-color: #84dfe2;
   width: 100%;
   text-align: center;
+  font-style: italic;
 }
 .recipe .title h1 {
   background-color: #292929;
@@ -1178,6 +1187,69 @@ nav .linkBox {
 }
 .list .listItems .checkedItem .button:hover {
   color: #B6B6B6;
+}
+
+.generator {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(51, 50, 50, 0.6);
+  z-index: 100;
+  position: fixed;
+  padding-top: 50px;
+}
+.generator .close {
+  font-size: 12rem;
+  position: fixed;
+  right: 50px;
+}
+.generator .close:hover {
+  cursor: pointer;
+  color: #FFC68A;
+}
+.generator h1 {
+  margin: 50px;
+}
+.generator .mealPicking {
+  display: flex;
+  background-color: #292929;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 50px auto 20px;
+}
+.generator .mealPicking h2 {
+  margin-right: 20px;
+}
+.generator .mealPicking .input {
+  padding: 10px;
+  background-color: #3d3d3d;
+  border: none;
+  color: #B6B6B6;
+  width: 200px;
+  margin: 0 20px;
+  font-size: 2rem;
+  height: 50px;
+}
+.generator .mealPicking .dates {
+  width: 100%;
+  display: flex;
+  background-color: #292929;
+  justify-content: center;
+  align-items: center;
+}
+.generator .mealPicking #mealFilter {
+  padding: 15px 30px;
+  order: 2;
+  border: none;
+  background: #E1DFFD;
+  font-family: "muli";
+  font-size: 2rem;
+  color: #292929;
+  text-align: center;
+}
+.generator .mealPicking #mealFilter:hover {
+  background-color: #B6B6B6;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -46,7 +46,7 @@ class Plan extends Component {
         var newEnd = new Date(event.target.elements[1].value.replace(/-/, '/'));
 
         var newStartF = event.target.elements[0].value.replaceAll('-', ', ');
-        var newEndF = event.target.elements[1].value.replaceAll('-', ', ')
+        var newEndF = event.target.elements[1].value.replaceAll('-', ', ');
 
         // console.log(newStartF, newEndF);
 
