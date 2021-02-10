@@ -80,36 +80,58 @@ class Generator extends Component {
     }
 
     compare(ingredients){
+        // put needed ingredient objects in an array
         let needs = [];
 
+
+
+        // go through the ingredients ...
         ingredients.forEach(ingredient => {
+            
+            // keep track of the forEach iterations for the inventory
+            let tally = 0;
+            
+            // ... to compare them to the inventory items we have
             this.props.data.inventory.forEach(item => {
+                // if there's a match in the inventory and a needed item, find out how much is needed or if we have enough
                 if(ingredient.name == item.name){
 
+                    // if the ingredient name matches, find out if the label does too
                     if(ingredient.label == item.label){
+                        // if the labels are the same, we can easily calculate the amount
                         let amount = ingredient.amount - item.amount;
 
+                        // if the difference is negative, then we don't have enough of the ingredient and we have to add it to the needs list
                         if (amount < 0) {
-                            
-                            needs.push({
-                                amount: amount,
-                                label: item.label,
-                                name: item.name
-                            });
+
+                            // find out if this ingredient type is already in our needs array                     
+                          
                         }
                     }
 
                 } else {
-                    needs.forEach(need => {
-                        if(need.name == ingredient.name){
-
-                        } else {
-                            needs.push(ingredient);
-                        }
-                    });
+                    // if the ingredient names don't match the inventory item, we may need to add something we don't have. Only add it to the needs list if we're sure (aka if we're comparing it to the last ingredient in the inventory to the needed ingredient in question) 
+                    if(tally == ingredients.length){
+                        // check if the ingredient is already added to needs
+                        needs.forEach(need => {
+                            if(need.name == ingredient.name){
+                                // if yes, find out if the format is the same
+                                if(need.label == ingredient.label){
+                                    // if the labels and name are the same, simply add the amount and add it to the array
+                                } else {
+                                    // if the labels don't match, convert before adding back to the array
+                                }
+    
+                            } else {
+                                // if the need isn't already in the list, add it
+                                needs.push(ingredient);
+                            }
+                        });
+                    }
                 }
+                // count the iteration of the forEach for inventory items we're comparing
+                tally++;
             });
-
         });
     }
 
