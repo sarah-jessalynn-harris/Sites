@@ -96,17 +96,29 @@ class Generator extends Component {
                 // if there's a match in the inventory and a needed item, find out how much is needed or if we have enough
                 if(ingredient.name == item.name){
 
-                    // if the ingredient name matches, find out if the label does too
+                    // if the ingredient name matches, that means we have some of this ingredient already. We need to find out if we need more or not. Start by finding0 out if the labels match too
                     if(ingredient.label == item.label){
                         // if the labels are the same, we can easily calculate the amount
                         let amount = ingredient.amount - item.amount;
 
                         // if the difference is negative, then we don't have enough of the ingredient and we have to add it to the needs list
-                        if (amount < 0) {
+                        if (amount <= 0) {
+
+                            // but before we add it, we have to see if this ingredient type is already in the needs list so we can add it to an existing entry, or add it to the list as a new item type                    
+                          
+                        } //if it were positive, that means we don't need anymore, so we don't need to add it to the needs list
+
+                    } else {
+                        // if the labels don't match, we'll have to convert the amounts before adding it to the needs list
+
+                        let amount;
+
+                        // if the difference is negative, then we don't have enough of the ingredient and we have to add it to the needs list
+                        if (amount <= 0) {
 
                             // find out if this ingredient type is already in our needs array                     
                           
-                        }
+                        } //if it were positive, that means we don't need anymore, so we don't need to add it to the needs list
                     }
 
                 } else {
@@ -118,8 +130,11 @@ class Generator extends Component {
                                 // if yes, find out if the format is the same
                                 if(need.label == ingredient.label){
                                     // if the labels and name are the same, simply add the amount and add it to the array
+                                    let newAmt = ingredient.amt + need.amt;
+                                    need.amount = newAmt;
                                 } else {
                                     // if the labels don't match, convert before adding back to the array
+
                                 }
     
                             } else {
