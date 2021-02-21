@@ -24,6 +24,7 @@ import firebase from 'firebase';
           <option value="gallon">gallon</option>
           <option value="gram">gram</option>
           <option value="ounce">ounce</option>
+          <option value="floz">floz</option>
           <option value="lbs">lbs</option>
           <option defaultValue="unit">unit</option>
         </select>
@@ -120,6 +121,7 @@ import firebase from 'firebase';
                             <option defaultValue="gallon">gallon</option>
                             <option defaultValue="gram">gram</option>
                             <option defaultValue="ounce">ounce</option>
+                            <option defaultValue="floz">floz</option>
                             <option defaultValue="lbs">lbs</option>
                             <option defaultValue="unit">unit</option>
                             </select>
@@ -185,6 +187,7 @@ import firebase from 'firebase';
                                                 <option defaultValue="gallon">gallon</option>
                                                 <option defaultValue="gram"> gram</option>
                                                 <option defaultValue="ounce">ounce</option>
+                                                <option defaultValue="floz">floz</option>
                                                 <option defaultValue="lbs">lbs</option>
                                                 <option defaultValue="unit">unit</option>
                                             </select>

@@ -2,8 +2,10 @@ import React, {Component} from "react";
 import ListItem from "../List/ListItem";
 import {NavLink} from "react-router-dom";
 import {add, format, isAfter, isBefore, isEqual} from "date-fns";
-import { unit } from 'mathjs';
+import { create, all } from 'mathjs';
 
+const config = {};
+const math = create(all, config);
 
 class Generator extends Component {
 
@@ -22,7 +24,7 @@ class Generator extends Component {
     generate(event){
         event.preventDefault();
 
-        if(event.target.elements[0].value == "" || event.target.elements[1].value == ""){
+        if(event.target.elements[0].value === "" || event.target.elements[1].value === ""){
             alert("Please enter a start and ending date.");
             return;
         }
@@ -32,8 +34,6 @@ class Generator extends Component {
 
         var newStartF = event.target.elements[0].value.replaceAll('-', ', ');
         var newEndF = event.target.elements[1].value.replaceAll('-', ', ');
-
-        // console.log(newStartF, newEndF);
 
         if(!isAfter(newEnd, newStart) && !isEqual(newEnd, newStart)) {
             alert("End date must come after start date chronologically.")
@@ -62,13 +62,12 @@ class Generator extends Component {
     }
 
     getIngredients(r){
-        console.log(r);
 
         let ingredients = [];
 
         this.props.data.recipes.forEach(recipe =>{
             r.forEach(id => {
-                if(recipe.id == id){
+                if(recipe.id === id){
                     recipe.ingredients.forEach(ingredient =>{
                         ingredients.push(ingredient);
                     });
@@ -83,8 +82,6 @@ class Generator extends Component {
         // put needed ingredient objects in an array
         let needs = [];
 
-
-
         // go through the ingredients ...
         ingredients.forEach(ingredient => {
             
@@ -94,10 +91,10 @@ class Generator extends Component {
             // ... to compare them to the inventory items we have
             this.props.data.inventory.forEach(item => {
                 // if there's a match in the inventory and a needed item, find out how much is needed or if we have enough
-                if(ingredient.name == item.name){
+                if(ingredient.name === item.name){
 
-                    // if the ingredient name matches, that means we have some of this ingredient already. We need to find out if we need more or not. Start by finding0 out if the labels match too
-                    if(ingredient.label == item.label){
+                    // if the ingredient name matches, that means we have some of this ingredient already. We need to find out if we need more or not. Start by finding out if the labels match too
+                    if(ingredient.label === item.label){
                         // if the labels are the same, we can easily calculate the amount
                         let amount = ingredient.amount - item.amount;
 
@@ -111,30 +108,44 @@ class Generator extends Component {
                     } else {
                         // if the labels don't match, we'll have to convert the amounts before adding it to the needs list
 
-                        let amount;
+                        let unit1 = math.unit(ingredient.label)
+                        let unit2 = math.unit(item.label);
+                        // find out if the labels are compatible to generate
+                        if(!unit2.equalBase(unit1)){
+                            // if they aren't, 
+                            console.log("aren't");
+                        } else {
+                            // if they are, convert and add the items
 
-                        // if the difference is negative, then we don't have enough of the ingredient and we have to add it to the needs list
-                        if (amount <= 0) {
+                            let conversion = math.evaluate(ingredient.amount + ' ' + ingredient.label + ' to ' + item.label);
 
-                            // find out if this ingredient type is already in our needs array                     
-                          
-                        } //if it were positive, that means we don't need anymore, so we don't need to add it to the needs list
+                            console.log(conversion);
+
+                            let amount = conversion + item;
+
+                            // if the difference is negative, then we don't have enough of the ingredient and we have to add it to the needs list
+                            if (amount <= 0) {
+
+                                // find out if this ingredient type is already in our needs array                     
+                            
+                            } //if it were positive, that means we don't need anymore, so we don't need to add it to the needs list
+                        }
                     }
 
                 } else {
                     // if the ingredient names don't match the inventory item, we may need to add something we don't have. Only add it to the needs list if we're sure (aka if we're comparing it to the last ingredient in the inventory to the needed ingredient in question) 
-                    if(tally == ingredients.length){
+                    if(tally === ingredients.length){
                         // check if the ingredient is already added to needs
                         needs.forEach(need => {
-                            if(need.name == ingredient.name){
+                            if(need.name === ingredient.name){
                                 // if yes, find out if the format is the same
-                                if(need.label == ingredient.label){
+                                if(need.label === ingredient.label){
                                     // if the labels and name are the same, simply add the amount and add it to the array
                                     let newAmt = ingredient.amt + need.amt;
                                     need.amount = newAmt;
                                 } else {
                                     // if the labels don't match, convert before adding back to the array
-
+                                    
                                 }
     
                             } else {
@@ -148,6 +159,7 @@ class Generator extends Component {
                 tally++;
             });
         });
+        console.log(needs);
     }
 
     render(){

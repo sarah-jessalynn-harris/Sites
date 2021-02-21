@@ -109,7 +109,7 @@ class GHandler extends Component {
             
             var checkedBool;
 
-            if(event.target.elements[3].value == "Yes") {
+            if(event.target.elements[3].value === "Yes") {
                 checkedBool = true;
             } else {
                 checkedBool = false;

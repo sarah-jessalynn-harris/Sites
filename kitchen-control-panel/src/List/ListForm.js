@@ -23,6 +23,7 @@ import React, {Component} from "react";
                             <option defaultValue="gallon">gallon</option>
                             <option defaultValue="gram">gram</option>
                             <option defaultValue="ounce">ounce</option>
+                            <option defaultValue="floz">floz</option>
                             <option defaultValue="lbs">lbs</option>
                             <option defaultValue="unit">unit</option>
                             </select>
@@ -57,6 +58,7 @@ import React, {Component} from "react";
                                     <option defaultValue="gallon">gallon</option>
                                     <option defaultValue="gram"> gram</option>
                                     <option defaultValue="ounce">ounce</option>
+                                    <option defaultValue="floz">floz</option>
                                     <option defaultValue="lbs">lbs</option>
                                     <option defaultValue="unit">unit</option>
                                 </select>
