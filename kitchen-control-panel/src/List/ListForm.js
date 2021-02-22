@@ -25,7 +25,6 @@ import React, {Component} from "react";
                             <option defaultValue="ounce">ounce</option>
                             <option defaultValue="floz">floz</option>
                             <option defaultValue="lbs">lbs</option>
-                            <option defaultValue="unit">unit</option>
                             </select>
                            
                             <input name="label" type="text" id="label" placeholder="Ingredient Name"/>
@@ -60,7 +59,6 @@ import React, {Component} from "react";
                                     <option defaultValue="ounce">ounce</option>
                                     <option defaultValue="floz">floz</option>
                                     <option defaultValue="lbs">lbs</option>
-                                    <option defaultValue="unit">unit</option>
                                 </select>
 
                           
