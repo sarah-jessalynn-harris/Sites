@@ -64,16 +64,49 @@ class Generator extends Component {
         this.getIngredients(recipes);
     }
 
+    // find out what ingredients we need from the recipes planned
     getIngredients(plans){
-        console.log(plans);
+        // console.log(plans);
+
+        // list of ingredients we need
         let ingredients = [];
 
+        // go through each planned recipe id
         plans.forEach(plan =>{
+            // find the recipe from the database that matches the id
             this.props.data.recipes.forEach(recipe => {
+                // if they match, go through each needed ingredient and add it to the list
                 if(recipe.id === plan){
                     recipe.ingredients.forEach(ingredient =>{
                         // console.log(ingredient);
-                        ingredients.push(ingredient);
+
+                        let arrayId = ingredients.findIndex(object => object.name === ingredient.name);
+
+                        // find out if the ingredient type is in the array already
+                       if(arrayId === -1){
+                            //if it isn't we can just add it    
+                            ingredients.push(ingredient);
+                       } else {
+
+                            let arrayObj = ingredients[arrayId];
+
+                            let ingredientUnit = math.unit(ingredient.label);
+                                            
+                            let itemUnit = math.unit(arrayObj.label);
+
+                            // if it is, we need to see if the units are compatable
+                                if(!itemUnit.equalBase(ingredientUnit)){
+                                    // if they aren't, just add to the needs list
+                                    ingredients.push(ingredient);
+                                } else {
+                                    // if they are, convert and add to the list
+                                        let newLabel = (math.evaluate(ingredient.amount+ ' ' + ingredient.label + ' to ' + arrayObj.label)).toJSON();
+                            
+                                        arrayObj.amount = arrayObj.amount + newLabel.value;                                               
+                                }
+                       }
+                        
+                        
                     });
                 }
             });
@@ -89,7 +122,7 @@ class Generator extends Component {
         // go through the ingredients ...
         ingredients.forEach(ingredient => {
             
-            // console.log(needs);
+            //console.log(needs);
             // keep track of the forEach iterations for the inventory
             let iterations = 0;
 
@@ -114,7 +147,7 @@ class Generator extends Component {
                         // if the labels are the same, we can easily calculate the amount
                         let amount = item.amount - ingredient.amount;
 
-                        // console.log(ingredient.name, " ", item.name, " ", amount);
+                        console.log(ingredient.name, " ", item.name, " ", amount);
 
                         // if the difference is negative, then we don't have enough of the ingredient and we have to add it to the needs list
                         if (amount < 0) {

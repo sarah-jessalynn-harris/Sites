@@ -7,7 +7,6 @@ import Generator from "../Generator/Generator";
 class GList extends Component {
     
     render() {
-console.log(this.props.needList);
         return(
             <div>
                     
