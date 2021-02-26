@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import GListItem from "./GlistItem";
-import Generator from "../Generator/Generator";
 
 
 

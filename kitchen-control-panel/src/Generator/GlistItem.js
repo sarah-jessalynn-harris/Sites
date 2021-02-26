@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {NavLink} from "react-router-dom";
 
 //component for displaying pantry item
 class GListItem extends Component {

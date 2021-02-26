@@ -1,7 +1,5 @@
 import React, {Component} from "react";
-import ListItem from "../List/ListItem";
-import {NavLink} from "react-router-dom";
-import {add, format, isAfter, isBefore, isEqual} from "date-fns";
+import {isAfter, isBefore, isEqual} from "date-fns";
 import { create, all } from 'mathjs';
 import GList from "./Glist";
 
@@ -41,7 +39,9 @@ class Generator extends Component {
         if(!isAfter(newEnd, newStart) && !isEqual(newEnd, newStart)) {
             alert("End date must come after start date chronologically.")
         } else {
-             this.getPlan(newStartF, newEndF); 
+            
+            this.getPlan(newStartF, newEndF);   
+            
         }
     }
         
@@ -49,7 +49,6 @@ class Generator extends Component {
 
     getPlan(s, e){
         let recipes = [];
-
         this.props.data.mealplan.forEach(meal =>{
 
             var startFormat = new Date(s);
@@ -60,17 +59,17 @@ class Generator extends Component {
                 recipes.push(meal.recipe);
             }
         });
-
+        console.log(recipes);
         this.getIngredients(recipes);
     }
 
     // find out what ingredients we need from the recipes planned
     getIngredients(plans){
-        // console.log(plans);
 
         // list of ingredients we need
-        let ingredients = [];
+        let extractedIngredients = [];
 
+        console.log(extractedIngredients);
         // go through each planned recipe id
         plans.forEach(plan =>{
             // find the recipe from the database that matches the id
@@ -78,32 +77,48 @@ class Generator extends Component {
                 // if they match, go through each needed ingredient and add it to the list
                 if(recipe.id === plan){
                     recipe.ingredients.forEach(ingredient =>{
-                        // console.log(ingredient);
+                        console.log(ingredient);
 
-                        let arrayId = ingredients.findIndex(object => object.name === ingredient.name);
+                        let arrayId = extractedIngredients.findIndex(object => object.name === ingredient.name);
+                        console.log(arrayId);
 
                         // find out if the ingredient type is in the array already
                        if(arrayId === -1){
                             //if it isn't we can just add it    
-                            ingredients.push(ingredient);
+                            extractedIngredients.push(ingredient);
+                            console.log("just adding: ", ingredient);
                        } else {
 
-                            let arrayObj = ingredients[arrayId];
+                            let arrayObj = extractedIngredients[arrayId];
+                            console.log("already in array: ", arrayObj)
 
                             let ingredientUnit = math.unit(ingredient.label);
                                             
                             let itemUnit = math.unit(arrayObj.label);
 
                             // if it is, we need to see if the units are compatable
-                                if(!itemUnit.equalBase(ingredientUnit)){
-                                    // if they aren't, just add to the needs list
-                                    ingredients.push(ingredient);
-                                } else {
-                                    // if they are, convert and add to the list
-                                        let newLabel = (math.evaluate(ingredient.amount+ ' ' + ingredient.label + ' to ' + arrayObj.label)).toJSON();
+                            if(arrayObj.label === ingredient.label){
+                                console.log("same label before: ", ingredient, arrayObj );
+                                arrayObj.amount = ingredient.amount + arrayObj.amount;
+                                console.log("same label after: ", ingredient, arrayObj );
+                            } else if(!itemUnit.equalBase(ingredientUnit)){
+                                // if they aren't, just add to the needs list
+                                extractedIngredients.push(ingredient);
+                            } else {
+                                console.log("needs conversion: ", ingredient);
+                                // if they are, convert and add to the list
+                                let newLabel = (math.evaluate(ingredient.amount + ' ' + ingredient.label + ' to ' + arrayObj.label)).toJSON();
+                                console.log(ingredient, newLabel);
+                                let newAmount  = arrayObj.amount + newLabel.value; 
+
+                                console.log(ingredient, arrayObj, newAmount);
+
+                                arrayObj.amount = newAmount;
                             
-                                        arrayObj.amount = arrayObj.amount + newLabel.value;                                               
-                                }
+                                console.log(ingredient, arrayObj);
+
+                                
+                            }
                        }
                         
                         
@@ -111,13 +126,15 @@ class Generator extends Component {
                 }
             });
         });
-        console.log(ingredients);
-        this.compare(ingredients);
+        console.log(extractedIngredients);
+        this.compare(extractedIngredients);
     }
 
     compare(ingredients){
         // put needed ingredient objects in an array
         let needs = [];
+
+        console.log(needs);
 
         // go through the ingredients ...
         ingredients.forEach(ingredient => {
@@ -141,13 +158,13 @@ class Generator extends Component {
                 if(ingredient.name === item.name){
                     // count the iteration of the forEach for inventory items that matched our plan ingredients
                     tally++;
-                    console.log(tally);
+                    // console.log(tally);
                     // if the ingredient name matches, that means we have some of this ingredient already. We need to find out if we need more or not. Start by finding out if the labels match too
                     if(ingredient.label === item.label){
                         // if the labels are the same, we can easily calculate the amount
                         let amount = item.amount - ingredient.amount;
 
-                        console.log(ingredient.name, " ", item.name, " ", amount);
+                        // console.log(ingredient.name, " ", item.name, " ", amount);
 
                         // if the difference is negative, then we don't have enough of the ingredient and we have to add it to the needs list
                         if (amount < 0) {
@@ -395,6 +412,16 @@ class Generator extends Component {
         this.setState({needList: needs}, ()=>{
             this.setState({generating: false});
         });
+    }
+
+    removeItem(props){
+        // look in array for these props
+
+        // take out of the array
+    }
+
+    addItem(){
+
     }
 
     render(){
