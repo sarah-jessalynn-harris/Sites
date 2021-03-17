@@ -93,7 +93,7 @@ nav .link {
   margin: 0 1rem;
 }
 nav .link:hover {
-  color: #A4ADE9;
+  color: #292929;
   cursor: pointer;
 }
 nav .logo {
@@ -438,7 +438,7 @@ nav .linkBox {
   display: flex;
   background-color: #3d3d3d;
   flex-direction: column;
-  margin: 20px;
+  margin: 10px;
   border: solid #84dfe2 1px;
 }
 .card .cardHeader {
@@ -537,6 +537,9 @@ nav .linkBox {
   width: 100%;
   margin-top: 20px;
 }
+.dashboard .overview h3 {
+  color: #84dfe2;
+}
 .dashboard .overview .box {
   width: 100%;
   display: flex;
@@ -548,17 +551,19 @@ nav .linkBox {
   display: flex;
   flex-direction: column;
   width: 25%;
-  border: 1px #292929 solid;
 }
 .dashboard .overview .box .calendarBox .dateRow {
-  color: #292929;
+  color: #B6B6B6;
   width: 100%;
   background-color: #5c5b5b;
-  color: #E1DFFD;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 10px 20px 5px;
+  padding: 5px 10px;
+  border: 1px solid #B6B6B6;
+}
+.dashboard .overview .box .calendarBox .dateRow h4 {
+  margin: 0;
+  font-weight: normal;
 }
 .dashboard .overview .box .calendarBox .mealBox {
   display: flex;
@@ -567,21 +572,25 @@ nav .linkBox {
   background-color: #3d3d3d;
   padding: 20px;
   min-height: 100%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #B6B6B6;
 }
 .dashboard .overview .box .calendarBox .mealBox .mealHolder {
   border: none;
-  background: #E1DFFD;
+  background: #84dfe2;
   font-family: "muli";
-  font-size: 2rem;
-  padding: 10px 20px;
+  font-size: 1.8rem;
+  padding: 5px;
   width: 300px;
-  margin: 10px auto;
   color: #292929;
   text-decoration: none;
   text-transform: capitalize;
+  text-align: center;
 }
 .dashboard .overview .box .calendarBox .mealBox .mealHolder:hover {
-  background-color: #5c5b5b;
+  background-color: #292929;
+  color: #B6B6B6;
 }
 .dashboard .dashButtons {
   width: 100%;
@@ -606,12 +615,13 @@ nav .linkBox {
 
 .dash {
   width: 100%;
-  background-image: linear-gradient(0deg, rgba(51, 50, 50, 0.6), rgba(51, 50, 50, 0.6)), url("./img/castIron.jpg");
+  background-image: linear-gradient(0deg, rgba(51, 50, 50, 0.4), rgba(51, 50, 50, 0.4)), url("./img/veggies.jpg");
   background-size: cover;
-  padding: 80px 70px 10px;
+  padding: 110px 20px 50px;
   background-attachment: fixed;
+  font-size: 4rem;
   color: #E1DFFD;
-  font-size: 5rem;
+  text-align: center;
 }
 
 .account {
@@ -633,7 +643,7 @@ nav .linkBox {
 .account .background {
   width: 100%;
   height: 90%;
-  background-image: url("./img/veggies.jpg");
+  background-image: url("./img/castIron.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -834,10 +844,6 @@ nav .linkBox {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-image: url("img/food.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   background-color: #3d3d3d;
 }
 .inventory .recipesHeading {
@@ -922,7 +928,7 @@ nav .linkBox {
 }
 .mealPlan .button {
   border: none;
-  background: #E1DFFD;
+  background: #84dfe2;
   font-family: "muli";
   font-size: 2rem;
   padding: 20px 40px;
@@ -952,7 +958,7 @@ nav .linkBox {
 .mealPlan .calendar .calendarBox .dateRow {
   color: #292929;
   width: 100%;
-  background-color: #E1DFFD;
+  background-color: #84dfe2;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -970,7 +976,7 @@ nav .linkBox {
   align-items: center;
   overflow-y: auto;
   white-space: nowrap;
-  border: solid #E1DFFD 1px;
+  border: solid #84dfe2 1px;
 }
 .mealPlan .calendar .calendarBox .mealBox .mealCard {
   margin: 20px;
@@ -1040,7 +1046,7 @@ nav .linkBox {
   padding: 15px 30px;
   order: 2;
   border: none;
-  background: #E1DFFD;
+  background: #84dfe2;
   font-family: "muli";
   font-size: 2rem;
   color: #292929;
@@ -1114,6 +1120,9 @@ nav .linkBox {
   color: #B6B6B6;
   cursor: pointer;
 }
+.list .addButton {
+  background-color: #84dfe2;
+}
 .list .listItems {
   width: 100%;
   display: flex;
@@ -1127,7 +1136,7 @@ nav .linkBox {
   padding: 10px 20px;
   border-radius: 10px;
   margin-bottom: 20px;
-  background-color: #B6B6B6;
+  background-color: #84dfe2;
   color: #292929;
 }
 .list .listItems .listItem .listId {
@@ -1140,7 +1149,7 @@ nav .linkBox {
   height: 40px;
   background-color: #292929;
   margin-right: 20px;
-  border: #B6B6B6 3px solid;
+  border: #5c5b5b 3px solid;
   border-radius: 5px;
 }
 .list .listItems .listItem .listId .checkbox:hover {
@@ -1192,7 +1201,7 @@ nav .linkBox {
 .generator {
   width: 100vw;
   min-height: 100vh;
-  background-color: rgba(51, 50, 50, 0.6);
+  background-color: rgba(51, 50, 50, 0.4);
   z-index: 100;
   position: relative;
   padding-top: 50px;

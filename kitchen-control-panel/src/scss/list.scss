@@ -43,6 +43,10 @@
         }
     }
 
+    .addButton {
+        background-color: $blue;
+    }
+
     .listItems {
         width: 100%;
         display: flex;
@@ -58,7 +62,7 @@
             padding: 10px 20px;
             border-radius: 10px;
             margin-bottom: 20px;
-            background-color: $white;
+            background-color: $blue;
             color: $black;
 
             .listId{
@@ -71,7 +75,7 @@
                     height: 40px;
                     background-color: $black;
                     margin-right: 20px;
-                    border: $white 3px solid;
+                    border: $cardShadow 3px solid;
                     border-radius: 5px;
 
 

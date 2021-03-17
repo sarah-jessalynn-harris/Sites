@@ -25,7 +25,7 @@ class List extends Component {
                     <div className="recipesHeading">
                         <h2> Shopping List </h2>
                         <div className="listButtons">
-                            <NavLink exact className="recipesButton" activeClassName="active" to={"/list/new"}> Add </NavLink>
+                            <NavLink exact className="recipesButton addButton" activeClassName="active" to={"/list/new"}> Add </NavLink>
                             <button className="recipesButton" onClick={this.togglePopup}> Generate </button>
                         </div>
                     </div>
