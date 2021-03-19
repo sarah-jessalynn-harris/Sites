@@ -35,8 +35,6 @@ class Recipe extends Component {
                         <div className="title">
                             <h1>{this.props.userData[this.state.id].name}</h1>
 
-                            <span className="topBar">&nbsp;</span>
-
                             <div className="imgHolder">
                                 <img src={this.props.userData[this.state.id].image} alt={this.props.userData[this.state.id].name}/>
                             </div>
@@ -62,7 +60,7 @@ class Recipe extends Component {
                                         {
                                             this.props.userData[this.state.id].instructions.map(function (item, x){
                                                 return <div key={x} className="instructionsWrapper">
-                                                    <p>Step {x + 1}: </p> &nbsp; <p>{item}</p>
+                                                    <p className="steps">Step {x + 1}: </p> &nbsp; <p>{item}</p>
                                                 </div>
 
                                             })

@@ -52,8 +52,6 @@
         display: flex;
         flex-direction: column;
 
-
-
         .listItem{
             width: 100%;
             display: flex;
@@ -134,6 +132,42 @@
 
                 &:hover{
                     color: $white;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 850px) {
+        padding: 100px 30px 30px;
+        
+        .recipesHeading{
+            flex-direction: column;
+        }
+    }
+
+    
+    @media only screen and (max-width: 600px) {
+        .recipesHeading{
+            .recipesButton{
+                width: 100px;
+            }
+        }
+
+        .listItems{
+            .listItem{
+                flex-direction: column;
+
+                .buttons, .listId{
+                    width: 100%;
+                    margin: 5px;
+                }
+
+                .buttons {
+                    margin-top: 20px;
+                    
+                    .button{
+                        margin: 5px;
+                    }
                 }
             }
         }

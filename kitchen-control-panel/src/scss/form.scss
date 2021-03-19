@@ -40,11 +40,22 @@
         }
     }
 
+        
+    @media only screen and (max-width: 600px) {
+        padding: 20px;
+    }
+
 }
 
 .loginForm {
     display: flex;
     flex-direction: column;
+
+    @media only screen and (max-width: 600px) {
+        input{
+            width: 250px;
+        }
+    }
 }
 
 .forgottenForm {
@@ -204,8 +215,8 @@
 .mealForm{
     display: flex;
     align-items: center;
-    width: 500px;
     margin: 35px auto 0;
+    width: 375px;
 
     select {
         padding: 10px;
@@ -213,22 +224,24 @@
         border: none;
         color: $white;
         margin: 5px 0;
-        width: 100%;
+        width: 275px;
         font-size: 2.0rem;
-        
-        width: 300px;
     }
 
     input{
-        width: 300px;
+        width: 275px;
     }
 
     .buttons{
         flex-direction: column;
 
         .options {
-            width: 300px;
+            width: 275px;
         }
+    }
+
+    @media only screen and (max-width: 400px) {
+        width: 300px;
     }
 }
 
@@ -248,6 +261,20 @@
         .checkInput{
             width: 100px;
             margin: 0 auto; 
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        .ingredientBox {
+            .ingredient{
+                display: flex;
+                flex-direction: column;
+
+                input, select{
+                    width: 100%;
+                    margin: 20px 5px;
+                }
+            }
         }
     }
 }

@@ -50,6 +50,11 @@
             background-color: $black;
             justify-content: center;
             align-items: center;
+            margin-bottom: 30px;
+
+            .datePicker{
+                display: flex;
+            }
         }
 
         #mealFilter {
@@ -115,5 +120,47 @@
     
     }
 
+    @media only screen and (max-width: 1000px) {
+        .mealPicking{
+            .dates{
+                flex-direction: column;
+
+                .datePicker{
+                    margin: 20px auto;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+        h1{
+            font-size: 4.0rem;
+        }
+
+        .close{
+            font-size: 7.0rem;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .listItems{
+            .listItem{
+                flex-direction: column;
+
+                .buttons, .listId{
+                    width: 100%;
+                    margin: 5px;
+                }
+
+                .buttons {
+                    margin-top: 20px;
+                    
+                    .button{
+                        margin: 5px;
+                    }
+                }
+            }
+        }
+    }
    
 }

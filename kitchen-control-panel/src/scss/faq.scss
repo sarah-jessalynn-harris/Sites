@@ -1,8 +1,7 @@
 .faq{
-    background-image: url("./img/faqbackground.jpeg");
 
     h2 {
-        color: $black;
+        color: $blue;
         margin: 0 auto;
     }
 
@@ -10,12 +9,16 @@
         flex-direction: column;
 
         .inventoryItem {
-            width: 80%;
+            width: 95%;
         }
 
         h4 {
             color: $blue;
             font-style: italic;
         }
+    }
+
+    @media only screen and (max-width: 600px) {
+        padding: 100px 20px 20px;
     }
 }

@@ -59,16 +59,23 @@
                 display: flex;
                 width: 100%;
                 background-color: $grey;
-                padding: 50px;
-                padding-left: 10px;
+                padding: 20px 10px;
                 align-items: center;
-                overflow-y: auto;
+                overflow-y: hidden;
+                overflow-x: auto;
                 white-space: nowrap;
                 border: solid $blue 1px;
 
                 .mealCard{
-                    margin: 20px;
                     background-color: $black;
+                    min-height: 70vh;
+                    .cardContent{
+                        .cardDescription{
+                            h2{
+                                text-align: center;
+                            }
+                        }
+                    }
                 }
 
                 .mealHolder {
@@ -99,12 +106,12 @@
                     width: 300px;
                     background-color: $peach;
                     text-align: center;
-                    margin: auto;
                     font-family: "muli";
                     font-size: 2.0rem;
-                    padding: 20px 40px;
+                    padding: 10px 20px;
                     text-decoration: none;
                     color: $black;
+                    margin: 0 auto;
 
                     &:hover{
                         background-color: $purple;
@@ -143,6 +150,11 @@
             background-color: $black;
             justify-content: space-between;
             align-items: center;
+
+            
+            .picker{
+                display: flex;
+            }
         }
 
         #mealFilter {
@@ -164,6 +176,42 @@
 
     @media only screen and (max-width: 1200px) {
         padding: 0px;
+
+        .mealPicking{
+            margin-top: 100px;
+            flex-direction: column;
+        }
+    }
+
+    @media only screen and (max-width: 900px) {
+        .mealPicking{
+            .dates{
+                flex-direction: column;
+
+                .picker, #mealFilter{
+                    margin: 20px auto;
+                }
+            }
+        }
+
+        .calendar{
+            .calendarBox{
+                .mealBox{
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .mealPicking{
+            .dates{
+                .picker{
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        }
     }
 
 }

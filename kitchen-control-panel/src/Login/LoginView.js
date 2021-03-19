@@ -24,7 +24,7 @@ const LoginView = ({login, signup, forgot}) => {
 
                 </div>
 
-                <form className="form" id="signup" onSubmit = {signup}>
+                <form className="form loginForm" id="signup" onSubmit = {signup}>
                     <h3> Register</h3>
 
                     <label htmlFor="firstname"> First Name: </label>

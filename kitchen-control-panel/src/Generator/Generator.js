@@ -434,13 +434,17 @@ class Generator extends Component {
                            
                            <div className="dates">
                            <h2> Missing Ingredients for: </h2>
-                               <input className="input" name="date" type="date" id="lDate1"/>
-                          
-               
-                               <h4> to </h4>
-               
-                               <input className="input" name="date2" type="date" id="lDate2" />
-                               <input type="submit" id="mealFilter" value="Generate"/> 
+
+                           <div className="datePicker">
+                                <input className="input" name="date" type="date" id="lDate1"/>
+                                
+                    
+                                <h4> to </h4>
+                
+                                <input className="input" name="date2" type="date" id="lDate2" />
+                           </div>
+                               
+                            <input type="submit" id="mealFilter" value="Generate"/> 
                            </div>
             </form>
                 

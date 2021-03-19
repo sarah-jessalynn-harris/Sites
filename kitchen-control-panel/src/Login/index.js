@@ -56,7 +56,7 @@ class LogInHandler extends Component {
 
                 await fire.auth().signInWithEmailAndPassword(email, password);
 
-                this.props.history.push("/");
+                this.props.history.push("/dashboard");
 
             } catch (error) {
 

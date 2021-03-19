@@ -153,14 +153,17 @@ class Plan extends Component {
                             <div className="dates">
                             <h2> Plan Week</h2>
                                 {/* <label for="date"> Start Date: </label> */}
-                                <input className="input" name="date" type="date" id="date1" defaultValue={starter}/>
-                           
-                
-                                <h4> to </h4>
-                
-                           
-                                {/* <label for="date2"> End Date: </label> */}
-                                <input className="input" name="date2" type="date" id="date2" defaultValue={ender}/>
+
+                                <div className="picker">
+                                    <input className="input" name="date" type="date" id="date1" defaultValue={starter}/>
+                            
+                    
+                                    <h4> to </h4>
+                    
+                            
+                                    {/* <label for="date2"> End Date: </label> */}
+                                    <input className="input" name="date2" type="date" id="date2" defaultValue={ender}/>
+                                </div>
                                 <input type="submit" id="mealFilter" value="Refresh Plan"/> 
                             </div>
 

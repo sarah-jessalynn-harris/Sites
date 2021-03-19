@@ -25,23 +25,24 @@
         color: $black;
 
         .imgHolder{
-            background-color: $grey;
+            background-color: $cardShadow;
             padding: 20px;
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url("./img/cutlery-background.png");
-
+            border-top: 1px solid $blue;
+            border-bottom: 1px solid $blue;
+            // margin-bottom: 40px;
             img {
-                height: 50vh;
+                width: 25vw;
+                border: 1px solid $blue;
             }
 
         }
-
         
 
-        .topBar, p {
+        p {
             background-color: $blue;
             width: 100%;
             text-align: center;
@@ -51,6 +52,7 @@
         h1 {
             background-color: $black;
             color: $blue;
+            margin-top: 20px;
         }
     }
 
@@ -59,6 +61,7 @@
         display: flex;
         padding: 20px;
         flex-wrap: wrap;
+        justify-content: space-evenly;
     }
 
     .ingredientsDisplay, .instructionsDisplay {
@@ -69,6 +72,12 @@
 
     .instructionsWrapper{
         display: flex;
+
+        .steps{
+            white-space: nowrap;
+            font-style: italic;
+            color: $blue;
+        }
     }
 
     .recipeOptions {
@@ -95,12 +104,25 @@
         }
     }
 
+    @media only screen and (max-width: 800px) {
+        .title{
+            .imgHolder{
+                padding: 20px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 40px;
+                img {
+                    width: 75vw;
+                    border: 1px solid $blue;
+                }
+            }
+        }
+    }
+
     @media only screen and (max-width: 550px) {
         padding: 150px 10px 10px;
-
-        .ingredientsDisplay, .instructionsDisplay {
-            padding: 0px;
-        }
     }
     
 }
