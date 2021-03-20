@@ -10,6 +10,7 @@
         font-size: 12rem;
         position: absolute;
         right: 50px;
+        top: 0px;
 
         &:hover{
             cursor: pointer;
@@ -139,10 +140,16 @@
 
         .close{
             font-size: 7.0rem;
+            right: 20px;
+            top: 50px;
         }
     }
 
     @media only screen and (max-width: 500px) {
+        .close{
+            right: 20px;
+        }
+
         .listItems{
             .listItem{
                 flex-direction: column;
@@ -158,6 +165,15 @@
                     .button{
                         margin: 5px;
                     }
+                }
+            }
+        }
+
+        .mealPicking{
+            .dates{
+                .datePicker{
+                    flex-direction: column;
+                    text-align: center;
                 }
             }
         }

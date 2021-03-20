@@ -19,42 +19,36 @@ class Dashboard extends Component {
     dashlinks = [
         {
             title: "Recipes",
-            image: "food.png",
             desc: "Save your rescipes in this digital cookbook! You will also use these recipes to create meal plans.",
             action: "Get Cooking!",
             link: "/recipes/"
         },
         {
             title: "Pantry",
-            image: "",
             desc: "Keep track of what you have at home by logging your food into your pantry.",
             action: "Fill Pantry!",
             link: "/pantry/"
         },
         {
             title: "Meal Plan",
-            image: "",
             desc: "Pick out your recipes to create a meal plan! You can plan out as far in advance as you like.",
             action: "Plan It!",
             link: "/plan/"
         },
         {
             title: "Shopping List",
-            image: "",
             desc: "View a list that can be generated for you if you have a meal plan set. You can add items manually, too!",
             action: "Go Shopping!",
             link: ""
         },
         {
             title: "Your Profile",
-            image: "",
             desc: "View your user profile",
             action: "View Account!",
             link: "/account/"
         },
         {
             title: "Support",
-            image: "",
             desc: "Need help organizing your kitchen with Kitchen Control Panel? Visit this page to see FAQs.",
             action: "Get Help!",
             link: "/help"
@@ -183,7 +177,6 @@ class Dashboard extends Component {
                                 return <Card
                                     key={key}
                                     title = {item.title}
-                                    image = {item.image}
                                     desc = {item.desc}
                                     action = {item.action}
                                     link = {item.link}
