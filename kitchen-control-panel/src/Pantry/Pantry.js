@@ -9,9 +9,14 @@ class Pantry extends Component {
     render() {
 
         return(
-            <div className="inventory">
+            <div>
+                <div className="dash pantryDash">
+                        Pantry
+                </div>
+                <div className="inventory">
+                
                 <div className="recipesHeading">
-                    <h2> Pantry </h2>
+                    <h3> Log the ingredients you have at home. </h3>
                     <NavLink exact className="recipesButton" activeClassName="active" to={"/pantry/new"}> Add </NavLink>
                 </div>
                 
@@ -30,6 +35,8 @@ class Pantry extends Component {
             
                 </div>
           </div>
+            </div>
+
         );
     }
 

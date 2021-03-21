@@ -145,11 +145,16 @@ class Plan extends Component {
             var ender = format(new Date(this.state.end), "yyyy-MM-dd");
 
             return(
-                <div className="mealPlan" id="mealPlan">
-               
+                <div>
+                     <div className="dash planDash">
+                        Meal Plan
+                    </div>
+                    <div className="mealPlan" id="mealPlan">
+                 
+                        <h4 className="guide"> Plan meals using your recipes for the week, month, year... as far out as you like! </h4>
 
                         <form className="mealPicking" onSubmit={this.handleRefresh}>
-                           
+                     
                             <div className="dates">
                             <h2> Plan Week</h2>
                                 {/* <label for="date"> Start Date: </label> */}
@@ -171,21 +176,24 @@ class Plan extends Component {
                         </form>
         
                         
-            
-                    <div className="calendar">
-                        {
-                            Object.keys(this.state.weeks).map(key => {
-                                return <Day
-                                        key = {key}
-                                        date = {key}
-                                        array = {this.state.weeks[key]}
-                                        planned = {this.state.weeks[key][0].planned}
-                                    />
-                            })
-                        }
+                
+                        <div className="calendar">
+                            {
+                                Object.keys(this.state.weeks).map(key => {
+                                    return <Day
+                                            key = {key}
+                                            date = {key}
+                                            array = {this.state.weeks[key]}
+                                            planned = {this.state.weeks[key][0].planned}
+                                        />
+                                })
+                            }
 
+                        </div>
                     </div>
-            </div>
+
+                </div>
+                
             );
         }
     }

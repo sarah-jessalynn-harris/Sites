@@ -657,11 +657,11 @@ nav .linkBox {
 
 .dash {
   width: 100%;
-  background-image: url("./img/cooking.jpg");
   background-size: cover;
   padding: 120px 20px 50px;
+  background-image: url("./img/avacado.jpg");
   background-attachment: fixed;
-  background-position: center top;
+  background-position: center center;
   font-size: 4rem;
   color: #292929;
   text-align: center;
@@ -753,6 +753,10 @@ nav .linkBox {
   padding: 50px;
   background-color: #292929;
 }
+.recipes h3 {
+  font-style: italic;
+  font-weight: normal;
+}
 .recipes .recipesHeading {
   width: 100%;
   padding: 50px 10px;
@@ -785,8 +789,20 @@ nav .linkBox {
 }
 @media only screen and (max-width: 600px) {
   .recipes {
-    padding: 80px 10px 10px;
+    padding: 10px;
   }
+  .recipes .recipesHeading {
+    flex-direction: column;
+  }
+  .recipes .recipesHeading .recipesButton {
+    margin-top: 20px;
+    width: 50%;
+  }
+}
+
+.recipesDash {
+  background-image: url("./img/fruits.jpg");
+  background-position: center center;
 }
 
 .recipe {
@@ -903,12 +919,16 @@ nav .linkBox {
 .inventory {
   width: 100%;
   min-height: 100vh;
-  padding: 100px;
+  padding: 50px 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   background-color: #3d3d3d;
+}
+.inventory h3 {
+  font-style: italic;
+  font-weight: normal;
 }
 .inventory .recipesHeading {
   width: 100%;
@@ -916,7 +936,6 @@ nav .linkBox {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #E1DFFD;
 }
 .inventory .recipesButton {
   text-decoration: none;
@@ -976,9 +995,22 @@ nav .linkBox {
   cursor: pointer;
 }
 @media only screen and (max-width: 1000px) {
+  .inventory h3 {
+    margin-bottom: 50px;
+  }
   .inventory .recipesHeading {
     flex-direction: column;
   }
+}
+@media only screen and (max-width: 800px) {
+  .inventory {
+    padding: 10px;
+  }
+}
+
+.pantryDash {
+  background-image: url("./img/zuccini.jpg");
+  background-position: center 450px;
 }
 
 .mealPlan {
@@ -989,6 +1021,11 @@ nav .linkBox {
   flex-direction: column;
   padding: 50px;
   justify-content: space-evenly;
+}
+.mealPlan .guide {
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
 }
 .mealPlan .button {
   border: none;
@@ -1130,8 +1167,11 @@ nav .linkBox {
   .mealPlan {
     padding: 0px;
   }
+  .mealPlan .guide {
+    margin-top: 50px;
+  }
   .mealPlan .mealPicking {
-    margin-top: 100px;
+    margin-top: 20px;
     flex-direction: column;
   }
 }
@@ -1153,6 +1193,11 @@ nav .linkBox {
   }
 }
 
+.planDash {
+  background-image: url("./img/zuccini.jpg");
+  background-position: center top;
+}
+
 .faq h2 {
   color: #84dfe2;
   margin: 0 auto;
@@ -1169,19 +1214,29 @@ nav .linkBox {
 }
 @media only screen and (max-width: 600px) {
   .faq {
-    padding: 100px 20px 20px;
+    padding: 20px;
   }
+}
+
+.faqDash {
+  background-image: url("./img/cooking.jpg");
+  background-position: center top;
 }
 
 .list {
   width: 100%;
   min-height: 100vh;
-  padding: 100px;
+  padding: 50px 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   background-color: #292929;
+}
+.list h4 {
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 50px;
 }
 .list .listButtons {
   display: flex;
@@ -1292,7 +1347,7 @@ nav .linkBox {
 }
 @media only screen and (max-width: 850px) {
   .list {
-    padding: 100px 30px 30px;
+    padding: 30px;
   }
   .list .recipesHeading {
     flex-direction: column;
@@ -1315,6 +1370,11 @@ nav .linkBox {
   .list .listItems .listItem .buttons .button {
     margin: 5px;
   }
+}
+
+.listDash {
+  background-image: url("./img/fruits.jpg");
+  background-position: center 400px;
 }
 
 .generator {

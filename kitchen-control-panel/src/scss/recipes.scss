@@ -3,6 +3,12 @@
     min-height: 100vh;
     padding: 50px;
     background-color: $black;
+
+    
+    h3{
+        font-style: italic;
+        font-weight: normal; 
+    }
    
     .recipesHeading {
         width: 100%;
@@ -40,7 +46,21 @@
     }
 
     @media only screen and (max-width: 600px) {
-        padding: 80px 10px 10px;
+        padding: 10px;
+
+        .recipesHeading{
+            flex-direction: column;
+
+            .recipesButton{
+                margin-top: 20px;
+                width: 50%;
+            }
+        }
     }
 
+}
+
+.recipesDash{
+    background-image: url("./img/fruits.jpg");
+    background-position: center center;
 }

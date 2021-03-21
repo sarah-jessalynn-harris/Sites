@@ -19,11 +19,15 @@ class List extends Component {
 
         return(
             <div>
+                <div className="dash listDash">
+                        Shopping List
+                </div>
+
                  {this.state.generate ? <Generator data={this.props.userData} toggle={this.togglePopup}/> : null}
 
                 <div className="list">
                     <div className="recipesHeading">
-                        <h2> Shopping List </h2>
+                        <h4>Add items to your shopping list manually, or by using our generation tool! We take your planned meals and suggest what you're missing from the pantry. </h4>
                         <div className="listButtons">
                             <NavLink exact className="recipesButton addButton" activeClassName="active" to={"/list/new"}> Add </NavLink>
                             <button className="recipesButton" onClick={this.togglePopup}> Generate </button>

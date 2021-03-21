@@ -30,24 +30,30 @@ class Faq extends Component {
     render() {
 
         return(
-            <div className="inventory faq">
-                <div className="recipesHeading">
-                    <h2> Frequently Asked Questions </h2>
+            <div>
+                <div className="dash faqDash">
+                        FAQ
                 </div>
-                
+                <div className="inventory faq">
 
-                <div className="inventoryItems">
-        
-                    {faq.map ((item, key)  =>
-                        <Qa 
-                            q = {item.q}
-                            a = {item.a}
-                            key = {key}
-                        />)
-                    }
+                    <div className="recipesHeading">
+                        <h2> Frequently Asked Questions </h2>
+                    </div>
+                    
+
+                    <div className="inventoryItems">
             
-                </div>
-          </div>
+                        {faq.map ((item, key)  =>
+                            <Qa 
+                                q = {item.q}
+                                a = {item.a}
+                                key = {key}
+                            />)
+                        }
+                
+                    </div>
+            </div>
+            </div>
         );
     }
 

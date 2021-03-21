@@ -73,7 +73,7 @@ class Recipe extends Component {
                     <div className="recipeOptions">
                         <NavLink className="button" to={"/recipe/edit/" + this.props.id}> Edit </NavLink>
                         <NavLink className="button" to={"/recipe/delete/" + this.props.id}> Delete </NavLink>
-                        <NavLink exact className="button" activeClassName="active" to={"/recipes"}> Return </NavLink>
+                        <NavLink exact className="button" activeClassName="active" to={"/recipes"}> Back to Recipes </NavLink>
                     </div>
             </div>
             );

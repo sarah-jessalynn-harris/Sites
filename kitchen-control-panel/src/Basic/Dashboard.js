@@ -147,7 +147,7 @@ class Dashboard extends Component {
             <div>
                 <div className="dash">
                         Dashboard
-                    </div>
+                </div>
 
                 <div className="dashboard">
 

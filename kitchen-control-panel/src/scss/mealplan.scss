@@ -7,6 +7,12 @@
     padding: 50px;
     justify-content: space-evenly;
 
+    .guide{
+        font-style: italic;
+        font-weight: normal; 
+        text-align: center;
+    }
+
     .button {
         border: none;
         background: $blue;
@@ -177,8 +183,12 @@
     @media only screen and (max-width: 1200px) {
         padding: 0px;
 
+        .guide{
+            margin-top: 50px;
+        }
+
         .mealPicking{
-            margin-top: 100px;
+            margin-top: 20px;
             flex-direction: column;
         }
     }
@@ -214,4 +224,9 @@
         }
     }
 
+}
+
+.planDash{
+    background-image: url("./img/zuccini.jpg");
+    background-position: center top;
 }

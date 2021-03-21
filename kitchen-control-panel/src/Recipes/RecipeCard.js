@@ -33,7 +33,7 @@ class RecipeCard extends Component {
 
                     <div className="cardButtons">
 
-                        <NavLink className="cardButton" to={"/recipe/" + this.props.id}> Cook </NavLink>
+                        <NavLink className="cardButton" to={"/recipe/" + this.props.id}> Instructions </NavLink>
                         <NavLink className="cardButton" to={"/recipe/edit/" + this.props.id}> Edit </NavLink>
                         <NavLink className="cardButton" to={"/recipe/delete/" + this.props.id}> Delete </NavLink>
 
