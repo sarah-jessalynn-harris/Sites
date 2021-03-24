@@ -414,15 +414,20 @@ class Generator extends Component {
         });
     }
 
-    removeItem(props){
+    // remove item from generated list
+    removeItem(obj){
         // look in array for these props
+        var id = this.state.needList.findIndex(element => element.name === obj.name && element.label === obj.label);
 
+        console.log(id);
         // take out of the array
+        var array = this.state.needList;
+        array.splice(id, 1);
+        console.log(array);
+        this.setState({needList: array});
     }
 
-    addItem(){
 
-    }
 
     render(){
         return(<div className="generator">
@@ -449,7 +454,7 @@ class Generator extends Component {
             </form>
                 
                 <div className="glist">
-                     {!this.state.generating ? <GList needList={this.state.needList}/> : null}
+                     {!this.state.generating ? <GList obj={(obj)=> this.removeItem(obj)} needList={this.state.needList} id={this.props.id}/> : null}
                 </div>       
        
         </div>);

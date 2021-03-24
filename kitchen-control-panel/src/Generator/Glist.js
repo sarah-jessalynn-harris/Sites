@@ -4,6 +4,12 @@ import GListItem from "./GlistItem";
 
 
 class GList extends Component {
+
+    // to delete an item from the generator list, we have to pass it up to generator from glistitem
+    recieveObj(obj){
+        // store the passed obj as a prop to pass to generator
+        this.props.obj(obj);
+    }
     
     render() {
         return(
@@ -18,6 +24,9 @@ class GList extends Component {
                                 label = {item.label}
                                 name = {item.name}
                                 id = {item.id}
+                                obj = {(obj) => this.recieveObj
+                                (obj)}
+                                fireId = {this.props.id}
                             />)
                         }
                 

@@ -56,6 +56,8 @@ import firebase from 'firebase';
         
         var file = e.target.files[0];
 
+        document.getElementById('addRecipe').style.display = "none";
+
         document.getElementById('fileBox').innerHTML= "Please wait while we upload your file...";  
     
         var fileName = file.name;
@@ -85,6 +87,8 @@ import firebase from 'firebase';
             var imgUrl = `<a class='urlPreview' id='urlPreview' href='${downloadURL}' target='_blank' rel="noopener noreferrer"> Image Preview </a>`;
         
             document.getElementById('fileBox').innerHTML= imgUrl;  
+            
+             document.getElementById('addRecipe').style.display = "inline";
            });
          });
       }

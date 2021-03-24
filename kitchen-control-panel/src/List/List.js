@@ -23,7 +23,7 @@ class List extends Component {
                         Shopping List
                 </div>
 
-                 {this.state.generate ? <Generator data={this.props.userData} toggle={this.togglePopup}/> : null}
+                 {this.state.generate ? <Generator data={this.props.userData} toggle={this.togglePopup} id={this.props.userData.userData.id}/> : null}
 
                 <div className="list">
                     <div className="recipesHeading">

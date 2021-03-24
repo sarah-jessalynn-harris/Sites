@@ -86,6 +86,7 @@ nav {
   align-items: center;
   position: fixed;
   font-size: 2rem;
+  z-index: 10;
 }
 nav .link {
   text-decoration: none;
@@ -1381,15 +1382,14 @@ nav .linkBox {
   width: 100vw;
   min-height: 100vh;
   background-color: rgba(51, 50, 50, 0.4);
-  z-index: 100;
-  position: relative;
   padding-top: 50px;
 }
 .generator .close {
   font-size: 12rem;
   position: absolute;
-  right: 50px;
-  top: 0px;
+  right: 30px;
+  top: 220px;
+  z-index: 0;
 }
 .generator .close:hover {
   cursor: pointer;
@@ -1494,16 +1494,8 @@ nav .linkBox {
   .generator h1 {
     font-size: 4rem;
   }
-  .generator .close {
-    font-size: 7rem;
-    right: 20px;
-    top: 50px;
-  }
 }
 @media only screen and (max-width: 500px) {
-  .generator .close {
-    right: 20px;
-  }
   .generator .listItems .listItem {
     flex-direction: column;
   }
