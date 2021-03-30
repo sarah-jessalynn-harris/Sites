@@ -8,6 +8,9 @@
     align-items: center;
     background-color: $black;
     
+    span{
+        color: $blue;
+    }
     
     h4{
         font-style: italic;
@@ -69,6 +72,7 @@
             margin-bottom: 20px;
             background-color: $blue;
             color: $black;
+            
 
             .listId{
                 display: flex;
@@ -83,7 +87,6 @@
                     border: $cardShadow 3px solid;
                     border-radius: 5px;
 
-
                     &:hover{
                         cursor: pointer;
                         // background-color: $white; 
@@ -97,6 +100,7 @@
                     align-items: center;
                     justify-content: center;
                     font-weight: bolder;
+                    border: 1px solid $white;
                 }
 
                 h4 {
@@ -132,6 +136,7 @@
         .checkedItem{
             background-color: $grey;
             color: $white;
+            border: 1px solid $white;
 
             .button {
                 background-color: $white;

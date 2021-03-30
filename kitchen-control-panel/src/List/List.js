@@ -10,9 +10,10 @@ class List extends Component {
     state = { generate: false};
 
     togglePopup = () => {
+        window.scrollTo(0, 0);
         this.setState({
          generate: !this.state.generate
-        });
+        },);
        };
     
     render() {

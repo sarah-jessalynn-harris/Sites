@@ -25,6 +25,7 @@ class Generator extends Component {
     generate(event){
         event.preventDefault();
 
+
         if(event.target.elements[0].value === "" || event.target.elements[1].value === ""){
             alert("Please enter a start and ending date.");
             return;
@@ -39,7 +40,6 @@ class Generator extends Component {
         if(!isAfter(newEnd, newStart) && !isEqual(newEnd, newStart)) {
             alert("End date must come after start date chronologically.")
         } else {
-            
             this.getPlan(newStartF, newEndF);   
             
         }
@@ -435,6 +435,8 @@ class Generator extends Component {
 
             <h1> Shopping List Item Generator</h1>
 
+            <p> To generate your shopping list items, enter a start and end date below. We'll give you a list of missing ingredients from your meal plan between those dates, and you can choose if you'd like to add it to your shopping list.</p>
+
             <form className="mealPicking" onSubmit={this.generate}>
                            
                            <div className="dates">
@@ -455,7 +457,9 @@ class Generator extends Component {
                 
                 <div className="glist">
                      {!this.state.generating ? <GList obj={(obj)=> this.removeItem(obj)} needList={this.state.needList} id={this.props.id}/> : null}
-                </div>       
+                </div>    
+
+                <div className="gListFooter"></div>   
        
         </div>);
     }

@@ -17,7 +17,7 @@ class GList extends Component {
                     
                     <div className="listItems">
             
-                        {this.props.needList.map ((item, key)  =>
+                        {this.props.needList.length !== 0 ? this.props.needList.map ((item, key)  =>
                             <GListItem 
                                 key = {key}
                                 amount = {item.amount}
@@ -27,7 +27,7 @@ class GList extends Component {
                                 obj = {(obj) => this.recieveObj
                                 (obj)}
                                 fireId = {this.props.id}
-                            />)
+                            />) : <p className="noItems"> There are no meals planned between these dates.</p>
                         }
                 
                     </div>
