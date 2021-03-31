@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {isAfter, isBefore, isEqual} from "date-fns";
-import { create, all, concat } from 'mathjs';
+import { create, all } from 'mathjs';
 import GList from "./Glist";
 
 const config = {};
@@ -296,6 +296,7 @@ class Generator extends Component {
                                         if(need.name === ingredient.name){
                                             // if yes, find out if the format is the same
                                             if(need.label === ingredient.label){
+                                                
                                                 // if the labels and name are the same, simply add the amount and add it to the array
                                                 let newAmt = ingredient.amount + need.amount;
                                                 need.amount = newAmt;
@@ -306,6 +307,9 @@ class Generator extends Component {
                                                 let ingredientUnit = math.unit(ingredient.label);
                                                 
                                                 let itemUnit = math.unit(item.label);
+
+                                                console.log("item in question:", ingredient, item)
+                                                console.log("unit in question:", ingredientUnit, itemUnit)
         
                                                 // find out if the labels are compatible to generate
                                                 if(!itemUnit.equalBase(ingredientUnit)){
