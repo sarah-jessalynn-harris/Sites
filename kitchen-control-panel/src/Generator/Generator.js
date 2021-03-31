@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {isAfter, isBefore, isEqual} from "date-fns";
-import { create, all } from 'mathjs';
+import { create, all, concat } from 'mathjs';
 import GList from "./Glist";
 
 const config = {};
@@ -25,7 +25,6 @@ class Generator extends Component {
     generate(event){
         event.preventDefault();
 
-
         if(event.target.elements[0].value === "" || event.target.elements[1].value === ""){
             alert("Please enter a start and ending date.");
             return;
@@ -41,7 +40,6 @@ class Generator extends Component {
             alert("End date must come after start date chronologically.")
         } else {
             this.getPlan(newStartF, newEndF);   
-            
         }
     }
         
@@ -67,7 +65,7 @@ class Generator extends Component {
     getIngredients(plans){
 
         // list of ingredients we need
-        let extractedIngredients = [];
+        var extractedIngredients = [];
 
         console.log(extractedIngredients);
         // go through each planned recipe id
@@ -77,20 +75,21 @@ class Generator extends Component {
                 // if they match, go through each needed ingredient and add it to the list
                 if(recipe.id === plan){
                     recipe.ingredients.forEach(ingredient =>{
-                        console.log(ingredient);
+                        console.log("ingredient from plan:", ingredient);
 
+                        // look for this ingredient in the list we have already
                         let arrayId = extractedIngredients.findIndex(object => object.name === ingredient.name);
-                        console.log(arrayId);
+                        // console.log(arrayId);
 
-                        // find out if the ingredient type is in the array already
+                        // if the ingredient type is in the array already, add amounts or if not, just add it to the list
                        if(arrayId === -1){
                             //if it isn't we can just add it    
                             extractedIngredients.push(ingredient);
                             console.log("just adding: ", ingredient);
                        } else {
-
+                            // add up the amounts before adding it to the array
                             let arrayObj = extractedIngredients[arrayId];
-                            console.log("already in array: ", arrayObj)
+                            console.log("already in array: ", arrayObj);
 
                             let ingredientUnit = math.unit(ingredient.label);
                                             
@@ -98,9 +97,14 @@ class Generator extends Component {
 
                             // if it is, we need to see if the units are compatable
                             if(arrayObj.label === ingredient.label){
-                                console.log("same label before: ", ingredient, arrayObj );
-                                arrayObj.amount = ingredient.amount + arrayObj.amount;
-                                console.log("same label after: ", ingredient, arrayObj );
+                              
+                                var amt = ingredient.amount + arrayObj.amount;
+
+                                extractedIngredients.splice(arrayId, 1, {
+                                    name: ingredient.name,
+                                    label: ingredient.label,
+                                    amount: amt
+                                });
                             } else if(!itemUnit.equalBase(ingredientUnit)){
                                 // if they aren't, just add to the needs list
                                 extractedIngredients.push(ingredient);
@@ -108,16 +112,18 @@ class Generator extends Component {
                                 console.log("needs conversion: ", ingredient);
                                 // if they are, convert and add to the list
                                 let newLabel = (math.evaluate(ingredient.amount + ' ' + ingredient.label + ' to ' + arrayObj.label)).toJSON();
-                                console.log(ingredient, newLabel);
+                                // console.log(ingredient, newLabel);
                                 let newAmount  = arrayObj.amount + newLabel.value; 
 
-                                console.log(ingredient, arrayObj, newAmount);
+                                // console.log(ingredient, arrayObj, newAmount);
 
-                                arrayObj.amount = newAmount;
+                                 extractedIngredients.splice(arrayId, 1, {
+                                    name: ingredient.name,
+                                    label: newLabel.unit,
+                                    amount: math.round(100*newAmount)/100
+                                });
                             
-                                console.log(ingredient, arrayObj);
-
-                                
+                                // console.log(ingredient, arrayObj);                            
                             }
                        }
                         
