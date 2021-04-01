@@ -251,7 +251,16 @@ class Generator extends Component {
                         
                         // if the labels and name are the same, simply add the amount and add it to the array
                         let newAmt = amount + need.amount;
-                        need.amount = newAmt; //*****
+
+                        let arrayId = needs.findIndex(object => object === need);
+
+                        console.log(arrayId, need, amount, label, newAmt);
+
+                        needs.splice( arrayId, 1, {
+                                amount: newAmt,
+                                name: name,
+                                label: label
+                        });
                         
                     } else {
                         // if the labels don't match, convert before adding back to the array
@@ -260,10 +269,9 @@ class Generator extends Component {
                         let needUnit = math.unit(need.label);
 
                         
-                        
 
                         // find out if the labels are compatible to convert
-                        if(!needUnit.equalBase(ingredientUnit)){
+                        if(!needUnit.equalBase(ingredientUnit) && needTally === needs.length){
                             // if they aren't, just add to the needs list
                             let neededObj = {
                                 amount: amount,
@@ -272,7 +280,7 @@ class Generator extends Component {
                             }
 
                             needs.push(neededObj);
-                        } else {
+                        } else if (needUnit.equalBase(ingredientUnit)){
 
                             console.log(need.label);
                             // if they are compatible, convert and add to the list
@@ -295,7 +303,7 @@ class Generator extends Component {
                     }
                     needs.push(needObj);
                     
-                }
+                } 
             });
 
         }  
