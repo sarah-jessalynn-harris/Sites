@@ -160,7 +160,7 @@ class Generator extends Component {
 
                 // console.log(ingredient.name, item.name);
                 
-                // if there's a match in the inventory and a needed item, find out how much is needed or if we have enough
+                // if there's a match in the inventory and a planned ingredient, find out how much is in the pantry to see if we have enough
                 if(ingredient.name === item.name){
                     // count the iteration of the forEach for inventory items that matched our plan ingredients
                     tally++;
@@ -173,77 +173,7 @@ class Generator extends Component {
                         // if the difference is negative, then we don't have enough of the ingredient and we have to add it to the needs list
                         if (amount < 0) {
                             // but before we add it, we have to see if this ingredient type is already in the needs list so we can add it to an existing entry, or add it to the list as a new item type  
-                            if(needs.length === 0) {
-                                // if this is the first item in the needs array, we just have to add it
-                                let neededObj = {
-                                    amount: (amount * -1),
-                                    name: ingredient.name,
-                                    label: ingredient.label
-                                }
-
-                                needs.push(neededObj);
-
-                            } else {
-                                // count the iteration as we go through the needs list
-                                let needTally = 0;
-
-                                // check if the ingredient is already added to needs
-                                needs.forEach(need => {
-                                    // count this itereation
-                                    needTally ++;
-
-                                    // is it in the needs array already?
-                                    if(need.name === ingredient.name){
-                                        // if yes, find out if the format is the same
-                                        if(need.label === ingredient.label){
-                                            // if the labels and name are the same, simply add the amount and add it to the array
-                                            let newAmt = (amount * -1) + need.amount;
-                                            need.amount = newAmt; //*****
-
-                                        } else {
-                                            // if the labels don't match, convert before adding back to the array
-                                            let ingredientUnit = math.unit(ingredient.label);
-                                            
-                                            let itemUnit = math.unit(item.label);
-    
-                                            // find out if the labels are compatible to generate
-                                            if(!itemUnit.equalBase(ingredientUnit)){
-                                                // if they aren't, just add to the needs list
-                                                let neededObj = {
-                                                    amount: (amount * -1),
-                                                    name: ingredient.name,
-                                                    label: ingredient.label
-                                                }
-
-                                                needs.push(neededObj);
-                                                
-
-                                            } else {
-                                                // if they are, convert and add to the list
-                                                let newLabel = (math.evaluate((amount * -1)+ ' ' + ingredient.label + ' to ' + need.label)).toJSON(); //*****
-        
-                                                need.amount = need.amount + newLabel.value; //*****
-                                                
-                                                
-                                            }
-                                        }
-            
-                                    } else if (needTally === needs.length){
-                                        // if the need isn't already in the list, add it
-                                        // console.log ("Amount for " + ingredient.name + ": " + amount);
-                                        let needObj = {
-                                            amount: (amount * -1),
-                                            label: ingredient.label,
-                                            name: ingredient.name
-                                        }
-                                        // console.log(needObj.amount);
-                                        needs.push(needObj);
-                                        
-                                        // console.log("Adding " + ingredient.name + " here!");
-                                    }
-                                });
-    
-                            }                 
+                            this.addToNeeds(math.ceil(amount * -1), ingredient.label, ingredient.name, needs);
                           
                         } //if it were positive or zero, that means we don't need anymore, so we don't need to add it to the needs list
 
@@ -255,7 +185,9 @@ class Generator extends Component {
                         // find out if the labels are compatible to generate
                         if(!unit2.equalBase(unit1)){
                             // if they aren't, just add to the needs list
-                            needs.push(ingredient);
+                            
+                            // find out if this ingredient type is already in our needs array so we can add it  
+                            this.addToNeeds(ingredient.amount, ingredient.label, ingredient.name, needs);  
                         } else {
                             // if they are, convert and add the items
 
@@ -268,88 +200,8 @@ class Generator extends Component {
                             // if the difference is negative, then we don't have enough of the ingredient and we have to add it to the needs list
                             if (amount < 0) {
 
-                                // find out if this ingredient type is already in our needs array   
-                                if(needs.length === 0) {
-                                    // if it's the first iteration of needs, just add this as the first item in the needs array
-                                    let neededObj = {
-                                        amount: Math.ceil(amount * -1),
-                                        name: ingredient.name,
-                                        label: item.label
-                                    }
-    
-                                    needs.push(neededObj);
-    
-        
-                                    // console.log("Adding " + ingredient.name + " here!");
-
-                                } else {
-                                    // count the iteration as we go through the needs list
-                                    let needTally = 0;
-    
-                                    // check if the ingredient is already added to needs
-                                    needs.forEach(need => {
-                                        // count this itereation
-                                        needTally ++;
-    
-                                        // is it in the needs array already?
-                                        if(need.name === ingredient.name){
-                                            // if yes, find out if the format is the same
-                                            if(need.label === ingredient.label){
-                                                
-                                                // if the labels and name are the same, simply add the amount and add it to the array
-                                                let newAmt = ingredient.amount + need.amount;
-                                                need.amount = newAmt; //*****
-                                                
-                                                // console.log("Adding " + ingredient.name + " here!");
-                                            } else {
-                                                // if the labels don't match, convert before adding back to the array
-                                                let ingredientUnit = math.unit(ingredient.label);
-                                                
-                                                let needUnit = math.unit(need.label);
-
-                                                console.log("item in question:", ingredient, need)
-                                                console.log("unit in question:", ingredientUnit, needUnit)
-        
-                                                // find out if the labels are compatible to convert
-                                                if(!needUnit.equalBase(ingredientUnit)){
-                                                    // if they aren't, just add to the needs list
-                                                    let neededObj = {
-                                                        amount: Math.ceil(amount * -1),
-                                                        name: ingredient.name,
-                                                        label: need.label
-                                                    }
-    
-                                                    needs.push(neededObj);
-                                                    // console.log("Adding " + ingredient.name + " here!");
-                                                } else {
-
-                                                    console.log(need.label);
-                                                    // if they are, convert and add to the list
-                                                    let newLabel = (math.evaluate(Math.ceil(amount * -1) + ' ' + need.label + ' to ' + need.label)).toJSON(); //*****
-
-                                                    
-                                            console.log("newLabel =", newLabel);
-        
-                                                    need.amount = need.amount + newLabel.value; //*****
-                                                    
-                                                    // console.log("Adding " + ingredient.name + " here!");
-                                                }
-                                            }
-                
-                                        } else if (needTally === needs.length){
-                                            // if the need isn't already in the list, add it
-                                            let needObj = {
-                                                amount: Math.ceil(amount * -1),
-                                                label: item.label,
-                                                name: ingredient.name
-                                            }
-                                            needs.push(needObj);
-                                            
-                                            // console.log("Adding " + ingredient.name + " here!");
-                                        }
-                                    });
-        
-                                }           
+                                // find out if this ingredient type is already in our needs array so we can add it
+                                this.addToNeeds(math.ceil(amount * -1), item.label, ingredient.name, needs);        
                             
                             } //if it were positive or zero, that means we don't need anymore, so we don't need to add it to the needs list
                         }
@@ -358,64 +210,96 @@ class Generator extends Component {
                 } else {
                     // if this is the final iteration, and there were no matches, we need to add the ingredient to the list, because we have none of it!
                     if(iterations === this.props.data.inventory.length && tally === 0){
-                        // if the ingredient names don't match the inventory item, we may need to add something we don't have. Only add it to the needs list if we're sure (aka if we're comparing it to the last ingredient in the inventory to the needed ingredient in question) 
-                    
-
-                        // if there's nothing in needs, add it
-                        if(needs.length === 0) {
-                            needs.push(ingredient);
-                            // console.log("Adding " + ingredient.name + " here!");
-                        } else {
-                            // count the iteration as we go through the needs list
-                            let needTally = 0;
-
-                            // check if the ingredient is already added to needs
-                            needs.forEach(need => {
-                                // count this itereation
-                                needTally ++;
-
-                                // is it in the needs array already?
-                                if(need.name === ingredient.name){
-                                    // if yes, find out if the format is the same
-                                    if(need.label === ingredient.label){
-                                        // if the labels and name are the same, simply add the amount and add it to the array
-                                        let newAmt = ingredient.amount + need.amount; 
-                                        need.amount = newAmt; //*****
-                                        // console.log("Adding " + ingredient.name + " here!");
-                                    } else {
-                                        // if the labels don't match, convert before adding back to the array
-                                        let ingredientUnit = math.unit(ingredient.label);
-                                        
-                                        let itemUnit = math.unit(item.label);
-
-                                        // find out if the labels are compatible to generate
-                                        if(!itemUnit.equalBase(ingredientUnit)){
-                                            // if they aren't, just add to the needs list
-                                            needs.push(ingredient); 
-                                            // console.log("Adding " + ingredient.name + " here!");
-                                        } else {
-                                            // if they are, convert and add to the list
-                                            let newLabel = (math.evaluate(ingredient.amount + ' ' + ingredient.label + ' to ' + need.label)).toJSON(); 
-
-                                            
-                                            need.amount = need.amount + newLabel.value; //*****
-                                            // console.log("Adding " + ingredient.name + " here!");   
-                                        }
-                                    }
-        
-                                } else if (needTally === needs.length){
-                                    // if the need isn't already in the list, add it
-                                    needs.push(ingredient);
-                                    // console.log("Adding " + ingredient.name + " here!");
-                                }
-                            });
-
-                    }
-                } 
+                        
+                        // find out if this ingredient type is already in our needs array so we can add it  
+                        this.addToNeeds(ingredient.amount, ingredient.label, ingredient.name, needs);   
+          
+                     } 
    
                 }
             });
         });
+        // console.log(needs);
+        // this.showItems(needs);
+    }
+
+    addToNeeds(amount, label, name, needs){
+        // find out if this ingredient type is already in our needs array   
+        if(needs.length === 0) {
+        // if it's the first iteration of needs, just add this as the first item in the needs array
+        let neededObj = {
+            amount: amount,
+            name: name,
+            label: label
+        }
+
+        needs.push(neededObj);
+
+        } else {
+            // count the iteration as we go through the needs list
+            let needTally = 0;
+
+            // check if the ingredient is already added to needs
+            needs.forEach(need => {
+                // count this itereation
+                needTally ++;
+
+                // is it in the needs array already?
+                if(need.name === name){
+                    // if yes, find out if the format is the same
+                    if(need.label === label){
+                        
+                        // if the labels and name are the same, simply add the amount and add it to the array
+                        let newAmt = amount + need.amount;
+                        need.amount = newAmt; //*****
+                        
+                    } else {
+                        // if the labels don't match, convert before adding back to the array
+                        let ingredientUnit = math.unit(label);
+                        
+                        let needUnit = math.unit(need.label);
+
+                        
+                        
+
+                        // find out if the labels are compatible to convert
+                        if(!needUnit.equalBase(ingredientUnit)){
+                            // if they aren't, just add to the needs list
+                            let neededObj = {
+                                amount: amount,
+                                name: name,
+                                label: label
+                            }
+
+                            needs.push(neededObj);
+                        } else {
+
+                            console.log(need.label);
+                            // if they are compatible, convert and add to the list
+                            let newLabel = (math.evaluate(Math.ceil(amount * -1) + ' ' + label + ' to ' + need.label)).toJSON(); //*****
+
+                            
+                            console.log("newLabel =", newLabel);
+
+                            need.amount = need.amount + newLabel.value; //*****
+                            
+                        }
+                    }
+
+                } else if (needTally === needs.length){
+                    // if the need isn't already in the list, add it
+                    let needObj = {
+                        amount: amount,
+                        label: label,
+                        name: name
+                    }
+                    needs.push(needObj);
+                    
+                }
+            });
+
+        }  
+
         console.log(needs);
         this.showItems(needs);
     }
