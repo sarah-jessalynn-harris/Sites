@@ -77,56 +77,75 @@ class Generator extends Component {
                     recipe.ingredients.forEach(ingredient =>{
                         console.log("ingredient from plan:", ingredient);
 
-                        // look for this ingredient in the list we have already
-                        let arrayId = extractedIngredients.findIndex(object => object.name === ingredient.name);
-                        // console.log(arrayId);
-
-                        // if the ingredient type is in the array already, add amounts or if not, just add it to the list
-                       if(arrayId === -1){
-                            //if it isn't we can just add it    
+                        //if this is the first entry into the extractedIngredients array, just add it
+                        if(extractedIngredients.length === 0){
                             extractedIngredients.push(ingredient);
-                            console.log("just adding: ", ingredient);
-                       } else {
-                            // add up the amounts before adding it to the array
-                            let arrayObj = extractedIngredients[arrayId];
-                            console.log("already in array: ", arrayObj);
+                        } else {
+// look for this ingredient in the list we have already
+                            for(var i=0; i < extractedIngredients.length; i++){
+                                var object = extractedIngredients[i];
+                                var index = i;
+                                
+                            console.log(object, index)
+                            // if the ingredient type is in the array already, add amounts or if not, just add it to the list
+                            if(object.name === ingredient.name) {
+                                // add up the amounts before adding it to the array
+                                let arrayObj = extractedIngredients[index];
+                                console.log("already in array: ", arrayObj);
 
-                            let ingredientUnit = math.unit(ingredient.label);
-                                            
-                            let itemUnit = math.unit(arrayObj.label);
+                                let ingredientUnit = math.unit(ingredient.label);
+                                                
+                                let itemUnit = math.unit(arrayObj.label);
 
-                            // if it is, we need to see if the units are compatable
-                            if(arrayObj.label === ingredient.label){
-                              
-                                var amt = ingredient.amount + arrayObj.amount;
+                                console.log("units", ingredientUnit, itemUnit)
 
-                                extractedIngredients.splice(arrayId, 1, {
-                                    name: ingredient.name,
-                                    label: ingredient.label,
-                                    amount: amt
-                                });
-                            } else if(!itemUnit.equalBase(ingredientUnit)){
-                                // if they aren't, just add to the needs list
+                                // if it is, we need to see if the units are compatable
+                                if(arrayObj.label === ingredient.label){
+                                    console.log("same label, math")
+                                    var amt = ingredient.amount + arrayObj.amount;
+
+                                    extractedIngredients.splice(index, 1, {
+                                        name: ingredient.name,
+                                        label: ingredient.label,
+                                        amount: amt
+                                    });
+                                 
+                                } else if(!itemUnit.equalBase(ingredientUnit) && (index + 1) === extractedIngredients.length){
+                                    // if they aren't, just add to the needs list
+                                    console.log("incompatible")
+                                    extractedIngredients.push(ingredient);
+                                 
+                                } else if (itemUnit.equalBase(ingredientUnit)){
+                                    // if it can be converted, convert and add to the list
+                                    console.log("needs conversion: ", ingredient);
+                                    let newLabel = (math.evaluate(ingredient.amount + ' ' + ingredient.label + ' to ' + arrayObj.label)).toJSON();
+                                    // console.log(ingredient, newLabel);
+                                    let newAmount  = arrayObj.amount + newLabel.value; 
+
+                                    // console.log(ingredient, arrayObj, newAmount);
+
+                                    extractedIngredients.splice(index, 1, {
+                                        name: ingredient.name,
+                                        label: newLabel.unit,
+                                        amount: math.round(100*newAmount)/100
+                                    });
+                                 
+                                    // console.log(ingredient, arrayObj);                            
+                                }
+
+                            } else if((index + 1) === extractedIngredients.length){
+                                //if it isn't we can just add it    
                                 extractedIngredients.push(ingredient);
-                            } else {
-                                console.log("needs conversion: ", ingredient);
-                                // if they are, convert and add to the list
-                                let newLabel = (math.evaluate(ingredient.amount + ' ' + ingredient.label + ' to ' + arrayObj.label)).toJSON();
-                                // console.log(ingredient, newLabel);
-                                let newAmount  = arrayObj.amount + newLabel.value; 
-
-                                // console.log(ingredient, arrayObj, newAmount);
-
-                                 extractedIngredients.splice(arrayId, 1, {
-                                    name: ingredient.name,
-                                    label: newLabel.unit,
-                                    amount: math.round(100*newAmount)/100
-                                });
-                            
-                                // console.log(ingredient, arrayObj);                            
-                            }
-                       }
+                                console.log("just adding: ", ingredient);
                         
+                            }
+                            }
+
+                            
+                        extractedIngredients.every((object, index)=>{
+                        });
+
+                    }
                         
                     });
                 }
@@ -240,7 +259,7 @@ class Generator extends Component {
             let needTally = 0;
 
             // check if the ingredient is already added to needs
-            needs.forEach(need => {
+            needs.forEach((need, index) => {
                 // count this itereation
                 needTally ++;
 
@@ -252,11 +271,9 @@ class Generator extends Component {
                         // if the labels and name are the same, simply add the amount and add it to the array
                         let newAmt = amount + need.amount;
 
-                        let arrayId = needs.findIndex(object => object === need);
+                        console.log(index, need, amount, label, newAmt);
 
-                        console.log(arrayId, need, amount, label, newAmt);
-
-                        needs.splice( arrayId, 1, {
+                        needs.splice( index, 1, {
                                 amount: newAmt,
                                 name: name,
                                 label: label
@@ -294,7 +311,7 @@ class Generator extends Component {
                         }
                     }
 
-                } else if (needTally === needs.length){
+                } else if (needTally === needs.length && need.name !== name){
                     // if the need isn't already in the list, add it
                     let needObj = {
                         amount: amount,
@@ -302,7 +319,6 @@ class Generator extends Component {
                         name: name
                     }
                     needs.push(needObj);
-                    
                 } 
             });
 
