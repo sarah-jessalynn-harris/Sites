@@ -81,71 +81,89 @@ class Generator extends Component {
                         if(extractedIngredients.length === 0){
                             extractedIngredients.push(ingredient);
                         } else {
-// look for this ingredient in the list we have already
-                            for(var i=0; i < extractedIngredients.length; i++){
-                                var object = extractedIngredients[i];
-                                var index = i;
-                                
-                            console.log(object, index)
+                            //using findIndex
+                            let arrayId = extractedIngredients.findIndex(object => object.name === ingredient.name);
+                             console.log(arrayId);
+
                             // if the ingredient type is in the array already, add amounts or if not, just add it to the list
-                            if(object.name === ingredient.name) {
+                            if(arrayId === -1){
+                                //if it isn't we can just add it    
+                                extractedIngredients.push(ingredient);
+                                console.log("just adding: ", ingredient);
+                            } else {
                                 // add up the amounts before adding it to the array
-                                let arrayObj = extractedIngredients[index];
+                                let arrayObj = extractedIngredients[arrayId];
                                 console.log("already in array: ", arrayObj);
 
                                 let ingredientUnit = math.unit(ingredient.label);
                                                 
                                 let itemUnit = math.unit(arrayObj.label);
 
-                                console.log("units", ingredientUnit, itemUnit)
-
                                 // if it is, we need to see if the units are compatable
                                 if(arrayObj.label === ingredient.label){
-                                    console.log("same label, math")
+                                
                                     var amt = ingredient.amount + arrayObj.amount;
 
-                                    extractedIngredients.splice(index, 1, {
+                                    extractedIngredients.splice(arrayId, 1, {
                                         name: ingredient.name,
                                         label: ingredient.label,
                                         amount: amt
                                     });
-                                 
-                                } else if(!itemUnit.equalBase(ingredientUnit) && (index + 1) === extractedIngredients.length){
-                                    // if they aren't, just add to the needs list
-                                    console.log("incompatible")
-                                    extractedIngredients.push(ingredient);
-                                 
-                                } else if (itemUnit.equalBase(ingredientUnit)){
-                                    // if it can be converted, convert and add to the list
+                                } else if(itemUnit.equalBase(ingredientUnit)){
                                     console.log("needs conversion: ", ingredient);
+                                    // if they are, convert and add to the list
                                     let newLabel = (math.evaluate(ingredient.amount + ' ' + ingredient.label + ' to ' + arrayObj.label)).toJSON();
                                     // console.log(ingredient, newLabel);
                                     let newAmount  = arrayObj.amount + newLabel.value; 
 
                                     // console.log(ingredient, arrayObj, newAmount);
 
-                                    extractedIngredients.splice(index, 1, {
+                                    extractedIngredients.splice(arrayId, 1, {
                                         name: ingredient.name,
                                         label: newLabel.unit,
                                         amount: math.round(100*newAmount)/100
                                     });
-                                 
+                                
                                     // console.log(ingredient, arrayObj);                            
-                                }
-
-                            } else if((index + 1) === extractedIngredients.length){
-                                //if it isn't we can just add it    
-                                extractedIngredients.push(ingredient);
-                                console.log("just adding: ", ingredient);
-                        
-                            }
-                            }
-
+                                } else if(!itemUnit.equalBase(ingredientUnit)){
+                                    // if they aren't, see if there's another match
+                                    var indexes = [];
                             
-                        extractedIngredients.every((object, index)=>{
-                        });
+                                    for(var i = 0; i < extractedIngredients.length; i++){
 
-                    }
+                                        if (extractedIngredients[i].name === ingredient.name){
+                                            indexes.push(i);
+                                        }
+                                    }
+                                    
+                                    console.log(indexes);
+
+                                    for(var x = 0; x < indexes.length; x++){
+                                        let indexUnit = math.unit(extractedIngredients[x].label);
+                                        
+                                        if(indexUnit.equalBase(ingredientUnit)){
+                                            // if they are, convert and add to the list
+                                    let newLabel = (math.evaluate(ingredient.amount + ' ' + ingredient.label + ' to ' + extractedIngredients[x].label)).toJSON();
+                                    // console.log(ingredient, newLabel);
+                                    let newAmount  = extractedIngredients[x].amount + newLabel.value; 
+
+                                    // console.log(ingredient, arrayObj, newAmount);
+
+                                    extractedIngredients.splice(arrayId, 1, {
+                                        name: ingredient.name,
+                                        label: newLabel.unit,
+                                        amount: math.round(100*newAmount)/100
+                                    });
+                                    break;
+                                        }
+                                    }
+
+                                     // just add to the needs list if there's no compatible match
+                                    extractedIngredients.push(ingredient);
+                                    
+                                }
+                            }
+                        }
                         
                     });
                 }
