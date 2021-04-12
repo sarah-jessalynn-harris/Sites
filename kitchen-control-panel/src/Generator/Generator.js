@@ -140,27 +140,29 @@ class Generator extends Component {
 
                                     for(var x = 0; x < indexes.length; x++){
                                         let indexUnit = math.unit(extractedIngredients[x].label);
-                                        
+                                        console.log(indexUnit, ingredientUnit, indexUnit.equalBase(ingredientUnit));
                                         if(indexUnit.equalBase(ingredientUnit)){
                                             // if they are, convert and add to the list
-                                    let newLabel = (math.evaluate(ingredient.amount + ' ' + ingredient.label + ' to ' + extractedIngredients[x].label)).toJSON();
-                                    // console.log(ingredient, newLabel);
-                                    let newAmount  = extractedIngredients[x].amount + newLabel.value; 
+                                            let newLabel = (math.evaluate(ingredient.amount + ' ' + ingredient.label + ' to ' + extractedIngredients[x].label)).toJSON();
+                                            // console.log(ingredient, newLabel);
+                                            let newAmount  = extractedIngredients[x].amount + newLabel.value; 
 
-                                    // console.log(ingredient, arrayObj, newAmount);
+                                            // console.log(ingredient, arrayObj, newAmount);
 
-                                    extractedIngredients.splice(arrayId, 1, {
-                                        name: ingredient.name,
-                                        label: newLabel.unit,
-                                        amount: math.round(100*newAmount)/100
-                                    });
-                                    break;
+                                            extractedIngredients.splice(arrayId, 1, {
+                                                name: ingredient.name,
+                                                label: newLabel.unit,
+                                                amount: math.round(100*newAmount)/100
+                                            });
+                                            console.log("converted here")
+                                            break;
+                                        } else {
+                                            // just add to the needs list if there's no compatible match
+                                            // extractedIngredients.push(ingredient);
+
                                         }
                                     }
 
-                                     // just add to the needs list if there's no compatible match
-                                    extractedIngredients.push(ingredient);
-                                    
                                 }
                             }
                         }
