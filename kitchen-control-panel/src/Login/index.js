@@ -118,10 +118,57 @@ class LogInHandler extends Component {
                       email: email,
                       joinDate: res.user.metadata.creationTime
                   },
-                recipes: [],
+                recipes: [
+                    {
+                        description: "homemade Amish style egg noodles",
+                        id: "0zwcpok6nenrx8iow1qi4ii",
+                        image: "https://firebasestorage.googleapis.com/v0/b/kitchen-control-panel.appspot.com/o/recipeImages%2Fdefault.jpg?alt=media&token=9abb9b44-48f6-4af1-a4b5-074d31976cc2",
+                        ingredients: [
+                            {label: "floz", name: "eggs", amount: 100},
+                            {label: "cup", name: "flour", amount: 3},
+                            {amount: 6, name: "broth", label: "cup"},
+                            {amount: 5, name: "love", label: "teaspoon"}
+                        ],
+                        instructions: ["crack eggs into a bowl", "beat eggs", "add flower little by little", "mix until dough like", "roll out dough flat", "roll up flattened dough like a cinnamon roll", "cut the roll slightly", "lay out noodles to dry", "boil broth", "add noodles to broth", "cook noodles until tender", "enjoy! it's hot"],
+                        name: "Noodles",
+                    },
+                    {
+                        description: "chicken fajitas with onion, tomato, and bell peppers",
+                        id: "2rqf4ook214pzm5nwxgczi",
+                        image: "https://firebasestorage.googleapis.com/v0/b/kitchen-control-panel.appspot.com/o/undefined%2FrecipeImages%2Ffajita.jpg?alt=media&token=8b1c8714-d89f-4ea9-9441-9b68cc34765a",
+                        ingredients: [
+                            {amount: 4, label: "teaspoon", name: "butter"},
+                            {amount: 5, label: "ounce", name: "onion"},
+                            {amount: 5, name: "bell pepper", label: "ounce"},
+                            {label: "ounce", amount: 5, name: "tomato"},
+                            {label: "cup", name: "seasoning", amount: 0.25},
+                            {name: "water", amount: 6, label: "tablespoon"},
+                            {label: "lbs", name: "chicken breast", amount: 1},
+                            {amount: 10, name: "tortillas", label: "ounce"},
+                        ],
+                        instructions: ["melt butter in the pan", "fry chicken and veggies together until chicken is cooked and veggies tender", "add seasoning and water until the water boils down", "serve in tortillas right away", "Enjoy!"],
+                        name: "Chicken Fajitas"
+                    },
+                    {
+                        description: "delicious staple of American cuisine",
+                        id: "iwi0xnlpwclecipowdwihs",
+                        image: "https://firebasestorage.googleapis.com/v0/b/kitchen-control-panel.appspot.com/o/waWzMikVb2gboEz6qI9T30s91b43%2FrecipeImages%2Fhamburger.jpg?alt=media&token=7d60caea-59cb-488c-9fde-72f01924882d",
+                        ingredients: [
+                            {label: "lbs", amount: 1, name: "ground beef"},
+                            {label: "ounce", amount: 14, name: "hamburger bun"},
+                            {name: "lettus", amount: 7, label: "ounce"},
+                            {amount: 5, label: "ounce", name: "tomato"},
+                            {name: "garlic powder", label: "teaspoon", amount: 2},
+                            {label: "teaspoon", name: "onion powder", amount: 2},
+                        ],
+                        instructions: ["mix seasonings and hamburger meat", "create patties", "fry patties", "place patties and veggies on buns", "Enjoy!"],
+                        name: "Hamburger"
+                    }
+
+                ],
                 mealplan: [],
                 inventory: [],
-                shoppinglist: []
+                shoppingList: []
               };
       
               return newUser.set(userData).catch(function(error){
@@ -131,7 +178,7 @@ class LogInHandler extends Component {
                 
             });
 
-            this.props.history.push("/");
+            this.props.history.push("/dashboard");
         }
     };
 

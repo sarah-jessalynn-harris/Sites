@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 class Recipes extends Component {
     
     render() {
-
+console.log(this.props.userData.recipes)
         return(
             <div>
                   <div className="dash recipesDash">
