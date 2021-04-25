@@ -16,6 +16,7 @@ class Generator extends Component {
             start: "",
             end: "",
             generating: true,
+            noPlans: false,
             needList: []
         }
 
@@ -57,7 +58,14 @@ class Generator extends Component {
                 recipes.push(meal.recipe);
             }
         });
-        console.log(recipes);
+        //console.log(recipes);
+
+        if(recipes.length === 0){
+            this.setState({noPlans : true});
+        } else {
+            this.setState({noPlans: false});
+        }
+
         this.getIngredients(recipes);
     }
 
@@ -67,7 +75,7 @@ class Generator extends Component {
         // list of ingredients we need
         var extractedIngredients = [];
 
-        console.log(extractedIngredients);
+        //console.log(extractedIngredients);
         // go through each planned recipe id
         plans.forEach(plan =>{
             // find the recipe from the database that matches the id
@@ -75,7 +83,7 @@ class Generator extends Component {
                 // if they match, go through each needed ingredient and add it to the list
                 if(recipe.id === plan){
                     recipe.ingredients.forEach(ingredient =>{
-                        console.log("ingredient from plan:", ingredient);
+                        //console.log("ingredient from plan:", ingredient);
 
                         //if this is the first entry into the extractedIngredients array, just add it
                         if(extractedIngredients.length === 0){
@@ -83,17 +91,17 @@ class Generator extends Component {
                         } else {
                             //using findIndex
                             let arrayId = extractedIngredients.findIndex(object => object.name === ingredient.name);
-                             console.log(arrayId);
+                             //console.log(arrayId);
 
                             // if the ingredient type is in the array already, add amounts or if not, just add it to the list
                             if(arrayId === -1){
                                 //if it isn't we can just add it    
                                 extractedIngredients.push(ingredient);
-                                console.log("just adding: ", ingredient);
+                                //console.log("just adding: ", ingredient);
                             } else {
                                 // add up the amounts before adding it to the array
                                 let arrayObj = extractedIngredients[arrayId];
-                                console.log("already in array: ", arrayObj);
+                                //console.log("already in array: ", arrayObj);
 
                                 let ingredientUnit = math.unit(ingredient.label);
                                                 
@@ -110,13 +118,13 @@ class Generator extends Component {
                                         amount: amt
                                     });
                                 } else if(itemUnit.equalBase(ingredientUnit)){
-                                    console.log("needs conversion: ", ingredient);
+                                    //console.log("needs conversion: ", ingredient);
                                     // if they are, convert and add to the list
                                     let newLabel = (math.evaluate(ingredient.amount + ' ' + ingredient.label + ' to ' + arrayObj.label)).toJSON();
-                                    // console.log(ingredient, newLabel);
+                                    //console.log(ingredient, newLabel);
                                     let newAmount  = arrayObj.amount + newLabel.value; 
 
-                                    // console.log(ingredient, arrayObj, newAmount);
+                                    //console.log(ingredient, arrayObj, newAmount);
 
                                     extractedIngredients.splice(arrayId, 1, {
                                         name: ingredient.name,
@@ -124,7 +132,7 @@ class Generator extends Component {
                                         amount: math.round(100*newAmount)/100
                                     });
                                 
-                                    // console.log(ingredient, arrayObj);                            
+                                    //console.log(ingredient, arrayObj);                            
                                 } else if(!itemUnit.equalBase(ingredientUnit)){
                                     // if they aren't, see if there's another match
                                     var indexes = [];
@@ -136,25 +144,25 @@ class Generator extends Component {
                                         }
                                     }
                                     
-                                    console.log(indexes);
+                                    //console.log(indexes);
 
                                     for(var x = 0; x < indexes.length; x++){
                                         let indexUnit = math.unit(extractedIngredients[x].label);
-                                        console.log(indexUnit, ingredientUnit, indexUnit.equalBase(ingredientUnit));
+                                        //console.log(indexUnit, ingredientUnit, indexUnit.equalBase(ingredientUnit));
                                         if(indexUnit.equalBase(ingredientUnit)){
                                             // if they are, convert and add to the list
                                             let newLabel = (math.evaluate(ingredient.amount + ' ' + ingredient.label + ' to ' + extractedIngredients[x].label)).toJSON();
-                                            // console.log(ingredient, newLabel);
+                                            //console.log(ingredient, newLabel);
                                             let newAmount  = extractedIngredients[x].amount + newLabel.value; 
 
-                                            // console.log(ingredient, arrayObj, newAmount);
+                                            //console.log(ingredient, arrayObj, newAmount);
 
                                             extractedIngredients.splice(arrayId, 1, {
                                                 name: ingredient.name,
                                                 label: newLabel.unit,
                                                 amount: math.round(100*newAmount)/100
                                             });
-                                            console.log("converted here")
+                                            //console.log("converted here")
                                             break;
                                         } else {
                                             // just add to the needs list if there's no compatible match
@@ -171,7 +179,7 @@ class Generator extends Component {
                 }
             });
         });
-        console.log(extractedIngredients);
+        //console.log(extractedIngredients);
         this.compare(extractedIngredients);
     }
 
@@ -179,11 +187,19 @@ class Generator extends Component {
         // put needed ingredient objects in an array
         let needs = [];
 
-        console.log(needs);
+        //console.log(needs);
 
         // go through the ingredients ...
         ingredients.forEach(ingredient => {
             
+            // if there are no inventory items, just add our needs to the list
+            if(this.props.data.inventory.length === 0){
+                        
+                // find out if this ingredient type is already in our needs array so we can add it  
+                this.addToNeeds(ingredient.amount, ingredient.label, ingredient.name, needs);   
+  
+             } 
+
             //console.log(needs);
             // keep track of the forEach iterations for the inventory
             let iterations = 0;
@@ -197,7 +213,7 @@ class Generator extends Component {
                 // count this iteration
                 iterations ++;
 
-                // console.log(ingredient.name, item.name);
+                //console.log(ingredient.name, item.name);
                 
                 // if there's a match in the inventory and a planned ingredient, find out how much is in the pantry to see if we have enough
                 if(ingredient.name === item.name){
@@ -234,7 +250,7 @@ class Generator extends Component {
 
                             let amount = item.amount - conversion.value;
 
-                            // console.log(amount, conversion);
+                            //console.log(amount, conversion);
 
                             // if the difference is negative, then we don't have enough of the ingredient and we have to add it to the needs list
                             if (amount < 0) {
@@ -258,7 +274,7 @@ class Generator extends Component {
                 }
             });
         });
-        // console.log(needs);
+        //console.log(needs);
         // this.showItems(needs);
     }
 
@@ -291,7 +307,7 @@ class Generator extends Component {
                         // if the labels and name are the same, simply add the amount and add it to the array
                         let newAmt = amount + need.amount;
 
-                        console.log(index, need, amount, label, newAmt);
+                        //console.log(index, need, amount, label, newAmt);
 
                         needs.splice( index, 1, {
                                 amount: newAmt,
@@ -319,12 +335,12 @@ class Generator extends Component {
                             needs.push(neededObj);
                         } else if (needUnit.equalBase(ingredientUnit)){
 
-                            console.log(need.label);
+                            //console.log(need.label);
                             // if they are compatible, convert and add to the list
                             let newLabel = (math.evaluate(Math.ceil(amount * -1) + ' ' + label + ' to ' + need.label)).toJSON(); //*****
 
                             
-                            console.log("newLabel =", newLabel);
+                            //console.log("newLabel =", newLabel);
 
                             need.amount = need.amount + newLabel.value; //*****
                             
@@ -344,7 +360,7 @@ class Generator extends Component {
 
         }  
 
-        console.log(needs);
+        //console.log(needs);
         this.showItems(needs);
     }
 
@@ -359,11 +375,11 @@ class Generator extends Component {
         // look in array for these props
         var id = this.state.needList.findIndex(element => element.name === obj.name && element.label === obj.label);
 
-        console.log(id);
+        //console.log(id);
         // take out of the array
         var array = this.state.needList;
         array.splice(id, 1);
-        console.log(array);
+        //console.log(array);
         this.setState({needList: array});
     }
 
@@ -396,7 +412,8 @@ class Generator extends Component {
             </form>
                 
                 <div className="glist">
-                     {!this.state.generating ? <GList obj={(obj)=> this.removeItem(obj)} needList={this.state.needList} id={this.props.id}/> : null}
+                     {!this.state.generating ? !this.state.noPlans ? <GList obj={(obj)=> this.removeItem(obj)} needList={this.state.needList} id={this.props.id}/> : null : null}
+                     {this.state.noPlans ? <p className="noItems"> There are no meals planned between these dates.</p> : null}
                 </div>    
 
                 <div className="gListFooter"></div>   

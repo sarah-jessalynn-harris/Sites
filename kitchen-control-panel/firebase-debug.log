@@ -1,0 +1,319 @@
+[debug] [2021-04-21T13:06:50.288Z] ----------------------------------------------------------------------
+[debug] [2021-04-21T13:06:50.292Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2021-04-21T13:06:50.292Z] CLI Version:   9.10.0
+[debug] [2021-04-21T13:06:50.292Z] Platform:      win32
+[debug] [2021-04-21T13:06:50.292Z] Node Version:  v14.16.1
+[debug] [2021-04-21T13:06:50.294Z] Time:          Wed Apr 21 2021 09:06:50 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-04-21T13:06:50.294Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=631475572&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-04-21T13:07:24.495Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/0AY0e-g6pq782nO3UJWvMFg88fUGDarX4J7MaSxqn2MYAWPpgbwBvbEueK2r-ee9Z42Kvkw","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9005","grant_type":"authorization_code"}
+[debug] [2021-04-21T13:07:24.510Z] Token Fetch Error: FirebaseError: Server Error. tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:80
+    at Request._callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:467:12)
+    at Request.onRequestError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:879:8)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at ClientRequest.onError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\tunnel-agent\index.js:179:21)
+    at Object.onceWrapper (events.js:422:26)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at Socket.socketErrorListener (_http_client.js:469:9)
+    at Socket.emit (events.js:315:20)
+    at Socket.EventEmitter.emit (domain.js:467:12)
+    at emitErrorNT (internal/streams/destroy.js:106:8)
+    at emitErrorCloseNT (internal/streams/destroy.js:74:3)
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=631475572&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
+[info] 
+[debug] [2021-04-21T13:10:00.883Z] ----------------------------------------------------------------------
+[debug] [2021-04-21T13:10:00.886Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2021-04-21T13:10:00.886Z] CLI Version:   9.10.0
+[debug] [2021-04-21T13:10:00.886Z] Platform:      win32
+[debug] [2021-04-21T13:10:00.886Z] Node Version:  v14.16.1
+[debug] [2021-04-21T13:10:00.887Z] Time:          Wed Apr 21 2021 09:10:00 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-04-21T13:10:00.887Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[debug] [2021-04-21T13:11:59.245Z] ----------------------------------------------------------------------
+[debug] [2021-04-21T13:11:59.247Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2021-04-21T13:11:59.247Z] CLI Version:   9.10.0
+[debug] [2021-04-21T13:11:59.248Z] Platform:      win32
+[debug] [2021-04-21T13:11:59.248Z] Node Version:  v14.16.1
+[debug] [2021-04-21T13:11:59.249Z] Time:          Wed Apr 21 2021 09:11:59 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-04-21T13:11:59.249Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=264958238&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-04-21T13:25:04.851Z] ----------------------------------------------------------------------
+[debug] [2021-04-21T13:25:04.853Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2021-04-21T13:25:04.853Z] CLI Version:   9.10.0
+[debug] [2021-04-21T13:25:04.853Z] Platform:      win32
+[debug] [2021-04-21T13:25:04.853Z] Node Version:  v14.16.1
+[debug] [2021-04-21T13:25:04.854Z] Time:          Wed Apr 21 2021 09:25:04 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-04-21T13:25:04.854Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=707138674&redirect_uri=http%3A%2F%2Flocalhost%3A9006
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-04-21T13:25:34.367Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/0AY0e-g5scPHRi22yyMe9JKeSOGrv0XdeVbz3HeuhKJkYpn43od-tqn4UaFM9HuCW26ZHWw","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9006","grant_type":"authorization_code"}
+[debug] [2021-04-21T13:25:34.385Z] Token Fetch Error: FirebaseError: Server Error. tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:80
+    at Request._callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:467:12)
+    at Request.onRequestError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:879:8)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at ClientRequest.onError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\tunnel-agent\index.js:179:21)
+    at Object.onceWrapper (events.js:422:26)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at Socket.socketErrorListener (_http_client.js:469:9)
+    at Socket.emit (events.js:315:20)
+    at Socket.EventEmitter.emit (domain.js:467:12)
+    at emitErrorNT (internal/streams/destroy.js:106:8)
+    at emitErrorCloseNT (internal/streams/destroy.js:74:3)
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=707138674&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
+[info] 
+[debug] [2021-04-21T13:30:39.738Z] ----------------------------------------------------------------------
+[debug] [2021-04-21T13:30:39.740Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2021-04-21T13:30:39.740Z] CLI Version:   9.10.0
+[debug] [2021-04-21T13:30:39.741Z] Platform:      win32
+[debug] [2021-04-21T13:30:39.741Z] Node Version:  v14.16.1
+[debug] [2021-04-21T13:30:39.742Z] Time:          Wed Apr 21 2021 09:30:39 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-04-21T13:30:39.742Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=265931554&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-04-21T13:31:16.721Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/0AY0e-g69HI9nobDk6HzSdiw7mYxx9X_dXHA6Hkfg2dLMoI9X88e1eqndtfUxR9TqDewbIw","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9005","grant_type":"authorization_code"}
+[debug] [2021-04-21T13:31:16.739Z] Token Fetch Error: FirebaseError: Server Error. tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:80
+    at Request._callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:467:12)
+    at Request.onRequestError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:879:8)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at ClientRequest.onError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\tunnel-agent\index.js:179:21)
+    at Object.onceWrapper (events.js:422:26)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at Socket.socketErrorListener (_http_client.js:469:9)
+    at Socket.emit (events.js:315:20)
+    at Socket.EventEmitter.emit (domain.js:467:12)
+    at emitErrorNT (internal/streams/destroy.js:106:8)
+    at emitErrorCloseNT (internal/streams/destroy.js:74:3)
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=265931554&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
+[info] 
+[debug] [2021-04-21T13:35:16.447Z] ----------------------------------------------------------------------
+[debug] [2021-04-21T13:35:16.449Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2021-04-21T13:35:16.450Z] CLI Version:   9.10.0
+[debug] [2021-04-21T13:35:16.450Z] Platform:      win32
+[debug] [2021-04-21T13:35:16.450Z] Node Version:  v14.16.1
+[debug] [2021-04-21T13:35:16.451Z] Time:          Wed Apr 21 2021 09:35:16 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-04-21T13:35:16.451Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=788212175&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-04-21T13:35:56.242Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/0AY0e-g6J9BGupLM7se9cI5N4LtuNRdADAUmT9y5WbIDZM9moh0bme1rJ0AkZK4ju6OYWqA","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9005","grant_type":"authorization_code"}
+[debug] [2021-04-21T13:35:56.259Z] Token Fetch Error: FirebaseError: Server Error. tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:80
+    at Request._callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:467:12)
+    at Request.onRequestError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:879:8)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at ClientRequest.onError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\tunnel-agent\index.js:179:21)
+    at Object.onceWrapper (events.js:422:26)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at Socket.socketErrorListener (_http_client.js:469:9)
+    at Socket.emit (events.js:315:20)
+    at Socket.EventEmitter.emit (domain.js:467:12)
+    at emitErrorNT (internal/streams/destroy.js:106:8)
+    at emitErrorCloseNT (internal/streams/destroy.js:74:3)
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=788212175&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
+[info] 
+[debug] [2021-04-21T13:40:35.993Z] ----------------------------------------------------------------------
+[debug] [2021-04-21T13:40:35.995Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2021-04-21T13:40:35.996Z] CLI Version:   9.10.0
+[debug] [2021-04-21T13:40:35.996Z] Platform:      win32
+[debug] [2021-04-21T13:40:35.996Z] Node Version:  v14.16.1
+[debug] [2021-04-21T13:40:35.997Z] Time:          Wed Apr 21 2021 09:40:35 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-04-21T13:40:35.997Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=4060034&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-04-21T13:40:56.248Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/0AY0e-g4-quJQWXAnwYnpo3Lg5fQ-akA4kLIEwe54aPZ7GUlJHFMFclYBCokooUhP49PrGw","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9005","grant_type":"authorization_code"}
+[debug] [2021-04-21T13:40:56.268Z] Token Fetch Error: FirebaseError: Server Error. tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:80
+    at Request._callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:467:12)
+    at Request.onRequestError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:879:8)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at ClientRequest.onError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\tunnel-agent\index.js:179:21)
+    at Object.onceWrapper (events.js:422:26)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at Socket.socketErrorListener (_http_client.js:469:9)
+    at Socket.emit (events.js:315:20)
+    at Socket.EventEmitter.emit (domain.js:467:12)
+    at emitErrorNT (internal/streams/destroy.js:106:8)
+    at emitErrorCloseNT (internal/streams/destroy.js:74:3)
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=4060034&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
+[info] 
+[debug] [2021-04-21T13:50:19.687Z] ----------------------------------------------------------------------
+[debug] [2021-04-21T13:50:19.689Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2021-04-21T13:50:19.689Z] CLI Version:   9.10.0
+[debug] [2021-04-21T13:50:19.689Z] Platform:      win32
+[debug] [2021-04-21T13:50:19.689Z] Node Version:  v14.16.1
+[debug] [2021-04-21T13:50:19.690Z] Time:          Wed Apr 21 2021 09:50:19 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-04-21T13:50:19.690Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=751231968&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-04-21T13:50:58.592Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/0AY0e-g6LEUvoddRMKcIITDsebhcqw-z8NHlqwc2vcV8BT4xHa1r-6YPi-1bN0uWIkzo4JQ","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9005","grant_type":"authorization_code"}
+[debug] [2021-04-21T13:50:58.608Z] Token Fetch Error: FirebaseError: Server Error. tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:80
+    at Request._callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:467:12)
+    at Request.onRequestError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:879:8)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at ClientRequest.onError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\tunnel-agent\index.js:179:21)
+    at Object.onceWrapper (events.js:422:26)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at Socket.socketErrorListener (_http_client.js:469:9)
+    at Socket.emit (events.js:315:20)
+    at Socket.EventEmitter.emit (domain.js:467:12)
+    at emitErrorNT (internal/streams/destroy.js:106:8)
+    at emitErrorCloseNT (internal/streams/destroy.js:74:3)
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=751231968&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
+[info] 
+[debug] [2021-04-21T15:05:19.668Z] ----------------------------------------------------------------------
+[debug] [2021-04-21T15:05:19.670Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2021-04-21T15:05:19.670Z] CLI Version:   9.10.0
+[debug] [2021-04-21T15:05:19.670Z] Platform:      win32
+[debug] [2021-04-21T15:05:19.670Z] Node Version:  v14.16.1
+[debug] [2021-04-21T15:05:19.671Z] Time:          Wed Apr 21 2021 11:05:19 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-04-21T15:05:19.671Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[debug] [2021-04-21T15:09:54.869Z] ----------------------------------------------------------------------
+[debug] [2021-04-21T15:09:54.871Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2021-04-21T15:09:54.871Z] CLI Version:   9.10.0
+[debug] [2021-04-21T15:09:54.871Z] Platform:      win32
+[debug] [2021-04-21T15:09:54.872Z] Node Version:  v14.16.1
+[debug] [2021-04-21T15:09:54.872Z] Time:          Wed Apr 21 2021 11:09:54 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-04-21T15:09:54.873Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=62979573&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-04-21T15:10:39.574Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/0AY0e-g6O1ID4LnapI-0DGODMU_Oio4rmH4eSXJdJ0dix5nU579sCa4qJ0MRz4SZ7VVEU2Q","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9005","grant_type":"authorization_code"}
+[debug] [2021-04-21T15:10:39.584Z] Token Fetch Error: FirebaseError: Server Error. tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:80
+    at Request._callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:467:12)
+    at Request.onRequestError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:879:8)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at ClientRequest.onError (C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\tunnel-agent\index.js:179:21)
+    at Object.onceWrapper (events.js:422:26)
+    at ClientRequest.emit (events.js:315:20)
+    at ClientRequest.EventEmitter.emit (domain.js:467:12)
+    at Socket.socketErrorListener (_http_client.js:469:9)
+    at Socket.emit (events.js:315:20)
+    at Socket.EventEmitter.emit (domain.js:467:12)
+    at emitErrorNT (internal/streams/destroy.js:106:8)
+    at emitErrorCloseNT (internal/streams/destroy.js:74:3)
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=62979573&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
+[info] 
+[debug] [2021-04-21T20:44:46.236Z] ----------------------------------------------------------------------
+[debug] [2021-04-21T20:44:46.238Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sarah\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2021-04-21T20:44:46.238Z] CLI Version:   9.10.0
+[debug] [2021-04-21T20:44:46.238Z] Platform:      win32
+[debug] [2021-04-21T20:44:46.239Z] Node Version:  v14.16.1
+[debug] [2021-04-21T20:44:46.239Z] Time:          Wed Apr 21 2021 16:44:46 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-04-21T20:44:46.239Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 

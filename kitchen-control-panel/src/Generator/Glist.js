@@ -12,6 +12,7 @@ class GList extends Component {
     }
     
     render() {
+        
         return(
             <div>
                     
@@ -27,7 +28,7 @@ class GList extends Component {
                                 obj = {(obj) => this.recieveObj
                                 (obj)}
                                 fireId = {this.props.id}
-                            />) : <p className="noItems"> There are no meals planned between these dates.</p>
+                            />) : null
                         }
                 
                     </div>

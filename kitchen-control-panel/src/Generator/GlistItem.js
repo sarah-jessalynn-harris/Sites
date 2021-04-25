@@ -20,10 +20,16 @@ class GListItem extends Component {
     // add item to shopping list
     addItem(){
 
+        //create custom id for recipe
+        var randId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+
+
         var item = {
+            id: randId,
             amount: this.props.amount,
             label: this.props.label,
-            name: this.props.name
+            name: this.props.name,
+            checked: false
         }
 
         var id = this.props.fireId;
