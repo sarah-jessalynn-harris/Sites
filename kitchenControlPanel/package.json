@@ -9,7 +9,7 @@
   "dependencies": {
     "firebase": "^7.20.0",
     "mathjs": "^6.2.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "node-sass": "^4.13.0"
   },
   "devDependencies": {},
