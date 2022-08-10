@@ -1,0 +1,791 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  width: 100%; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 2.0rem;
+  font-family: forma-djr-display;
+  letter-spacing: .05rem; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 1.6rem; }
+
+img:hover {
+  cursor: grab; }
+
+.wrapper {
+  width: 100%; }
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 65%; } }
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 50%; } }
+
+header {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  z-index: 100; }
+  header .logo {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    header .logo img {
+      width: 13%; }
+  header .links {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #4A67AD; }
+    header .links .navigation {
+      width: 50%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+      header .links .navigation a {
+        text-decoration: none;
+        color: #FFFFFF;
+        font-size: 2.5rem; }
+        header .links .navigation a:hover {
+          color: #90A2D0;
+          cursor: pointer; }
+    header .links .more {
+      width: 45%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+      header .links .more .search {
+        width: 70%;
+        position: relative;
+        display: flex; }
+        header .links .more .search form {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center; }
+          header .links .more .search form i {
+            color: #766A7B;
+            position: relative;
+            left: 30px;
+            top: 0px; }
+          header .links .more .search form input {
+            padding: 8px 8px 8px 40px;
+            width: 325px;
+            color: #766A7B;
+            font-size: 1.8rem; }
+            header .links .more .search form input::placeholder {
+              color: #9D90A1;
+              font-family: forma-djr-display; }
+          header .links .more .search form .searchButton {
+            background-color: #90A2D0;
+            width: auto;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            color: #FFFFFF;
+            font-family: forma-djr-display;
+            font-size: 1.8rem; }
+            header .links .more .search form .searchButton:hover {
+              cursor: pointer;
+              background-color: #9D90A1; }
+        header .links .more .search #suggestionDiv {
+          position: absolute;
+          z-index: 101;
+          width: 325px;
+          top: 100%;
+          left: 20px;
+          display: flex;
+          flex-direction: column; }
+          header .links .more .search #suggestionDiv a {
+            color: white;
+            padding: 10px 20px;
+            background-color: #90A2D0; }
+            header .links .more .search #suggestionDiv a:hover {
+              background-color: #4A67AD;
+              cursor: pointer; }
+      header .links .more .social {
+        width: 20%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center; }
+        header .links .more .social i {
+          font-size: 3.0rem;
+          color: #FFFFFF; }
+          header .links .more .social i:hover {
+            color: #90A2D0;
+            cursor: pointer; }
+  header .sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99; }
+  @media only screen and (max-width: 1400px) {
+    header .logo img {
+      width: 15%; }
+    header .links {
+      flex-direction: column;
+      padding: 20px 10px;
+      height: 140px; }
+      header .links .navigation, header .links .more {
+        width: 100%; }
+      header .links .more {
+        justify-content: space-between; }
+    header .sticky {
+      flex-direction: column-reverse;
+      top: -70px; }
+      header .sticky .navigation {
+        margin-top: 20px; } }
+  @media only screen and (max-width: 900px) {
+    header .logo img {
+      width: 20%; } }
+  @media only screen and (max-width: 680px) {
+    header .links .more .search form input {
+      width: 220px; }
+    header .links .more .search #suggestionDiv {
+      width: 220px; } }
+  @media only screen and (max-width: 600px) {
+    header .logo img {
+      width: 30%; }
+    header .links .more .search #suggestionDiv {
+      left: 16px; } }
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+  footer .ad {
+    width: 100%;
+    min-height: 80px;
+    padding: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: #4A67AD;
+    color: #FFFFFF; }
+  footer .footing {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px; }
+    footer .footing .logo {
+      width: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      footer .footing .logo img {
+        width: 70%; }
+    footer .footing .address {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center; }
+      footer .footing .address .blueText {
+        color: #4A67AD;
+        font-size: 2.5rem; }
+    footer .footing .phone {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center; }
+      footer .footing .phone .blueText {
+        color: #4A67AD;
+        font-size: 2.5rem; }
+    footer .footing .social {
+      width: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center; }
+      footer .footing .social i {
+        color: #4A67AD;
+        font-size: 5.0rem; }
+        footer .footing .social i:hover {
+          color: #90A2D0;
+          cursor: pointer; }
+  @media only screen and (max-width: 1200px) {
+    footer .footing {
+      flex-direction: column; }
+      footer .footing .logo, footer .footing .address, footer .footing .phone, footer .footing .social {
+        width: 100%;
+        padding: 20px; }
+      footer .footing .logo img {
+        width: 50%; }
+      footer .footing .social {
+        flex-direction: row; } }
+
+.home {
+  width: 100%; }
+  .home .imageHeader {
+    width: 100%;
+    height: 90vh;
+    background-image: url("../img/misc/building.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+  .home .contents {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px; }
+    .home .contents img {
+      width: 30%;
+      margin: 50px; }
+    .home .contents h1 {
+      color: #4A67AD;
+      padding: 50px; }
+    .home .contents p {
+      color: #9D90A1;
+      font-size: 3.0rem;
+      text-align: center; }
+  @media only screen and (max-width: 700px) {
+    .home .imageHeader {
+      background-position: -100px; }
+    .home .contents img {
+      width: 50%; } }
+
+.about {
+  width: 100%; }
+  .about .imageHeader {
+    width: 100%;
+    height: 90vh;
+    background-image: url("../img/misc/dogagain.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+  .about .contents {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px; }
+    .about .contents img {
+      height: 400px; }
+    .about .contents h1 {
+      color: #4A67AD;
+      padding: 50px;
+      text-align: center; }
+    .about .contents p {
+      color: #9D90A1;
+      font-size: 2.5rem;
+      text-align: center;
+      padding: 0 50px; }
+    .about .contents .subSection {
+      width: 100%;
+      margin: 50px auto; }
+      .about .contents .subSection .subSectionContents {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .about .contents .subSection .last {
+        flex-direction: row-reverse; }
+  @media only screen and (max-width: 1200px) {
+    .about .contents .subSection .subSectionContents, .about .contents .subSection .last {
+      flex-direction: column;
+      align-items: center; }
+      .about .contents .subSection .subSectionContents img, .about .contents .subSection .last img {
+        height: auto;
+        width: 90%;
+        margin-bottom: 50px; } }
+      
+
+.contact {
+  width: 100%; }
+  .contact .imageHeader {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/misc/office.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+  .contact .contents {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px; }
+    .contact .contents img {
+      height: 500px; }
+    .contact .contents h1 {
+      color: #4A67AD;
+      padding: 50px; }
+    .contact .contents h2 {
+      color: #4A67AD;
+      text-align: center;
+      font-size: 3.5rem; }
+    .contact .contents p {
+      color: #9D90A1;
+      font-size: 3.0rem;
+      text-align: center; }
+    .contact .contents .contactUs {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      align-items: center; }
+      .contact .contents .contactUs .contactInfo .pTwo {
+        margin-top: 50px;
+        font-size: 3.0rem; }
+  @media only screen and (max-width: 1300px) {
+    .contact .contents .contactUs {
+      flex-direction: column; }
+      .contact .contents .contactUs .contactInfo {
+        margin: 50px auto; } }
+  @media only screen and (max-width: 700px) {
+    .contact .imageHeader {
+      background-position: -100px; } }
+
+.animals {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  padding: 50px; }
+  .animals .animal {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px; }
+    .animals .animal img {
+      width: 300px; }
+    .animals .animal h1 {
+      color: #4A67AD;
+      margin-top: 20px; }
+    .animals .animal:hover {
+      background-color: #4A67AD;
+      cursor: pointer; }
+      .animals .animal:hover h1 {
+        color: #FFFFFF; }
+
+.animalProfile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px; }
+  .animalProfile .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #4A67AD;
+    padding: 20px; }
+  .animalProfile .animalPhoto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    .animalProfile .animalPhoto img {
+      width: 300px; }
+  .animalProfile .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    width: 350px; }
+    .animalProfile .info h3 {
+      color: #4A67AD;
+      align-self: center; }
+    .animalProfile .info .heading {
+      color: #4A67AD;
+      padding-right: 10px; }
+    .animalProfile .info p {
+      color: #766A7B; }
+    .animalProfile .info form {
+      display: flex;
+      flex-direction: column; }
+      .animalProfile .info form label {
+        display: flex;
+        margin: 10px 5px;
+        font-size: 3.0rem; }
+      .animalProfile .info form input {
+        font-size: 3.0rem;
+        padding: 0 10px;
+        border: none;
+        color: #766A7B;
+        width: 75%; }
+        .animalProfile .info form input::placeholder {
+          color: #90A2D0; }
+      .animalProfile .info form .submitButton {
+        padding: 20px 30px;
+        background-color: #4A67AD;
+        border: none;
+        color: white;
+        font-size: 2.0rem;
+        margin: 20px auto; }
+        .animalProfile .info form .submitButton:hover {
+          background-color: #90A2D0;
+          cursor: pointer; }
+      .animalProfile .info form .description {
+        flex-direction: column; }
+        .animalProfile .info form .description textarea {
+          margin: 25px auto;
+          width: 100%;
+          height: 300px;
+          font-size: 3.0rem;
+          padding: 20px;
+          border: 1px solid #90A2D0;
+          color: #766A7B;
+          font-family: forma-djr-display; }
+          .animalProfile .info form .description textarea::placeholder {
+            color: #90A2D0; }
+  .animalProfile .appointment {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px; }
+    .animalProfile .appointment .appointmentButton, .animalProfile .appointment .adminAnimalButtons .appointmentButton {
+      padding: 20px 30px;
+      background-color: #4A67AD;
+      border: none;
+      color: white;
+      font-size: 2.0rem;
+      margin: 20px 10px; }
+      .animalProfile .appointment .appointmentButton:hover, .animalProfile .appointment .adminAnimalButtons .appointmentButton:hover {
+        background-color: #90A2D0;
+        cursor: pointer; }
+    .animalProfile .appointment .adminAnimalButtons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      padding-bottom: 20px; }
+
+.appointmentForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px; }
+  .appointmentForm .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #4A67AD;
+    padding: 20px; }
+  .appointmentForm .animalPhoto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    .appointmentForm .animalPhoto img {
+      width: 300px; }
+  .appointmentForm .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px; }
+    .appointmentForm .info h3 {
+      color: #4A67AD;
+      align-self: center; }
+    .appointmentForm .info .heading {
+      color: #4A67AD;
+      padding-right: 10px; }
+    .appointmentForm .info p {
+      color: #766A7B; }
+  .appointmentForm .appointment {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px; }
+    .appointmentForm .appointment .appointmentButton {
+      padding: 20px 30px;
+      background-color: #4A67AD;
+      border: none;
+      color: white;
+      font-size: 2.0rem; }
+      .appointmentForm .appointment .appointmentButton:hover {
+        background-color: #90A2D0;
+        cursor: pointer; }
+
+.appointmentSuccess {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px; }
+  .appointmentSuccess .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #4A67AD;
+    padding: 20px; }
+  .appointmentSuccess .animalPhoto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    .appointmentSuccess .animalPhoto img {
+      width: 300px; }
+  .appointmentSuccess .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px; }
+    .appointmentSuccess .info h3 {
+      color: #4A67AD;
+      align-self: center; }
+    .appointmentSuccess .info .heading {
+      color: #4A67AD;
+      padding-right: 10px; }
+    .appointmentSuccess .info p {
+      color: #766A7B; }
+  .appointmentSuccess .appointment {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px; }
+    .appointmentSuccess .appointment .appointmentButton {
+      padding: 20px 30px;
+      background-color: #4A67AD;
+      border: none;
+      color: white;
+      font-size: 2.0rem; }
+      .appointmentSuccess .appointment .appointmentButton:hover {
+        background-color: #90A2D0;
+        cursor: pointer; }
+
+.login {
+  width: 100%; }
+  .login .headerImage {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/misc/dogs.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
+    .login .headerImage:hover {
+      cursor: grab; }
+  .login .contents {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../img/misc/background.png");
+    background-size: 110%;
+    background-position-y: -100px;
+    background-position-x: center;
+    background-repeat: repeat;
+    padding: 50px; }
+    .login .contents .welcome {
+      width: 80%;
+      background-color: white;
+      border: 1px solid #9D90A1;
+      margin: -130px auto 50px;
+      display: flex;
+      box-shadow: 0 1.5rem 15px #4A67AD;
+      padding: 20px; }
+      .login .contents .welcome p {
+        color: #4A67AD;
+        font-size: 5.0rem;
+        margin: auto; }
+    .login .contents .signIn, .login .contents .signUp {
+      width: 80%;
+      background-color: white;
+      border: 1px solid #9D90A1;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1.5rem 15px #4A67AD;
+      padding: 100px;
+      justify-content: center;
+      align-items: center; }
+      .login .contents .signIn p, .login .contents .signUp p {
+        color: #4A67AD;
+        font-size: 4.0rem;
+        margin-bottom: 50px;
+        text-align: center; }
+      .login .contents .signIn label, .login .contents .signUp label {
+        color: #4A67AD;
+        font-size: 3.0rem; }
+      .login .contents .signIn input, .login .contents .signUp input {
+        border: none;
+        font-size: 2.5rem;
+        color: #90A2D0;
+        padding: 20px;
+        font-family: forma-djr-display;
+        margin: 30px 0;
+        width: 300px; }
+        .login .contents .signIn input::placeholder, .login .contents .signUp input::placeholder {
+          color: #9D90A1; }
+    .login .contents .signUp .signUpButton, .login .contents .signIn .signInButton {
+      width: 100%;
+      padding: 20px 30px;
+      margin: 20px 0;
+      background-color: #4A67AD;
+      color: white;
+      font-family: forma-djr-display;
+      font-size: 2.5rem;
+      border: none; }
+      .login .contents .signUp .signUpButton:hover, .login .contents .signIn .signInButton:hover {
+        background-color: #90A2D0;
+        cursor: pointer; }
+    .login .contents .signUp .disclaimer {
+      font-size: 2.0rem;
+      color: #90A2D0;
+      font-style: italic;
+      text-align: left;
+      margin-top: -20px; }
+  @media only screen and (max-width: 900px) {
+    .login .headerImage {
+      background-position-x: -100px; }
+    .login .contents {
+      padding: 20px; }
+      .login .contents .signIn, .login .contents .signUp {
+        width: 90%; }
+        .login .contents .signIn label, .login .contents .signUp label {
+          margin-right: 10px; }
+        .login .contents .signIn input, .login .contents .signUp input {
+          border: 1px solid #4A67AD; } }
+  @media only screen and (max-width: 870px) {
+    .login .headerImage {
+      background-position-x: -150px; } }
+  @media only screen and (max-width: 760px) {
+    .login .headerImage {
+      background-position-x: -200px; } }
+  @media only screen and (max-width: 720px) {
+    .login .headerImage {
+      background-position-x: -520px; } }
+  @media only screen and (max-width: 620px) {
+    .login .contents {
+      padding: 20px; }
+      .login .contents .signIn, .login .contents .signUp {
+        padding: 50px; } }
+
+.userProfile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../img/misc/background.png");
+  background-size: 110%;
+  background-position-y: -100px;
+  background-position-x: center;
+  background-repeat: repeat;
+  padding: 50px; }
+  .userProfile .userData {
+    width: 80%;
+    background-color: white;
+    border: 1px solid #9D90A1;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1.5rem 15px #4A67AD;
+    padding: 50px; }
+    .userProfile .userData h2 {
+      color: #4A67AD;
+      font-size: 5.0rem; }
+    .userProfile .userData .heading {
+      color: #4A67AD;
+      padding-right: 10px;
+      font-size: 3.0rem; }
+    .userProfile .userData p {
+      color: #90A2D0;
+      font-size: 3.0rem; }
+    .userProfile .userData .userInfo {
+      width: 100%;
+      margin: 25px auto; }
+      .userProfile .userData .userInfo .accountNav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        margin-left: 100px; }
+        .userProfile .userData .userInfo .accountNav a {
+          text-decoration: none;
+          color: #4A67AD;
+          font-size: 3.0rem;
+          margin: 30px 10px; }
+          .userProfile .userData .userInfo .accountNav a:hover {
+            color: #90A2D0; }
+      .userProfile .userData .userInfo table {
+        width: 100%;
+        color: #4A67AD; }
+      .userProfile .userData .userInfo tr:nth-child(odd) {
+        background-color: #90A2D0;
+        color: #FFFFFF; }
+      .userProfile .userData .userInfo th {
+        background-color: #4A67AD;
+        color: #FFFFFF;
+        padding: 10px; }
+      .userProfile .userData .userInfo td {
+        padding: 10px;
+        text-align: center; }
+    .userProfile .userData .userButtons {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+      .userProfile .userData .userButtons button {
+        width: 30%;
+        padding: 20px 30px;
+        margin: 20px 0;
+        background-color: #4A67AD;
+        color: white;
+        font-family: forma-djr-display;
+        font-size: 2.5rem;
+        border: none; }
+        .userProfile .userData .userButtons button:hover {
+          background-color: #90A2D0;
+          cursor: pointer; }
+    .userProfile .userData .adminButtons {
+      flex-direction: column;
+      align-items: center; }
+      .userProfile .userData .adminButtons button {
+        margin: 30px auto; }
+  @media only screen and (max-width: 1100px) {
+    .userProfile .userData .userButtons {
+      flex-direction: column;
+      width: 100%;
+      align-items: center; }
+      .userProfile .userData .userButtons button {
+        width: 50%; } }
+  @media only screen and (max-width: 800px) {
+    .userProfile .userData {
+      padding: 20px; }
+      .userProfile .userData .userButtons button {
+        width: 90%; } }
+  @media only screen and (max-width: 650px) {
+    .userProfile {
+      padding: 0px;
+      padding-top: 30px; }
+      .userProfile .userData .userInfo .accountNav {
+        margin-left: 0; }
+      .userProfile .userData .apptable {
+        width: 100%;
+        margin: 10px auto; }
+        .userProfile .userData .apptable th, .userProfile .userData .apptable td {
+          padding: 5px; } }

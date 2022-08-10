@@ -1,0 +1,142 @@
+//style the profile of animals
+.animalProfile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+
+    .title{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        color: $blue;
+        padding: 20px;
+    }
+
+    .animalPhoto {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+        img {
+            width: 300px;
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+        width: 350px;
+
+
+        h3 {
+            color: $blue;
+            align-self: center;
+        }
+
+        .heading {
+            color: $blue;
+            padding-right: 10px;
+        }
+
+        p {
+            color: $gray;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+
+            label {
+                display: flex;
+                margin: 10px 5px;
+                font-size: 3.0rem;
+            }
+
+            input {
+                font-size: 3.0rem;
+                padding: 0 10px;
+                border: none;
+                color: $gray;
+                width: 75%;
+                
+                &::placeholder {
+                    color: $cyan;
+                }
+            }
+
+            .submitButton {
+                padding: 20px 30px;
+                background-color: $blue;
+                border: none;
+                color: white;
+                font-size: 2.0rem;
+                margin: 20px auto;
+
+                &:hover {
+                    background-color: $cyan;
+                    cursor: pointer;
+                }
+            }
+
+            .description {
+                flex-direction: column;
+
+                textarea {
+                    margin: 25px auto;
+                    width: 100%;
+                    height: 300px;
+                    font-size: 3.0rem;
+                    padding: 20px;
+                    border: 1px solid $cyan;
+                    color: $gray;
+                    font-family: forma-djr-display;
+
+                    
+                    &::placeholder {
+                        color: $cyan;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .appointment {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 20px;
+
+        .appointmentButton, .adminAnimalButtons .appointmentButton {
+            padding: 20px 30px;
+            background-color: $blue;
+            border: none;
+            color: white;
+            font-size: 2.0rem;
+            margin: 20px 10px;
+
+            &:hover {
+                background-color: $cyan;
+                cursor: pointer;
+            }
+        }
+
+        .adminAnimalButtons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+    }
+}

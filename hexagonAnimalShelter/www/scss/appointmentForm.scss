@@ -1,0 +1,75 @@
+//style the appointment form
+.appointmentForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+
+
+    .title{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        color: $blue;
+        padding: 20px;
+    }
+
+    .animalPhoto {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+        img {
+            width: 300px;
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+
+
+        h3 {
+            color: $blue;
+            align-self: center;
+        }
+
+        .heading {
+            color: $blue;
+            padding-right: 10px;
+        }
+
+        p {
+            color: $gray;
+        }
+  
+    }
+
+    .appointment {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 20px;
+
+        .appointmentButton {
+            padding: 20px 30px;
+            background-color: $blue;
+            border: none;
+            color: white;
+            font-size: 2.0rem;
+
+            &:hover {
+                background-color: $cyan;
+                cursor: pointer;
+            }
+        }
+    }
+}

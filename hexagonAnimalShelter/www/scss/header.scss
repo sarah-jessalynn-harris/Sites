@@ -1,0 +1,230 @@
+//style the header
+header {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    z-index: 100;
+    
+    .logo {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 13%;
+        }
+    }
+
+    .links {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: $blue;
+
+        .navigation {
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                color: $white;
+                font-size: 2.5rem;
+
+                &:hover {
+                    color: $cyan;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .more {
+            width: 45%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+ 
+
+            .search {
+                width: 70%;
+                position: relative;
+                display: flex;
+
+                form {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    i {
+                        color: $gray;
+                        position: relative;
+                        left: 30px;
+                        top: 0px;
+                    }
+
+                    input {
+                        padding: 8px 8px 8px 40px;
+                        width: 325px;
+                        color: $gray;
+                        font-size: 1.8rem;
+                        
+                        &::placeholder {
+                            color: $grey;
+                            font-family: forma-djr-display;
+                        }
+                    }
+
+                    .searchButton {
+                        background-color: $cyan;
+                        width: auto;
+                        padding: 10px 20px;
+                        margin-left: 10px;
+                        border: none;
+                        color: $white;
+                        font-family: forma-djr-display;
+                        font-size: 1.8rem;
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $grey;
+                        }
+                    }
+
+                }
+
+                #suggestionDiv {
+                    position: absolute;
+                    z-index: 101;
+                    width: 325px;
+                    top: 100%;
+                    left: 20px;
+                    display: flex;
+                    flex-direction: column;
+
+                    a {
+                        color: white;
+                        padding: 10px 20px;
+                        background-color: $cyan;
+                        
+
+                        &:hover {
+                            background-color: $blue;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .social {
+                width: 20%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                
+                i {
+                    font-size: 3.0rem;
+                    color: $white;
+
+                    &:hover {
+                        color: $cyan;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 99; 
+    }  
+
+    @media only screen and (max-width: 1400px) {
+
+        .logo {
+            img {
+                width: 15%;
+            }
+        }
+
+       .links {
+           flex-direction: column;
+           padding: 20px 10px;
+           height: 140px;
+        
+           .navigation, .more {
+               width: 100%;
+           }
+
+           .more {
+               justify-content: space-between;
+           }
+
+       }
+
+       .sticky {
+            flex-direction: column-reverse;
+            top: -70px;
+
+            .navigation{ 
+                margin-top: 20px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 900px) {
+        .logo {
+            img {
+                width: 20%;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 680px) {
+        .links {
+           .more {
+               .search {
+                   
+                    form {
+                       input {
+                           width: 220px;
+                       }
+                    }
+
+                   #suggestionDiv {
+                        width: 220px;
+                   }
+               }
+           }
+        }
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .logo {
+            img {
+                width: 30%;
+            }
+        }
+
+        .links {
+            .more {
+                .search {
+ 
+                    #suggestionDiv {
+                        left: 16px;
+                    }
+                }
+            }
+         }
+    }
+}
