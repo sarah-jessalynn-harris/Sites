@@ -165,13 +165,13 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #95848C;
+    background-image: url("../img/20J.jpg");
 }
 
 .container {
-    width: 75%;
+    width: 50%;
     padding: 25px;
-    background-color: black;
+    background-color: #1A2131;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -181,4 +181,44 @@ nav a:hover {
 .container img {
     width: 400px;
     padding: 50px;
+}
+
+.container h1{
+    font-weight: bolder;
+    font-family: "script";
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.container h4 {
+    padding-bottom: 15px;
+    font-weight: normal;
+}
+
+.addressBook {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.address {
+    display: flex;
+}
+
+.address a {
+    color: #ECF7F8;
+    display: flex;
+    font-style: italic;
+}
+
+.address p {
+    font-style: italic;
+}
+
+.address i {
+    margin-right: 20px;
+}
+
+.address a:hover {
+    color: #6E7A94;
 }
