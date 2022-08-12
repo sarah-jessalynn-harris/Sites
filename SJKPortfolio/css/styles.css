@@ -389,20 +389,20 @@ nav i:hover {
   }
 
   .thumbnail img {
-      width: 32%;
+      width: 43%;
       padding: 20px;
       background-color: #E9E9E9;
   }
 
   .thumbnail .textPortfolio {
       font-size: 1.6rem;
-      width: 55%;
+      width: 50%;
       background-color: #E9E9E9;
       padding: 5.0rem;
   }
 
   .thumbnail .buttons {
-      margin-top: 30px;
+      margin-top: 20px;
       display: flex;
       flex-direction: column;
   }
