@@ -35,8 +35,23 @@ a  {
 }
 
 @font-face {
+    font-family: "lgcLite";
+    src: url('../fonts/Louis\ George\ Cafe\ Light.ttf');
+}
+
+@font-face {
     font-family: "script";
     src: url('../fonts/MelodySouthern-Script.otf');
+}
+
+@font-face {
+    font-family: "caps";
+    src: url("../fonts/MelodySouthern.otf");
+}
+
+@font-face {
+    font-family: "hand";
+    src: url("../fonts/Autography.otf");
 }
 
 @media only screen and (max-width: 900px) {
@@ -110,25 +125,6 @@ nav a:hover {
     overflow: hidden;
 }
 
-.heading {
-    font-family: "script";
-    font-weight: bolder;
-    letter-spacing: 0.5rem;
-    font-size: 3.0rem;
-    background-color:#1A2131;
-    border: 2px solid #ECF7F8;
-    border-radius: 5%;
-    padding: 5px 10px;
-    position: fixed;
-    top: 70%;
-    left: 50%;
-    z-index: 99;
-}
-
-.heading:hover {
-    cursor: pointer;
-    background-color: #6E7A94;
-}
 
 #bgVideo {
     width: 100vw;
@@ -142,10 +138,12 @@ nav a:hover {
     width: 200px;
     font-size: 18px;
     padding: 10px;
+    background-color: #6E7A94;
     border: 2px solid #ECF7F8;
     border-radius: 5%;
-    background-color: #1A2131;
     color: #ECF7F8;
+    font-family: "caps";
+    font-weight: bolder;
     position: fixed;
     margin: 10px;
     bottom: 0;
@@ -153,10 +151,226 @@ nav a:hover {
     z-index: 50;
 }
   
-#muteButton:hover {
-    background-color: #6E7A94;
+#muteButton:hover { 
+    background-color: #1A2131;
     cursor: pointer;
 }
+
+.intro {
+    width: 100%;
+    height: 100vh;
+    background-color: #1A2131;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeLogo {
+    width: 150px;
+    margin: 100px 0px 20px;
+}
+
+.intro h1 {
+    font-style: italic;
+    font-family: script;
+}
+
+.intro h2 {
+    font-family: "caps";
+    margin: 50px;
+}
+
+.socials {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.socials a {
+    color: #ECF7F8;
+    display: flex;
+    font-style: italic;
+}
+
+.socials a:hover {
+    color: #6E7A94;
+}
+
+.actionButton {
+    font-family: "lgcLite";
+    font-weight: bolder;
+    color: #ECF7F8;
+    font-size: 2.0rem;
+    background-color: #6E7A94;
+    border: 2px solid #ECF7F8;
+    border-radius: 5%;
+    padding: 10px 30px;
+    margin-bottom: 50px;
+}
+
+.actionButton:hover {
+    cursor: pointer;
+    background-color:#1A2131;
+}
+
+
+
+
+/* About Page */
+.about {
+    background-color: #4B506C;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner {
+    width: 100%;
+}
+
+.greeting {
+    font-size: 5.5rem;
+    font-weight: bolder;
+    position: absolute;
+    bottom: 10%;
+    left: 75%;
+}
+
+.content {
+    min-height: 100vh;
+    width: 100%;
+    background-color: hsl(222, 31%, 15%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content a {
+    color: #6E7A94;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.columnA, .columnB {
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+}
+
+.columnB {
+    background-color: #6E7A94;
+    justify-content: flex-end;
+}
+
+.main{
+    padding: 20px;
+}
+
+.profile {
+    width: 45%;
+}
+
+.instruments {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.columnB h2 {
+    font-weight: bolder;
+    font-variant: small-caps;
+    margin-bottom: 30px;
+}
+
+.columnB li {
+    margin: 10px;
+}
+
+.tuba {
+    width: 55%;
+}
+
+
+
+
+
+/* Audio Page */
+.audio {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.runner {
+    height: 100vh;
+}
+
+.header {
+    font-size: 5.5rem;
+    font-weight: bolder;
+    color: #1A2131;
+    position: absolute;
+    bottom: 50%;
+    right: 10%;
+}
+
+.gallery {
+    width: 100%;
+    background-color: #6E7A94;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mp3 {
+    height: 300px;
+    width: 500px;
+    background-color: #1A2131;
+    padding: 50px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mp3 h5 {
+    font-family: "caps";
+}
+
+.mp3 p {
+    font-style: italic;
+}
+
+audio {
+    margin-top: 20px;
+    height: 40px;
+}
+
+
+
+
 
 /* Contact Page */
 .contact {
@@ -170,6 +384,7 @@ nav a:hover {
 
 .container {
     width: 50%;
+    margin-top: 100px;
     padding: 25px;
     background-color: #1A2131;
     display: flex;
@@ -211,6 +426,10 @@ nav a:hover {
     font-style: italic;
 }
 
+.address a:hover {
+    color: #6E7A94;
+}
+
 .address p {
     font-style: italic;
 }
@@ -219,6 +438,3 @@ nav a:hover {
     margin-right: 20px;
 }
 
-.address a:hover {
-    color: #6E7A94;
-}
