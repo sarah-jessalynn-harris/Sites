@@ -137,7 +137,8 @@ nav a:hover {
 
 .home {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    background-color: #1A2131;
     overflow: hidden;
 }
 
@@ -151,12 +152,14 @@ nav a:hover {
 }
 
 @media only screen and (max-width: 1080px){
-    
+    .home {
+        padding-top: 150px;
+    }
 }
   
 #muteButton {
     width: 200px;
-    font-size: 18px;
+    font-size: 1.8rem;
     padding: 10px;
     background-color: #6E7A94;
     border: 2px solid #ECF7F8;
@@ -169,6 +172,12 @@ nav a:hover {
     bottom: 0;
     right: 0;
     z-index: 50;
+}
+
+@media only screen and (max-width: 700px){
+    #muteButton {
+        width: 100px;
+    }
 }
   
 #muteButton:hover { 
@@ -259,22 +268,19 @@ nav a:hover {
     align-items: center;
 }
 
-.banner {
-    width: 100%;
-}
-
 .greeting {
     font-size: 5.5rem;
     font-weight: bolder;
     position: absolute;
     bottom: 10%;
     left: 75%;
+    margin: 20px;;
 }
 
 .content {
     min-height: 100vh;
     width: 100%;
-    background-color: hsl(222, 31%, 15%);
+    background-color: #1A2131;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -330,8 +336,43 @@ nav a:hover {
     width: 55%;
 }
 
+@media only screen and (max-width: 1350px){
+    .columnA, .columnB {
+        flex-direction: column;
+    }
 
+    .main, .instruments {
+        padding: 50px;
+    }
+}
 
+@media only screen and (max-width: 800px){
+    .instruments {
+        width: 80%;
+    }
+
+    .columnB {
+        padding: 0;
+    }
+
+    li {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .greeting {
+        bottom: 0;
+        left: 25%;
+    }
+
+}
+
+@media only screen and (max-width: 450px) {  
+    .heading {
+        background-position: 20%;
+    }
+}
 
 
 /* Audio Page */
@@ -343,6 +384,11 @@ nav a:hover {
 
 .title {
     width: 100%;
+    height: 100vh;
+    background-image: url("/img/sousaphone.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
 }
@@ -365,6 +411,7 @@ nav a:hover {
     background-color: #6E7A94;
     padding: 50px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -394,7 +441,13 @@ audio {
     height: 40px;
 }
 
-
+@media only screen and (max-width: 400px) {
+    .mp3 {
+        padding: 20px;
+        width: 250px;
+        height: auto;
+    }
+}
 
 
 
@@ -409,9 +462,9 @@ audio {
 }
 
 .container {
-    width: 50%;
-    margin-top: 100px;
-    padding: 25px;
+    width: 60%;
+    margin-top: 75px;
+    padding: 30px;
     background-color: #1A2131;
     display: flex;
     flex-direction: column;
@@ -420,13 +473,14 @@ audio {
 }
 
 .container img {
-    width: 400px;
-    padding: 50px;
+    width: 35%;
+    padding-bottom: 50px;
 }
 
 .container h1{
     font-weight: bolder;
     font-family: "script";
+    font-size: 4.0rem;
     text-align: center;
     padding-bottom: 10px;
 }
@@ -464,3 +518,16 @@ audio {
     margin-right: 20px;
 }
 
+@media only screen and (max-width: 800px){
+    .container {
+        width: 90%;
+    }
+
+    .container img {
+        width: 55%;
+        padding-bottom: 20px;
+    }
+    .container h1{
+        font-size: 3.0rem;
+    }
+}
