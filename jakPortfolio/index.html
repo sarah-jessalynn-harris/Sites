@@ -42,11 +42,19 @@
 
     <div class="home">
 
-        <video autoplay muted loop id="bgVideo">
-            <source src="./img/performing.mp4" type="video/mp4">
+        <video autoplay muted loop class="bgVideo" id="videoH">
+            <source id="vid" src="./img/headingHorizontal.mp4" type="video/mp4">
         </video>
 
-        <button id="muteButton" onclick="myFunction()">Unmute</button>
+        <video autoplay muted loop class="bgVideo" id="videoV">
+            <source id="vid" src="./img/headingVertical.mp4" type="video/mp4" >
+        </video>
+
+        <p class="caption"> Argagui Amrag - Traditional Mongolian Song</p>
+
+        <button id="muteButtonH" class="muteButton hVideo" onclick="muteControl('videoH')">Unmute</button>
+
+        <button id="muteButtonV" class="muteButton vVideo" onclick="muteControl('videoV')">Unmute</button>
 
 
         <div class="intro">
