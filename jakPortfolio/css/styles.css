@@ -162,7 +162,7 @@ nav a:hover {
     text-align: center;
     position: fixed;
     margin: 10px;
-    bottom: 0;
+    bottom: 0px;
     right: 0;
     z-index: 50;
 }
@@ -178,16 +178,7 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 700px){
-
-    #videoV, #muteButtonV {
-        display: flex;
-    }
-
-    #videoH, #muteButtonH {
-        display: none;
-    }
-
+@media only screen and (max-width: 800px){
     .bgVideo {
         margin-top: -300px;
     }
