@@ -182,6 +182,14 @@ nav a:hover {
     .bgVideo {
         margin-top: -300px;
     }
+
+    #videoV, #muteButtonV {
+        display: flex;
+    }
+
+    #videoH, #muteButtonH {
+        display: none;
+    }
 }
 
 
